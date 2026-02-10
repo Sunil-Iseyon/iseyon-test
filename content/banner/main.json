@@ -1,0 +1,31 @@
+{
+  "heading": "Why Leading Companies Trust Us",
+  "subheading": "Join thousands of businesses already transforming their operations with our comprehensive analytics platform designed for the modern enterprise.",
+  "benefits": [
+    "Enterprise-grade Security",
+    "Real-time Data Processing",
+    "99.9% Uptime SLA",
+    "AI-Powered Insights",
+    "Scalable Infrastructure",
+    "Dedicated Support",
+    "Custom Integrations",
+    "Advanced Compliance"
+  ],
+  "stats": [
+    {
+      "value": "99.9%",
+      "label": "Uptime",
+      "description": "Guaranteed availability"
+    },
+    {
+      "value": "10M+",
+      "label": "Data Points",
+      "description": "Processed daily"
+    },
+    {
+      "value": "500+",
+      "label": "Clients",
+      "description": "Worldwide"
+    }
+  ]
+}

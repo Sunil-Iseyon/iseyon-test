@@ -1,0 +1,44 @@
+{
+  "title": "Security & Compliance",
+  "subtitle": "Enterprise-grade security with full regulatory compliance",
+  "description": "Enterprise-grade security with full compliance to industry standards and regulations.",
+  "image": "/services/Shopify_Banner_Design_c0viof.png",
+  "icon": "Shield",
+  "variant": "primary",
+  "slug": "security-compliance",
+  "detailedDescription": "Protect your most valuable asset – your data. Our security solutions ensure your analytics platform meets the highest standards of data protection and regulatory compliance.",
+  "features": [
+    "End-to-end encryption",
+    "Role-based access control",
+    "Comprehensive audit logs",
+    "GDPR/HIPAA compliance",
+    "SOC 2 certification",
+    "Regular security audits"
+  ],
+  "benefits": [
+    {
+      "title": "Peace of Mind",
+      "description": "Rest easy knowing your data is protected by industry-leading security"
+    },
+    {
+      "title": "Regulatory Ready",
+      "description": "Meet compliance requirements without additional effort"
+    },
+    {
+      "title": "Trust & Transparency",
+      "description": "Build customer trust with robust data protection"
+    }
+  ],
+  "stats": [
+    { "label": "Security Rating", "value": "A+" },
+    { "label": "Compliance Standards", "value": "15+" },
+    { "label": "Breach Rate", "value": "0%" }
+  ],
+  "useCases": [
+    "Healthcare data protection",
+    "Financial services compliance",
+    "PCI DSS certification",
+    "Data privacy management"
+  ],
+  "cta": "Secure Your Data"
+}

@@ -1,0 +1,44 @@
+{
+  "title": "AI Solutions",
+  "subtitle": "Implement machine learning models to transform your business",
+  "description": "AI can streamline operations, automate tasks, analyze data for insights, personalize customer experiences, improve decision-making, enhance cybersecurity, and drive innovation, ultimately boosting efficiency and competitiveness for a company.",
+  "image": "/services/AI.webp",
+  "icon": "Brain",
+  "variant": "secondary",
+  "slug": "ai-solutions",
+  "detailedDescription": "Harness the power of artificial intelligence to automate processes, predict outcomes, and unlock new opportunities. Our AI solutions are tailored to your specific business needs and industry requirements.",
+  "features": [
+    "Custom ML model development",
+    "Natural language processing",
+    "Computer vision applications",
+    "Recommendation engines",
+    "Predictive maintenance",
+    "Intelligent automation"
+  ],
+  "benefits": [
+    {
+      "title": "Automation at Scale",
+      "description": "Automate complex tasks that previously required human intervention"
+    },
+    {
+      "title": "Predictive Power",
+      "description": "Anticipate trends and customer behavior before they happen"
+    },
+    {
+      "title": "Competitive Edge",
+      "description": "Stay ahead with cutting-edge AI capabilities"
+    }
+  ],
+  "stats": [
+    { "label": "Task Automation", "value": "70%" },
+    { "label": "Prediction Accuracy", "value": "95%" },
+    { "label": "Cost Reduction", "value": "40%" }
+  ],
+  "useCases": [
+    "Customer service chatbots",
+    "Fraud detection systems",
+    "Product recommendations",
+    "Sentiment analysis"
+  ],
+  "cta": "Explore AI"
+}

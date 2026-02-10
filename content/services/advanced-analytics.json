@@ -1,0 +1,44 @@
+{
+  "title": "Advanced Analytics",
+  "subtitle": "Deep dive into your data with our comprehensive analytics platform",
+  "description": "Deep dive into your data with our comprehensive analytics platform powered by AI algorithms.",
+  "image": "/services/business-analytics.webp",
+  "icon": "BarChart3",
+  "variant": "primary",
+  "slug": "advanced-analytics",
+  "detailedDescription": "Our Advanced Analytics platform empowers organizations to extract meaningful insights from complex datasets. Powered by cutting-edge AI algorithms, we transform raw data into actionable intelligence that drives strategic decision-making.",
+  "features": [
+    "Real-time interactive dashboards",
+    "Custom report generation",
+    "Predictive analytics models",
+    "Advanced data visualization",
+    "Automated insights discovery",
+    "Cross-platform data integration"
+  ],
+  "benefits": [
+    {
+      "title": "Faster Decisions",
+      "description": "Reduce time-to-insight by up to 80% with automated analytics"
+    },
+    {
+      "title": "Improved Accuracy",
+      "description": "AI-powered analysis eliminates human error and bias"
+    },
+    {
+      "title": "Scalable Solutions",
+      "description": "Handle millions of data points without performance degradation"
+    }
+  ],
+  "stats": [
+    { "label": "Faster Insights", "value": "80%" },
+    { "label": "Data Accuracy", "value": "99.9%" },
+    { "label": "ROI Increase", "value": "3x" }
+  ],
+  "useCases": [
+    "Customer behavior analysis",
+    "Sales forecasting",
+    "Market trend identification",
+    "Performance optimization"
+  ],
+  "cta": "Start Analyzing"
+}

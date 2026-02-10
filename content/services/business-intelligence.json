@@ -1,0 +1,44 @@
+{
+  "title": "Business Intelligence",
+  "subtitle": "Transform raw data into strategic business insights",
+  "description": "Transform raw data into actionable insights for strategic decision-making.",
+  "image": "/services/StrategyB.webp",
+  "icon": "TrendingUp",
+  "variant": "secondary",
+  "slug": "business-intelligence",
+  "detailedDescription": "Make data-driven decisions with confidence. Our BI solutions provide executive dashboards, KPI tracking, and comprehensive analytics that give you complete visibility into your business performance.",
+  "features": [
+    "Executive dashboards",
+    "KPI tracking & alerts",
+    "Trend analysis",
+    "Competitive insights",
+    "Financial reporting",
+    "Operational analytics"
+  ],
+  "benefits": [
+    {
+      "title": "Clear Visibility",
+      "description": "See your entire business at a glance with intuitive dashboards"
+    },
+    {
+      "title": "Actionable Insights",
+      "description": "Turn data into decisions with clear recommendations"
+    },
+    {
+      "title": "Strategic Planning",
+      "description": "Plan for the future with data-backed forecasts"
+    }
+  ],
+  "stats": [
+    { "label": "Decision Speed", "value": "5x" },
+    { "label": "Report Generation", "value": "Instant" },
+    { "label": "Business Growth", "value": "45%" }
+  ],
+  "useCases": [
+    "Executive reporting",
+    "Sales performance tracking",
+    "Market analysis",
+    "Financial forecasting"
+  ],
+  "cta": "Get Insights"
+}

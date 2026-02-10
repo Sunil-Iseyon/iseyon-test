@@ -1,0 +1,25 @@
+{
+  "name": "Xcaria",
+  "tagline": "Smart Retail Forecasting Made Simple",
+  "logo": "/xcaria_logo.webp",
+  "description": "**Xcaria **revolutionizes retail forecasting with AI-powered predictions that help retailers optimize inventory, reduce waste, and maximize profits. Our platform combines advanced machine learning with intuitive design to deliver accurate forecasts in real-time.\n",
+  "features": [
+    {
+      "icon": "Zap",
+      "title": "Real-time Forecasting",
+      "description": "Get instant predictions to optimize your inventory"
+    },
+    {
+      "icon": "TrendingUp",
+      "title": "Demand Planning",
+      "description": "Predict customer demand with 95% accuracy"
+    },
+    {
+      "icon": "Shield",
+      "title": "Risk Management",
+      "description": "Minimize overstock and stockout scenarios"
+    }
+  ],
+  "ctaText": "Explore Xcaria",
+  "ctaLink": "#"
+}

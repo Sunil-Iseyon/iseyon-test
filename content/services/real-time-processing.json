@@ -1,0 +1,44 @@
+{
+  "title": "Real-time Processing",
+  "subtitle": "Process and analyze data as it happens",
+  "description": "Process and analyze data in real-time for immediate insights and faster action.",
+  "image": "/services/internal-apps.webp",
+  "icon": "Zap",
+  "variant": "secondary",
+  "slug": "real-time-processing",
+  "detailedDescription": "In today's fast-paced business environment, speed is everything. Our real-time processing solutions enable instant insights, allowing you to respond to opportunities and threats as they emerge.",
+  "features": [
+    "Streaming analytics",
+    "Sub-millisecond latency",
+    "High-throughput processing",
+    "Complex event processing",
+    "Real-time alerting",
+    "Live dashboards"
+  ],
+  "benefits": [
+    {
+      "title": "Instant Insights",
+      "description": "Get answers in milliseconds, not hours or days"
+    },
+    {
+      "title": "Rapid Response",
+      "description": "React to events as they happen, not after the fact"
+    },
+    {
+      "title": "Operational Excellence",
+      "description": "Optimize operations with real-time visibility"
+    }
+  ],
+  "stats": [
+    { "label": "Processing Speed", "value": "<1ms" },
+    { "label": "Data Throughput", "value": "10M/sec" },
+    { "label": "Uptime", "value": "99.99%" }
+  ],
+  "useCases": [
+    "IoT sensor monitoring",
+    "Stock trading platforms",
+    "Fraud detection",
+    "Supply chain optimization"
+  ],
+  "cta": "Go Real-time"
+}

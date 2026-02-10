@@ -1,0 +1,44 @@
+{
+  "title": "Data Integration",
+  "subtitle": "Seamlessly unify all your data sources into one platform",
+  "description": "Seamlessly integrate all your data sources into a unified analytics platform.",
+  "image": "/services/data-integration.webp",
+  "icon": "Database",
+  "variant": "primary",
+  "slug": "data-integration",
+  "detailedDescription": "Break down data silos and create a unified view of your business. Our data integration solutions connect disparate systems, ensuring data consistency and accessibility across your organization.",
+  "features": [
+    "API integrations",
+    "Real-time data pipelines",
+    "ETL/ELT tools",
+    "Data quality management",
+    "Master data management",
+    "Cloud-native architecture"
+  ],
+  "benefits": [
+    {
+      "title": "Unified Data",
+      "description": "Single source of truth for all your business data"
+    },
+    {
+      "title": "Real-time Sync",
+      "description": "Keep data synchronized across all systems instantly"
+    },
+    {
+      "title": "Reduced Complexity",
+      "description": "Simplify your data architecture and reduce maintenance"
+    }
+  ],
+  "stats": [
+    { "label": "Integration Time", "value": "75%" },
+    { "label": "Data Accuracy", "value": "99%" },
+    { "label": "System Connections", "value": "100+" }
+  ],
+  "useCases": [
+    "CRM and ERP integration",
+    "Multi-cloud data sync",
+    "Legacy system modernization",
+    "Data warehouse consolidation"
+  ],
+  "cta": "Integrate Now"
+}
