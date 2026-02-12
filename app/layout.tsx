@@ -1,10 +1,12 @@
 import React from "react"
+import { Suspense } from "react"
 import type { Metadata } from 'next'
 import { Sansation, Open_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { NewsletterStatusBanner } from "@/components/newsletter-status-banner"
 import { getServicesForNavigation } from "@/lib/tina-queries"
 
 const open_Sans = Open_Sans({ 
@@ -45,6 +47,9 @@ export default async function RootLayout({
       
       <body className="antialiased" style={{ fontFamily: 'var(--font-open-sans)' }}>
         <Header servicesMenu={servicesMenu} />
+        <Suspense fallback={null}>
+          <NewsletterStatusBanner />
+        </Suspense>
         {children}
         <Analytics />
         <Footer/>

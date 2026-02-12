@@ -85,6 +85,14 @@ const client = {
         },
       });
     },
+    founderMessagesConnection: () => {
+      const edges = getAllFilesInDir('founder-messages');
+      return Promise.resolve({
+        data: {
+          founderMessagesConnection: { edges },
+        },
+      });
+    },
     banner: ({ relativePath }: { relativePath: string }) => {
       const data = readJsonFile(`banner/${relativePath}`);
       return Promise.resolve({
@@ -173,6 +181,12 @@ const client = {
         data: {
           blogPostsConnection: { edges },
         },
+      });
+    },
+    blogPost: ({ relativePath }: { relativePath: string }) => {
+      const data = readJsonFile(`blog/${relativePath}`);
+      return Promise.resolve({
+        data: { blogPost: data },
       });
     },
     communityGalleryConnection: () => {

@@ -23,7 +23,7 @@ export function Header({ servicesMenu }: HeaderProps) {
   // Helper function to get link styles
   const getLinkStyles = () => {
     return (isLandingPage && !isScrolled)
-      ? 'text-white hover:text-white/80' 
+      ? ' hover:text-black/80' 
       : 'text-foreground hover:text-primary'
   }
 
@@ -67,7 +67,7 @@ export function Header({ servicesMenu }: HeaderProps) {
   return (
     <header className={` fixed top-0 z-50 w-full transition-all duration-700 ease-in-out ${
       (isLandingPage && !isScrolled)
-        ? 'bg-transparent' 
+        ? '' 
         : 'bg-white shadow-md'
     }`}>
       <nav className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
@@ -77,9 +77,9 @@ export function Header({ servicesMenu }: HeaderProps) {
         </Link>
 
         {/* Desktop Menu - Center with Glass Effect */}
-        <div className={`hidden lg:flex items-center gap-6 xl:gap-8 absolute left-1/2 -translate-x-1/2 px-6 xl:px-8 py-2 md:py-3 rounded-full transition-all duration-700 ease-in-out ${
+        <div className={`hidden text-black lg:flex items-center gap-6 xl:gap-8 absolute left-1/2 -translate-x-1/2 px-6 xl:px-8 py-2 md:py-3 rounded-full transition-all duration-700 ease-in-out ${
           (isLandingPage && !isScrolled)
-            ? 'bg-slate-900/30 backdrop-blur-lg border border-white/20 shadow-xl' 
+            ? 'text-black' 
             : 'bg-transparent border-0 shadow-none backdrop-blur-none'
         }`}>
           {/* Services Mega Menu Dropdown */}
@@ -203,7 +203,7 @@ export function Header({ servicesMenu }: HeaderProps) {
                       <Link
                         key={item.label}
                         href={item.href}
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-white rounded transition-colors"
+                        className="block px-4 py-2 text-sm text-foreground hover:bg-primary/10 hover:text-primary rounded-md transition-colors"
                       >
                         {item.label}
                       </Link>
@@ -223,7 +223,7 @@ export function Header({ servicesMenu }: HeaderProps) {
         <div className="hidden md:block z-10 flex-shrink-0">
           <Link
             href="/contact"
-            className="px-4 md:px-6 py-2 font-semibold bg-sky-600 text-primary-foreground rounded-lg  hover:rounded-2xl hover:bg-primary/90 transition-all duration-300 font-medium text-sm md:text-base shadow-lg hover:shadow-xl"
+            className="px-4 md:px-8 py-2 font-semibold bg-sky-600 text-primary-foreground rounded-lg  hover:rounded-2xl hover:bg-primary/90 transition-all duration-300 font-medium text-sm md:text-base shadow-lg hover:shadow-xl"
           >
             Contact Us
           </Link>

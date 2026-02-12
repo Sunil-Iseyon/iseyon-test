@@ -17,7 +17,7 @@ export function Footer() {
   const companyLinks = [
     { name: "Our Team", url: "/team" },
     { name: "Our Vision", url: "/vision" },
-    { name: "Contact Us", url: "/get-in-touch" },
+    { name: "Contact Us", url: "/contact" },
     { name: "Blog", url: "/blog" },
   ]
 
@@ -85,7 +85,7 @@ export function Footer() {
           <motion.div variants={itemVariants} className="space-y-4">
             {/* Logo - Left */}
         <Link href="/" className="flex items-center gap-2 font-bold text-xl text-white z-10">
-          <img src="/iseyon-whiteLogo.webp" alt="Iseyon Analytics Logo" className="h-12 w-40" />
+          <img src="/iseyon-whiteLogo.webp" alt="Iseyon Analytics Logo" className="h-20 w-45" />
         </Link>
             <p className=" text-sm">
               Transforming businesses with AI-powered analytics and intelligence solutions.
@@ -181,22 +181,10 @@ export function Footer() {
             >
               <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
             </a>
-            <a
-              href="https://twitter.com"
-              className="hover:text-primary transition-colors"
-            >
-              <Twitter className="w-4 h-4 md:w-5 md:h-5" />
-            </a>
-            <a
-              href="https://github.com"
-              className="hover:text-primary transition-colors"
-            >
-              <Github className="w-4 h-4 md:w-5 md:h-5" />
-            </a>
           </div>
 
           <div className="text-center md:text-right text-xs md:text-sm">
-            <p className="inline">&copy; 2026 iSeyon Analytics. All rights reserved. | </p>
+            <p className="inline">&copy; 2026 Iseyon Analytics. All rights reserved. | </p>
             <Link href="/privacy-policy" 
             className="relative inline-block after:absolute after:w-0 after:h-[1px] after:bottom-0 after:left-0 after:bg-background after:transition-all after:duration-300 hover:after:w-full">
              Privacy Policy</Link>

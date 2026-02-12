@@ -145,9 +145,22 @@ html {
   }
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @layer utilities {
   .animate-shimmer {
     animation: shimmer 2s linear infinite;
+  }
+  
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
   }
   
   .ripple-gradient {

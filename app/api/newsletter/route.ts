@@ -1,51 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-
-// Function to get access token using client credentials flow
-async function getAccessToken() {
-  const tokenEndpoint = `https://login.microsoftonline.com/${process.env.AZURE_TENANT_ID}/oauth2/v2.0/token`
-  
-  const params = new URLSearchParams({
-    client_id: process.env.AZURE_CLIENT_ID!,
-    client_secret: process.env.AZURE_CLIENT_SECRET!,
-    scope: "https://graph.microsoft.com/.default",
-    grant_type: "client_credentials",
-  })
-
-  const response = await fetch(tokenEndpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: params.toString(),
-  })
-
-  const data = await response.json()
-  
-  if (!response.ok) {
-    throw new Error(`Failed to get access token: ${data.error_description || data.error}`)
-  }
-  
-  return data.access_token
-}
-
-// Function to send email using Microsoft Graph API
-async function sendEmailViaGraph(accessToken: string, emailData: any) {
-  const graphEndpoint = `https://graph.microsoft.com/v1.0/users/${process.env.SMTP_USER}/sendMail`
-  
-  const response = await fetch(graphEndpoint, {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${accessToken}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(emailData),
-  })
-
-  if (!response.ok) {
-    const error = await response.text()
-    throw new Error(`Failed to send email: ${error}`)
-  }
-  
-  return response
-}
+import crypto from 'crypto'
 
 export async function POST(request: NextRequest) {
   try {
@@ -59,7 +13,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Validate email format
+    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -68,148 +22,186 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Get access token
-    const accessToken = await getAccessToken()
-
-    // Prepare confirmation email to subscriber
-    const confirmationEmailData = {
-      message: {
-        subject: "Welcome to iSeyon Analytics Newsletter",
-        body: {
-          contentType: "HTML",
-          content: `
-            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-              <div style="background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%); padding: 40px 20px; text-align: center; border-radius: 8px 8px 0 0;">
-                <h1 style="color: white; margin: 0; font-size: 28px;">Welcome to iSeyon Analytics</h1>
-              </div>
-              
-              <div style="background-color: #ffffff; padding: 40px 30px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px;">
-                <p style="font-size: 16px; color: #374151; line-height: 1.6;">
-                  Thank you for subscribing to our newsletter!
-                </p>
-                
-                <p style="font-size: 16px; color: #374151; line-height: 1.6;">
-                  You'll now receive the latest updates on:
-                </p>
-                
-                <ul style="color: #374151; line-height: 1.8; font-size: 15px;">
-                  <li>AI-powered analytics insights</li>
-                  <li>Business intelligence trends</li>
-                  <li>Industry best practices</li>
-                  <li>New product features and updates</li>
-                  <li>Exclusive content and resources</li>
-                </ul>
-
-                <div style="background-color: #EEF2FF; padding: 20px; border-radius: 8px; margin: 30px 0;">
-                  <p style="margin: 0; color: #4F46E5; font-weight: 600; font-size: 16px;">
-                    🎉 Stay tuned for valuable insights!
-                  </p>
-                </div>
-
-                <p style="font-size: 14px; color: #6b7280; margin-top: 30px;">
-                  If you have any questions, feel free to reach out to us at 
-                  <a href="mailto:info@iSeyon.com" style="color: #4F46E5; text-decoration: none;">info@iSeyon.com</a>
-                </p>
-              </div>
-
-              <div style="text-align: center; padding: 20px; color: #9ca3af; font-size: 12px;">
-                <p style="margin: 5px 0;">© 2026 iSeyon Analytics. All rights reserved.</p>
-              </div>
-            </div>
-          `,
-        },
-        toRecipients: [
-          {
-            emailAddress: {
-              address: email,
-            },
-          },
-        ],
-      },
-    }
-
-    // Prepare notification email to admin
-    const notificationEmailData = {
-      message: {
-        subject: "New Newsletter Subscription",
-        body: {
-          contentType: "HTML",
-          content: `
-            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-              <h2 style="color: #4F46E5; border-bottom: 2px solid #4F46E5; padding-bottom: 10px;">
-                New Newsletter Subscription
-              </h2>
-              
-              <div style="margin: 20px 0; padding: 20px; background-color: #f9fafb; border-radius: 8px;">
-                <p style="font-size: 16px; color: #374151; margin: 0;">
-                  <strong>Email:</strong> <a href="mailto:${email}" style="color: #4F46E5;">${email}</a>
-                </p>
-                <p style="font-size: 14px; color: #6b7280; margin-top: 10px;">
-                  Subscribed on: ${new Date().toLocaleString()}
-                </p>
-              </div>
-
-              <div style="margin-top: 20px; padding: 15px; background-color: #EEF2FF; border-left: 4px solid #4F46E5; border-radius: 4px;">
-                <p style="margin: 0; color: #4F46E5; font-size: 14px;">
-                  💡 Consider adding this subscriber to your email marketing platform.
-                </p>
-              </div>
-            </div>
-          `,
-        },
-        toRecipients: [
-          {
-            emailAddress: {
-              address: process.env.CONTACT_EMAIL || process.env.EMAIL_RECIPIENT || "infoindia@lancetindia.com",
-            },
-          },
-        ],
-      },
-    }
-
-    // Send both emails via Microsoft Graph API
-    if (process.env.AZURE_CLIENT_ID && process.env.AZURE_CLIENT_SECRET && process.env.AZURE_TENANT_ID && process.env.SMTP_USER) {
-      try {
-        await Promise.all([
-          sendEmailViaGraph(accessToken, confirmationEmailData),
-          sendEmailViaGraph(accessToken, notificationEmailData)
-        ])
-
-        return NextResponse.json(
-          { 
-            success: true,
-            message: 'Successfully subscribed! Check your email for confirmation.'
-          },
-          { status: 200 }
-        )
-      } catch (emailError) {
-        console.error('Error sending newsletter emails:', emailError)
-        console.log('Newsletter subscription:', email)
-        
-        return NextResponse.json(
-          { 
-            error: 'Failed to send confirmation email. Please try again.',
-            details: emailError instanceof Error ? emailError.message : 'Unknown error'
-          },
-          { status: 500 }
-        )
-      }
-    } else {
-      console.log('Azure OAuth credentials not configured. Email not sent.')
-      console.log('Newsletter subscription:', email)
-      
+    // Check for required Brevo environment variables
+    if (!process.env.BREVO_API_KEY) {
+      console.error('BREVO_API_KEY is not set')
       return NextResponse.json(
-        { error: 'Email service not configured. Please contact us directly.' },
-        { status: 503 }
+        { error: 'Server configuration error. Please contact support.' },
+        { status: 500 }
       )
     }
-  } catch (error) {
-    console.error('Error processing newsletter subscription:', error)
+
+    const apiKey = process.env.BREVO_API_KEY.trim()
+
+    // Generate confirmation token using email and a secret
+    // This is stateless - we can verify it without storing in Brevo
+    const secret = process.env.BREVO_API_KEY || 'fallback-secret'
+    const tokenData = `${email}-confirm-newsletter`
+    const token = crypto
+      .createHash('sha256')
+      .update(`${tokenData}-${secret}`)
+      .digest('hex')
+
+    console.log('Newsletter subscription - Token generated:', {
+      email,
+      tokenPrefix: token.substring(0, 15),
+      tokenLength: token.length,
+      apiKeyPrefix: apiKey.substring(0, 10)
+    })
+
+    // Auto-detect base URL (works for both local and production)
+    // NEXT_PUBLIC_SITE_URL should be set in Vercel environment variables to https://iseyon3.vercel.app
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+
+    console.log('Base URL for confirmation link:', baseUrl)
+
+    // Create confirmation URL
+    const confirmUrl = `${baseUrl}/api/newsletter/confirm?token=${token}&email=${encodeURIComponent(email)}`
+
+    console.log('Newsletter subscription initiated for:', email)
+
+    // Add contact to Brevo immediately with UNCONFIRMED status
+    // This way you can see all subscription attempts in Brevo
+    try {
+      await fetch('https://api.brevo.com/v3/contacts', {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json',
+          'api-key': apiKey,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          attributes: {
+            SUBSCRIPTION_STATUS: 'PENDING_CONFIRMATION',
+            SUBSCRIPTION_DATE: new Date().toISOString()
+          },
+          updateEnabled: true,
+        }),
+      })
+      console.log('Contact added to Brevo with pending status:', email)
+    } catch (error) {
+      console.error('Failed to add contact to Brevo:', error)
+      // Continue anyway - we'll add them to the list after confirmation
+    }
+
+    // Send confirmation email
+    const confirmationEmailResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'api-key': apiKey,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        sender: {
+          name: process.env.BREVO_SENDER_NAME || 'Iseyon Analytics',
+          email: process.env.BREVO_SENDER_EMAIL || 'manasi.behera@iseyon.com',
+        },
+        to: [{ email: email }],
+        subject: 'Please confirm your newsletter subscription',
+        textContent: `Thank you for your interest in Iseyon Analytics Newsletter!
+
+To complete your subscription and start receiving our latest insights on AI, analytics, and data science, please confirm your email address by clicking the link below:
+
+${confirmUrl}
+
+Didn't sign up? You can safely ignore this email. Your email address will not be added to our list.
+
+© ${new Date().getFullYear()} Iseyon Analytics. All rights reserved.
+New York | New Jersey | Minnesota | California | Florida | Bangalore`,
+        htmlContent: `
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <meta charset="utf-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;">
+                  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f4f4f4; padding: 20px;">
+                    <tr>
+                      <td align="center">
+                        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
+                          <!-- Header -->
+                          <tr>
+                            <td style="background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%); padding: 40px 20px; text-align: center;">
+                              <h1 style="color: #ffffff; margin: 0; font-size: 28px;">📧 Confirm Your Subscription</h1>
+                            </td>
+                          </tr>
+                          <!-- Content -->
+                          <tr>
+                            <td style="padding: 40px 30px;">
+                              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px;">
+                                Thank you for your interest in Iseyon Analytics Newsletter!
+                              </p>
+                              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 30px;">
+                                To complete your subscription and start receiving our latest insights on AI, analytics, and data science, please confirm your email address by clicking the button below:
+                              </p>
+                              <div style="text-align: center; margin: 30px 0;">
+                                <a href="${confirmUrl}" style="background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%); color: #ffffff; padding: 16px 40px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block; font-size: 16px;">
+                                  ✓ Confirm Subscription
+                                </a>
+                              </div>
+                              <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 30px 0 0; text-align: center;">
+                                Or copy and paste this link into your browser:<br>
+                                <a href="${confirmUrl}" style="color: #0ea5e9; word-break: break-all;">${confirmUrl}</a>
+                              </p>
+                              <div style="margin-top: 30px; padding: 15px; background-color: #fef3c7; border-radius: 6px; border-left: 4px solid #f59e0b;">
+                                <p style="margin: 0; color: #92400e; font-size: 14px;">
+                                  ⚠️ <strong>Didn't sign up?</strong> You can safely ignore this email. Your email address will not be added to our list.
+                                </p>
+                              </div>
+                            </td>
+                          </tr>
+                          <!-- Footer -->
+                          <tr>
+                            <td style="background-color: #1e293b; padding: 30px; text-align: center;">
+                              <p style="color: #94a3b8; font-size: 14px; margin: 0 0 10px;">
+                                &copy; ${new Date().getFullYear()} Iseyon Analytics. All rights reserved.
+                              </p>
+                              <p style="color: #94a3b8; font-size: 12px; margin: 0;">
+                                New York | New Jersey | Minnesota | California | Florida | Bangalore
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </body>
+              </html>
+            `,
+      }),
+    })
+
+    if (!confirmationEmailResponse.ok) {
+      const errorData = await confirmationEmailResponse.json()
+      console.error('Failed to send confirmation email:', {
+        status: confirmationEmailResponse.status,
+        statusText: confirmationEmailResponse.statusText,
+        error: errorData,
+        email: email
+      })
+      return NextResponse.json(
+        { error: 'Failed to send confirmation email. Please try again later.' },
+        { status: 500 }
+      )
+    }
+
+    console.log('Confirmation email sent successfully to:', email)
+
     return NextResponse.json(
       { 
-        error: 'Failed to subscribe. Please try again later.',
-        details: error instanceof Error ? error.message : 'Unknown error'
+        message: 'Please check your email to confirm your subscription. Check your spam/junk folder if you don\'t see it within a few minutes.',
+        requiresConfirmation: true
       },
+      { status: 200 }
+    )
+
+  } catch (error) {
+    console.error('Newsletter subscription error:', error)
+    return NextResponse.json(
+      { error: 'An unexpected error occurred. Please try again later.' },
       { status: 500 }
     )
   }

@@ -13,6 +13,7 @@ async function getHomeData() {
   const partnersResponse = await client.queries.partnersConnection();
   const bannerResponse = await client.queries.banner({ relativePath: "main.json" });
   const projectResponse = await client.queries.project({ relativePath: "main.json" });
+  const founderMessagesResponse = await client.queries.founderMessagesConnection();
 
   // Filter for services that should show on home page and sort by modification date
   const allServiceContent = serviceContentResponse.data.serviceContentConnection.edges?.map(edge => ({
@@ -36,6 +37,7 @@ async function getHomeData() {
     partners: partnersResponse.data.partnersConnection.edges?.map(edge => edge?.node) || [],
     banner: bannerResponse.data.banner,
     project: projectResponse.data.project,
+    founderMessages: founderMessagesResponse.data.founderMessagesConnection.edges?.map(edge => edge?.node) || [],
   };
 }
 
@@ -44,7 +46,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-white snap-y snap-proximity">
-      <Hero data={data.hero as any} />
+      <Hero data={data.hero as any} founderMessages={data.founderMessages as any} />
       <ServicesSection services={data.services as any} />
       <NewProject data={data.project as any} />
       <TestimonialsSection testimonials={data.testimonials as any} />

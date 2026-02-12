@@ -25,6 +25,11 @@ export async function getAllPartners() {
   return response.data.partnersConnection.edges?.map(edge => edge?.node) || [];
 }
 
+export async function getAllFounderMessages() {
+  const response = await client.queries.founderMessagesConnection();
+  return response.data.founderMessagesConnection.edges?.map(edge => edge?.node) || [];
+}
+
 export async function getBannerContent() {
   const response = await client.queries.banner({ relativePath: "main.json" });
   return response.data.banner;

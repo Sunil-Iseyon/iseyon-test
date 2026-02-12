@@ -18,6 +18,7 @@ interface ProjectData {
   tagline: string;
   logo: string;
   description: string;
+  featuredImage: string;
   features: {
     icon: string;
     title: string;
@@ -33,19 +34,19 @@ interface NewProjectProps {
 
 export function NewProject({ data }: NewProjectProps) {
   return (
-    <section className="relative pt-20 snap-start">
-      <div className="">
+    <section className="relative pt-12 sm:pt-16 lg:pt-20 snap-start">
+      <div className="px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10 lg:mb-12"
         >
           {/* Logo */}
           <Link href="/" className="mx-auto flex items-center justify-center gap-2 font-bold text-xl text-primary">
-            <img src={data.logo} alt={data.name} className="h-28 w-60 mx-auto" />
+            <img src={data.logo} alt={data.name} className="h-16 sm:h-20 lg:h-28 w-auto max-w-[80%] sm:max-w-60 mx-auto" />
           </Link>
 
           <motion.p 
@@ -53,14 +54,14 @@ export function NewProject({ data }: NewProjectProps) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg md:text-2xl  font-medium max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium max-w-3xl mx-auto px-4"
           >
             {data.tagline}
           </motion.p>
         </motion.div>
 
         {/* Project details */}
-        <div className="w-full bg-slate-900 relative overflow-hidden flex items-center justify-center">
+        <div className="w-full bg-slate-900 relative overflow-hidden flex items-center justify-center rounded-xl sm:rounded-2xl">
           {/* Animated Background */}
           <motion.div
             className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-accent/20 to-secondary/10 rounded-full blur-3xl"
@@ -90,13 +91,13 @@ export function NewProject({ data }: NewProjectProps) {
           {/* Particles */}
           <Particles />
           
-          <div className="relative overflow-hidden rounded-2xl">
+          <div className="relative overflow-hidden rounded-xl sm:rounded-2xl">
             {/* Background */}
             <div className="absolute inset-0 bg-primary -z-10" />
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 py-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 py-4 sm:py-5">
               {/* Featured Image */}
-              <div className="h-64 lg:h-full flex items-center justify-center relative overflow-hidden p-8">
+              <div className="h-48 sm:h-56 md:h-64 lg:h-full flex items-center justify-center relative overflow-hidden p-4 sm:p-6 lg:p-8">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -105,26 +106,26 @@ export function NewProject({ data }: NewProjectProps) {
                   className="relative w-full h-full flex items-center justify-center"
                 >
                   <Image
-                    src={data.logo}
+                    src={data.featuredImage}
                     alt={data.name}
                     width={500}
                     height={500}
-                    className="object-contain w-full h-full max-w-md hover:scale-105 transition-transform duration-300"
+                    className="object-contain w-full h-full max-w-[250px] sm:max-w-xs lg:max-w-md hover:scale-105 transition-transform duration-300"
                   />
                 </motion.div>
               </div>                
 
               {/* Content */}
-              <div className="p-6 lg:p-8 flex flex-col justify-between">
+              <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
                 <div>
                   <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
                     viewport={{ once: true }}
-                    className="mb-4"
+                    className="mb-3 sm:mb-4"
                   >
-                    <span className="inline-block px-3 py-1 bg-white/20 text-white rounded-full text-sm font-semibold">
+                    <span className="inline-block px-2.5 sm:px-3 py-1 bg-white/20 text-white rounded-full text-xs sm:text-sm font-semibold">
                       Featured Project
                     </span>
                   </motion.div>
@@ -134,7 +135,7 @@ export function NewProject({ data }: NewProjectProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.8 }}
                     viewport={{ once: true }}
-                    className="text-3xl font-bold mb-3 leading-tight text-white"
+                    className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 leading-tight text-white"
                   >
                     {data.name}
                   </motion.h3>
@@ -151,7 +152,7 @@ export function NewProject({ data }: NewProjectProps) {
                     </motion.p> */}
 
                   {/* Features */}
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                     {data.features.map((feature, index) => {
                       const Icon = iconMap[feature.icon as keyof typeof iconMap] || Zap;
                       return (
@@ -163,9 +164,9 @@ export function NewProject({ data }: NewProjectProps) {
                           viewport={{ once: true }}
                           className="flex items-start gap-2"
                         >
-                          <Icon className="w-5 h-5 text-white mt-0.5 shrink-0" />
+                          <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white mt-0.5 shrink-0" />
                           <div>
-                            <p className="text-sm font-semibold text-white">{feature.title}</p>
+                            <p className="text-xs sm:text-sm font-semibold text-white">{feature.title}</p>
                             <p className="text-xs text-white/80">{feature.description}</p>
                           </div>
                         </motion.div>
@@ -174,14 +175,14 @@ export function NewProject({ data }: NewProjectProps) {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3">
                     <Link href={data.ctaLink}>
                       <motion.button
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 1.6 }}
                         viewport={{ once: true }}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)" }}
                         whileTap={{ scale: 0.95 }}
                         className="px-6 py-2.5 bg-secondary text-white rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
                       >
@@ -190,17 +191,17 @@ export function NewProject({ data }: NewProjectProps) {
                       </motion.button>
                     </Link>
                     
-                    <Link href="/services">
+                    <Link href="/contact">
                       <motion.button
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 1.8 }}
                         viewport={{ once: true }}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, backgroundColor: "rgba(var(--secondary), 0.1)", boxShadow: "0 20px 40px rgba(var(--secondary), 0.2)" }}
                         whileTap={{ scale: 0.95 }}
                         className="px-6 py-2.5  border-2 border-secondary text-secondary rounded-lg font-semibold text-sm hover:bg-secondary/5 transition-all"
                       >
-                        Learn More
+                        Contact Us
                       </motion.button>
                     </Link>
                   </div>

@@ -136,17 +136,17 @@ export function BannerSection({ data }: BannerSectionProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-50px' }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
           >
             {data.benefits.map((benefit, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05}}
-                className="flex items-center gap-3 p-4 rounded-lg bg-white/10 border border-white/20 hover:border-white/30 transition-all"
+                className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-lg bg-white/10 border border-white/20 hover:border-white/30 transition-all"
               >
-                <Check className="w-6 h-6 text-secondary shrink-0" />
-                <span className="text-white font-medium">{benefit}</span>
+                <Check className="w-5 h-5 sm:w-6 sm:h-6 text-secondary shrink-0" />
+                <span className="text-white font-medium text-sm sm:text-base">{benefit}</span>`
               </motion.div>
             ))}
           </motion.div>

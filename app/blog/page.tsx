@@ -19,10 +19,9 @@ export default async function BlogPage() {
       {/* HERO */}
       <div className="flex justify-center items-center">
         <div>
-          <h1 className="text-6xl font-bold mb-4">Our Blog & Insight</h1>
+          <h1 className="text-6xl font-bold mb-4">Our Blog</h1>
           <p className="text-gray-600 max-w-md">
-            We delve into the world of EHS, exploring the latest trends,
-            regulations, and best practices.
+            We dive into the world of AI and analytics, exploring the latest trends, innovations, and best practices shaping modern businesses.
           </p>
         </div>
 

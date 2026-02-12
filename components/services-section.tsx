@@ -106,7 +106,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
         >
           {services.map((service, index) => {
             const Icon = iconMap[service.homePageIcon as keyof typeof iconMap] || BarChart3;
-            const isPrimary = index % 3 === 0; // Alternate between primary and secondary
+            const isPrimary = index % 2 === 0; // Alternating: sky, white, sky, white...
             const serviceSlug = service._sys?.filename || service.heading.toLowerCase().replace(/\s+/g, '-');
             const serviceUrl = `/services/${service.category}/${serviceSlug}`;
             
@@ -115,7 +115,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                 key={index}
                 variants={itemVariants}
                 className={`
-                  group relative p-6 md:p-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden h-72 md:h-80 lg:h-80
+                  group relative p-4 sm:p-6 md:p-8 rounded-bl-2xl sm:rounded-bl-3xl lg:rounded-bl-4xl rounded-tr-2xl sm:rounded-tr-3xl lg:rounded-tr-4xl transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden h-64 sm:h-72 md:h-80 lg:h-80
                   ${isPrimary 
                     ? 'bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600' 
                     : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border border-slate-200'
@@ -137,15 +137,15 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                 <div className="relative z-10 transition-all duration-300 group-hover:blur-sm h-full flex flex-col">
                   {/* Icon */}
                   <div className={`
-                    w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shrink-0
+                    w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 shrink-0
                     ${isPrimary ? 'bg-slate-800/90' : 'bg-slate-700/90'}
                   `}>
-                    <Icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" />
                   </div>
 
                   {/* Title */}
                   <h3 className={`
-                    text-lg md:text-xl font-bold mb-3 md:mb-4
+                    text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4
                     ${isPrimary ? 'text-white' : 'text-slate-800'}
                   `}>
                     {service.heading}

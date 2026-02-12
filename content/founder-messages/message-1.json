@@ -1,0 +1,19 @@
+{
+  "name": "John Doe",
+  "role": "Co-Founder & CEO",
+  "initials": "JD",
+  "message": {
+    "type": "root",
+    "children": [
+      {
+        "type": "p",
+        "children": [
+          {
+            "type": "text",
+            "text": "Our vision is to democratize data analytics and make AI-powered insights accessible to every business, regardless of size."
+          }
+        ]
+      }
+    ]
+  }
+}

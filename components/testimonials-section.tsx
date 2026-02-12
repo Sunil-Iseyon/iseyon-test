@@ -53,7 +53,8 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
             Client Stories
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Trusted by Industry Leaders
+            What Our Clients Say
+
           </h2>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             Hear from our clients about their transformative experiences with our solutions

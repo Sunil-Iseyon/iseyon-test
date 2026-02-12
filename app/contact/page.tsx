@@ -16,6 +16,7 @@ export default function GetInTouchPage() {
   })
   
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<{
     type: 'success' | 'error' | null
     message: string
@@ -50,6 +51,7 @@ export default function GetInTouchPage() {
           type: 'success',
           message: data.message || 'Your message has been sent successfully!'
         })
+        setShowSuccess(true)
         // Reset form
         setFormData({
           name: '',
@@ -83,6 +85,11 @@ export default function GetInTouchPage() {
     })
   }
 
+  const handleFillAnotherForm = () => {
+    setShowSuccess(false)
+    setSubmitStatus({ type: null, message: '' })
+  }
+
   const contactInfo = [
     {
       icon: Mail,
@@ -104,21 +111,57 @@ export default function GetInTouchPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/5 via-white to-indigo-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-blue-200/40 to-cyan-200/40 rounded-full blur-3xl"
+            animate={{
+              y: [0, -30, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-20 left-10 w-72 h-72 bg-gradient-to-br from-indigo-200/40 to-purple-200/40 rounded-full blur-3xl"
+            animate={{
+              y: [0, 30, 0],
+              scale: [1, 1.15, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
+            className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Get in <span className="text-primary">Touch</span>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-primary font-medium mb-4 text-sm tracking-wide uppercase"
+            >
+              Connect with us
+            </motion.p>
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+              Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-600">Touch</span>
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
               Let's discuss how we can help transform your data into actionable insights. 
               We're here to answer your questions and start your journey to data excellence.
             </p>
@@ -130,15 +173,45 @@ export default function GetInTouchPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* Contact Form or Success Section */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                <h2 className="text-3xl font-bold text-foreground mb-6">Send us a Message</h2>
+              {showSuccess ? (
+                /* Success Section */
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-xl p-12 border-2 border-green-200 text-center">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", duration: 0.6 }}
+                    className="w-20 h-20 bg-green-500 rounded-full mx-auto mb-6 flex items-center justify-center"
+                  >
+                    <CheckCircle className="w-12 h-12 text-white" />
+                  </motion.div>
+                  <h2 className="text-4xl font-bold text-foreground mb-4">Message Sent!</h2>
+                  <p className="text-lg text-gray-700 mb-8">
+                    Thank you for reaching out to us. We've received your message and our team will get back to you shortly.
+                  </p>
+                  <div className="space-y-4">
+                    <button
+                      onClick={handleFillAnotherForm}
+                      className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                    >
+                      <Send className="w-5 h-5" />
+                      Send Another Message
+                    </button>
+                    <p className="text-sm text-gray-600">
+                      Expected response time: <span className="font-semibold text-green-700">24-48 hours</span>
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                /* Contact Form */
+                <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                  <h2 className="text-3xl font-bold text-foreground mb-6">Send us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -309,6 +382,7 @@ export default function GetInTouchPage() {
                   </button>
                 </form>
               </div>
+              )}
             </motion.div>
 
             {/* Contact Information */}

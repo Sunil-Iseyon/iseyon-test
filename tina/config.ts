@@ -344,6 +344,43 @@ export default defineConfig({
         ],
       },
       {
+        name: "founderMessages",
+        label: "Founder Messages",
+        path: "content/founder-messages",
+        format: "json",
+        fields: [
+          {
+            type: "string",
+            name: "name",
+            label: "Founder Name",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "role",
+            label: "Role",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "avatar",
+            label: "Avatar Image",
+          },
+          {
+            type: "string",
+            name: "initials",
+            label: "Initials",
+            required: true,
+          },
+          {
+            type: "rich-text",
+            name: "message",
+            label: "Message",
+            required: true,
+          },
+        ],
+      },
+      {
         name: "partners",
         label: "Partners",
         path: "content/partners",
@@ -588,6 +625,13 @@ export default defineConfig({
             name: "logo",
             label: "Logo",
             required: true,
+          },
+          {
+            type: "image",
+            name: "featuredImage",
+            label: "Featured Image",
+            required: true,
+            description: "Main hero/showcase image for the project",
           },
           {
             type: "rich-text",
@@ -876,9 +920,19 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "string",
+            name: "shortDescription",
+            label: "Short Description",
+            description: "Brief description shown in blog cards (recommended: 100-150 characters)",
+            required: true,
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
             type: "rich-text",
             name: "description",
-            label: "Description",
+            label: "Full Content",
             required: true,
           },
           {
