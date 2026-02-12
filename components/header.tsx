@@ -223,7 +223,7 @@ export function Header({ servicesMenu }: HeaderProps) {
         <div className="hidden md:block z-10 flex-shrink-0">
           <Link
             href="/contact"
-            className="px-4 md:px-8 py-2 font-semibold bg-sky-600 text-primary-foreground rounded-lg  hover:rounded-2xl hover:bg-primary/90 transition-all duration-300 font-medium text-sm md:text-base shadow-lg hover:shadow-xl"
+            className="px-4 md:px-8 py-3 font-semibold bg-sky-600 text-primary-foreground rounded-sm  hover:rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium text-sm md:text-base shadow-lg hover:shadow-xl"
           >
             Contact Us
           </Link>

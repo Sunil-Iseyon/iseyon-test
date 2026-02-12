@@ -31,22 +31,22 @@ interface HeroProps {
 
 export function Hero({ data, founderMessages = [] }: HeroProps) {
   return (
-    <section className='mt-4 sm:mt-6 lg:mt-10 min-h-[600px] sm:min-h-[700px] lg:min-h-screen mx-2 sm:mx-4 lg:mx-5'>
+    <section className='mt-10 min-h-[600px] sm:min-h-[700px] lg:min-h-screen mx-2 sm:mx-4 lg:mx-5'>
 <main className="rounded-t-xl sm:rounded-t-2xl overflow-hidden">
-      <div className="mx-auto py-6 sm:py-8 lg:py-10">
+      <div className="mx-auto py-10">
         <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 py-4 sm:py-5 rounded-t-2xl sm:rounded-t-3xl'>
- <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+ <div className="grid lg:grid-cols-2  items-center">
           {/* Left Content */}
-          <div className="space-y-3 sm:space-y-4 z-10 w-full max-w-full lg:max-w-2xl">
+          <div className="space-y-3 z-10 w-full max-w-full lg:max-w-2xl">
             {/* Header */}
-            <div className="space-y-1 sm:space-y-2">
+            <div className="space-y-1 sm:space-y-4">
               {data.badge && (
                 <p className="text-teal-600 italic text-sm sm:text-base lg:text-lg font-medium">
                   {data.badge}
                 </p>
               )}
               {data.title && (
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-[3.5rem]  font-bold text-slate-900 leading-tight">
                   {data.title}
                 </h1>
               )}
@@ -90,25 +90,25 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                 Trusted by leading companies
               </p>
               <div className="relative overflow-hidden">
-                <div className="flex items-center gap-4 sm:gap-6 lg:gap-8 animate-scroll">
+                <div className="flex items-center space-x-8 sm:space-x-6 animate-scroll">
                   {/* Original set */}
                   <Image src="/partners/databricks-logo.webp" alt="Databricks" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/tableau.webp" alt="Tableau" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
+                  <Image src="/partners/tableau.webp" alt="Tableau" width={90} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
                   <Image src="/partners/strategy.webp" alt="Strategy" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
                   <Image src="/partners/microsoft.webp" alt="Microsoft" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/snowflake.webp" alt="Snowflake" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/AWS.webp" alt="AWS" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-20 h-auto" />
-                  <Image src="/partners/informatica.webp" alt="Informatica" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
+                  <Image src="/partners/snowflake.webp" alt="Snowflake" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
+                  <Image src="/partners/AWS.webp" alt="AWS" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-20 h-auto" />
+                  <Image src="/partners/informatica.webp" alt="Informatica" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
                   <Image src="/partners/lancet.webp" alt="Lancet" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
                   
                   {/* Duplicate set for seamless loop */}
                   <Image src="/partners/databricks-logo.webp" alt="Databricks" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/tableau.webp" alt="Tableau" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
+                  <Image src="/partners/tableau.webp" alt="Tableau" width={90} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
                   <Image src="/partners/strategy.webp" alt="Strategy" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
                   <Image src="/partners/microsoft.webp" alt="Microsoft" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/snowflake.webp" alt="Snowflake" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/AWS.webp" alt="AWS" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-20 h-auto" />
-                  <Image src="/partners/informatica.webp" alt="Informatica" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
+                  <Image src="/partners/snowflake.webp" alt="Snowflake" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
+                  <Image src="/partners/AWS.webp" alt="AWS" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-20 h-auto" />
+                  <Image src="/partners/informatica.webp" alt="Informatica" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
                   <Image src="/partners/lancet.webp" alt="Lancet" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
                 </div>
               </div>
@@ -120,13 +120,13 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
 
             <div className="absolute inset-0">
               {/* Column 1 - Left side tall bars */}
-              <div className="absolute top-67 left-52 w-26 h-80 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent"></div>
+              <div className="absolute top-67 left-59 w-26 h-80 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent"></div>
 
-              <div className="absolute top-79 left-78 w-26 h-56 bg-linear-to-t from-sky-200 via-sky-200/40 to-transparent opacity-80"></div>
+              <div className="absolute top-79 right-50 w-26 h-56 bg-linear-to-t from-sky-200 via-sky-200/40 to-transparent opacity-80"></div>
              
               {/* Column 2 - Middle bars */}
-              <div className="absolute bottom-0 left-64 w-20 h-40 bg-cyan-100 opacity-50"></div>
-              <div className="absolute bottom-48 right-10  rounded-full w-24 h-32 bg-cyan-100 opacity-55"></div>
+              {/* <div className="absolute bottom-0 left-64 w-20 h-40 bg-cyan-100 opacity-50"></div> */}
+              {/* <div className="absolute bottom-48 right-10  rounded-full w-24 h-32 bg-cyan-100 opacity-55"></div> */}
              
               {/* Column 3 - Right side bars */}
               <div className="absolute top-72 right-30 w-20 h-48 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent "></div>
@@ -259,7 +259,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
        
 
         {/* Bottom Section - Founder Messages */}
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8 mt-3 sm:mt-4 lg:mt-5 pt-3 sm:pt-4 lg:pt-5 border-t border-gray-200 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6  pt-3 sm:pt-4  border-gray-200 px-4 sm:px-8 md:px-12 lg:px-12 xl:px-24">
           {/* Rotating Founder Messages */}
           <div className="w-full">
             <RotatingFounderMessages messages={founderMessages} interval={10000} />
