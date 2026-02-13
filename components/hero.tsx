@@ -45,13 +45,13 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
     }
   }
   return (
-    <section className='pt-12 md:pt-11 min-h-screen mx-2 sm:mx-4 lg:mx-5 flex flex-col'>
-      <main className="rounded-t-lg sm:rounded-t-xl lg:rounded-t-2xl overflow-hidden flex-1 flex flex-col">
-        <div className="mx-auto py-6 sm:py-10 flex-1 flex flex-col">
-          <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-6 sm:py-8 md:py-10 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl flex-1 flex flex-col justify-center'>
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center h-full">
+    <section className='pt-12 md:pt-11 min-h-screen mx-2 sm:mx-4 lg:mx-5 flex flex-col md:block'>
+      <main className="rounded-t-lg sm:rounded-t-xl lg:rounded-t-2xl overflow-hidden flex-1 md:flex-none flex flex-col md:block">
+        <div className="mx-auto py-4 md:py-6 lg:py-10 flex-1 md:flex-none flex flex-col md:block">
+          <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-4 md:py-6 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl flex-1 md:flex-none flex flex-col md:block justify-between md:justify-start'>
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
               {/* Left Content */}
-              <div className="space-y-3 sm:space-y-4 md:space-y-6 z-10 w-full max-w-full overflow-hidden">
+              <div className="space-y-3 sm:space-y-4 z-10 w-full max-w-full overflow-hidden">
                 {/* Header */}
                 <div className="space-y-2 sm:space-y-3">
                   {data.badge && (
@@ -59,7 +59,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.2 }}
-                      className="text-teal-600 italic text-xs sm:text-sm lg:text-base font-medium">
+                      className="text-teal-600 italic text-xs sm:text-sm lg:text-base text-center md:text-left font-medium">
                       {data.badge}
                     </motion.p>
                   )}
@@ -68,7 +68,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.4 }}
-                      className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 leading-tight break-words hyphens-auto max-w-full"
+                      className="text-3xl lg:text-4xl xl:text-5xl text-center md:text-left font-bold text-slate-900 leading-tight break-words hyphens-auto max-w-full"
                       style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
                       {data.title}
                     </motion.h1>
@@ -78,7 +78,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.6 }}
-                      className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed break-words max-w-full"
+                      className="text-gray-600 text-sm md:text-base text-center md:text-left leading-relaxed break-words max-w-full"
                       style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
                       {typeof data.description === 'string' ? (
                         <p>{data.description}</p>
@@ -94,7 +94,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="flex flex-row items-center gap-3 sm:gap-4 pt-2">
+                  className="flex flex-row items-center justify-center md:justify-normal gap-3 sm:gap-4 pt-2">
                   {data.primaryCta?.text && data.primaryCta?.href && (
                     <Button asChild className="group duration-300 transform hover:-translate-y-1 bg-white text-teal-600 hover:bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-3.5 flex items-center justify-center gap-2 font-semibold text-xs sm:text-sm lg:text-base shadow-sm whitespace-nowrap transition-all">
 
@@ -341,11 +341,16 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                 </svg>
               </div>
             </div>
+
+            {/* Founder Messages - Mobile Only (inside gradient) */}
+            <div className="md:hidden mt-4 pt-4 border-t border-sky-300/30">
+              <RotatingFounderMessages messages={founderMessages} interval={10000} delay={1500} />
+            </div>
           </div>
 
 
-          {/* Bottom Section - Founder Messages */}
-          <div className="grid grid-cols-1 gap-4 sm:gap-6 pt-6 sm:pt-8 md:pt-10 border-gray-200 px-4 sm:px-8 md:px-12 lg:px-12 xl:px-24">
+          {/* Bottom Section - Founder Messages - Desktop Only (outside gradient) */}
+          <div className="hidden md:grid grid-cols-1 gap-4 sm:gap-6 pt-4 sm:pt-6 border-gray-200 px-4 sm:px-8 md:px-12 lg:px-12 xl:px-24">
             {/* Rotating Founder Messages */}
             <div className="w-full">
               <RotatingFounderMessages messages={founderMessages} interval={10000} delay={1500} />
