@@ -58,11 +58,11 @@ export default async function ServicePage({
                         <span className="text-sm">Category: {category}, Service: {service}</span>
                     </p>
                     <Link 
-                      href="/services" 
+                      href="/" 
                       className="mt-6 inline-flex items-center gap-2 text-primary hover:underline"
                     >
                       <ArrowLeft className="w-4 h-4" />
-                      Back to Services
+                      Back to Home
                     </Link>
                 </div>
             </div>

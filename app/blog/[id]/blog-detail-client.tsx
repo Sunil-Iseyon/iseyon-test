@@ -111,8 +111,9 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
         <motion.div
           className="prose prose-lg max-w-none mb-12"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
           <ReactMarkdown
             components={{
@@ -138,8 +139,9 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
         <motion.div
           className="border-t border-b py-8 mb-8"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
           <div className="grid grid-cols-2 gap-8">
             {/* Previous Blog */}
@@ -177,8 +179,8 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
         {/* Footer */}
         <motion.div
           className="pt-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <Link href="/blog" className="text-blue-600 hover:underline">
