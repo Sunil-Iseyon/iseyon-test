@@ -92,9 +92,9 @@ export function PartnersSlider({ partners }: PartnersSliderProps) {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {[
-            { number: '500+', label: 'Active Clients' },
-            { number: '99.9%', label: 'Uptime' },
-            { number: '50M+', label: 'Daily Transactions' },
+            { number: '800+', label: 'Project Delivered' },
+            { number: '98%', label: 'Client Satisfaction' },
+            { number: '24/7', label: 'Service available' },
           ].map((stat, idx) => (
             <motion.div
               key={idx}

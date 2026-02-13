@@ -45,10 +45,10 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
     }
   }
   return (
-    <section className='pt-12 md:pt-11 min-h-screen mx-2 sm:mx-4 lg:mx-5 flex flex-col md:block'>
+    <section className='pt-12 md:pt-11 mx-2 sm:mx-4 lg:mx-5 flex flex-col md:block min-h-[calc(100vh-3rem)] md:min-h-0'>
       <main className="rounded-t-lg sm:rounded-t-xl lg:rounded-t-2xl overflow-hidden flex-1 md:flex-none flex flex-col md:block">
         <div className="mx-auto py-4 md:py-6 lg:py-10 flex-1 md:flex-none flex flex-col md:block">
-          <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-4 md:py-6 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl flex-1 md:flex-none flex flex-col md:block justify-center md:justify-start'>
+          <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-8 md:py-6 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl flex-1 md:flex-none flex flex-col md:block justify-center md:justify-start'>
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
               {/* Left Content */}
               <div className="space-y-3 sm:space-y-4 z-10 w-full max-w-full overflow-hidden flex flex-col items-center md:items-start">

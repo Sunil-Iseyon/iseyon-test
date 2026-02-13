@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Linkedin, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -142,9 +142,9 @@ export function TeamClient({ values, team }: TeamClientProps) {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[85%] h-[90%] rounded-[50%] bg-linear-to-br from-indigo-500 via-indigo-400 to-indigo-300 opacity-20 blur-3xl"></div>
 
                 {/* Main Image */}
-                <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl">
+                <div className="relative w-full h-full ">
                   <Image
-                    src="/team/team-values.jpg"
+                    src="/team.png"
                     alt="Our Team Values"
                     fill
                     className="object-cover"
@@ -237,90 +237,79 @@ export function TeamClient({ values, team }: TeamClientProps) {
           {/* Team Carousel - Mobile */}
           <div className="sm:hidden relative">
             <div className="overflow-hidden rounded-2xl">
-              <motion.div
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.2}
-                onDragEnd={(e, { offset, velocity }) => {
-                  const swipe = offset.x;
-                  const swipeVelocity = velocity.x;
-                  
-                  if (swipe > 50 || swipeVelocity > 500) {
-                    // Swipe right - go to previous
-                    prevSlide();
-                  } else if (swipe < -50 || swipeVelocity < -500) {
-                    // Swipe left - go to next
-                    nextSlide();
-                  }
-                }}
-                className="flex cursor-grab active:cursor-grabbing"
-                animate={{ x: -currentSlide * 100 + '%' }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              >
-                {team.map((member, index) => (
-                  <div
-                    key={index}
-                    className="min-w-full px-2"
-                  >
-                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
-                      {/* Member Image */}
-                      <div className="relative h-80 overflow-hidden">
-                        <Image
-                          src={member.image || '/team/placeholder.jpg'}
-                          alt={member.name || 'Team Member'}
-                          fill
-                          className="object-cover pointer-events-none"
-                        />
-                        {/* LinkedIn Icon */}
-                        {member.linkedin && (
-                          <Link
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 z-20"
-                          >
-                            <Linkedin className="w-5 h-5" />
-                          </Link>
-                        )}
-                      </div>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: 300 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -300 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  className="px-2"
+                >
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+                    {/* Member Image */}
+                    <div className="relative h-80 overflow-hidden">
+                      <Image
+                        src={team[currentSlide].image || '/team/placeholder.jpg'}
+                        alt={team[currentSlide].name || 'Team Member'}
+                        fill
+                        className="object-cover"
+                      />
+                      {/* LinkedIn Icon */}
+                      {team[currentSlide].linkedin && (
+                        <Link
+                          href={team[currentSlide].linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 z-20"
+                        >
+                          <Linkedin className="w-5 h-5" />
+                        </Link>
+                      )}
+                    </div>
 
-                      {/* Member Info - Mobile */}
-                      <div className="p-5 pointer-events-none">
-                        <h3 className="text-xl font-bold text-foreground mb-2">
-                          {member.name}
-                        </h3>
-                        <p className="text-primary font-semibold mb-3 text-base">
-                          {member.role}
-                        </p>
-                        <TinaRichText content={member.descp} className="text-sm text-gray-600 leading-relaxed" />
-                      </div>
+                    {/* Member Info - Mobile */}
+                    <div className="p-5">
+                      <h3 className="text-xl font-bold text-foreground mb-2">
+                        {team[currentSlide].name}
+                      </h3>
+                      <p className="text-primary font-semibold mb-3 text-base">
+                        {team[currentSlide].role}
+                      </p>
+                      <TinaRichText content={team[currentSlide].descp} className="text-sm text-gray-600 leading-relaxed" />
                     </div>
                   </div>
-                ))}
-              </motion.div>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Carousel Navigation */}
-            <button
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
               onClick={prevSlide}
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-all z-30"
               aria-label="Previous team member"
             >
               <ChevronLeft className="w-6 h-6 text-gray-800" />
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
               onClick={nextSlide}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-all z-30"
               aria-label="Next team member"
             >
               <ChevronRight className="w-6 h-6 text-gray-800" />
-            </button>
+            </motion.button>
 
             {/* Carousel Indicators */}
             <div className="flex justify-center gap-2 mt-6">
               {team.map((_, index) => (
-                <button
+                <motion.button
                   key={index}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setCurrentSlide(index)}
                   className={`h-2 rounded-full transition-all ${
                     index === currentSlide 
