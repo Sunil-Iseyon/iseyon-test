@@ -83,7 +83,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   };
 
   return (
-    <section className="pt-20 snap-start snap-always min-h-screen bg-white" id="services">
+    <section className="pt-10 md:pt-20 snap-start snap-always min-h-screen bg-white" id="services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12 md:mb-16 px-4 md:px-0"
@@ -169,7 +169,12 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                           <Button
                             variant="default"
                             size="sm"
-                            className="w-full bg-white hover:bg-sky-600 text-sky-500 hover:text-white shadow-md text-xs font-medium flex items-center justify-center gap-2"
+                            className={`w-full shadow-md text-xs font-medium flex items-center justify-center gap-2 transition-all
+                              ${isPrimary 
+                                ? 'bg-white text-sky-500 hover:bg-transparent hover:border-white hover:text-white border border-white' 
+                                : 'bg-sky-500 text-white hover:bg-transparent hover:border-sky-500 hover:text-sky-500 border border-sky-500'
+                              }
+                            `}
                           >
                             <span>Learn more</span>
                             <span className="inline-block">→</span>
@@ -249,7 +254,12 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                       <Button
                         variant="default"
                         size="sm"
-                        className="w-full bg-white hover:bg-sky-600 text-sky-500 hover:text-white shadow-lg text-sm md:text-base font-medium flex items-center justify-center gap-2 group/btn"
+                        className={`w-full shadow-lg text-sm md:text-base font-medium flex items-center justify-center gap-2 group/btn transition-all
+                          ${isPrimary 
+                            ? 'bg-white text-sky-500 hover:bg-transparent hover:border-white hover:text-white border border-white' 
+                            : 'bg-sky-500 text-white hover:bg-transparent hover:border-sky-500 hover:text-sky-500 border border-sky-500'
+                          }
+                        `}
                       >
                         <span>Learn more</span>
                         <motion.span
