@@ -78,16 +78,16 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
               />
               <div className="flex flex-wrap gap-6 sm:gap-10 md:gap-16 lg:gap-20 justify-center">
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">500+</div>
-                  <div className="text-xs sm:text-sm text-foreground/60">Clients Served</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">812</div>
+                  <div className="text-xs sm:text-sm text-foreground/60 max-w-[15rem]">Hundreds of successful BI projects completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">50+</div>
-                  <div className="text-xs sm:text-sm text-foreground/60">Countries</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">126</div>
+                  <div className="text-xs sm:text-sm text-foreground/60 max-w-[15rem]">More than 100 consultants serving clients worldwide</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">99%</div>
-                  <div className="text-xs sm:text-sm text-foreground/60">Satisfaction</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">10k+</div>
+                  <div className="text-xs sm:text-sm text-foreground/60 max-w-[15rem]">Over 10 thousands hours of services performed</div>
                 </div>
               </div>
             </motion.div>
