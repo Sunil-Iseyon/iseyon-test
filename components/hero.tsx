@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import { RotatingFounderMessages } from '@/components/rotating-founder-messages'
+import { motion } from 'framer-motion'
 
 interface HeroProps {
   data: {
@@ -31,106 +32,148 @@ interface HeroProps {
 
 export function Hero({ data, founderMessages = [] }: HeroProps) {
   return (
-    <section className='mt-10 min-h-[600px] sm:min-h-[700px] lg:min-h-screen mx-2 sm:mx-4 lg:mx-5'>
-<main className="rounded-t-xl sm:rounded-t-2xl overflow-hidden">
-      <div className="mx-auto py-10">
-        <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 py-4 sm:py-5 rounded-t-2xl sm:rounded-t-3xl'>
- <div className="grid lg:grid-cols-2  items-center">
+    <section className='pt-12 md:pt-11 min-h-[500px] sm:min-h-[600px] lg:min-h-screen mx-2 sm:mx-4 lg:mx-5'>
+<main className="rounded-t-lg sm:rounded-t-xl lg:rounded-t-2xl overflow-hidden">
+      <div className="mx-auto py-6 sm:py-10">
+        <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-4  lg:px-24 py-6 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl'>
+ <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           {/* Left Content */}
-          <div className="space-y-3 z-10 w-full max-w-full lg:max-w-2xl">
+          <div className="space-y-4  z-10 w-full max-w-full lg:max-w-2xl">
             {/* Header */}
-            <div className="space-y-1 sm:space-y-4">
+            <div className="">
               {data.badge && (
-                <p className="text-teal-600 italic text-sm sm:text-base lg:text-lg font-medium">
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="text-teal-600 italic text-xs sm:text-sm lg:text-base font-medium">
                   {data.badge}
-                </p>
+                </motion.p>
               )}
               {data.title && (
-                <h1 className="text-3xl sm:text-4xl md:text-[3.5rem]  font-bold text-slate-900 leading-tight">
+                <motion.h1 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 leading-tight break-words">
                   {data.title}
-                </h1>
+                </motion.h1>
               )}
               {data.description && (
-                <div className="text-gray-600 text-xs sm:text-sm leading-relaxed max-w-full lg:max-w-2xl">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed max-w-full lg:max-w-2xl">
                   {typeof data.description === 'string' ? (
                     <p>{data.description}</p>
                   ) : (
                     <TinaMarkdown content={data.description} />
                   )}
-                </div>
+                </motion.div>
               )}
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="flex flex-row items-center gap-3 sm:gap-4 pt-2">
               {data.primaryCta?.text && data.primaryCta?.href && (
-                <Button asChild className="bg-white text-teal-600 hover:bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-center gap-2 font-semibold text-sm sm:text-base">
+                <Button asChild className="group bg-white text-teal-600 hover:bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-3.5 flex items-center justify-center gap-2 font-semibold text-xs sm:text-sm lg:text-base shadow-sm whitespace-nowrap transition-all">
+
                   <a href={data.primaryCta.href}>
-                    <Mail size={16} className="sm:w-[18px] sm:h-[18px]" />
+                    <Mail size={18} className="sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
                     {data.primaryCta.text}
                   </a>
                 </Button>
               )}
               {data.secondaryCta?.text && data.secondaryCta?.href && (
-                <Button asChild variant="ghost" className="text-teal-600 hover:text-teal-700 flex items-center justify-center gap-2 text-sm sm:text-base">
+                <Button asChild variant="ghost" className="group text-teal-600 hover:text-teal-700 hover:bg-teal-50 flex items-center justify-center gap-2 text-xs sm:text-sm lg:text-base py-2.5 sm:py-3 whitespace-nowrap transition-all">
+
                   <a href={data.secondaryCta.href}>
                     {data.secondaryCta.text}
-                    <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
+                    <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
               )}
-            </div>
+            </motion.div>
         
             {/* Divider Line */}
-            <div className="w-full max-w-xs sm:max-w-md lg:max-w-lg h-0.5 bg-linear-to-r from-green-500 via-green-200 to-transparent rounded-full"></div>
+            <motion.div 
+              initial={{ opacity: 0, scaleX: 0 }}
+              animate={{ opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+              className="w-full max-w-[200px] sm:max-w-xs md:max-w-md lg:max-w-lg h-0.5 bg-linear-to-r from-green-500 via-green-200 to-transparent rounded-full mt-4 sm:mt-6 origin-left"></motion.div>
             {/* <div className="w-220 h-1 bg-white absolute left-0 rounded-full mb-2"></div> */}
             {/* Trust Logos */}
-            <div className="space-y-1 sm:space-y-2">
-              <p className="text-gray-500 text-xs sm:text-sm font-medium uppercase tracking-wide">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              className="space-y-2">
+              <p className="text-gray-500 text-[10px] sm:text-xs font-medium uppercase tracking-wide">
                 Trusted by leading companies
               </p>
-              <div className="relative overflow-hidden">
-                <div className="flex items-center space-x-8 sm:space-x-6 animate-scroll">
+              <div className="relative overflow-hidden py-2">
+                <div className="flex items-center space-x-8 sm:space-x-10 lg:space-x-12 animate-scroll">
                   {/* Original set */}
-                  <Image src="/partners/databricks-logo.webp" alt="Databricks" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/tableau.webp" alt="Tableau" width={90} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/strategy.webp" alt="Strategy" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/microsoft.webp" alt="Microsoft" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/snowflake.webp" alt="Snowflake" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/AWS.webp" alt="AWS" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-20 h-auto" />
-                  <Image src="/partners/informatica.webp" alt="Informatica" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/lancet.webp" alt="Lancet" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
+                  <Image src="/partners/databricks-logo.webp" alt="Databricks" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/tableau.webp" alt="Tableau" width={90} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/strategy.webp" alt="Strategy" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/microsoft.webp" alt="Microsoft" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/snowflake.webp" alt="Snowflake" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/AWS.webp" alt="AWS" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-16 sm:w-18 lg:w-20 h-auto" />
+                  <Image src="/partners/informatica.webp" alt="Informatica" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/lancet.webp" alt="Lancet" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
                   
                   {/* Duplicate set for seamless loop */}
-                  <Image src="/partners/databricks-logo.webp" alt="Databricks" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/tableau.webp" alt="Tableau" width={90} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/strategy.webp" alt="Strategy" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/microsoft.webp" alt="Microsoft" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/snowflake.webp" alt="Snowflake" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/AWS.webp" alt="AWS" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-20 h-auto" />
-                  <Image src="/partners/informatica.webp" alt="Informatica" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
-                  <Image src="/partners/lancet.webp" alt="Lancet" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-12 sm:w-14 lg:w-[70px] h-auto" />
+                  <Image src="/partners/databricks-logo.webp" alt="Databricks" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/tableau.webp" alt="Tableau" width={90} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/strategy.webp" alt="Strategy" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/microsoft.webp" alt="Microsoft" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/snowflake.webp" alt="Snowflake" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/AWS.webp" alt="AWS" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-16 sm:w-18 lg:w-20 h-auto" />
+                  <Image src="/partners/informatica.webp" alt="Informatica" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
+                  <Image src="/partners/lancet.webp" alt="Lancet" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Illustration */}
           <div className="relative h-full hidden lg:flex items-center justify-center">
 
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 hidden lg:block">
               {/* Column 1 - Left side tall bars */}
-              <div className="absolute top-67 left-59 w-26 h-80 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent"></div>
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "20rem" }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="absolute top-67 left-59 w-26 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent"
+              />
 
-              <div className="absolute top-79 right-50 w-26 h-56 bg-linear-to-t from-sky-200 via-sky-200/40 to-transparent opacity-80"></div>
-             
-              {/* Column 2 - Middle bars */}
-              {/* <div className="absolute bottom-0 left-64 w-20 h-40 bg-cyan-100 opacity-50"></div> */}
-              {/* <div className="absolute bottom-48 right-10  rounded-full w-24 h-32 bg-cyan-100 opacity-55"></div> */}
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 0.8, height: "14rem" }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="absolute top-79 right-50 w-26 bg-linear-to-t from-sky-200 via-sky-200/40 to-transparent"
+              />
              
               {/* Column 3 - Right side bars */}
-              <div className="absolute top-72 right-30 w-20 h-48 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent "></div>
-              <div className="absolute top-72 right-2 w-28 h-56 bg-linear-to-t from-sky-200 via-sky-200/40 to-transparent opacity-80 "></div>
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "12rem" }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="absolute top-72 right-30 w-20 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent"
+              />
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 0.8, height: "14rem" }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+                className="absolute top-72 right-2 w-28 bg-linear-to-t from-sky-200 via-sky-200/40 to-transparent"
+              />
             </div>
  
 
@@ -259,10 +302,10 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
        
 
         {/* Bottom Section - Founder Messages */}
-        <div className="grid grid-cols-1 gap-4 sm:gap-6  pt-3 sm:pt-4  border-gray-200 px-4 sm:px-8 md:px-12 lg:px-12 xl:px-24">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 pt-4 sm:pt-6 border-gray-200 px-4 sm:px-8 md:px-12 lg:px-12 xl:px-24">
           {/* Rotating Founder Messages */}
           <div className="w-full">
-            <RotatingFounderMessages messages={founderMessages} interval={10000} />
+            <RotatingFounderMessages messages={founderMessages} interval={10000} delay={1500} />
           </div>
         </div>
       </div>

@@ -20,6 +20,13 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const iconMap = {
   BarChart3,
@@ -97,8 +104,93 @@ export function ServicesSection({ services }: ServicesSectionProps) {
           </p>
         </motion.div>
 
+        {/* Mobile Carousel */}
+        <div className="md:hidden px-4">
+          <Carousel
+            opts={{
+              align: "center",
+              loop: true,
+              dragFree: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {services.map((service, index) => {
+                const Icon = iconMap[service.homePageIcon as keyof typeof iconMap] || BarChart3;
+                const isPrimary = index % 2 === 0;
+                const serviceSlug = service._sys?.filename || service.heading.toLowerCase().replace(/\\s+/g, '-');
+                const serviceUrl = `/services/${service.category}/${serviceSlug}`;
+                
+                return (
+                  <CarouselItem key={index} className="basis-[85%] pl-2 md:pl-4">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className={`
+                        group relative p-4 rounded-2xl sm:rounded-3xl transition-all duration-300 shadow-lg h-auto min-h-[240px] flex flex-col overflow-hidden
+                        ${isPrimary 
+                          ? 'bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600' 
+                          : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border border-slate-200'
+                        }
+                      `}
+                    >
+                      {/* Blur overlay on tap/touch */}
+                      <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px] opacity-0 active:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                      <div className="relative z-10 flex flex-col h-full">
+                        {/* Icon */}
+                        <div className={`
+                          w-12 h-12 rounded-xl flex items-center justify-center mb-3 shrink-0
+                          ${isPrimary ? 'bg-slate-800/90' : 'bg-slate-700/90'}
+                        `}>
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+
+                        {/* Title */}
+                        <h3 className={`
+                          text-base font-bold mb-2
+                          ${isPrimary ? 'text-white' : 'text-slate-800'}
+                        `}>
+                          {service.heading}
+                        </h3>
+
+                        {/* Description */}
+                        <p className={`
+                          text-xs leading-relaxed mb-3 grow
+                          ${isPrimary ? 'text-white/90' : 'text-slate-600'}
+                        `}>
+                          {service.homePageDescription}
+                        </p>
+
+                        {/* Learn More Button */}
+                        <Link href={serviceUrl}>
+                          <Button
+                            variant="default"
+                            size="sm"
+                            className="w-full bg-white hover:bg-sky-600 text-sky-500 hover:text-white shadow-md text-xs font-medium flex items-center justify-center gap-2"
+                          >
+                            <span>Learn more</span>
+                            <span className="inline-block">→</span>
+                          </Button>
+                        </Link>
+                      </div>
+                    </motion.div>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <div className="flex justify-center gap-2 mt-4">
+              <CarouselPrevious className="relative left-0 translate-x-0" />
+              <CarouselNext className="relative right-0 translate-x-0" />
+            </div>
+          </Carousel>
+        </div>
+
+        {/* Desktop Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4 md:px-0"
+          className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4 md:px-0"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -114,38 +206,30 @@ export function ServicesSection({ services }: ServicesSectionProps) {
               <motion.div
                 key={index}
                 variants={itemVariants}
+                whileHover={{ scale: 1.02, y: -8 }}
                 className={`
-                  group relative p-4 sm:p-6 md:p-8 rounded-bl-2xl sm:rounded-bl-3xl lg:rounded-bl-4xl rounded-tr-2xl sm:rounded-tr-3xl lg:rounded-tr-4xl transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden h-64 sm:h-72 md:h-80 lg:h-80
+                  group relative p-6 md:p-8 rounded-2xl sm:rounded-3xl transition-all duration-300 shadow-lg hover:shadow-2xl h-auto min-h-[280px] md:min-h-[320px] flex flex-col overflow-hidden
                   ${isPrimary 
                     ? 'bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600' 
                     : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border border-slate-200'
                   }
                 `}
               >
-                {/* Background Image */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <Image
-                    src={service.image}
-                    alt={service.heading}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-                </div>
+                {/* Blur overlay on hover */}
+                <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                {/* Content */}
-                <div className="relative z-10 transition-all duration-300 group-hover:blur-sm h-full flex flex-col">
+                <div className="relative z-10 flex flex-col h-full">
                   {/* Icon */}
                   <div className={`
-                    w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 shrink-0
+                    w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shrink-0 transition-transform duration-300 group-hover:scale-110
                     ${isPrimary ? 'bg-slate-800/90' : 'bg-slate-700/90'}
                   `}>
-                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" />
+                    <Icon className="w-7 h-7 md:w-8 md:h-8 text-white" />
                   </div>
 
                   {/* Title */}
                   <h3 className={`
-                    text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 md:mb-4
+                    text-lg md:text-xl font-bold mb-3 md:mb-4
                     ${isPrimary ? 'text-white' : 'text-slate-800'}
                   `}>
                     {service.heading}
@@ -153,29 +237,33 @@ export function ServicesSection({ services }: ServicesSectionProps) {
 
                   {/* Description */}
                   <p className={`
-                    text-xs md:text-sm leading-relaxed grow
+                    text-sm leading-relaxed mb-4 grow
                     ${isPrimary ? 'text-white/90' : 'text-slate-600'}
                   `}>
                     {service.homePageDescription}
                   </p>
-                </div>
 
-                {/* Learn More Button - Shows on hover */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileHover={{ opacity: 1, y: 0 }}
-                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-20"
-                >
-                  <Link href={serviceUrl}>
-                    <Button
-                      variant="default"
-                      size="sm"
-                      className="bg-white hover:bg-sky-600 text-sky-500 hover:text-white shadow-2xl text-sm md:text-base font-medium px-6 md:px-8 py-2 md:py-3"
-                    >
-                      Learn more
-                    </Button>
-                  </Link>
-                </motion.div>
+                  {/* Learn More Button - shown on hover */}
+                  <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <Link href={serviceUrl}>
+                      <Button
+                        variant="default"
+                        size="sm"
+                        className="w-full bg-white hover:bg-sky-600 text-sky-500 hover:text-white shadow-lg text-sm md:text-base font-medium flex items-center justify-center gap-2 group/btn"
+                      >
+                        <span>Learn more</span>
+                        <motion.span
+                          initial={{ x: 0 }}
+                          whileHover={{ x: 4 }}
+                          transition={{ duration: 0.2 }}
+                          className="inline-block"
+                        >
+                          →
+                        </motion.span>
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               </motion.div>
             );
           })}

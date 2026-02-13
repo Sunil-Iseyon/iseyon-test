@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
+import { AnimatePresence, motion } from 'framer-motion'
 
 interface FounderMessage {
   name: string
@@ -14,25 +15,36 @@ interface FounderMessage {
 interface RotatingFounderMessagesProps {
   messages: FounderMessage[]
   interval?: number
+  delay?: number
 }
 
 export function RotatingFounderMessages({ 
   messages, 
-  interval = 10000 
+  interval = 10000,
+  delay = 1500
 }: RotatingFounderMessagesProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+
+  // Show messages after delay
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true)
+    }, delay)
+    return () => clearTimeout(timer)
+  }, [delay])
 
   useEffect(() => {
-    if (messages.length <= 1) return
+    if (messages.length <= 1 || !isVisible) return
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % messages.length)
     }, interval)
 
     return () => clearInterval(timer)
-  }, [messages.length, interval])
+  }, [messages.length, interval, isVisible])
 
-  if (!messages || messages.length === 0) {
+  if (!messages || messages.length === 0 || !isVisible) {
     return null
   }
 
@@ -40,23 +52,37 @@ export function RotatingFounderMessages({
 
   return (
     <div className="space-y-3 sm:space-y-4">
-      <div className="flex items-center gap-2 sm:gap-3">
-        {/* Avatar */}
-        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-teal-400 border-2 border-white flex items-center justify-center text-white text-xs sm:text-sm font-bold shrink-0">
-          {currentMessage.initials}
-        </div>
-        
-        {/* Name and Role */}
-        <div>
-          <p className="font-semibold text-slate-900 text-sm sm:text-base">{currentMessage.name}</p>
-          <p className="text-xs sm:text-sm text-gray-500">{currentMessage.role}</p>
-        </div>
-      </div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+            {/* Avatar */}
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-teal-400 border-2 border-white flex items-center justify-center text-white text-xs sm:text-sm font-bold shrink-0">
+              {currentMessage.initials}
+            </div>
+            
+            {/* Name and Role */}
+            <div>
+              <p className="font-semibold text-slate-900 text-sm sm:text-base">{currentMessage.name}</p>
+              <p className="text-xs sm:text-sm text-gray-500">{currentMessage.role}</p>
+            </div>
+          </div>
 
-      {/* Message */}
-      <div className="text-gray-700 text-xs sm:text-sm leading-relaxed prose prose-sm sm:prose prose-p:my-0 max-w-full lg:max-w-5xl">
-        <TinaMarkdown content={currentMessage.message} />
-      </div>
+          {/* Message */}
+          <div className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed prose prose-sm sm:prose prose-p:my-0 max-w-[54rem]">
+            {typeof currentMessage.message === 'string' ? (
+              <p>{currentMessage.message}</p>
+            ) : (
+              <TinaMarkdown content={currentMessage.message} />
+            )}
+          </div>
+        </motion.div>
+      </AnimatePresence>
 
       {/* Dots Indicator */}
       {messages.length > 1 && (

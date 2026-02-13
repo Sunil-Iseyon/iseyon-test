@@ -5,6 +5,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Search } from 'lucide-react'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 type Blog = {
   id?: number
@@ -31,97 +38,127 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
     })
   }, [search, blogs])
 
+  const renderBlogCard = (blog: Blog, idx: number) => (
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ 
+        duration: 0.5, 
+        delay: idx * 0.1,
+        ease: "easeOut"
+      }}
+      whileHover={{ 
+        y: -12, 
+        scale: 1.02,
+        boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
+      }}
+      className="rounded-xl border overflow-hidden bg-white shadow-sm cursor-pointer h-full group transition-all"
+    >
+      <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.4 }}
+          className="w-full h-full"
+        >
+          <Image
+            src={blog.image}
+            alt={blog.title}
+            fill
+            className="object-cover"
+          />
+        </motion.div>
+        
+        {/* Overlay on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+
+      <div className="p-4 sm:p-5">
+        <motion.span 
+          className="text-xs text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded-full inline-block"
+          whileHover={{ scale: 1.05 }}
+        >
+          {blog.category}
+        </motion.span>
+
+        <h3 className="font-semibold mt-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+          {blog.title}
+        </h3>
+
+        <p className="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-2">
+          {blog.shortDescription || blog.description}
+        </p>
+
+        <div className="text-xs text-gray-400 mt-3 sm:mt-4 flex items-center gap-2">
+          {blog.author && <span className="font-medium">{blog.author}</span>}
+          {blog.author && <span>·</span>}
+          <span>{blog.date}</span>
+          <span>·</span>
+          <span>{blog.readTime}</span>
+        </div>
+        
+        {/* Arrow indicator on hover */}
+        <motion.div
+          className="mt-3 sm:mt-4 text-blue-600 font-medium text-xs sm:text-sm flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
+          initial={{ x: -10 }}
+          whileHover={{ x: 0 }}
+        >
+          Read More →
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+
   return (
     <>
       {/* SEARCH */}
-      <div className="flex justify-end items-center mt-14">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+      <div className="flex justify-end items-center mt-10 sm:mt-12 md:mt-14">
+        <div className="relative w-full sm:w-auto">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400" />
 
           <input
             placeholder="Search articles..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-10 pr-4 py-2 border rounded-full text-sm outline-none"
+            className="pl-9 sm:pl-10 pr-4 py-2 border rounded-full text-xs sm:text-sm outline-none w-full sm:w-64"
           />
         </div>
       </div>
 
-      {/* BLOG GRID */}
+      {/* BLOG CAROUSEL - Mobile */}
+      <div className="md:hidden mt-8 sm:mt-10">
+        <Carousel
+          opts={{
+            align: "center",
+            loop: true,
+            dragFree: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 sm:-ml-4">
+            {filteredBlogs.map((blog, idx) => (
+              <CarouselItem key={blog.id || idx} className="basis-[85%] sm:basis-[90%] pl-2 sm:pl-4">
+                <Link href={`/blog/${blog.id || idx}`}>
+                  {renderBlogCard(blog, idx)}
+                </Link>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center gap-2 mt-6">
+            <CarouselPrevious className="relative left-0 translate-x-0" />
+            <CarouselNext className="relative right-0 translate-x-0" />
+          </div>
+        </Carousel>
+      </div>
+
+      {/* BLOG GRID - Desktop */}
       <motion.div
         layout
-        className="grid md:grid-cols-3 gap-8 mt-12"
+        className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-10 md:mt-12"
       >
         {filteredBlogs.map((blog, idx) => (
           <Link key={blog.id || idx} href={`/blog/${blog.id || idx}`}>
-            <motion.div
-              layout
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.5, 
-                delay: idx * 0.1,
-                ease: "easeOut"
-              }}
-              whileHover={{ 
-                y: -12, 
-                scale: 1.02,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
-              }}
-              className="rounded-xl border overflow-hidden bg-white shadow-sm cursor-pointer h-full group transition-all"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.4 }}
-                  className="w-full h-full"
-                >
-                  <Image
-                    src={blog.image}
-                    alt={blog.title}
-                    fill
-                    className="object-cover"
-                  />
-                </motion.div>
-                
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              <div className="p-5">
-                <motion.span 
-                  className="text-xs text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded-full inline-block"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  {blog.category}
-                </motion.span>
-
-                <h3 className="font-semibold mt-2 group-hover:text-blue-600 transition-colors">
-                  {blog.title}
-                </h3>
-
-                <p className="text-sm text-gray-600 mt-2 line-clamp-2">
-                  {blog.shortDescription || blog.description}
-                </p>
-
-                <div className="text-xs text-gray-400 mt-4 flex items-center gap-2">
-                  {blog.author && <span className="font-medium">{blog.author}</span>}
-                  {blog.author && <span>·</span>}
-                  <span>{blog.date}</span>
-                  <span>·</span>
-                  <span>{blog.readTime}</span>
-                </div>
-                
-                {/* Arrow indicator on hover */}
-                <motion.div
-                  className="mt-4 text-blue-600 font-medium text-sm flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                  initial={{ x: -10 }}
-                  whileHover={{ x: 0 }}
-                >
-                  Read More →
-                </motion.div>
-              </div>
-            </motion.div>
+            {renderBlogCard(blog, idx)}
           </Link>
         ))}
       </motion.div>

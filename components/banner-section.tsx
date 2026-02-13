@@ -104,13 +104,13 @@ export function BannerSection({ data }: BannerSectionProps) {
           >
             <motion.h2
               variants={headingVariants}
-              className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight"
             >
               {data.heading}
             </motion.h2>
             <motion.p
               variants={subheadingVariants}
-              className="text-lg text-primary-foreground/80 mb-8"
+              className="text-sm sm:text-base md:text-lg text-primary-foreground/80 mb-6 sm:mb-8"
             >
               {data.subheading}
             </motion.p>
@@ -120,12 +120,12 @@ export function BannerSection({ data }: BannerSectionProps) {
               variants={statsVariants}
             >
               <div className="flex items-center gap-3">
-                <div className="w-15 h-15 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-bold text-primary">500+</span>
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-15 md:h-15 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary">500+</span>
                 </div>
                 <div className="text-white">
-                  <p className="font-semibold">Companies Trust Us</p>
-                  <p className="text-sm text-primary-foreground/70">Worldwide</p>
+                  <p className="text-sm sm:text-base font-semibold">Companies Trust Us</p>
+                  <p className="text-xs sm:text-sm text-primary-foreground/70">Worldwide</p>
                 </div>
               </div>
             </motion.div>
@@ -136,7 +136,7 @@ export function BannerSection({ data }: BannerSectionProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-50px' }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+            className="grid grid-cols-2 gap-3 sm:gap-4"
           >
             {data.benefits.map((benefit, index) => (
               <motion.div

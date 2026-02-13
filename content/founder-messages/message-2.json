@@ -1,19 +1,6 @@
 {
-  "name": "Sarah Miller",
-  "role": "Co-Founder & CTO",
-  "initials": "SM",
-  "message": {
-    "type": "root",
-    "children": [
-      {
-        "type": "p",
-        "children": [
-          {
-            "type": "text",
-            "text": "We're building the future of business intelligence with cutting-edge AI that turns complex data into actionable insights in real-time."
-          }
-        ]
-      }
-    ]
-  }
+  "name": "Walter Reis",
+  "role": "Founder & CTO",
+  "initials": "WR",
+  "message": "Data-driven decisions are no longer optional—they're essential. We empower organizations to harness the full potential of their data.\n"
 }

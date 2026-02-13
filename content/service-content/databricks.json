@@ -1,0 +1,10 @@
+{
+  "category": "cloud-and-platforms",
+  "heading": "Databricks",
+  "image": "/services/AI.webp",
+  "subheading": "Beautiful, intuitive dashboards tailored to your KPIs — sales, finance, operations, marketing, or forecasting.",
+  "content": "### Custom Power BI Dashboards\n\nBeautiful, intuitive dashboards tailored to your KPIs — sales, finance, operations, marketing, or forecasting.\n\nData Integration\n\nConnect multiple sources including databases, APIs, Excel, cloud platforms, and SaaS tools into a single analytics layer.\n\nData Modeling & Transformation\n\nClean, structure, and optimize your data using best-practice modeling techniques for fast and reliable reporting.\n\nAdvanced Analytics\n\nImplement \\*\\*DAX \\*\\*calculations, trend analysis, forecasting, and performance metrics for deeper business intelligence.\n\nReal-Time Reporting\n\nMonitor live data with auto-refresh dashboards so you always stay ahead.\n\nSecure Sharing & Access Control\n\nRole-based access ensures the right people see the right data — across desktop and mobile.\n",
+  "showOnHomePage": true,
+  "homePageDescription": "Beautiful, intuitive dashboards tailored to your KPIs — sales, finance, operations, marketing, or forecasting.",
+  "homePageIcon": "LineChart"
+}

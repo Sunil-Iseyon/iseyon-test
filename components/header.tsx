@@ -65,10 +65,10 @@ export function Header({ servicesMenu }: HeaderProps) {
   ]
 
   return (
-    <header className={` fixed top-0 z-50 w-full transition-all duration-700 ease-in-out ${
+    <header className={` fixed top-0 z-50 w-full transition-all duration-700 ease-in-out bg-white ${
       (isLandingPage && !isScrolled)
         ? '' 
-        : 'bg-white shadow-md'
+        : 'shadow-md'
     }`}>
       <nav className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
         {/* Logo - Left */}
@@ -232,7 +232,7 @@ export function Header({ servicesMenu }: HeaderProps) {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden p-2 transition-colors duration-300 ${(isLandingPage && !isScrolled) ? 'text-white' : 'text-foreground'}`}
+          className={`lg:hidden p-2 transition-colors duration-300 z-50 ${(isLandingPage && !isScrolled) ? 'text-slate-900' : 'text-foreground'}`}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -355,11 +355,11 @@ export function Header({ servicesMenu }: HeaderProps) {
               </Link>
 
               <Link
-                href="/request-demo"
+                href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="block w-full px-3 py-2 bg-primary text-primary-foreground rounded text-center font-medium hover:bg-primary/90"
               >
-                Request Demo
+                Contact Us
               </Link>
             </div>
           </motion.div>

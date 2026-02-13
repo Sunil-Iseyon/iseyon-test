@@ -154,14 +154,14 @@ export default function GetInTouchPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-primary font-medium mb-4 text-sm tracking-wide uppercase"
+              className="text-primary font-medium mb-3 sm:mb-4 text-xs sm:text-sm tracking-wide uppercase"
             >
               Connect with us
             </motion.p>
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
               Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-600">Touch</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
               Let's discuss how we can help transform your data into actionable insights. 
               We're here to answer your questions and start your journey to data excellence.
             </p>
@@ -182,36 +182,36 @@ export default function GetInTouchPage() {
             >
               {showSuccess ? (
                 /* Success Section */
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-xl p-12 border-2 border-green-200 text-center">
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-xl p-6 sm:p-8 md:p-12 border-2 border-green-200 text-center">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", duration: 0.6 }}
-                    className="w-20 h-20 bg-green-500 rounded-full mx-auto mb-6 flex items-center justify-center"
+                    className="w-16 h-16 sm:w-20 sm:h-20 bg-green-500 rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center"
                   >
-                    <CheckCircle className="w-12 h-12 text-white" />
+                    <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
                   </motion.div>
-                  <h2 className="text-4xl font-bold text-foreground mb-4">Message Sent!</h2>
-                  <p className="text-lg text-gray-700 mb-8">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">Message Sent!</h2>
+                  <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-6 sm:mb-8">
                     Thank you for reaching out to us. We've received your message and our team will get back to you shortly.
                   </p>
                   <div className="space-y-4">
                     <button
                       onClick={handleFillAnotherForm}
-                      className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                      className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 sm:py-4 px-4 sm:px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base"
                     >
-                      <Send className="w-5 h-5" />
+                      <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                       Send Another Message
                     </button>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-xs sm:text-sm text-gray-600">
                       Expected response time: <span className="font-semibold text-green-700">24-48 hours</span>
                     </p>
                   </div>
                 </div>
               ) : (
                 /* Contact Form */
-                <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                  <h2 className="text-3xl font-bold text-foreground mb-6">Send us a Message</h2>
+                <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 border border-gray-100">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4 sm:mb-6">Send us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -394,8 +394,8 @@ export default function GetInTouchPage() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Contact Information</h2>
-                <p className="text-gray-600 text-lg">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3 sm:mb-4">Contact Information</h2>
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg">
                   We're always happy to hear from you. Whether you have a question about our services, 
                   pricing, or anything else, our team is ready to answer all your questions.
                 </p>
@@ -412,12 +412,12 @@ export default function GetInTouchPage() {
                     transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
                     className="flex items-start gap-4 p-6 bg-gradient-to-br from-primary/5 to-indigo-50 rounded-xl hover:shadow-lg transition-all duration-300 border border-primary/10 group"
                   >
-                    <div className="p-3 bg-primary rounded-lg group-hover:scale-110 transition-transform duration-300">
-                      <item.icon className="w-6 h-6 text-white" />
+                    <div className="p-2 sm:p-3 bg-primary rounded-lg group-hover:scale-110 transition-transform duration-300">
+                      <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                      <p className="text-gray-600">{item.detail}</p>
+                      <h3 className="text-sm sm:text-base font-semibold text-foreground mb-1">{item.title}</h3>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600 break-words">{item.detail}</p>
                     </div>
                   </motion.a>
                 ))}
@@ -429,10 +429,10 @@ export default function GetInTouchPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, duration: 0.5 }}
-                className="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200"
+                className="p-4 sm:p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200"
               >
-                <h3 className="font-semibold text-foreground mb-4 text-lg">Business Hours</h3>
-                <div className="space-y-2 text-gray-600">
+                <h3 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">Business Hours</h3>
+                <div className="space-y-2 text-sm sm:text-base text-gray-600">
                   <p className="flex justify-between">
                     <span>Monday - Friday:</span>
                     <span className="font-medium">10:00 AM - 7:00 PM</span>
@@ -446,15 +446,15 @@ export default function GetInTouchPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.7, duration: 0.5 }}
-                className="p-6 bg-gradient-to-br from-primary to-indigo-600 rounded-xl text-white"
+                className="p-4 sm:p-6 bg-gradient-to-br from-primary to-indigo-600 rounded-xl text-white"
               >
-                <h3 className="font-bold text-xl mb-2">Ready to Transform Your Data?</h3>
-                <p className="mb-4 text-white/90">
+                <h3 className="text-lg sm:text-xl font-bold mb-2">Ready to Transform Your Data?</h3>
+                <p className="text-sm sm:text-base mb-4 text-white/90">
                   Schedule a demo to see how our solutions can help your business grow.
                 </p>
                 <a
                   href="/request-demo"
-                  className="inline-block bg-white text-primary font-medium py-3 px-6 rounded-lg hover:bg-gray-100 transition-all duration-300"
+                  className="inline-block bg-white text-primary text-sm sm:text-base font-medium py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-gray-100 transition-all duration-300"
                 >
                   Request a Demo
                 </a>

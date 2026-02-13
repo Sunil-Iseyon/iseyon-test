@@ -19,9 +19,9 @@ export function Timeline({ events }: { events: TimelineEvent[] }) {
 
   return (
     <section>
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Community Timeline</h2>
-        <p className="mt-2 text-muted-foreground">Join us in supporting our community through these amazing events</p>
+      <div className="mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Community Timeline</h2>
+        <p className="mt-2 text-sm sm:text-base text-muted-foreground">Join us in supporting our community through these amazing events</p>
       </div>
 
       <div className="relative">
@@ -45,10 +45,10 @@ export function Timeline({ events }: { events: TimelineEvent[] }) {
               </div>
 
               {/* Content card */}
-              <div className="rounded-lg bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-md">
-                <time className="text-sm font-semibold text-primary">{event.year}</time>
-                <h3 className="mt-2 text-xl font-bold text-foreground">{event.title}</h3>
-                <p className="mt-3 text-muted-foreground">{event.description}</p>
+              <div className="rounded-lg bg-card p-4 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-md">
+                <time className="text-xs sm:text-sm font-semibold text-primary">{event.year}</time>
+                <h3 className="mt-2 text-base sm:text-lg md:text-xl font-bold text-foreground">{event.title}</h3>
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base text-muted-foreground">{event.description}</p>
               </div>
             </motion.div>
           ))}

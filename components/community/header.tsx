@@ -12,10 +12,10 @@ export function Header() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="text-balance text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-foreground">
             Support for Communities
           </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg leading-6 sm:leading-8 text-muted-foreground max-w-3xl mx-auto px-4">
             We are planning to participate in some local runs to support our community and take the chance to move.
           </p>
         </motion.div>

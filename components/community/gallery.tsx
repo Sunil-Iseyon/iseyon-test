@@ -53,10 +53,10 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
   };
 
   return (
-    <section className="mb-20 mt-20">
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Gallery</h2>
-        <p className="mt-2 text-muted-foreground">Moments from our community events and gatherings</p>
+    <section className="mb-12 sm:mb-20 mt-12 sm:mt-20">
+      <div className="mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Gallery</h2>
+        <p className="mt-2 text-sm sm:text-base text-muted-foreground">Moments from our community events and gatherings</p>
       </div>
 
       <div className="max-w-5xl mx-auto w-full">
