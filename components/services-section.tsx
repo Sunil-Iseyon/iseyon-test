@@ -135,7 +135,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className={`
-                        group relative p-4 rounded-2xl sm:rounded-3xl transition-all duration-300 shadow-lg  min-h-[240px] flex flex-col overflow-hidden
+                        group relative p-4 items-center rounded-2xl sm:rounded-3xl transition-all duration-300 shadow-lg  min-h-[240px] flex flex-col overflow-hidden
                         ${isPrimary 
                           ? 'bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600' 
                           : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border border-slate-200'
@@ -164,7 +164,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
 
                         {/* Description */}
                         <p className={`
-                          text-xs leading-relaxed mb-3 grow
+                          text-xs leading-relaxed mb-3 grow h-[60px]
                           ${isPrimary ? 'text-white/90' : 'text-slate-600'}
                         `}>
                           {service.homePageDescription}
@@ -193,7 +193,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
               })}
             </CarouselContent>
             {services.length > 1 && (
-              <div className="flex justify-center gap-2 mt-4">
+              <div className="flex justify-center gap-2 mt-7">
                 <CarouselPrevious className="relative left-0 translate-x-0" />
                 <CarouselNext className="relative right-0 translate-x-0" />
               </div>
@@ -250,7 +250,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
 
                   {/* Description */}
                   <p className={`
-                    text-sm leading-relaxed mb-4 grow
+                    text-sm leading-relaxed mb-4 grow 
                     ${isPrimary ? 'text-white/90' : 'text-slate-600'}
                   `}>
                     {service.homePageDescription}
