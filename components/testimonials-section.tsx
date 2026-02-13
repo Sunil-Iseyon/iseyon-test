@@ -82,7 +82,13 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
   );
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+  <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12 md:mb-20"
@@ -103,7 +109,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
         </motion.div>
 
         {/* Mobile Carousel */}
-        <div className="md:hidden">
+        <div className="md:hidden px-4">
           <Carousel
             opts={{
               align: "center",
@@ -112,9 +118,9 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-4 md:-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="basis-[90%] pl-2 md:pl-4">
+                <CarouselItem key={index} className="basis-[85%] pl-4 md:pl-4">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -153,6 +159,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
           ))}
         </motion.div>
       </div>
-    </section>
-  )
+    </motion.div>
+  </section>
+);
 }

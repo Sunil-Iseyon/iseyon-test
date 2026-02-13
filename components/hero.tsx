@@ -32,7 +32,7 @@ interface HeroProps {
 
 export function Hero({ data, founderMessages = [] }: HeroProps) {
   return (
-    <section className='pt-12 md:pt-11 min-h-[500px] sm:min-h-[600px] lg:min-h-screen mx-2 sm:mx-4 lg:mx-5'>
+    <section className='pt-12 md:pt-11 min-h-screen mx-2 sm:mx-4 lg:mx-5'>
       <main className="rounded-t-lg sm:rounded-t-xl lg:rounded-t-2xl overflow-hidden">
         <div className="mx-auto py-6 sm:py-10">
           <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-6 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl'>

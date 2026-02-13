@@ -143,7 +143,7 @@ export function Header({ servicesMenu }: HeaderProps) {
                               animate={{ opacity: 1, x: 0 }}
                               exit={{ opacity: 0, x: -10 }}
                               transition={{ duration: 0.2 }}
-                              className='w-80 p-4 h-[250px]'
+                              className='w-80 p-4 max-h-[400px] overflow-y-auto'
                             >
                               <h3 className="font-bold text-base text-slate-800 mb-4 pb-2 border-b border-slate-200">
                                 {hoveredGroup}
