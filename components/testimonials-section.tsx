@@ -68,7 +68,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
         <div className="flex items-center gap-3 md:gap-4">
           <Avatar className="w-10 h-10 md:w-12 md:h-12 border-2 border-cyan-100">
             <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-            <AvatarFallback className="bg-primary text-white font-semibold text-sm md:text-base">
+            <AvatarFallback className="bg-gradient-to-r from-primary to-indigo-400 text-white font-semibold text-sm md:text-base">
               {testimonial.initials}
             </AvatarFallback>
           </Avatar>
