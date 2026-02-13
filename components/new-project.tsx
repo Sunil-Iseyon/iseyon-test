@@ -34,7 +34,7 @@ interface NewProjectProps {
 
 export function NewProject({ data }: NewProjectProps) {
   return (
-    <section className="relative pt-20 snap-start">
+    <section className="relative pt-10 md:pt-20 snap-start">
       <div className="">
         {/* Heading */}
         <motion.div

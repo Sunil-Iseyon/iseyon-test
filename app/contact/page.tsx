@@ -150,14 +150,6 @@ export default function GetInTouchPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-primary font-medium mb-3 sm:mb-4 text-xs sm:text-sm tracking-wide uppercase"
-            >
-              Connect with us
-            </motion.p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
               Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-600">Touch</span>
             </h1>
@@ -438,26 +430,6 @@ export default function GetInTouchPage() {
                     <span className="font-medium">10:00 AM - 7:00 PM</span>
                   </p>
                 </div>
-              </motion.div>
-
-              {/* CTA Box */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.7, duration: 0.5 }}
-                className="p-4 sm:p-6 bg-gradient-to-br from-primary to-indigo-600 rounded-xl text-white"
-              >
-                <h3 className="text-lg sm:text-xl font-bold mb-2">Ready to Transform Your Data?</h3>
-                <p className="text-sm sm:text-base mb-4 text-white/90">
-                  Schedule a demo to see how our solutions can help your business grow.
-                </p>
-                <a
-                  href="/request-demo"
-                  className="inline-block bg-white text-primary text-sm sm:text-base font-medium py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-gray-100 transition-all duration-300"
-                >
-                  Request a Demo
-                </a>
               </motion.div>
             </motion.div>
           </div>
