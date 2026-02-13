@@ -31,14 +31,27 @@ interface HeroProps {
 }
 
 export function Hero({ data, founderMessages = [] }: HeroProps) {
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById("services")
+    if (servicesSection) {
+      const navbarHeight = 80
+      const elementPosition = servicesSection.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      })
+    }
+  }
   return (
-    <section className='pt-12 md:pt-11 min-h-screen mx-2 sm:mx-4 lg:mx-5'>
-      <main className="rounded-t-lg sm:rounded-t-xl lg:rounded-t-2xl overflow-hidden">
-        <div className="mx-auto py-6 sm:py-10">
-          <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-6 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl'>
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+    <section className='pt-12 md:pt-11 min-h-screen mx-2 sm:mx-4 lg:mx-5 flex flex-col'>
+      <main className="rounded-t-lg sm:rounded-t-xl lg:rounded-t-2xl overflow-hidden flex-1 flex flex-col">
+        <div className="mx-auto py-6 sm:py-10 flex-1 flex flex-col">
+          <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-6 sm:py-8 md:py-10 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl flex-1 flex flex-col justify-center'>
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center h-full">
               {/* Left Content */}
-              <div className="space-y-3 sm:space-y-4 z-10 w-full max-w-full overflow-hidden">
+              <div className="space-y-3 sm:space-y-4 md:space-y-6 z-10 w-full max-w-full overflow-hidden">
                 {/* Header */}
                 <div className="space-y-2 sm:space-y-3">
                   {data.badge && (
@@ -92,12 +105,16 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                     </Button>
                   )}
                   {data.secondaryCta?.text && data.secondaryCta?.href && (
-                    <Button asChild variant="ghost" className="group border border-teal-600 text-teal-600 hover:text-teal-700 hover:bg-teal-50 flex items-center justify-center gap-2 text-xs sm:text-sm lg:text-base py-2.5 sm:py-3 whitespace-nowrap transition-all">
+                    <Button asChild variant="ghost"
+                      onClick={scrollToServices}>
 
-                      <a href={data.secondaryCta.href}>
+                      {/* <a href={data.secondaryCta.href}> */}
+                      <div className="group border border-teal-600 text-teal-600 hover:text-teal-700 hover:bg-teal-50 flex items-center justify-center gap-2 text-xs sm:text-sm lg:text-base py-2.5 sm:py-3 whitespace-nowrap transition-all">
                         {data.secondaryCta.text}
                         <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                      </a>
+                      </div>
+
+                      {/* </a> */}
                     </Button>
                   )}
                 </motion.div>
@@ -258,35 +275,35 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 1.4 }}
                       >
-                      {/* Card shadow */}
-                      <rect x="2" y="2" width="200" height="130" rx="8" fill="rgba(125, 211, 252, 0.1)" />
-                      <rect x="0" y="0" width="200" height="130" rx="8" fill="url(#cardGradient)" stroke="rgba(125, 211, 252, 0.4)" strokeWidth="2" />
-                      <text x="100" y="20" textAnchor="middle" fontSize="12" fill="rgba(15, 23, 42, 0.7)" fontWeight="600">Forecast</text>
-                      {/* Grid lines */}
-                      <line x1="20" y1="40" x2="180" y2="40" stroke="rgba(226, 232, 240, 0.5)" strokeWidth="1" />
-                      <line x1="20" y1="60" x2="180" y2="60" stroke="rgba(226, 232, 240, 0.5)" strokeWidth="1" />
-                      <line x1="20" y1="80" x2="180" y2="80" stroke="rgba(226, 232, 240, 0.5)" strokeWidth="1" />
-                      <line x1="20" y1="100" x2="180" y2="100" stroke="rgba(226, 232, 240, 0.5)" strokeWidth="1" />
-                      {/* Forecast line */}
-                      <polyline
-                        points="20,90 60,70 100,75 140,50 180,45"
-                        fill="none"
-                        stroke="rgba(14, 165, 233, 0.8)"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      {/* Forecast area */}
-                      <polygon
-                        points="20,90 60,70 100,75 140,50 180,45 180,100 20,100"
-                        fill="rgba(14, 165, 233, 0.15)"
-                      />
-                      {/* Data points */}
-                      <circle cx="20" cy="90" r="4" fill="rgba(14, 165, 233, 1)" />
-                      <circle cx="60" cy="70" r="4" fill="rgba(14, 165, 233, 1)" />
-                      <circle cx="100" cy="75" r="4" fill="rgba(14, 165, 233, 1)" />
-                      <circle cx="140" cy="50" r="4" fill="rgba(14, 165, 233, 1)" />
-                      <circle cx="180" cy="45" r="4" fill="rgba(6, 182, 212, 1)" />
+                        {/* Card shadow */}
+                        <rect x="2" y="2" width="200" height="130" rx="8" fill="rgba(125, 211, 252, 0.1)" />
+                        <rect x="0" y="0" width="200" height="130" rx="8" fill="url(#cardGradient)" stroke="rgba(125, 211, 252, 0.4)" strokeWidth="2" />
+                        <text x="100" y="20" textAnchor="middle" fontSize="12" fill="rgba(15, 23, 42, 0.7)" fontWeight="600">Forecast</text>
+                        {/* Grid lines */}
+                        <line x1="20" y1="40" x2="180" y2="40" stroke="rgba(226, 232, 240, 0.5)" strokeWidth="1" />
+                        <line x1="20" y1="60" x2="180" y2="60" stroke="rgba(226, 232, 240, 0.5)" strokeWidth="1" />
+                        <line x1="20" y1="80" x2="180" y2="80" stroke="rgba(226, 232, 240, 0.5)" strokeWidth="1" />
+                        <line x1="20" y1="100" x2="180" y2="100" stroke="rgba(226, 232, 240, 0.5)" strokeWidth="1" />
+                        {/* Forecast line */}
+                        <polyline
+                          points="20,90 60,70 100,75 140,50 180,45"
+                          fill="none"
+                          stroke="rgba(14, 165, 233, 0.8)"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        {/* Forecast area */}
+                        <polygon
+                          points="20,90 60,70 100,75 140,50 180,45 180,100 20,100"
+                          fill="rgba(14, 165, 233, 0.15)"
+                        />
+                        {/* Data points */}
+                        <circle cx="20" cy="90" r="4" fill="rgba(14, 165, 233, 1)" />
+                        <circle cx="60" cy="70" r="4" fill="rgba(14, 165, 233, 1)" />
+                        <circle cx="100" cy="75" r="4" fill="rgba(14, 165, 233, 1)" />
+                        <circle cx="140" cy="50" r="4" fill="rgba(14, 165, 233, 1)" />
+                        <circle cx="180" cy="45" r="4" fill="rgba(6, 182, 212, 1)" />
                       </motion.g>
                     </g>
 
@@ -328,7 +345,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
 
 
           {/* Bottom Section - Founder Messages */}
-          <div className="grid grid-cols-1 gap-4 sm:gap-6 pt-4 sm:pt-6 border-gray-200 px-4 sm:px-8 md:px-12 lg:px-12 xl:px-24">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 pt-6 sm:pt-8 md:pt-10 border-gray-200 px-4 sm:px-8 md:px-12 lg:px-12 xl:px-24">
             {/* Rotating Founder Messages */}
             <div className="w-full">
               <RotatingFounderMessages messages={founderMessages} interval={10000} delay={1500} />

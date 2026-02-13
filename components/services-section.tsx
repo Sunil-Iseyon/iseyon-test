@@ -83,7 +83,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   };
 
   return (
-    <section className="pt-10 md:pt-20 pb-10 md:pb-16 snap-start snap-always min-h-screen bg-white" id="services">
+    <section className="pt-10 md:pt-20 pb-10 md:pb-16  bg-white" id="services">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -178,7 +178,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                             className={`w-full shadow-md text-xs font-medium flex items-center justify-center gap-2 transition-all
                               ${isPrimary 
                                 ? 'bg-white text-sky-500 hover:bg-transparent hover:border-white hover:text-white border border-white' 
-                                : 'bg-sky-500 text-white hover:bg-transparent hover:border-sky-500 hover:text-sky-500 border border-sky-500'
+                                : 'bg-sky-500 text-white hover:bg-transparent  hover:text-sky-500 border border-sky-500'
                               }
                             `}
                           >
@@ -265,7 +265,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                         className={`w-full shadow-lg text-sm md:text-base font-bold flex items-center justify-center gap-2 group/btn transition-all
                           ${isPrimary 
                             ? 'bg-white text-sky-500 hover:bg-transparent hover:border-white hover:text-white border border-white' 
-                            : 'bg-sky-500 text-white hover:bg-white hover:border-sky-500 hover:text-sky-500 border border-sky-500'
+                            : 'bg-sky-500 text-white hover:bg-white  hover:text-sky-500 border '
                           }
                         `}
                       >
