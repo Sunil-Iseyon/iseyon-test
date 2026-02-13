@@ -7,6 +7,7 @@ import './globals.css'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { NewsletterStatusBanner } from "@/components/newsletter-status-banner"
+import { RouteProgress } from "@/components/route-progress"
 import { getServicesForNavigation } from "@/lib/tina-queries"
 
 const open_Sans = Open_Sans({ 
@@ -46,6 +47,9 @@ export default async function RootLayout({
     <html lang="en" className={`${open_Sans.variable} ${sansation.variable}`}>
       
       <body className="antialiased" style={{ fontFamily: 'var(--font-open-sans)' }}>
+        <Suspense fallback={null}>
+          <RouteProgress />
+        </Suspense>
         <Header servicesMenu={servicesMenu} />
         <Suspense fallback={null}>
           <NewsletterStatusBanner />

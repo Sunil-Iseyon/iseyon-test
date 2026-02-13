@@ -1,16 +1,17 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Linkedin, ArrowRight } from 'lucide-react'
+import { Linkedin, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { TinaRichText } from './tina-rich-text'
 import type { TinaMarkdownContent } from 'tinacms/dist/rich-text'
+import { useState } from 'react'
 
 interface TeamMember {
   name?: string
   role?: string
-  bio?: string | TinaMarkdownContent
+  descp?: string | TinaMarkdownContent
   image?: string
   linkedin?: string
 }
@@ -27,6 +28,8 @@ interface TeamClientProps {
 }
 
 export function TeamClient({ values, team }: TeamClientProps) {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -45,6 +48,14 @@ export function TeamClient({ values, team }: TeamClientProps) {
       y: 0,
       transition: { duration: 0.5 },
     },
+  }
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % team.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + team.length) % team.length)
   }
 
   return (
@@ -105,7 +116,7 @@ export function TeamClient({ values, team }: TeamClientProps) {
                     variants={itemVariants}
                     className="flex gap-3 sm:gap-4 group"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="shrink-0 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <ArrowRight className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-primary" />
                     </div>
                     <div>
@@ -146,7 +157,7 @@ export function TeamClient({ values, team }: TeamClientProps) {
       </section>
 
       {/* Team Members Section */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-slate-50">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-linear-to-b from-white to-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -166,13 +177,13 @@ export function TeamClient({ values, team }: TeamClientProps) {
             </p>
           </motion.div>
 
-          {/* Team Grid */}
+          {/* Team Grid - Desktop */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
+            className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           >
             {team.map((member, index) => (
               <motion.div
@@ -182,14 +193,20 @@ export function TeamClient({ values, team }: TeamClientProps) {
                 className="group relative bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
               >
                 {/* Member Image */}
-                <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 overflow-hidden">
+                <div className="relative h-64 md:h-72 lg:h-80 overflow-hidden">
                   <Image
                     src={member.image || '/team/placeholder.jpg'}
                     alt={member.name || 'Team Member'}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                  <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                  
+                  {/* Description on Hover - Desktop */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5 md:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+                    
+                    <TinaRichText content={member.descp} className="text-xs sm:text-sm md:text-base text-white/90 leading-relaxed line-clamp-4" />
+                  </div>
                   
                   {/* LinkedIn Icon */}
                   {member.linkedin && (
@@ -197,26 +214,125 @@ export function TeamClient({ values, team }: TeamClientProps) {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-white z-20"
+                      className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-white z-30"
                     >
                       <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
                     </Link>
                   )}
                 </div>
 
-                {/* Member Info */}
+                {/* Member Info - Desktop (Below Image) */}
                 <div className="p-4 sm:p-5 md:p-6">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-1.5 sm:mb-2 group-hover:text-primary transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-primary font-semibold mb-2 sm:mb-2.5 md:mb-3 text-sm sm:text-base">
+                  <p className="text-primary font-semibold text-sm sm:text-base">
                     {member.role}
                   </p>
-                  <TinaRichText content={member.bio} className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed" />
                 </div>
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Team Carousel - Mobile */}
+          <div className="sm:hidden relative">
+            <div className="overflow-hidden rounded-2xl">
+              <motion.div
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = offset.x;
+                  const swipeVelocity = velocity.x;
+                  
+                  if (swipe > 50 || swipeVelocity > 500) {
+                    // Swipe right - go to previous
+                    prevSlide();
+                  } else if (swipe < -50 || swipeVelocity < -500) {
+                    // Swipe left - go to next
+                    nextSlide();
+                  }
+                }}
+                className="flex cursor-grab active:cursor-grabbing"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                animate={{ x: 0 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              >
+                {team.map((member, index) => (
+                  <div
+                    key={index}
+                    className="min-w-full"
+                  >
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg mx-2">
+                      {/* Member Image */}
+                      <div className="relative h-96 overflow-hidden">
+                        <Image
+                          src={member.image || '/team/placeholder.jpg'}
+                          alt={member.name || 'Team Member'}
+                          fill
+                          className="object-cover pointer-events-none"
+                        />
+                        {/* LinkedIn Icon */}
+                        {member.linkedin && (
+                          <Link
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="absolute top-4 right-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 z-20"
+                          >
+                            <Linkedin className="w-5 h-5" />
+                          </Link>
+                        )}
+                      </div>
+
+                      {/* Member Info - Mobile */}
+                      <div className="p-5 pointer-events-none">
+                        <h3 className="text-xl font-bold text-foreground mb-2">
+                          {member.name}
+                        </h3>
+                        <p className="text-primary font-semibold mb-3 text-base">
+                          {member.role}
+                        </p>
+                        <TinaRichText content={member.descp} className="text-sm text-gray-600 leading-relaxed" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Carousel Navigation */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-all z-30"
+              aria-label="Previous team member"
+            >
+              <ChevronLeft className="w-6 h-6 text-gray-800" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-all z-30"
+              aria-label="Next team member"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-800" />
+            </button>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center gap-2 mt-6">
+              {team.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentSlide 
+                      ? 'w-8 bg-primary' 
+                      : 'w-2 bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to team member ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </main>

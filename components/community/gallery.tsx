@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface GalleryImage {
   image: string;
@@ -54,16 +55,34 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
 
   return (
     <section className="mb-12 sm:mb-20 mt-12 sm:mt-20">
-      <div className="mb-8 sm:mb-12">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-8 sm:mb-12"
+      >
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Gallery</h2>
         <p className="mt-2 text-sm sm:text-base text-muted-foreground">Moments from our community events and gatherings</p>
-      </div>
+      </motion.div>
 
-      <div className="max-w-5xl mx-auto w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="max-w-5xl mx-auto w-full"
+      >
         {/* Slider Container */}
         <div className="relative group">
           {/* Main Image */}
-          <div className="relative w-full overflow-hidden rounded-lg aspect-video h-[500px]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative w-full overflow-hidden rounded-lg aspect-video h-[500px]"
+          >
             <Image
               src={currentImage.image || "/placeholder.svg"}
               alt={currentImage.description || currentImage.title || "Gallery image"}
@@ -71,7 +90,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
               className="object-contain transition-opacity duration-500"
               priority
             />
-          </div>
+          </motion.div>
 
           {/* Previous Button */}
           <button
@@ -107,17 +126,29 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
         </div>
 
         {/* Image Title */}
-        <h3 className="mt-6 text-2xl font-semibold text-foreground text-center">
+        <motion.h3
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-6 text-2xl font-semibold text-foreground text-center"
+        >
           {currentImage.title}
-        </h3>
+        </motion.h3>
 
         {/* Thumbnail Navigation */}
-        <div className="mt-8 flex gap-3 overflow-x-auto pb-2 justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-8 flex gap-3 overflow-x-auto pb-2 justify-center"
+        >
           {images.map((image, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`relative flex-shrink-0 rounded-lg overflow-hidden transition-all duration-300 ${
+              className={`relative shrink-0 rounded-lg overflow-hidden transition-all duration-300 ${
                 index === currentIndex
                   ? 'ring-2 ring-foreground'
                   : 'hover:opacity-75'
@@ -134,8 +165,8 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
               />
             </button>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
