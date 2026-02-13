@@ -83,8 +83,14 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   };
 
   return (
-    <section className="pt-20 snap-start snap-always min-h-screen bg-white" id="services">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="pt-10 md:pt-20 pb-10 md:pb-16 bg-white" id="services">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <motion.div
           className="text-center mb-12 md:mb-16 px-4 md:px-0"
           initial={{ opacity: 0, y: 20 }}
@@ -114,7 +120,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-4">
               {services.map((service, index) => {
                 const Icon = iconMap[service.homePageIcon as keyof typeof iconMap] || BarChart3;
                 const isPrimary = index % 2 === 0;
@@ -122,14 +128,14 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                 const serviceUrl = `/services/${service.category}/${serviceSlug}`;
                 
                 return (
-                  <CarouselItem key={index} className="basis-[85%] pl-2 md:pl-4">
+                  <CarouselItem key={index} className="basis-[85%] pl-4">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className={`
-                        group relative p-4 rounded-2xl sm:rounded-3xl transition-all duration-300 shadow-lg h-auto min-h-[240px] flex flex-col overflow-hidden
+                        group relative p-4 rounded-2xl sm:rounded-3xl transition-all duration-300 shadow-lg  min-h-[240px] flex flex-col overflow-hidden
                         ${isPrimary 
                           ? 'bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600' 
                           : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border border-slate-200'
@@ -169,7 +175,12 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                           <Button
                             variant="default"
                             size="sm"
-                            className="w-full bg-white hover:bg-sky-600 text-sky-500 hover:text-white shadow-md text-xs font-medium flex items-center justify-center gap-2"
+                            className={`w-full shadow-md text-xs font-medium flex items-center justify-center gap-2 transition-all
+                              ${isPrimary 
+                                ? 'bg-white text-sky-500 hover:bg-transparent  hover:text-white ' 
+                                : 'bg-sky-500 text-white hover:bg-transparent  hover:text-sky-500 border border-sky-500'
+                              }
+                            `}
                           >
                             <span>Learn more</span>
                             <span className="inline-block">→</span>
@@ -181,10 +192,12 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                 );
               })}
             </CarouselContent>
-            <div className="flex justify-center gap-2 mt-4">
-              <CarouselPrevious className="relative left-0 translate-x-0" />
-              <CarouselNext className="relative right-0 translate-x-0" />
-            </div>
+            {services.length > 1 && (
+              <div className="flex justify-center gap-2 mt-4">
+                <CarouselPrevious className="relative left-0 translate-x-0" />
+                <CarouselNext className="relative right-0 translate-x-0" />
+              </div>
+            )}
           </Carousel>
         </div>
 
@@ -211,7 +224,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                   group relative p-6 md:p-8 rounded-2xl sm:rounded-3xl transition-all duration-300 shadow-lg hover:shadow-2xl h-auto min-h-[280px] md:min-h-[320px] flex flex-col overflow-hidden
                   ${isPrimary 
                     ? 'bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600' 
-                    : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border border-slate-200'
+                    : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 '
                   }
                 `}
               >
@@ -248,8 +261,13 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                     <Link href={serviceUrl}>
                       <Button
                         variant="default"
-                        size="sm"
-                        className="w-full bg-white hover:bg-sky-600 text-sky-500 hover:text-white shadow-lg text-sm md:text-base font-medium flex items-center justify-center gap-2 group/btn"
+                        size="lg"
+                        className={`w-full shadow-lg text-sm md:text-base font-bold flex items-center justify-center gap-2 group/btn transition-all
+                          ${isPrimary 
+                            ? 'bg-white text-sky-500 hover:bg-transparent hover:border-white hover:text-white border border-white' 
+                            : 'bg-sky-500 text-white hover:bg-white  hover:text-sky-500 border '
+                          }
+                        `}
                       >
                         <span>Learn more</span>
                         <motion.span
@@ -268,7 +286,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
             );
           })}
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
