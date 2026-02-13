@@ -49,12 +49,20 @@ export function Header({ servicesMenu }: HeaderProps) {
     hidden: {
       opacity: 0,
       y: -10,
-      transition: { duration: 0.2 }
+      height: 0,
+      transition: { 
+        duration: 0.3,
+        ease: "easeInOut"
+      }
     },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.2 }
+      height: "auto",
+      transition: { 
+        duration: 0.3,
+        ease: "easeInOut"
+      }
     }
   }
 
@@ -134,7 +142,7 @@ export function Header({ servicesMenu }: HeaderProps) {
                       </div>
                       
                       {/* Right Panel - Leaf Items */}
-                      <div >
+                      <div className="relative w-80">
                         <AnimatePresence mode="wait">
                           {hoveredGroup && (
                             <motion.div
@@ -142,8 +150,11 @@ export function Header({ servicesMenu }: HeaderProps) {
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               exit={{ opacity: 0, x: -10 }}
-                              transition={{ duration: 0.2 }}
-                              className='w-80 p-4 max-h-[400px] overflow-y-auto'
+                              transition={{ 
+                                duration: 0.3,
+                                ease: "easeInOut"
+                              }}
+                              className='p-4 min-h-[200px]'
                             >
                               <h3 className="font-bold text-base text-slate-800 mb-4 pb-2 border-b border-slate-200">
                                 {hoveredGroup}
@@ -171,18 +182,35 @@ export function Header({ servicesMenu }: HeaderProps) {
             </AnimatePresence>
           </div>
 
-          <Link href="/vision" className={`font-medium transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 inline-block ${getLinkStyles()}`}>
+          <Link 
+            href="/vision" 
+            className={`font-medium transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 inline-block ${getLinkStyles()}`}
+            onMouseEnter={() => {
+              setOpenDropdown(null)
+              setHoveredGroup(null)
+            }}
+          >
             Our Vision
           </Link>
 
-          <Link href="/team" className={`font-medium transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 inline-block ${getLinkStyles()}`}>
+          <Link 
+            href="/team" 
+            className={`font-medium transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 inline-block ${getLinkStyles()}`}
+            onMouseEnter={() => {
+              setOpenDropdown(null)
+              setHoveredGroup(null)
+            }}
+          >
             Our Team
           </Link>
 
           {/* Insights Dropdown */}
           <div
             className="relative group"
-            onMouseEnter={() => setOpenDropdown('insights')}
+            onMouseEnter={() => {
+              setOpenDropdown('insights')
+              setHoveredGroup(null)
+            }}
             onMouseLeave={() => setOpenDropdown(null)}
           >
             <button className={getButtonStyles()}>
@@ -214,7 +242,14 @@ export function Header({ servicesMenu }: HeaderProps) {
             </AnimatePresence>
           </div>
 
-          <Link href="/blog" className={`font-medium transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 inline-block ${getLinkStyles()}`}>
+          <Link 
+            href="/blog" 
+            className={`font-medium transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 inline-block ${getLinkStyles()}`}
+            onMouseEnter={() => {
+              setOpenDropdown(null)
+              setHoveredGroup(null)
+            }}
+          >
             Blog
           </Link>
         </div>

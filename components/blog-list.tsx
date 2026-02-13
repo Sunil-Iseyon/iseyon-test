@@ -132,43 +132,33 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
         </div>
       </motion.div>
 
-      {/* BLOG CAROUSEL - Mobile */}
-      <div className="md:hidden mt-8 sm:mt-10 px-4">
+      {/* BLOG CAROUSEL - Both Mobile and Desktop */}
+      <div className="mt-8 sm:mt-10 px-4">
         <Carousel
           opts={{
-            align: "center",
+            align: "start",
             loop: true,
             dragFree: true,
           }}
           className="w-full"
         >
-          <CarouselContent className="-ml-4 sm:-ml-4">
+          <CarouselContent className="-ml-4">
             {filteredBlogs.map((blog, idx) => (
-              <CarouselItem key={blog.id || idx} className="basis-[85%] sm:basis-[90%] pl-4 sm:pl-4">
+              <CarouselItem key={blog.id || idx} className="basis-[85%] sm:basis-[90%] md:basis-1/3 pl-4">
                 <Link href={`/blog/${blog.id || idx}`}>
                   {renderBlogCard(blog, idx)}
                 </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-center gap-2 mt-6">
-            <CarouselPrevious className="relative left-0 translate-x-0" />
-            <CarouselNext className="relative right-0 translate-x-0" />
-          </div>
+          {filteredBlogs.length > 3 && (
+            <div className="flex justify-center gap-2 mt-6">
+              <CarouselPrevious className="relative left-0 translate-x-0 hover:text-white" />
+              <CarouselNext className="relative right-0 translate-x-0 hover:text-white" />
+            </div>
+          )}
         </Carousel>
       </div>
-
-      {/* BLOG GRID - Desktop */}
-      <motion.div
-        layout
-        className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-10 md:mt-12"
-      >
-        {filteredBlogs.map((blog, idx) => (
-          <Link key={blog.id || idx} href={`/blog/${blog.id || idx}`}>
-            {renderBlogCard(blog, idx)}
-          </Link>
-        ))}
-      </motion.div>
     </>
   )
 }

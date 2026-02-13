@@ -36,7 +36,7 @@ export function ServiceDetailClient({ content }: { content: ServiceContent }) {
             <div className="flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-34 text-center lg:text-left">
 
               {/* Text */}
-              <div className="flex flex-col justify-center items-center lg:items-start ">
+              <div className="flex flex-col justify-center items-center lg:items-start max-w-xl">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

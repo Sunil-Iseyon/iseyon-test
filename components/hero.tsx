@@ -83,7 +83,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                   transition={{ duration: 0.6, delay: 0.8 }}
                   className="flex flex-row items-center gap-3 sm:gap-4 pt-2">
                   {data.primaryCta?.text && data.primaryCta?.href && (
-                    <Button asChild className="group bg-white text-teal-600 hover:bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-3.5 flex items-center justify-center gap-2 font-semibold text-xs sm:text-sm lg:text-base shadow-sm whitespace-nowrap transition-all">
+                    <Button asChild className="group duration-300 transform hover:-translate-y-1 bg-white text-teal-600 hover:bg-gray-50 border border-gray-200 rounded-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-3.5 flex items-center justify-center gap-2 font-semibold text-xs sm:text-sm lg:text-base shadow-sm whitespace-nowrap transition-all">
 
                       <a href={data.primaryCta.href}>
                         <Mail size={18} className="sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
@@ -92,7 +92,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                     </Button>
                   )}
                   {data.secondaryCta?.text && data.secondaryCta?.href && (
-                    <Button asChild variant="ghost" className="group text-teal-600 hover:text-teal-700 hover:bg-teal-50 flex items-center justify-center gap-2 text-xs sm:text-sm lg:text-base py-2.5 sm:py-3 whitespace-nowrap transition-all">
+                    <Button asChild variant="ghost" className="group border border-teal-600 text-teal-600 hover:text-teal-700 hover:bg-teal-50 flex items-center justify-center gap-2 text-xs sm:text-sm lg:text-base py-2.5 sm:py-3 whitespace-nowrap transition-all">
 
                       <a href={data.secondaryCta.href}>
                         {data.secondaryCta.text}

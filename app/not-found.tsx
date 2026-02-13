@@ -6,7 +6,7 @@ import { Home, ArrowLeft, Sparkles } from 'lucide-react'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center px-4 relative overflow-hidden">
+    <div className=" pt-34 pb-20 min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center px-4 relative overflow-hidden">
       {/* Animated Background Elements */}
       <motion.div
         className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl"

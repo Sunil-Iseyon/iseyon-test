@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Zap, TrendingUp, Shield, Brain } from 'lucide-react'
+import { ArrowRight, Zap, TrendingUp, Shield, Brain, Mail } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Particles } from '@/components/particles'
@@ -176,18 +176,18 @@ export function NewProject({ data }: NewProjectProps) {
 
                   {/* Action Buttons */}
                   <div className="flex flex-row gap-3">
-                    <Link href={data.ctaLink}>
+                    <Link href={data.ctaLink} target='_blank'>
                       <motion.button
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 1.6 }}
                         viewport={{ once: true }}
-                        whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)" }}
+                        // whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)" }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-4 sm:px-6 py-2.5 bg-secondary text-white rounded-lg font-semibold text-xs sm:text-sm shadow-lg hover:shadow-xl transition-all flex items-center gap-2 whitespace-nowrap"
+                        className="group px-4  py-2.5 border-2 border-white text-white rounded-lg font-semibold sm:text-sm  hover:bg-white/10 hover:border-white/50 flex items-center justify-center gap-2 text-xs  whitespace-nowrap transition-all"
                       >
                         {data.ctaText}
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                       </motion.button>
                     </Link>
                     
@@ -197,10 +197,11 @@ export function NewProject({ data }: NewProjectProps) {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 1.8 }}
                         viewport={{ once: true }}
-                        whileHover={{ scale: 1.05, backgroundColor: "rgba(var(--secondary), 0.1)", boxShadow: "0 20px 40px rgba(var(--secondary), 0.2)" }}
+                        // whileHover={{ scale: 1.05, backgroundColor: "rgba(var(--secondary), 0.1)", boxShadow: "0 20px 40px rgba(var(--secondary), 0.2)" }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-4 sm:px-6 py-2.5 border-2 border-secondary text-secondary rounded-lg font-semibold text-xs sm:text-sm hover:bg-secondary/5 transition-all whitespace-nowrap"
+                        className="px-4 sm:px-6 py-2.5 flex items-center justify-center gap-2  text-white bg-secondary rounded-lg font-semibold text-xs sm:text-sm  transition-all duration-300 transform hover:-translate-y-1 whitespace-nowrap"
                       >
+                        <Mail size={18} className="sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
                         Contact Us
                       </motion.button>
                     </Link>

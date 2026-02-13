@@ -108,56 +108,39 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
           </p>
         </motion.div>
 
-        {/* Mobile Carousel */}
-        <div className="md:hidden px-4">
+        {/* Carousel - Both Mobile and Desktop */}
+        <div className="px-4">
           <Carousel
             opts={{
-              align: "center",
+              align: "start",
               loop: true,
               dragFree: true,
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-4 md:-ml-4">
+            <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="basis-[85%] pl-4 md:pl-4">
+                <CarouselItem key={index} className="basis-[85%] md:basis-1/3 pl-4">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="h-full"
                   >
                     {renderTestimonialCard(testimonial, index)}
                   </motion.div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center gap-2 mt-6">
-              <CarouselPrevious className="relative left-0 translate-x-0" />
-              <CarouselNext className="relative right-0 translate-x-0" />
-            </div>
+            {testimonials.length > 3 && (
+              <div className="flex justify-center gap-2 mt-6">
+                <CarouselPrevious className="relative left-0 translate-x-0" />
+                <CarouselNext className="relative right-0 translate-x-0" />
+              </div>
+            )}
           </Carousel>
         </div>
-
-        {/* Desktop Grid */}
-        <motion.div
-          className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(6, 182, 212, 0.08)' }}
-              className="group"
-            >
-              {renderTestimonialCard(testimonial, index)}
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </motion.div>
   </section>

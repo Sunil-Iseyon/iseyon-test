@@ -120,7 +120,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-4 md:-ml-4">
+            <CarouselContent className="-ml-4">
               {services.map((service, index) => {
                 const Icon = iconMap[service.homePageIcon as keyof typeof iconMap] || BarChart3;
                 const isPrimary = index % 2 === 0;
@@ -128,7 +128,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                 const serviceUrl = `/services/${service.category}/${serviceSlug}`;
                 
                 return (
-                  <CarouselItem key={index} className="basis-[85%] pl-4 md:pl-4">
+                  <CarouselItem key={index} className="basis-[85%] pl-4">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -192,10 +192,12 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                 );
               })}
             </CarouselContent>
-            <div className="flex justify-center gap-2 mt-4">
-              <CarouselPrevious className="relative left-0 translate-x-0" />
-              <CarouselNext className="relative right-0 translate-x-0" />
-            </div>
+            {services.length > 1 && (
+              <div className="flex justify-center gap-2 mt-4">
+                <CarouselPrevious className="relative left-0 translate-x-0" />
+                <CarouselNext className="relative right-0 translate-x-0" />
+              </div>
+            )}
           </Carousel>
         </div>
 

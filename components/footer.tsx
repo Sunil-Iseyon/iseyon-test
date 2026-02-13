@@ -175,17 +175,18 @@ export function Footer() {
         {/* Social Links */}
         <motion.div variants={itemVariants} className="border-t border-slate-700 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
           <div className="flex items-center gap-4">
-            <a
+            <Link
               href="https://linkedin.com"
               className="hover:text-primary transition-colors"
+              target='_blank'
             >
               <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
-            </a>
+            </Link>
           </div>
 
           <div className="text-center md:text-right text-xs md:text-sm">
             <p className="inline">&copy; 2026 Iseyon Analytics. All rights reserved. | </p>
-            <Link href="/privacy-policy" 
+            <Link href="/privacy-policy" target='_blank'
             className="relative inline-block after:absolute after:w-0 after:h-[1px] after:bottom-0 after:left-0 after:bg-background after:transition-all after:duration-300 hover:after:w-full">
              Privacy Policy</Link>
           </div>
