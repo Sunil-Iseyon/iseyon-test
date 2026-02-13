@@ -254,18 +254,17 @@ export function TeamClient({ values, team }: TeamClientProps) {
                   }
                 }}
                 className="flex cursor-grab active:cursor-grabbing"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                animate={{ x: 0 }}
+                animate={{ x: -currentSlide * 100 + '%' }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 {team.map((member, index) => (
                   <div
                     key={index}
-                    className="min-w-full"
+                    className="min-w-full px-2"
                   >
-                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg mx-2">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
                       {/* Member Image */}
-                      <div className="relative h-96 overflow-hidden">
+                      <div className="relative h-80 overflow-hidden">
                         <Image
                           src={member.image || '/team/placeholder.jpg'}
                           alt={member.name || 'Team Member'}
