@@ -23,8 +23,21 @@ const sansation = Sansation({
 });
 
 export const metadata: Metadata = {
-  title: 'iSeyon Analytics | AI-Powered Business Intelligence',
-  description: 'Transform your business with AI-powered analytics and intelligence solutions',
+  metadataBase: new URL('https://iseyon-analytics-v0.vercel.app'),
+  title: {
+    default: 'iSeyon Analytics | AI-Powered Business Intelligence',
+    template: '%s | iSeyon Analytics',
+  },
+  description: 'Transform your business with AI-powered analytics and intelligence solutions. Expert BI consulting, cloud platforms, and data-driven insights.',
+  keywords: ['AI business intelligence', 'data analytics', 'BI consulting', 'Power BI', 'Snowflake', 'Databricks', 'business analytics', 'AI solutions'],
+  authors: [{ name: 'iSeyon Analytics Team' }],
+  creator: 'iSeyon Analytics',
+  publisher: 'iSeyon Analytics',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: [
       {
@@ -32,6 +45,42 @@ export const metadata: Metadata = {
         type: 'image/svg+xml',
       },
     ],
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://iseyon-analytics-v0.vercel.app',
+    siteName: 'iSeyon Analytics',
+    title: 'iSeyon Analytics | AI-Powered Business Intelligence',
+    description: 'Transform your business with AI-powered analytics and intelligence solutions',
+    images: [
+      {
+        url: '/iseyon.webp',
+        width: 1200,
+        height: 630,
+        alt: 'iSeyon Analytics',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'iSeyon Analytics | AI-Powered Business Intelligence',
+    description: 'Transform your business with AI-powered analytics and intelligence solutions',
+    images: ['/iseyon.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add your actual verification code
   },
 }
 

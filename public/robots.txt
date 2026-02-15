@@ -1,0 +1,25 @@
+# Robots.txt for iSeyon Analytics
+# https://iseyon-analytics-v0.vercel.app
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /tina/
+
+# Sitemap
+Sitemap: https://iseyon-analytics-v0.vercel.app/sitemap.xml
+
+# Bot-specific directives
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay for courtesy
+Crawl-delay: 1

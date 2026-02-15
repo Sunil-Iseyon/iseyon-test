@@ -1,5 +1,6 @@
 import client from '@/lib/tina-local-client'
 import { BlogDetailClient } from './blog-detail-client'
+import type { Metadata } from 'next'
 
 async function getBlogPosts() {
   const response = await client.queries.blogPostsConnection()
@@ -14,6 +15,46 @@ export async function generateStaticParams() {
   return blogs.map((blog) => ({
     id: blog.id.toString(),
   }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}): Promise<Metadata> {
+  const { id } = await params
+  const blogs = await getBlogPosts()
+  const blog = blogs.find(b => b.id === parseInt(id))
+  
+  if (!blog) {
+    return {
+      title: 'Blog Post Not Found | iSeyon Analytics',
+    }
+  }
+
+  return {
+    title: `${blog.title} | iSeyon Analytics Blog`,
+    description: blog.summary || blog.title,
+    keywords: blog.tags || [],
+    openGraph: {
+      title: blog.title,
+      description: blog.summary || blog.title,
+      url: `https://iseyon-analytics-v0.vercel.app/blog/${id}`,
+      type: 'article',
+      images: blog.image ? [{ url: blog.image }] : [],
+      publishedTime: blog.date,
+      authors: [blog.author || 'iSeyon Analytics Team'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: blog.title,
+      description: blog.summary || blog.title,
+      images: blog.image ? [blog.image] : [],
+    },
+    alternates: {
+      canonical: `https://iseyon-analytics-v0.vercel.app/blog/${id}`,
+    },
+  }
 }
 
 export default async function BlogDetailPage({
@@ -37,5 +78,40 @@ export default async function BlogDetailPage({
     )
   }
 
-  return <BlogDetailClient blog={blog} prevBlog={prevBlog} nextBlog={nextBlog} />
+  // Article schema for blog post
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: blog.title,
+    description: blog.summary || blog.title,
+    image: blog.image,
+    datePublished: blog.date,
+    dateModified: blog.date,
+    author: {
+      '@type': 'Person',
+      name: blog.author || 'iSeyon Analytics Team',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'iSeyon Analytics',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://iseyon-analytics-v0.vercel.app/blog/${id}`,
+    },
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <BlogDetailClient blog={blog} prevBlog={prevBlog} nextBlog={nextBlog} />
+    </>
+  )
 }

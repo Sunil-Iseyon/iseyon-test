@@ -20,19 +20,21 @@ export function PrivacyPolicyClient({ sections }: { sections: PrivacySection[] }
         Privacy Policy
       </motion.h1>
 
-      <motion.p
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className="text-gray-500 mb-12"
       >
-        Last updated: February 2026
-      </motion.p>
+        <p>
+          Last updated: <time dateTime="2026-02-15">February 15, 2026</time>
+        </p>
+      </motion.div>
 
       {/* Sections */}
-      <div className="space-y-10">
+      <article className="space-y-10 w-full">
         {sections.map((section, i) => (
-          <motion.div
+          <motion.section
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -45,9 +47,9 @@ export function PrivacyPolicyClient({ sections }: { sections: PrivacySection[] }
             <p className="text-gray-600 leading-relaxed">
               {section.content}
             </p>
-          </motion.div>
+          </motion.section>
         ))}
-      </div>
+      </article>
     </main>
   )
 }

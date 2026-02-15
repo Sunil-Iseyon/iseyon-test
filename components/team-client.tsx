@@ -59,10 +59,28 @@ export function TeamClient({ values, team }: TeamClientProps) {
   }
 
   return (
-    <main className="pt-20 sm:pt-24 md:pt-28 lg:pt-30 bg-white">
+    <main className="pt-20  bg-white">
+      {/* Page Title - H1 for SEO */}
+      <section className="py-8 sm:py-10 md:py-12 bg-linear-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
+              Meet Our Expert Team
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+              <strong>78% of enterprises now leverage AI for business intelligence.</strong> Our team of seasoned experts brings decades of combined experience in AI-powered analytics, helping organizations transform data into actionable insights and drive measurable growth.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Company Values Section */}
-      <section className="">
+      <section className="py-12 sm:py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
             {/* Left - Values Content */}
@@ -99,7 +117,7 @@ export function TeamClient({ values, team }: TeamClientProps) {
                   transition={{ delay: 0.4, duration: 0.6 }}
                   className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 md:mb-8"
                 >
-                  Our core values shape everything we do, guiding our decisions and defining our culture.
+                  Our core values shape everything we do, guiding our decisions and defining our culture. With the AI market projected to reach <strong>$347.05 billion in 2026</strong> according to <a href="https://www.statista.com/outlook/tmo/artificial-intelligence/worldwide" target="_blank" rel="nofollow" className="text-primary hover:underline">Statista</a>, we&apos;re committed to delivering cutting-edge solutions that drive real business value.
                 </motion.p>
               </div>
 
