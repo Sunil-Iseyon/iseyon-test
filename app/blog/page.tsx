@@ -165,10 +165,10 @@ export default async function BlogPage() {
         </div>
         
         {/* Evidence-based content sections for E-E-A-T */}
-        <IndustryStatistics />
-        <AuthoritativeCitations />
-        <ExpertQuotations />
-        <ProprietaryResearch />
+        {/* <IndustryStatistics /> */}
+        {/* <AuthoritativeCitations /> */}
+        {/* <ExpertQuotations /> */}
+        {/* <ProprietaryResearch /> */}
       </article>
     </>
   )

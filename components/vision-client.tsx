@@ -115,7 +115,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
               Our Vision for 2026 and Beyond
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-3xl mx-auto">
-             iSeyon Analytics envisions a future where AI and advanced analytics integrate seamlessly into every business operation. 
+             Iseyon Analytics envisions a future where AI and advanced analytics integrate seamlessly into every business operation. 
             </p>
           </motion.div>
 
@@ -162,7 +162,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6">Core Values</h2>
             <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">
-              The principles that guide everything iSeyon Analytics does
+              The principles that guide everything Iseyon Analytics does
             </p>
           </motion.div>
 
@@ -216,7 +216,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 md:mb-8"
             >
-              iSeyon Analytics' Commitment to You
+              Iseyon Analytics' Commitment to You
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -225,7 +225,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10"
             >
-              iSeyon Analytics is committed to providing continuous innovation, unwavering support, and solutions that evolve with your business. Furthermore, our team partners with you to build the future of intelligent business analytics.
+              Iseyon Analytics is committed to providing continuous innovation, unwavering support, and solutions that evolve with your business. Furthermore, our team partners with you to build the future of intelligent business analytics.
             </motion.p>
             
           </article>

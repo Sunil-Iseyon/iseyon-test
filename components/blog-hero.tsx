@@ -35,7 +35,7 @@ export function BlogHero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-sm sm:text-base md:text-lg text-gray-600 max-w-md"
           >
-            iSeyon Analytics dives into the world of AI and analytics, exploring the latest trends, innovations, and best practices shaping modern businesses.
+            Iseyon Analytics dives into the world of AI and analytics, exploring the latest trends, innovations, and best practices shaping modern businesses.
           </motion.p>
         </motion.div>
 
@@ -47,7 +47,7 @@ export function BlogHero() {
         >
           <Image
             src="/bunny2.png"
-            alt="Hero banner for iSeyon Analytics blog featuring AI, Business Intelligence, and data analytics insights and trends"
+            alt="Hero banner for Iseyon Analytics blog featuring AI, Business Intelligence, and data analytics insights and trends"
             width={600}
             height={300}
             className="w-full max-w-md lg:max-w-lg"
