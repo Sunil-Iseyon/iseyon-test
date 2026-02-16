@@ -5,6 +5,8 @@ import { TestimonialsSection } from '@/components/testimonials-section'
 import { BannerSection } from '@/components/banner-section'
 import { PartnersSlider } from '@/components/partners-slider'
 import { IndustryStats, ExpertQuotes, ProprietaryResearch, AuthoritativeCitations } from '@/components/seo-enhancements'
+import { FAQSchema } from '@/components/faq-schema'
+import { homeFAQs } from '@/lib/home-faqs'
 import client from "@/lib/tina-local-client";
 import type { Metadata } from 'next'
 
@@ -88,6 +90,12 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://iseyon-analytics-v0.vercel.app',
+    languages: {
+      'en': 'https://iseyon-analytics-v0.vercel.app',
+      'en-US': 'https://iseyon-analytics-v0.vercel.app',
+      'en-IN': 'https://iseyon-analytics-v0.vercel.app',
+      'x-default': 'https://iseyon-analytics-v0.vercel.app',
+    },
   },
   robots: {
     index: true,
@@ -104,6 +112,22 @@ export const metadata: Metadata = {
   creator: 'iSeyon Analytics',
   publisher: 'iSeyon Analytics',
   category: 'Business Intelligence and Data Analytics',
+  other: {
+    // Dublin Core metadata
+    'DC.title': 'iSeyon Analytics | AI-Powered Business Intelligence & Data Analytics',
+    'DC.description': 'AI-powered business intelligence and data analytics solutions with proven 5.6x ROI',
+    'DC.creator': 'iSeyon Analytics Team',
+    'DC.date': new Date().toISOString().split('T')[0],
+    'DC.language': 'en',
+    'DC.format': 'text/html',
+    'DC.publisher': 'iSeyon Analytics',
+    'DC.rights': 'Copyright © 2024 iSeyon Analytics. Licensed under CC-BY-NC-SA-4.0',
+    'DC.subject': 'Business Intelligence, AI Analytics, Data Science, Cloud Platforms',
+    'DC.type': 'Service',
+    // License metadata
+    'license': 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+    'referrer': 'no-referrer-when-downgrade',
+  },
 }
 
 export default async function Home() {
@@ -228,6 +252,7 @@ export default async function Home() {
       '@type': 'ImageObject',
       url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
     },
+    license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
   };
 
   // BreadcrumbList schema
@@ -266,13 +291,14 @@ export default async function Home() {
       />
       <main className="min-h-screen bg-white snap-y snap-proximity">
         <Hero data={data.hero as any} founderMessages={data.founderMessages as any} />
-        <IndustryStats />
+        {/* <IndustryStats /> */}
         <ServicesSection services={data.services as any} />
-        <ProprietaryResearch />
+        {/* <ProprietaryResearch /> */}
         <NewProject data={data.project as any} />
-        <ExpertQuotes />
+        {/* <ExpertQuotes /> */}
         <TestimonialsSection testimonials={data.testimonials as any} />
-        <AuthoritativeCitations />
+        {/* <AuthoritativeCitations /> */}
+        <FAQSchema faqs={homeFAQs} title="Frequently Asked Questions" />
         <BannerSection data={data.banner as any} />
         <PartnersSlider partners={data.partners as any} />
       </main>

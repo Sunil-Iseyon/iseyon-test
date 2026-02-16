@@ -38,8 +38,18 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
     })
   }, [search, blogs])
 
+  // Helper function to convert date string to ISO format
+  const formatDateToISO = (dateStr: string): string => {
+    try {
+      const date = new Date(dateStr)
+      return date.toISOString().split('T')[0]
+    } catch {
+      return new Date().toISOString().split('T')[0]
+    }
+  }
+
   const renderBlogCard = (blog: Blog, idx: number) => (
-    <motion.div
+    <motion.article
       layout
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -55,6 +65,8 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
         boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
       }}
       className="rounded-xl border overflow-hidden bg-white shadow-sm cursor-pointer h-full group transition-all"
+      itemScope
+      itemType="https://schema.org/BlogPosting"
     >
       <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
         <motion.div
@@ -64,9 +76,10 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
         >
           <Image
             src={blog.image}
-            alt={blog.title}
+            alt={`${blog.title} - iSeyon Analytics blog article cover image`}
             fill
             className="object-cover"
+            itemProp="image"
           />
         </motion.div>
         
@@ -75,25 +88,24 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
       </div>
 
       <div className="p-4 sm:p-5">
-        {/* <motion.span 
-          className="text-xs text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded-full inline-block"
-          whileHover={{ scale: 1.05 }}
-        >
-          {blog.category}
-        </motion.span> */}
-
-        <h3 className="font-semibold mt-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base">
+        <h3 className="font-semibold mt-2 group-hover:text-blue-600 transition-colors text-sm sm:text-base" itemProp="headline">
           {blog.title}
         </h3>
 
-        <p className="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-2">
+        <p className="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-2" itemProp="description">
           {blog.shortDescription || blog.description}
         </p>
 
         <div className="text-xs text-gray-400 mt-3 sm:mt-4 flex items-center gap-2">
-          {blog.author && <span className="font-medium">{blog.author}</span>}
+          {blog.author && (
+            <span className="font-medium" itemProp="author" itemScope itemType="https://schema.org/Person">
+              <span itemProp="name">{blog.author}</span>
+            </span>
+          )}
           {blog.author && <span>·</span>}
-          <span>{blog.date}</span>
+          <time dateTime={formatDateToISO(blog.date)} itemProp="datePublished">
+            {blog.date}
+          </time>
           <span>·</span>
           <span>{blog.readTime}</span>
         </div>
@@ -107,33 +119,46 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
           Read More →
         </motion.div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 
   return (
-    <>
+    <main id="blog-content" role="main" aria-label="Blog articles">
+      {/* H2 Section Heading */}
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mt-8 sm:mt-10 mb-4"
+      >
+        Recent Posts
+      </motion.h2>
+      
       {/* SEARCH */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="flex justify-end items-center mt-10 sm:mt-12 md:mt-14"
+        className="flex justify-end items-center mt-6 sm:mt-8"
+        role="search"
       >
         <div className="relative w-full sm:w-auto">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400" aria-hidden="true" />
 
           <input
             placeholder="Search articles..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-9 sm:pl-10 pr-4 py-2 border rounded-full text-xs sm:text-sm outline-none w-full sm:w-64"
+            aria-label="Search blog articles"
           />
         </div>
       </motion.div>
 
       {/* BLOG CAROUSEL - Both Mobile and Desktop */}
-      <div className="mt-8 sm:mt-10 px-4">
+      <section className="mt-8 sm:mt-10 px-4" aria-label="Blog post carousel">
         <Carousel
           opts={{
             align: "start",
@@ -158,7 +183,7 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
             </div>
           )}
         </Carousel>
-      </div>
-    </>
+      </section>
+    </main>
   )
 }

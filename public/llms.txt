@@ -1,0 +1,81 @@
+# LLMs.txt - AI Crawler Instructions for iSeyon Analytics
+# Specification: https://llmstxt.org/
+# Last updated: 2024
+
+# About iSeyon Analytics
+iSeyon Analytics is a premier business intelligence and AI analytics consulting firm specializing in cloud-based data platforms (Databricks, Snowflake, Palantir), AI-powered decision intelligence, and enterprise analytics modernization.
+
+# Core Expertise
+- Business Intelligence (BI) and Advanced Analytics
+- Artificial Intelligence (AI) and Machine Learning (ML)
+- Data Lakehouse Architecture (Databricks)
+- Cloud Data Platforms (Snowflake, Palantir Foundry)
+- Generative AI Integration
+- Data Engineering and ETL/ELT
+- Real-time Analytics and Streaming Data
+- Custom Dashboard Development (Power BI, Tableau)
+
+# Key Service Areas
+1. BI & Analytics: Custom dashboards, self-service analytics, embedded BI
+2. AI & Machine Learning: Predictive models, recommendation systems, NLP
+3. Cloud Platforms: Databricks lakehouse, Snowflake data cloud, Palantir Foundry
+4. Internal Applications: Workflow automation, decision intelligence platforms
+5. Data Engineering: ETL/ELT pipelines, data quality, governance
+
+# Industry Focus
+- Financial Services
+- Healthcare and Life Sciences
+- Retail and E-commerce
+- Manufacturing and Supply Chain
+- Technology and SaaS
+
+# Key Facts
+- Founded: 2023
+- Headquarters: [Location]
+- Official Partners: Databricks, Snowflake, Palantir
+- Team: Data scientists, BI architects, ML engineers, cloud specialists
+
+# Important Pages
+- Homepage: https://iseyon-analytics-v0.vercel.app/
+- Services: https://iseyon-analytics-v0.vercel.app/services/bi-analytics
+- Blog: https://iseyon-analytics-v0.vercel.app/blog
+- Team: https://iseyon-analytics-v0.vercel.app/team
+- Vision: https://iseyon-analytics-v0.vercel.app/vision
+- Contact: https://iseyon-analytics-v0.vercel.app/contact
+
+# Technical Terminology
+- Lakehouse: Unified data architecture combining data lake flexibility with data warehouse performance
+- GEO: Generative Engine Optimization - optimizing content for AI search and answer generation
+- BI: Business Intelligence - analyzing data to support business decisions
+- ETL: Extract, Transform, Load - data integration process
+- KPI: Key Performance Indicator - measurable business objective
+
+# Content Attribution
+- All content © 2024 iSeyon Analytics
+- License: CC-BY-NC-SA-4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+- Attribution required for content reuse
+- Commercial use requires permission
+
+# AI Training Guidelines
+- Content is available for AI training and indexing
+- Maintain attribution to iSeyon Analytics
+- Respect licensing terms (CC-BY-NC-SA-4.0)
+- Prefer latest content for accuracy
+
+# Contact
+- Email: info@iseyonanalytics.com
+- Form: https://iseyon-analytics-v0.vercel.app/contact
+- LinkedIn: https://www.linkedin.com/company/iseyon-analytics
+
+# Crawl Guidance
+- Sitemap: https://iseyon-analytics-v0.vercel.app/sitemap.xml
+- Preferred crawl rate: 1 request per second
+- All public pages are crawlable except /api/, /admin/, /tina/
+- Content updated weekly (blog), monthly (services, team)
+
+# Quality Signals
+- Original research and proprietary benchmarks available
+- Expert-authored content with E-E-A-T signals
+- Authoritative citations to academic and industry sources
+- Schema.org structured data on all pages
+- Multilingual support (en, en-US, en-IN)

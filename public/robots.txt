@@ -1,6 +1,8 @@
 # Robots.txt for iSeyon Analytics
 # https://iseyon-analytics-v0.vercel.app
+# Last updated: 2024
 
+# Default access for all bots
 User-agent: *
 Allow: /
 Disallow: /api/
@@ -11,7 +13,7 @@ Disallow: /tina/
 # Sitemap
 Sitemap: https://iseyon-analytics-v0.vercel.app/sitemap.xml
 
-# Bot-specific directives
+# Traditional search engine bots
 User-agent: Googlebot
 Allow: /
 
@@ -20,6 +22,44 @@ Allow: /
 
 User-agent: Bingbot
 Allow: /
+
+# AI and LLM crawler bots - explicitly allowed
+User-agent: GPTBot
+Allow: /
+Comment: OpenAI GPT crawler for training and indexing
+
+User-agent: ChatGPT-User
+Allow: /
+Comment: ChatGPT user-agent for web browsing
+
+User-agent: CCBot
+Allow: /
+Comment: Common Crawl bot
+
+User-agent: anthropic-ai
+Allow: /
+Comment: Anthropic Claude crawler
+
+User-agent: Claude-Web
+Allow: /
+Comment: Claude web search
+
+User-agent: Google-Extended
+Allow: /
+Comment: Google Bard and AI training
+
+User-agent: PerplexityBot
+Allow: /
+Comment: Perplexity AI search
+
+User-agent: YouBot
+Allow: /
+Comment: You.com AI search
+
+# Academic and research bots
+User-agent: ia_archiver
+Allow: /
+Comment: Internet Archive Wayback Machine
 
 # Crawl delay for courtesy
 Crawl-delay: 1
