@@ -13,6 +13,9 @@ Disallow: /tina/
 # Sitemap
 Sitemap: https://iseyon-analytics-v0.vercel.app/sitemap.xml
 
+# RSS Feed
+# https://iseyon-analytics-v0.vercel.app/feed.xml
+
 # Traditional search engine bots
 User-agent: Googlebot
 Allow: /

@@ -82,6 +82,11 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code', // Add your actual verification code
   },
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://iseyon-analytics-v0.vercel.app/feed.xml',
+    },
+  },
 }
 
 export default async function RootLayout({

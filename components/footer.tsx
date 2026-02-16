@@ -3,7 +3,7 @@
 import React from "react"
 
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react'
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Rss } from 'lucide-react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
@@ -19,6 +19,7 @@ export function Footer() {
     { name: "Our Vision", url: "/vision" },
     { name: "Contact Us", url: "/contact" },
     { name: "Blog", url: "/blog" },
+    { name: "RSS Feed", url: "/feed.xml" },
   ]
 
   const handleSubscribe = async (e: React.FormEvent) => {
@@ -178,9 +179,17 @@ export function Footer() {
             <Link
               href="https://linkedin.com"
               className="hover:text-primary transition-colors"
-              target='_blank'
+              aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
+            </Link>
+            <Link
+              href="/feed.xml"
+              className="hover:text-primary transition-colors"
+              target='_blank'
+              aria-label="RSS Feed"
+            >
+              <Rss className="w-4 h-4 md:w-5 md:h-5" />
             </Link>
           </div>
 

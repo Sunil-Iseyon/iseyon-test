@@ -96,6 +96,82 @@ Set `BREVO_ADMIN_EMAIL` to the email address where you want to receive:
 - Auto-reply with branding and CTAs
 - All contact details beautifully formatted
 
+### RSS Campaign (Automated Newsletter)
+
+**RSS Feed URL**: `https://iseyon-analytics-v0.vercel.app/feed.xml`
+
+**What is an RSS Campaign:**
+An RSS (Really Simple Syndication) campaign allows you to automatically send newsletters to your subscribers whenever new blog posts are published. Brevo will check your RSS feed periodically and send an email to your subscribers with the new content.
+
+**Setup Instructions:**
+
+1. **Log in to Brevo Dashboard**
+   - Navigate to **Campaigns** → **RSS Campaigns**
+
+2. **Create New RSS Campaign**
+   - Click **Create an RSS Campaign**
+   - Enter campaign name (e.g., "iSeyon Blog Updates")
+
+3. **Configure RSS Feed**
+   - RSS Feed URL: `https://iseyon-analytics-v0.vercel.app/feed.xml`
+   - Brevo will automatically parse the feed and detect new posts
+   - Test the feed to ensure it's working correctly
+
+4. **Select Recipients**
+   - Choose your newsletter list (Newsletter Subscribers)
+   - Option to segment your audience if needed
+
+5. **Design Email Template**
+   - Choose a template or create your own
+   - Use RSS merge tags to display blog content:
+     - `{{ rss.title }}` - Blog post title
+     - `{{ rss.description }}` - Blog post description
+     - `{{ rss.link }}` - Link to full blog post
+     - `{{ rss.image }}` - Featured image
+     - `{{ rss.author }}` - Post author
+     - `{{ rss.pubDate }}` - Publication date
+     - `{{ rss.category }}` - Post category
+
+6. **Set Frequency**
+   - Choose how often Brevo should check for new posts:
+     - Daily (recommended)
+     - Weekly
+     - Monthly
+   - Set the time when emails should be sent
+
+7. **Configure Sender Information**
+   - From Name: `iSeyon Analytics`
+   - From Email: `info@iSeyon.com` (must be verified)
+   - Subject line: Use merge tags like "New Blog Post: {{ rss.title }}"
+
+8. **Activate Campaign**
+   - Review all settings
+   - Click **Activate** to start the automated campaign
+   - Brevo will send emails automatically when new blog posts are detected
+
+**RSS Feed Features:**
+- Complies with RSS 2.0 standard
+- Includes Dublin Core (dc:) metadata for author information
+- Supports content encoding for full article text
+- Includes featured images as enclosures
+- SEO-friendly with proper GUID and permalinks
+- Cached for 1 hour for optimal performance
+
+**Benefits:**
+- 100% automated - no manual intervention needed
+- Subscribers stay updated with latest content
+- Professional, consistent email format
+- Increases blog engagement and traffic
+- Saves time managing manual newsletters
+
+**Best Practices:**
+- Keep blog posts consistent in format
+- Use compelling titles and descriptions
+- Include high-quality featured images
+- Write engaging preview text in `shortDescription`
+- Monitor campaign analytics in Brevo dashboard
+- A/B test subject lines for better open rates
+
 ## Testing
 
 ### Test Newsletter Subscription

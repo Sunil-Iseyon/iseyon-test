@@ -217,31 +217,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
             </p>
 
             {/* Citations */}
-            <div className="mt-8 pt-8 border-t border-white/20">
-              <h3 className="text-lg font-semibold text-white mb-4">References</h3>
-              <ol id='citations' className="text-sm text-white/80 space-y-2 text-left max-w-3xl mx-auto">
-                <li id="cite1">
-                  <a 
-                    href='https://www.gartner.com/en/newsroom/press-releases/2026-1-15-gartner-says-worldwide-ai-spending-will-total-2-point-5-trillion-dollars-in-2026'
-                    target="_blank"
-                    rel="nofollow noopener"
-                    className="hover:text-white underline"
-                  >
-                    Gartner AI Spending 2026
-                  </a>
-                </li>
-                <li id="cite2">
-                  <a 
-                    href='https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html'
-                    target="_blank"
-                    rel="nofollow noopener"
-                    className="hover:text-white underline"
-                  >
-                    Deloitte State of AI 2026
-                  </a>
-                </li>
-              </ol>
-            </div>
+            
           </motion.div>
         </div>
       </section>

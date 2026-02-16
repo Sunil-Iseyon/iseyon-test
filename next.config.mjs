@@ -12,6 +12,10 @@ const nextConfig = {
         source: '/admin',
         destination: '/admin/index.html',
       },
+      {
+        source: '/feed.xml',
+        destination: '/rss',
+      },
     ]
   },
 }
