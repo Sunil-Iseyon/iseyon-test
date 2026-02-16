@@ -4,13 +4,17 @@ import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { useState } from 'react'
 
-export function ContactClient() {
+interface ContactClientProps {
+  defaultContactType?: string
+}
+
+export function ContactClient({ defaultContactType = '' }: ContactClientProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     phone: '',
-    contactType: '',
+    contactType: defaultContactType,
     industry: '',
     message: ''
   })

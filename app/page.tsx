@@ -155,11 +155,11 @@ export default async function Home() {
     },
     {
       question: 'What cloud platforms do you specialize in?',
-      answer: 'We specialize in leading cloud data platforms including Snowflake, Databricks, Palantir, and Anaplan. Our team has extensive experience in implementing, optimizing, and managing these platforms for enterprise clients.',
+      answer: 'We specialize in leading cloud data platforms including Snowflake, Databricks, Palantir, Anaplan, Azure, and AWS. Our team has extensive experience in implementing, optimizing, and managing these platforms for enterprise clients.',
     },
     {
       question: 'How can I get started with iSeyon Analytics?',
-      answer: 'Getting started is easy! Contact us through our contact form to request a demo or consultation. Our team will assess your needs and create a customized solution that aligns with your business goals.',
+      answer: 'Getting started is easy! Contact us through our contact form or call us at +1-651-503-9126. Our team will assess your needs and create a customized solution that aligns with your business goals.',
     },
   ];
 

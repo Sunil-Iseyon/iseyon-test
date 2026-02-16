@@ -3,9 +3,10 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, ArrowLeft } from 'lucide-react'
+import { ArrowRight, ArrowLeft, HelpCircle } from 'lucide-react'
 import { TinaRichText } from './tina-rich-text'
 import type { TinaMarkdownContent } from 'tinacms/dist/rich-text'
+import { useState } from 'react'
 
 interface ServiceContent {
   heading: string;
@@ -15,7 +16,20 @@ interface ServiceContent {
   category: string;
 }
 
-export function ServiceDetailClient({ content }: { content: ServiceContent }) {
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+export function ServiceDetailClient({ 
+  content, 
+  faqs = [] 
+}: { 
+  content: ServiceContent
+  faqs?: FAQ[]
+}) {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(0)
+
   return (
     <main className="min-h-screen bg-white">
       <div className='px-3 sm:px-6 md:px-8 lg:px-12 flex flex-col mx-auto'>
@@ -61,7 +75,7 @@ export function ServiceDetailClient({ content }: { content: ServiceContent }) {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative w-full lg:w-[600px] h-[180px] sm:h-[240px] md:h-[320px] lg:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl"
+                className="relative w-full lg:w-150 h-45 sm:h-60 md:h-80 lg:h-100 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl"
               >
                 <Image
                   src={content.image}
@@ -91,10 +105,107 @@ export function ServiceDetailClient({ content }: { content: ServiceContent }) {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        {faqs.length > 0 && (
+          <section className="py-12 sm:py-16 md:py-20 bg-slate-50">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-center mb-8 sm:mb-10 md:mb-12"
+              >
+                <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-primary/10 rounded-full">
+                  <HelpCircle className="w-5 h-5 text-primary" />
+                  <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                    FAQ
+                  </span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+                  Get answers to common questions about our {content.heading} services
+                </p>
+              </motion.div>
+
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100"
+                  >
+                    <button
+                      onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                      className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-gray-50 transition-colors"
+                    >
+                      <h3 className="text-base sm:text-lg font-semibold text-foreground pr-4">
+                        {faq.question}
+                      </h3>
+                      <motion.div
+                        animate={{ rotate: openFAQ === index ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="shrink-0"
+                      >
+                        <svg 
+                          className="w-5 h-5 text-primary" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </motion.div>
+                    </button>
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: openFAQ === index ? 'auto' : 0,
+                        opacity: openFAQ === index ? 1 : 0,
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-4 sm:p-6 pt-0 text-sm sm:text-base text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Additional CTA in FAQ section */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="mt-10 text-center p-6 bg-white rounded-xl border-2 border-primary/20"
+              >
+                <p className="text-gray-700 mb-4">
+                  <strong>Still have questions?</strong> Our experts are here to help.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-all"
+                >
+                  Contact Us Today
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            </div>
+          </section>
+        )}
       </div>
 
       {/* Static CTA Section */}
-      <section className="py-12 bg-gradient-to-br from-primary via-primary/90 to-accent">
+      <section className="py-12 bg-linear-to-br from-primary via-primary/90 to-accent">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
