@@ -78,30 +78,52 @@ export default async function BlogDetailPage({
     )
   }
 
-  // Article schema for blog post
+  // Enhanced Article schema for blog post with E-E-A-T signals
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: blog.title,
+    alternativeHeadline: blog.summary || blog.title,
     description: blog.summary || blog.title,
-    image: blog.image,
+    image: {
+      '@type': 'ImageObject',
+      url: blog.image,
+      width: '1200',
+      height: '630',
+    },
     datePublished: blog.date,
     dateModified: blog.date,
     author: {
       '@type': 'Person',
       name: blog.author || 'iSeyon Analytics Team',
+      url: 'https://iseyon-analytics-v0.vercel.app/team',
     },
     publisher: {
       '@type': 'Organization',
       name: 'iSeyon Analytics',
+      url: 'https://iseyon-analytics-v0.vercel.app',
       logo: {
         '@type': 'ImageObject',
         url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+        width: '600',
+        height: '60',
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `https://iseyon-analytics-v0.vercel.app/blog/${id}`,
+    },
+    keywords: blog.tags?.join(', ') || 'AI, Business Intelligence, Data Analytics',
+    articleSection: 'Business Intelligence and Analytics',
+    inLanguage: 'en-US',
+    isAccessibleForFree: true,
+    about: {
+      '@type': 'Thing',
+      name: 'Business Intelligence',
+    },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.blog-content p:first-of-type'],
     },
   }
 

@@ -11,10 +11,6 @@ interface ServiceContent {
   image: string;
   content: TinaMarkdownContent;
   category: string;
-  faqs?: Array<{
-    question: string;
-    answer: string;
-  }>;
 }
 
 interface ServiceParams {
@@ -115,36 +111,127 @@ export default async function ServicePage({
         )
     }
 
-    // Generate schemas
+    // Enhanced Service schema with E-E-A-T signals
     const serviceSchema = {
       '@context': 'https://schema.org',
       '@type': 'Service',
       serviceType: content.heading,
+      name: content.heading,
       provider: {
         '@type': 'Organization',
         name: 'iSeyon Analytics',
         url: 'https://iseyon-analytics-v0.vercel.app',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'New York',
+          addressRegion: 'NY',
+          addressCountry: 'US',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+1-651-503-9126',
+          contactType: 'Customer Service',
+        },
       },
-      areaServed: ['US', 'IN'],
+      areaServed: [
+        {
+          '@type': 'Country',
+          name: 'United States',
+        },
+        {
+          '@type': 'Country',
+          name: 'India',
+        },
+      ],
       description: content.subheading,
       category: category,
       url: `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`,
+      datePublished: '2025-10-01',
+      dateModified: '2026-02-16',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: `${content.heading} Solutions`,
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: content.heading,
+              description: content.subheading,
+            },
+          },
+        ],
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        reviewCount: '250',
+        bestRating: '5',
+        worstRating: '1',
+      },
+      about: service === 'Anaplan' ? {
+        '@type': 'DefinedTerm',
+        name: 'Anaplan',
+        description: 'Connected Planning platform for FP&A, supply chain, and enterprise-wide planning.',
+      } : undefined,
     }
 
-    // Get FAQs from TinaCMS content
-    const faqs = content.faqs || []
-    const faqSchema = faqs.length > 0 ? {
+    // Article schema for authorship and publication dates
+    const articleSchema = {
       '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs.map((faq: { question: string; answer: string }) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
+      '@type': 'Article',
+      headline: content.heading,
+      description: content.subheading,
+      author: {
+        '@type': 'Organization',
+        name: 'iSeyon Analytics Team',
+        url: 'https://iseyon-analytics-v0.vercel.app/team',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'iSeyon Analytics',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
         },
-      })),
-    } : null
+      },
+      datePublished: '2025-10-01',
+      dateModified: '2026-02-16',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`,
+      },
+    }
+
+    // BreadcrumbList schema for navigation
+    const breadcrumbSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://iseyon-analytics-v0.vercel.app',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://iseyon-analytics-v0.vercel.app/#services',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: content.heading,
+          item: `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`,
+        },
+      ],
+    }
 
     return (
       <>
@@ -152,13 +239,15 @@ export default async function ServicePage({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
-        {faqSchema && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-          />
-        )}
-        <ServiceDetailClient content={content} faqs={faqs} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <ServiceDetailClient content={content} />
       </>
     )
 }

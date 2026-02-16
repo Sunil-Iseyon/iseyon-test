@@ -44,6 +44,44 @@ export const metadata: Metadata = {
 export default async function TeamPage() {
   const { values, team } = await getTeamData();
 
+  // AboutPage schema
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'Our Team',
+    description: 'Meet the expert team at iSeyon Analytics driving innovation in AI-powered business intelligence and data analytics.',
+    url: 'https://iseyon-analytics-v0.vercel.app/team',
+    publisher: {
+      '@type': 'Organization',
+      name: 'iSeyon Analytics',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+      },
+    },
+    inLanguage: 'en-US',
+  };
+
+  // BreadcrumbList schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://iseyon-analytics-v0.vercel.app',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Team',
+        item: 'https://iseyon-analytics-v0.vercel.app/team',
+      },
+    ],
+  };
+
   // Generate Organization schema with team members
   const organizationSchema = {
     '@context': 'https://schema.org',
@@ -69,6 +107,14 @@ export default async function TeamPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

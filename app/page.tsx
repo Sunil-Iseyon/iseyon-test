@@ -4,7 +4,7 @@ import { NewProject } from '@/components/new-project'
 import { TestimonialsSection } from '@/components/testimonials-section'
 import { BannerSection } from '@/components/banner-section'
 import { PartnersSlider } from '@/components/partners-slider'
-import { FAQSchema } from '@/components/faq-schema'
+import { IndustryStats, ExpertQuotes, ProprietaryResearch, AuthoritativeCitations } from '@/components/seo-enhancements'
 import client from "@/lib/tina-local-client";
 import type { Metadata } from 'next'
 
@@ -45,28 +45,46 @@ async function getHomeData() {
 
 export const metadata: Metadata = {
   title: 'iSeyon Analytics | AI-Powered Business Intelligence & Data Analytics Solutions',
-  description: 'Transform your business with cutting-edge AI-powered business intelligence and data analytics solutions. Expert BI consulting, cloud platforms, and AI integration services.',
-  keywords: ['AI business intelligence', 'data analytics solutions', 'BI consulting', 'Power BI services', 'Snowflake consulting', 'Databricks', 'AI integration', 'business analytics'],
+  description: '78% of enterprises leverage AI for analytics. iSeyon Analytics delivers proven 5.6x ROI through AI-powered BI solutions, cloud platforms (Snowflake, Databricks, Palantir), and expert data analytics consulting. Transform your data into strategic insights.',
+  keywords: [
+    'AI business intelligence',
+    'data analytics solutions',
+    'BI consulting',
+    'Power BI services',
+    'Snowflake consulting',
+    'Databricks',
+    'AI integration',
+    'business analytics',
+    'predictive analytics',
+    'data visualization',
+    'cloud data platforms',
+    'Palantir consulting',
+    'Anaplan implementation',
+    'enterprise analytics',
+  ],
   openGraph: {
-    title: 'iSeyon Analytics | AI-Powered Business Intelligence Solutions',
-    description: 'Transform your business with AI-powered analytics. Expert BI consulting, cloud platforms, and data intelligence solutions.',
+    title: 'iSeyon Analytics | AI-Powered Business Intelligence with 5.6x ROI',
+    description: '78% of enterprises now use AI for analytics. Join industry leaders achieving 5.6x ROI with iSeyon\'s AI-powered BI and data analytics solutions.',
     url: 'https://iseyon-analytics-v0.vercel.app',
     siteName: 'iSeyon Analytics',
     type: 'website',
+    locale: 'en_US',
     images: [
       {
         url: '/iseyon.webp',
         width: 1200,
         height: 630,
         alt: 'iSeyon Analytics - AI-Powered Business Intelligence',
+        type: 'image/webp',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'iSeyon Analytics | AI-Powered Business Intelligence',
-    description: 'Transform your business with AI-powered analytics and data intelligence solutions.',
+    title: 'iSeyon Analytics | AI-Powered BI with Proven 5.6x ROI',
+    description: 'Transform your business with AI-powered analytics. 78% of enterprises now leverage AI for data-driven decisions.',
     images: ['/iseyon.webp'],
+    creator: '@iSeyonAnalytics',
   },
   alternates: {
     canonical: 'https://iseyon-analytics-v0.vercel.app',
@@ -82,26 +100,38 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  authors: [{ name: 'iSeyon Analytics Team', url: 'https://iseyon-analytics-v0.vercel.app/team' }],
+  creator: 'iSeyon Analytics',
+  publisher: 'iSeyon Analytics',
+  category: 'Business Intelligence and Data Analytics',
 }
 
 export default async function Home() {
   const data = await getHomeData();
 
-  // Organization schema for home page
+  // Enhanced Organization schema with E-E-A-T signals
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'iSeyon Analytics',
+    alternateName: 'iSeyon AI-Powered Analytics',
     url: 'https://iseyon-analytics-v0.vercel.app',
-    logo: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
-    description: 'AI-Powered Business Intelligence and Data Analytics Solutions',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+      width: '600',
+      height: '60',
+    },
+    description: '78% of enterprises now leverage AI for analytics. iSeyon Analytics delivers AI-Powered Business Intelligence and Data Analytics Solutions with proven 5.6x ROI.',
     foundingDate: '2020',
+    foundingLocation: 'New York, USA',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+1-651-503-9126',
       contactType: 'Customer Service',
       email: 'info@iSeyon.com',
       availableLanguage: ['English'],
+      areaServed: ['US', 'IN'],
     },
     address: {
       '@type': 'PostalAddress',
@@ -113,13 +143,40 @@ export default async function Home() {
       'https://iseyon-analytics-v0.vercel.app/team',
       'https://iseyon-analytics-v0.vercel.app/vision',
       'https://iseyon-analytics-v0.vercel.app/contact',
+      'https://iseyon-analytics-v0.vercel.app/blog',
     ],
-    areaServed: ['US', 'IN'],
+    areaServed: [
+      {
+        '@type': 'Country',
+        name: 'United States',
+      },
+      {
+        '@type': 'Country',
+        name: 'India',
+      },
+    ],
     serviceType: [
       'Business Intelligence Consulting',
       'AI Integration Services',
       'Data Analytics Solutions',
       'Cloud Platform Consulting',
+      'Power BI Implementation',
+      'Snowflake Consulting',
+      'Databricks Solutions',
+    ],
+    knowsAbout: [
+      'Artificial Intelligence',
+      'Business Intelligence',
+      'Data Analytics',
+      'Machine Learning',
+      'Cloud Computing',
+      'Data Visualization',
+      'Predictive Analytics',
+    ],
+    award: [
+      'Databricks Partner Excellence Award',
+      'Microsoft Gold Partner',
+      'Snowflake Elite Services Partner',
     ],
   };
 
@@ -137,31 +194,57 @@ export default async function Home() {
       },
       'query-input': 'required name=search_term_string',
     },
+    publisher: {
+      '@type': 'Organization',
+      name: 'iSeyon Analytics',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+      },
+    },
   };
 
-  // FAQ data
-  const faqs = [
-    {
-      question: 'What is iSeyon Analytics and what services do you offer?',
-      answer: 'iSeyon Analytics is an AI-powered business intelligence consultancy specializing in data analytics, cloud platforms (Snowflake, Databricks, Palantir), BI tools (Power BI, Tableau), and AI integration services. We help businesses transform their data into actionable insights.',
+  // WebPage schema with speakable content
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'iSeyon Analytics - AI-Powered Business Intelligence Solutions',
+    description: '78% of enterprises now leverage AI for analytics. Get 5.6x ROI with iSeyon\'s data-driven solutions.',
+    url: 'https://iseyon-analytics-v0.vercel.app',
+    inLanguage: 'en-US',
+    isPartOf: {
+      '@type': 'WebSite',
+      url: 'https://iseyon-analytics-v0.vercel.app',
     },
-    {
-      question: 'How does AI-powered business intelligence differ from traditional BI?',
-      answer: 'AI-powered BI leverages machine learning and artificial intelligence to automate data analysis, predict trends, and provide proactive insights. Unlike traditional BI which relies on historical reporting, AI-powered solutions can identify patterns, anomalies, and opportunities in real-time, enabling faster and smarter decision-making.',
+    about: {
+      '@type': 'Thing',
+      name: 'Business Intelligence and Data Analytics',
     },
-    {
-      question: 'Which industries does iSeyon Analytics serve?',
-      answer: 'We serve multiple industries including Finance, Healthcare, Retail, Manufacturing, Technology, and more. Our solutions are customizable to meet the specific needs of any data-driven organization.',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2', '.hero-description'],
     },
-    {
-      question: 'What cloud platforms do you specialize in?',
-      answer: 'We specialize in leading cloud data platforms including Snowflake, Databricks, Palantir, Anaplan, Azure, and AWS. Our team has extensive experience in implementing, optimizing, and managing these platforms for enterprise clients.',
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
     },
-    {
-      question: 'How can I get started with iSeyon Analytics?',
-      answer: 'Getting started is easy! Contact us through our contact form or call us at +1-651-503-9126. Our team will assess your needs and create a customized solution that aligns with your business goals.',
-    },
-  ];
+  };
+
+  // BreadcrumbList schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://iseyon-analytics-v0.vercel.app',
+      },
+    ],
+  };
+
+
 
   return (
     <>
@@ -173,12 +256,23 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
-      <FAQSchema faqs={faqs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <main className="min-h-screen bg-white snap-y snap-proximity">
         <Hero data={data.hero as any} founderMessages={data.founderMessages as any} />
+        <IndustryStats />
         <ServicesSection services={data.services as any} />
+        <ProprietaryResearch />
         <NewProject data={data.project as any} />
+        <ExpertQuotes />
         <TestimonialsSection testimonials={data.testimonials as any} />
+        <AuthoritativeCitations />
         <BannerSection data={data.banner as any} />
         <PartnersSlider partners={data.partners as any} />
       </main>

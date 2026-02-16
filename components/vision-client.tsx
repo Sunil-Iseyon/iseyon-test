@@ -115,7 +115,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
               Our Vision for 2026 and Beyond
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-3xl mx-auto">
-              We envision a future where artificial intelligence and advanced analytics are seamlessly integrated into every aspect of business operations.
+              We envision a future where artificial intelligence and advanced analytics are seamlessly integrated into every aspect of business operations, matching Gartner's forecast of $2.52 trillion worldwide AI spending in 2026<sup><a href='#cite1' className="text-primary hover:underline">[1]</a></sup>.
             </p>
           </motion.div>
 
@@ -162,7 +162,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6">Core Values</h2>
             <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">
-              The principles that guide everything we do
+              The principles that guide everything we do, aligning with Deloitte's State of AI in the Enterprise 2026 report on scaling AI projects<sup><a href='#cite2' className="text-primary hover:underline">[2]</a></sup>.
             </p>
           </motion.div>
 
@@ -215,6 +215,33 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10">
               We're committed to providing continuous innovation, unwavering support, and solutions that evolve with your business. Together, we're building the future of intelligent business analytics.
             </p>
+
+            {/* Citations */}
+            <div className="mt-8 pt-8 border-t border-white/20">
+              <h3 className="text-lg font-semibold text-white mb-4">References</h3>
+              <ol id='citations' className="text-sm text-white/80 space-y-2 text-left max-w-3xl mx-auto">
+                <li id="cite1">
+                  <a 
+                    href='https://www.gartner.com/en/newsroom/press-releases/2026-1-15-gartner-says-worldwide-ai-spending-will-total-2-point-5-trillion-dollars-in-2026'
+                    target="_blank"
+                    rel="nofollow noopener"
+                    className="hover:text-white underline"
+                  >
+                    Gartner AI Spending 2026
+                  </a>
+                </li>
+                <li id="cite2">
+                  <a 
+                    href='https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html'
+                    target="_blank"
+                    rel="nofollow noopener"
+                    className="hover:text-white underline"
+                  >
+                    Deloitte State of AI 2026
+                  </a>
+                </li>
+              </ol>
+            </div>
           </motion.div>
         </div>
       </section>
