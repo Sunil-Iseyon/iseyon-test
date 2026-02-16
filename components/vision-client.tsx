@@ -55,7 +55,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
       {/* Mission Section */}
       <section className="pb-12 sm:pb-16 md:pb-20 lg:pb-24 pt-20 sm:pt-24 md:pt-28 lg:pt-30 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl flex flex-col lg:flex-row lg:items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 mx-auto text-center">
+          <article className="max-w-4xl flex flex-col lg:flex-row lg:items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -66,34 +66,34 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
                 <Target className="w-3 h-3 sm:w-4 sm:h-4" />
                 {visionData?.missionTitle || 'Our Mission'}
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6 leading-tight">
-                {visionData?.missionHeading || 'Vision, Leadership, Consistency'}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6 leading-tight">
+                {visionData?.missionHeading || 'Our Vision: Shaping the Future of AI & Business Intelligence'}
+              </h1>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-500 mb-3 sm:mb-4 md:mb-6 leading-tight">
+                Closing the Gap Between Business Leaders and Technology Professionals
               </h2>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-500 mb-3 sm:mb-4 md:mb-6 leading-tight">
-                Closing the gap between business leaders and technology professionals
-              </h3>
               <TinaRichText 
                 content={visionData?.missionDescription} 
                 className="text-sm sm:text-base md:text-lg text-foreground/70 leading-relaxed mb-4 sm:mb-6 md:mb-8" 
               />
-              <div className="flex flex-wrap gap-6 sm:gap-10 md:gap-16 lg:gap-20 justify-center">
+              <dl className="flex flex-wrap gap-6 sm:gap-10 md:gap-16 lg:gap-20 justify-center">
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">812</div>
-                  <div className="text-xs sm:text-sm text-foreground/60 max-w-[15rem]">Hundreds of successful BI projects completed</div>
+                  <dt className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">800+</dt>
+                  <dd className="text-xs sm:text-sm text-foreground/60 max-w-[15rem]">BI projects completed (internal records, 2026)</dd>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">126</div>
-                  <div className="text-xs sm:text-sm text-foreground/60 max-w-[15rem]">More than 100 consultants serving clients worldwide</div>
+                  <dt className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">125+</dt>
+                  <dd className="text-xs sm:text-sm text-foreground/60 max-w-[15rem]">Consultants worldwide (active roster, 2026)</dd>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">10k+</div>
-                  <div className="text-xs sm:text-sm text-foreground/60 max-w-[15rem]">Over 10 thousands hours of services performed</div>
+                  <dt className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">10,000+</dt>
+                  <dd className="text-xs sm:text-sm text-foreground/60 max-w-[15rem]">Service hours delivered (client engagements, 2026)</dd>
                 </div>
-              </div>
+              </dl>
             </motion.div>
 
      
-          </div>
+          </article>
         </div>
       </section>
 
@@ -115,7 +115,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
               Our Vision for 2026 and Beyond
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-3xl mx-auto">
-              We envision a future where artificial intelligence and advanced analytics are seamlessly integrated into every aspect of business operations, matching Gartner's forecast of $2.52 trillion worldwide AI spending in 2026<sup><a href='#cite1' className="text-primary hover:underline">[1]</a></sup>.
+             iSeyon Analytics envisions a future where AI and advanced analytics integrate seamlessly into every business operation. 
             </p>
           </motion.div>
 
@@ -162,11 +162,11 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6">Core Values</h2>
             <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">
-              The principles that guide everything we do, aligning with Deloitte's State of AI in the Enterprise 2026 report on scaling AI projects<sup><a href='#cite2' className="text-primary hover:underline">[2]</a></sup>.
+              The principles that guide everything iSeyon Analytics does
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+          <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {values.map((value, index) => {
               const Icon = iconMap[value.icon as keyof typeof iconMap] || Lightbulb
               return (
@@ -184,41 +184,51 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
                   >
                     <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                   </motion.div>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-2 sm:mb-3">{value.title}</h3>
-                  <TinaRichText content={value.description} className="text-xs sm:text-sm md:text-base text-foreground/70 leading-relaxed" />
+                  <dt className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-2 sm:mb-3">{value.title}</dt>
+                  <dd><TinaRichText content={value.description} className="text-xs sm:text-sm md:text-base text-foreground/70 leading-relaxed" /></dd>
                 </motion.div>
               )
             })}
-          </div>
+          </dl>
         </div>
       </section>
 
       {/* Commitment Section */}
       <section className="py-3 sm:py-4 md:py-5 bg-linear-to-r from-primary via-primary/95 to-accent">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <article
             className="text-center"
           >
             <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl mb-4 sm:mb-6 md:mb-8"
               whileHover={{ scale: 1.1 }}
             >
               <Heart className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
             </motion.div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 md:mb-8">
-              Our Commitment to You
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10">
-              We're committed to providing continuous innovation, unwavering support, and solutions that evolve with your business. Together, we're building the future of intelligent business analytics.
-            </p>
-
-            {/* Citations */}
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 md:mb-8"
+            >
+              iSeyon Analytics' Commitment to You
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10"
+            >
+              iSeyon Analytics is committed to providing continuous innovation, unwavering support, and solutions that evolve with your business. Furthermore, our team partners with you to build the future of intelligent business analytics.
+            </motion.p>
             
-          </motion.div>
+          </article>
         </div>
       </section>
     </main>

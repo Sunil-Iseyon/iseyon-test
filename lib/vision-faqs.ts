@@ -1,22 +1,23 @@
 export const visionFAQs = [
   {
-    question: "What is iSeyon Analytics' vision?",
-    answer: "iSeyon Analytics envisions transforming how enterprises leverage AI and data analytics to drive business growth, achieve 5.6x ROI, and make data-driven decisions with confidence."
+    question: "What is iSeyon Analytics' vision for AI and business intelligence?",
+    answer: "iSeyon Analytics envisions a future where AI and advanced analytics integrate seamlessly into every business operation. According to Gartner, AI spending will reach $2.52 trillion in 2026. Our vision focuses on making data-driven insights accessible to organizations of all sizes through innovative AI-powered solutions."
   },
   {
     question: "What are iSeyon Analytics' core values?",
-    answer: "Our core values include innovation, integrity, client success, excellence in delivery, continuous learning, and collaborative partnership with our clients to achieve their business objectives."
+    answer: "iSeyon Analytics operates with four core values: Innovation (constantly pushing boundaries with AI and data analytics), Integrity (operating with transparency and highest ethical standards), Excellence (delivering world-class solutions that exceed expectations), and Customer Focus (committed to client growth and success)."
   },
   {
-    question: "How does iSeyon Analytics stay innovative?",
-    answer: "We invest continuously in research and development, maintain strategic partnerships with leading technology vendors (Databricks, Snowflake, Palantir), and actively contribute to the AI and BI community."
+    question: "How many projects has iSeyon Analytics completed?",
+    answer: "iSeyon Analytics has completed over 800 BI projects (based on internal records, 2026) with more than 125 consultants worldwide and over 10,000 service hours delivered through client engagements. Our proven track record demonstrates expertise across various industries and data platforms."
   },
   {
-    question: "What makes iSeyon Analytics different from competitors?",
-    answer: "Our unique combination of deep technical expertise, proven track record of 5.6x ROI, AI-powered solutions, and commitment to long-term client success sets us apart in the business intelligence consulting space."
+    question: "What industries does iSeyon Analytics serve?",
+    answer: "iSeyon Analytics serves enterprises across finance, healthcare, retail, manufacturing, and technology sectors. Our AI-powered business intelligence solutions help organizations achieve measurable ROI through data-driven transformation. In addition, we specialize in cloud platforms like Snowflake, Databricks, and Palantir."
   },
   {
-    question: "What is iSeyon Analytics' approach to client success?",
-    answer: "We prioritize understanding each client's unique challenges, delivering customized AI-powered solutions, providing comprehensive training and support, and ensuring measurable business outcomes."
+    question: "How does iSeyon Analytics democratize data science?",
+    answer: "iSeyon Analytics makes advanced analytics accessible by providing intuitive AI tools, comprehensive training, and expert consulting services. Our mission is to help organizations of all sizes harness data potential. Furthermore, we eliminate the need for extensive in-house data science teams through our proven methodologies and support."
   },
 ]
+

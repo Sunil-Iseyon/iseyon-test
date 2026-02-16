@@ -19,7 +19,6 @@ export function Footer() {
     { name: "Our Vision", url: "/vision" },
     { name: "Contact Us", url: "/contact" },
     { name: "Blog", url: "/blog" },
-    { name: "RSS Feed", url: "/feed.xml" },
   ]
 
   const handleSubscribe = async (e: React.FormEvent) => {
@@ -86,10 +85,10 @@ export function Footer() {
           <motion.div variants={itemVariants} className="space-y-4">
             {/* Logo - Left */}
         <Link href="/" className="flex items-center gap-2 font-bold text-xl text-white z-10">
-          <img src="/iseyon-whiteLogo.webp" alt="Iseyon Analytics Logo" className="h-20 w-45" />
+          <img src="/iseyon-whiteLogo.webp" alt="iSeyon Analytics white logo representing Vision, Leadership and Consistency" className="h-20 w-45" />
         </Link>
             <p className=" text-sm">
-              Transforming businesses with AI-powered analytics and intelligence solutions.
+              Transforming businesses through AI-powered analytics and data-driven intelligence solutions.
             </p>
           </motion.div>
 
@@ -182,14 +181,6 @@ export function Footer() {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4 md:w-5 md:h-5" />
-            </Link>
-            <Link
-              href="/feed.xml"
-              className="hover:text-primary transition-colors"
-              target='_blank'
-              aria-label="RSS Feed"
-            >
-              <Rss className="w-4 h-4 md:w-5 md:h-5" />
             </Link>
           </div>
 

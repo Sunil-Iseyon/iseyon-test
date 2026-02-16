@@ -1,27 +1,27 @@
 {
   "missionTitle": "Our Mission",
   "missionHeading": "Vision, Leadership, Consistency",
-  "missionDescription": "We empower businesses to harness the full potential of their data through innovative AI and analytics solutions. Our mission is to democratize data science, making advanced analytics accessible to organizations of all sizes.",
+  "missionDescription": "iSeyon Analytics empowers businesses to harness data potential through AI and analytics. Our mission is to democratize data science, making advanced analytics accessible to organizations of all sizes.",
   "values": [
     {
       "icon": "Lightbulb",
       "title": "Innovation",
-      "description": "We constantly push the boundaries of what's possible with AI and data analytics."
+      "description": "iSeyon Analytics constantly pushes the boundaries of what's possible with AI and data analytics."
     },
     {
       "icon": "Shield",
       "title": "Integrity",
-      "description": "We operate with transparency and maintain the highest ethical standards."
+      "description": "iSeyon Analytics operates with transparency and maintains the highest ethical standards."
     },
     {
       "icon": "Rocket",
       "title": "Excellence",
-      "description": "We deliver world-class solutions that exceed expectations."
+      "description": "iSeyon Analytics delivers world-class solutions that exceed client expectations."
     },
     {
       "icon": "Heart",
       "title": "Customer Focus",
-      "description": "Your success is our success, and we're committed to your growth."
+      "description": "Your success is iSeyon Analytics' success. Furthermore, the company is committed to your growth."
     }
   ],
   "visionPoints": [
