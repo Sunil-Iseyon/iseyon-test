@@ -1,6 +1,5 @@
 import { BlogList } from '@/components/blog-list'
 import { BlogHero } from '@/components/blog-hero'
-import { FAQSchema, blogFAQs } from '@/components/faq-schema'
 import {
   AuthoritativeCitations,
   ExpertQuotations,
@@ -170,9 +169,6 @@ export default async function BlogPage() {
         <AuthoritativeCitations />
         <ExpertQuotations />
         <ProprietaryResearch />
-        
-        {/* FAQ Section */}
-        <FAQSchema faqs={blogFAQs} title="Blog & Content FAQs" />
       </article>
     </>
   )

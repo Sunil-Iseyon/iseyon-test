@@ -55,23 +55,25 @@ export async function generateMetadata({
 
   if (!content) {
     return {
-      title: 'Service Not Found | iSeyon Analytics',
+      title: 'Service Not Found',
     }
   }
 
   const serviceName = content.heading
   const description = content.subheading || `Expert ${serviceName} consulting and implementation services by iSeyon Analytics. Transform your data operations with our proven expertise.`
+  const pageUrl = `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`
+  const imageAlt = `${serviceName} services dashboard showing data analytics and business intelligence capabilities provided by iSeyon Analytics`
 
   return {
-    title: `${serviceName} Services | iSeyon Analytics`,
+    title: `${serviceName} Services`,
     description,
     keywords: [serviceName, `${serviceName} consulting`, `${serviceName} implementation`, 'business intelligence', 'data analytics', 'iSeyon Analytics'],
     openGraph: {
       title: `${serviceName} Services | iSeyon Analytics`,
       description,
-      url: `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`,
+      url: pageUrl,
       type: 'website',
-      images: content.image ? [{ url: content.image, alt: serviceName }] : [],
+      images: content.image ? [{ url: content.image, alt: imageAlt }] : [],
     },
     twitter: {
       card: 'summary_large_image',
@@ -80,7 +82,17 @@ export async function generateMetadata({
       images: content.image ? [content.image] : [],
     },
     alternates: {
-      canonical: `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`,
+      canonical: pageUrl,
+      languages: {
+        'en': pageUrl,
+        'x-default': pageUrl,
+      },
+    },
+    other: {
+      'DC.title': `${serviceName} Services | iSeyon Analytics`,
+      'DC.creator': 'iSeyon Analytics',
+      'DC.description': description,
+      'DC.date': new Date().toISOString().split('T')[0],
     },
   }
 }
@@ -116,35 +128,30 @@ export default async function ServicePage({
     }
 
     // Generate schemas
+    const currentDate = new Date().toISOString().split('T')[0]
     const serviceSchema = {
       '@context': 'https://schema.org',
       '@type': 'Service',
       serviceType: content.heading,
+      name: `${content.heading} Services`,
       provider: {
         '@type': 'Organization',
         name: 'iSeyon Analytics',
         url: 'https://iseyon-analytics-v0.vercel.app',
+        logo: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+        sameAs: [
+          'https://iseyon-analytics-v0.vercel.app/team',
+          'https://iseyon-analytics-v0.vercel.app/vision',
+        ],
       },
       areaServed: ['US', 'IN'],
       description: content.subheading,
       category: category,
       url: `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`,
+      datePublished: currentDate,
+      dateModified: currentDate,
+      image: content.image ? `https://iseyon-analytics-v0.vercel.app${content.image}` : undefined,
     }
-
-    // Get FAQs from TinaCMS content
-    const faqs = content.faqs || []
-    const faqSchema = faqs.length > 0 ? {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs.map((faq: { question: string; answer: string }) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    } : null
 
     return (
       <>
@@ -152,12 +159,6 @@ export default async function ServicePage({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
-        {faqSchema && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-          />
-        )}
         <ServiceDetailClient content={content} />
       </>
     )

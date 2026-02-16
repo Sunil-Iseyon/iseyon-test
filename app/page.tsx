@@ -5,8 +5,6 @@ import { TestimonialsSection } from '@/components/testimonials-section'
 import { BannerSection } from '@/components/banner-section'
 import { PartnersSlider } from '@/components/partners-slider'
 import { IndustryStats, ExpertQuotes, ProprietaryResearch, AuthoritativeCitations } from '@/components/seo-enhancements'
-import { FAQSchema } from '@/components/faq-schema'
-import { homeFAQs } from '@/lib/home-faqs'
 import client from "@/lib/tina-local-client";
 import type { Metadata } from 'next'
 
@@ -298,7 +296,6 @@ export default async function Home() {
         {/* <ExpertQuotes /> */}
         <TestimonialsSection testimonials={data.testimonials as any} />
         {/* <AuthoritativeCitations /> */}
-        <FAQSchema faqs={homeFAQs} title="Frequently Asked Questions" />
         <BannerSection data={data.banner as any} />
         <PartnersSlider partners={data.partners as any} />
       </main>

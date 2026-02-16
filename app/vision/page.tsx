@@ -1,7 +1,5 @@
 import client from "@/lib/tina-local-client";
 import { VisionClient } from "@/components/vision-client";
-import { FAQSchema } from '@/components/faq-schema';
-import { visionFAQs } from '@/lib/vision-faqs';
 import { getSpeakableSchema, standardActions, getPotentialActionSchema } from '@/components/advanced-seo-metadata';
 import type { Metadata } from 'next';
 
@@ -113,7 +111,6 @@ export default async function VisionPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
       />
       <VisionClient visionData={visionData} />
-      <FAQSchema faqs={visionFAQs} title="Vision & Values FAQs" />
     </>
   );
 }

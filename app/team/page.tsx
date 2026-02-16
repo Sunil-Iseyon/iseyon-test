@@ -1,6 +1,5 @@
 import client from "@/lib/tina-local-client";
 import { TeamClient } from "@/components/team-client";
-import { FAQSchema, teamFAQs } from '@/components/faq-schema';
 import { getSpeakableSchema, standardActions, getPotentialActionSchema } from '@/components/advanced-seo-metadata';
 import type { Metadata } from 'next';
 
@@ -167,7 +166,6 @@ export default async function TeamPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <TeamClient values={values as any} team={team as any} />
-      <FAQSchema faqs={teamFAQs} title="Team & Expertise FAQs" />
     </>
   );
 }

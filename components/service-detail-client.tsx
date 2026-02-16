@@ -70,7 +70,7 @@ export function ServiceDetailClient({
               >
                 <Image
                   src={content.image}
-                  alt={content.heading}
+                  alt={`${content.heading} services dashboard showing data analytics and business intelligence capabilities by iSeyon Analytics`}
                   fill
                   // className="object-cover"
                   priority

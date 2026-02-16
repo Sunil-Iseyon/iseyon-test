@@ -1,5 +1,4 @@
 import { ContactClient } from '@/components/contact-client'
-import { FAQSchema, contactFAQs } from '@/components/faq-schema'
 import { getSpeakableSchema, standardActions, getPotentialActionSchema } from '@/components/advanced-seo-metadata'
 import type { Metadata } from 'next'
 
@@ -117,7 +116,6 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
       />
       <ContactClient />
-      <FAQSchema faqs={contactFAQs} title="Contact & Support FAQs" />
     </>
   )
 }
