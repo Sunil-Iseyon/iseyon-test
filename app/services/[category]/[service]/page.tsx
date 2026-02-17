@@ -129,28 +129,83 @@ export default async function ServicePage({
 
     // Generate schemas
     const currentDate = new Date().toISOString().split('T')[0]
+    const pageUrl = `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`
+    
     const serviceSchema = {
       '@context': 'https://schema.org',
-      '@type': 'Service',
-      serviceType: content.heading,
-      name: `${content.heading} Services`,
-      provider: {
-        '@type': 'Organization',
-        name: 'iSeyon Analytics',
-        url: 'https://iseyon-analytics-v0.vercel.app',
-        logo: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
-        sameAs: [
-          'https://iseyon-analytics-v0.vercel.app/team',
-          'https://iseyon-analytics-v0.vercel.app/vision',
-        ],
-      },
-      areaServed: ['US', 'IN'],
-      description: content.subheading,
-      category: category,
-      url: `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`,
-      datePublished: currentDate,
-      dateModified: currentDate,
-      image: content.image ? `https://iseyon-analytics-v0.vercel.app${content.image}` : undefined,
+      '@graph': [
+        {
+          '@type': ['Service', 'TechArticle'],
+          '@id': `${pageUrl}#service`,
+          serviceType: content.heading,
+          name: `${content.heading} Services`,
+          headline: content.heading,
+          description: content.subheading,
+          provider: {
+            '@type': 'Organization',
+            '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+            name: 'iSeyon Analytics',
+            url: 'https://iseyon-analytics-v0.vercel.app',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+            },
+            foundingDate: '2020',
+            knowsAbout: ['Business Intelligence', 'Data Analytics', 'AI Integration', content.heading],
+            sameAs: [
+              'https://www.linkedin.com/company/iseyon-analytics',
+              'https://iseyon-analytics-v0.vercel.app/team',
+              'https://iseyon-analytics-v0.vercel.app/vision',
+            ],
+          },
+          author: {
+            '@type': 'Organization',
+            '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+          },
+          publisher: {
+            '@type': 'Organization',
+            '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+          },
+          areaServed: ['US', 'IN'],
+          category: category,
+          url: pageUrl,
+          datePublished: '2024-01-15',
+          dateModified: currentDate,
+          inLanguage: 'en-US',
+          image: content.image ? {
+            '@type': 'ImageObject',
+            url: `https://iseyon-analytics-v0.vercel.app${content.image}`,
+            caption: `${content.heading} services dashboard by iSeyon Analytics`,
+          } : undefined,
+          isPartOf: {
+            '@type': 'WebSite',
+            '@id': 'https://iseyon-analytics-v0.vercel.app/#website',
+          },
+          breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://iseyon-analytics-v0.vercel.app',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Services',
+                item: 'https://iseyon-analytics-v0.vercel.app/#services',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: content.heading,
+                item: pageUrl,
+              },
+            ],
+          },
+        },
+      ],
     }
 
     return (

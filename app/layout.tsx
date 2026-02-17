@@ -111,12 +111,100 @@ export default async function RootLayout({
 }>) {
   // Fetch services dynamically for navigation
   const servicesMenu = await getServicesForNavigation();
+
+  // Global Organization schema for E-E-A-T
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+    name: 'iSeyon Analytics',
+    legalName: 'iSeyon Analytics',
+    url: 'https://iseyon-analytics-v0.vercel.app',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+      width: 250,
+      height: 60,
+    },
+    foundingDate: '2020',
+    founders: [
+      {
+        '@type': 'Person',
+        name: 'Srinivas Reddy Karri',
+        jobTitle: 'Founder & CEO',
+        sameAs: 'https://iseyon-analytics-v0.vercel.app/team',
+      },
+    ],
+    knowsAbout: [
+      'Business Intelligence',
+      'Data Analytics',
+      'Artificial Intelligence',
+      'Machine Learning',
+      'Cloud Platforms',
+      'Snowflake',
+      'Databricks',
+      'Palantir',
+      'Anaplan',
+      'Power BI',
+      'Data Visualization',
+      'Predictive Analytics',
+    ],
+    areaServed: [
+      {
+        '@type': 'Country',
+        name: 'United States',
+      },
+      {
+        '@type': 'Country',
+        name: 'India',
+      },
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'New York',
+      addressRegion: 'NY',
+      addressCountry: 'US',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-651-503-9126',
+      contactType: 'Customer Service',
+      email: 'info@iSeyon.com',
+      availableLanguage: ['English'],
+      areaServed: ['US', 'IN'],
+    },
+    sameAs: [
+      'https://www.linkedin.com/company/iseyon-analytics',
+    ],
+    description: 'Iseyon Analytics provides AI-powered business intelligence and data analytics solutions.',
+  }
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': 'https://iseyon-analytics-v0.vercel.app/#website',
+    url: 'https://iseyon-analytics-v0.vercel.app',
+    name: 'iSeyon Analytics',
+    description: 'AI-Powered Business Intelligence & Data Analytics Solutions',
+    publisher: {
+      '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+    },
+    inLanguage: 'en-US',
+  }
   
   return (
     <html lang="en" className={`${open_Sans.variable} ${sansation.variable}`}>
       <head>
         <link rel="sitemap" href="/sitemap.xml" />
         <link rel="search" href="/llms.txt" type="text/plain" title="LLM Instructions" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
       </head>
       <body className="antialiased" style={{ fontFamily: 'var(--font-open-sans)' }}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded">

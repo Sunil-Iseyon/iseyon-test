@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { useState } from 'react'
+import { FAQSchema, contactFAQs } from './faq-schema'
 
 interface ContactClientProps {
   defaultContactType?: string
@@ -439,6 +440,58 @@ export function ContactClient({ defaultContactType = '' }: ContactClientProps) {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Why Contact <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-indigo-600">iSeyon Analytics</span>?
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              Partner with us for proven expertise in AI-powered business intelligence and data analytics solutions
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Proven Track Record',
+                description: 'We\'ve helped enterprises achieve 5.6x ROI through AI-powered analytics and data transformation initiatives.',
+              },
+              {
+                title: 'Expert Team',
+                description: 'Our certified consultants bring decades of combined experience in BI, AI integration, and cloud platforms like Snowflake, Databricks, and Palantir.',
+              },
+              {
+                title: 'Comprehensive Support',
+                description: 'From initial consultation to post-implementation support, we provide end-to-end guidance for your data analytics journey.',
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="p-6 bg-linear-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQSchema faqs={contactFAQs} title="Frequently Asked Questions About Contacting Us" />
     </main>
   )
 }

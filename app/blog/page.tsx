@@ -1,5 +1,6 @@
 import { BlogList } from '@/components/blog-list'
 import { BlogHero } from '@/components/blog-hero'
+import { FAQSchema, blogFAQs } from '@/components/faq-schema'
 import {
   AuthoritativeCitations,
   ExpertQuotations,
@@ -163,6 +164,9 @@ export default async function BlogPage() {
           <BlogHero />
           <BlogList blogs={blogs} />
         </div>
+        
+        {/* FAQ Section */}
+        <FAQSchema faqs={blogFAQs} title="Frequently Asked Questions About Our Blog" />
         
         {/* Evidence-based content sections for E-E-A-T */}
         {/* <IndustryStatistics /> */}

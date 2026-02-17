@@ -4,7 +4,9 @@ import { NewProject } from '@/components/new-project'
 import { TestimonialsSection } from '@/components/testimonials-section'
 import { BannerSection } from '@/components/banner-section'
 import { PartnersSlider } from '@/components/partners-slider'
+import { FAQSchema } from '@/components/faq-schema'
 import { IndustryStats, ExpertQuotes, ProprietaryResearch, AuthoritativeCitations } from '@/components/seo-enhancements'
+import { homeFAQs } from '@/lib/home-faqs'
 import client from "@/lib/tina-local-client";
 import type { Metadata } from 'next'
 
@@ -230,12 +232,24 @@ export default async function Home() {
   const webPageSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
+    '@id': 'https://iseyon-analytics-v0.vercel.app/#webpage',
     name: 'iSeyon Analytics - AI-Powered Business Intelligence Solutions',
     description: '78% of enterprises now leverage AI for analytics. Get 5.6x ROI with iSeyon\'s data-driven solutions.',
     url: 'https://iseyon-analytics-v0.vercel.app',
     inLanguage: 'en-US',
+    datePublished: '2024-01-15',
+    dateModified: new Date().toISOString().split('T')[0],
+    author: {
+      '@type': 'Organization',
+      '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+    },
     isPartOf: {
       '@type': 'WebSite',
+      '@id': 'https://iseyon-analytics-v0.vercel.app/#website',
       url: 'https://iseyon-analytics-v0.vercel.app',
     },
     about: {
@@ -298,6 +312,7 @@ export default async function Home() {
         {/* <AuthoritativeCitations /> */}
         <BannerSection data={data.banner as any} />
         <PartnersSlider partners={data.partners as any} />
+        <FAQSchema faqs={homeFAQs} title="Frequently Asked Questions About iSeyon Analytics" />
       </main>
     </>
   )

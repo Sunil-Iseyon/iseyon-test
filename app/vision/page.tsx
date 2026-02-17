@@ -113,7 +113,7 @@ export default async function VisionPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
       />
       <VisionClient visionData={visionData} />
-      {/* <FAQSchema faqs={visionFAQs} title="Vision & Mission FAQs" /> */}
+      <FAQSchema faqs={visionFAQs} title="Vision & Mission FAQs" />
     </>
   );
 }

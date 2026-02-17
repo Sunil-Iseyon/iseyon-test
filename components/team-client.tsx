@@ -5,6 +5,7 @@ import { Linkedin, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { TinaRichText } from './tina-rich-text'
+import { FAQSchema, teamFAQs } from './faq-schema'
 import type { TinaMarkdownContent } from 'tinacms/dist/rich-text'
 import { useState } from 'react'
 
@@ -341,6 +342,9 @@ export function TeamClient({ values, team }: TeamClientProps) {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSchema faqs={teamFAQs} title="Frequently Asked Questions About Our Team" />
     </main>
   )
 }

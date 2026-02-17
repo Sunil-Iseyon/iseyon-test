@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 import { TinaRichText } from './tina-rich-text'
+import { FAQSchema, serviceFAQs } from './faq-schema'
+import { RelatedContent, serviceRelatedLinks } from './related-content'
 import type { TinaMarkdownContent } from 'tinacms/dist/rich-text'
 
 interface ServiceContent {
@@ -13,6 +15,10 @@ interface ServiceContent {
   image: string;
   content: TinaMarkdownContent;
   category: string;
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
 }
 
 export function ServiceDetailClient({ 
@@ -97,6 +103,18 @@ export function ServiceDetailClient({
           </div>
         </section>
       </div>
+
+      {/* FAQ Section */}
+      <FAQSchema 
+        faqs={content.faqs && content.faqs.length > 0 ? content.faqs : serviceFAQs} 
+        title={`Frequently Asked Questions About ${content.heading}`}
+      />
+
+      {/* Related Services */}
+      <RelatedContent 
+        title="Explore Our Other Services" 
+        links={serviceRelatedLinks.filter(link => !link.href.includes(content.heading.toLowerCase()))}
+      />
 
       {/* Static CTA Section */}
       <section className="py-12 bg-linear-to-br from-primary via-primary/90 to-accent">
