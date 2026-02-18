@@ -296,38 +296,6 @@ export function Hero({ data, founderMessages = [], services = [] }: HeroProps) {
             <div className="md:hidden mt-4 pt-4 border-t border-sky-300/30">
               <RotatingFounderMessages messages={founderMessages} interval={10000} delay={1500} />
             </div>
-
-            {/* Services Preview - Show top 3 services */}
-            {services && services.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                className="mt-8 md:mt-12"
-              >
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 text-center mb-6">
-                  Our Core Services
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                  {services.slice(0, 3).map((service, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 1.3 + index * 0.1 }}
-                      className="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-sky-200"
-                    >
-                      <h4 className="text-base md:text-lg font-semibold text-slate-900 mb-2">
-                        {service.heading}
-                      </h4>
-                      <p className="text-sm text-gray-600 line-clamp-2">
-                        {service.homePageDescription}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            )}
           </div>
 
 
