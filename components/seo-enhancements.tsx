@@ -172,8 +172,9 @@ export function  ExpertQuotes() {
   )
 }
 
-// Original Research Table - Critical for SEO (original_research rule)
+// Performance Benchmarks Table - Replace with your actual client data
 export function ProprietaryResearch() {
+  // TODO: Replace these with your actual client implementation metrics
   const benchmarks = [
     {
       metric: 'Data Processing Speed',
@@ -227,11 +228,11 @@ export function ProprietaryResearch() {
             iSeyon Analytics Performance Benchmarks
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-6">
-            Proprietary research based on 250+ client implementations across 15 industries (2023-2025)
+            Client implementation results across industries
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm text-primary font-medium">
             <TrendingUp className="w-4 h-4" />
-            Original Research | Data-Driven Results
+            Client Performance Data
           </div>
         </motion.div>
 
@@ -291,7 +292,7 @@ export function ProprietaryResearch() {
           className="mt-8 p-6 bg-blue-50 border-l-4 border-primary rounded-r-xl"
         >
           <p className="text-sm text-gray-700 leading-relaxed">
-            <strong>Methodology:</strong> Aggregated performance metrics from 250+ iSeyon Analytics client implementations across Finance, Healthcare, Retail, Manufacturing, and Technology sectors between January 2023 and February 2026. Industry averages sourced from Gartner Magic Quadrant reports, Forrester Wave evaluations, and IDC MarketScape assessments. All measurements normalized for enterprise-scale deployments (1,000+ users).
+            <strong>Note:</strong> Replace the benchmark data above with your actual verified client metrics. Include proper methodology and data collection details when you have real implementation data to display.
           </p>
         </motion.div>
       </div>

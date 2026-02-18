@@ -2,8 +2,32 @@ import { NextRequest, NextResponse } from "next/server"
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json()
-    const { name, email, company, phone, contactType, industry, message } = body
+    // Parse FormData to handle file uploads
+    const formData = await request.formData()
+    const name = formData.get('name') as string
+    const email = formData.get('email') as string
+    const company = formData.get('company') as string
+    const phone = formData.get('phone') as string
+    const contactType = formData.get('contactType') as string
+    const industry = formData.get('industry') as string
+    const message = formData.get('message') as string
+    
+    // Extract attachments
+    const attachments: Array<{ content: string; name: string }> = []
+    let attachmentIndex = 0
+    while (formData.has(`attachment_${attachmentIndex}`)) {
+      const file = formData.get(`attachment_${attachmentIndex}`) as File
+      if (file) {
+        const bytes = await file.arrayBuffer()
+        const buffer = Buffer.from(bytes)
+        const base64Content = buffer.toString('base64')
+        attachments.push({
+          content: base64Content,
+          name: file.name
+        })
+      }
+      attachmentIndex++
+    }
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -40,28 +64,21 @@ export async function POST(request: NextRequest) {
     })
 
     // Send notification email to admin
-    const adminEmailResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
-      method: 'POST',
-      headers: {
-        'accept': 'application/json',
-        'api-key': apiKey,
-        'content-type': 'application/json',
+    const adminEmailPayload: any = {
+      sender: {
+        name: process.env.BREVO_SENDER_NAME || 'Iseyon Website',
+        email: process.env.BREVO_SENDER_EMAIL || 'manasi.behera@iseyon.com',
       },
-      body: JSON.stringify({
-        sender: {
-          name: process.env.BREVO_SENDER_NAME || 'Iseyon Website',
-          email: process.env.BREVO_SENDER_EMAIL || 'manasi.behera@iseyon.com',
-        },
-        to: [{
-          email: process.env.BREVO_ADMIN_EMAIL || 'mbehera@lancetindia.com',
-          name: 'Iseyon Team'
-        }],
-        replyTo: {
-          email: email,
-          name: name
-        },
-        subject: `New Contact Form Submission from ${name}`,
-        textContent: `
+      to: [{
+        email: process.env.BREVO_ADMIN_EMAIL || 'mbehera@lancetindia.com',
+        name: 'Iseyon Team'
+      }],
+      replyTo: {
+        email: email,
+        name: name
+      },
+      subject: `New Contact Form Submission from ${name}${attachments.length > 0 ? ` (${attachments.length} attachment${attachments.length > 1 ? 's' : ''})` : ''}`,
+      textContent: `
 New Contact Form Submission
 
 Contact Information:
@@ -75,12 +92,14 @@ ${industry ? `Industry: ${industry}` : ''}
 Message:
 ${message}
 
+${attachments.length > 0 ? `\nAttachments (${attachments.length}):\n${attachments.map(a => `- ${a.name}`).join('\n')}` : ''}
+
 ---
 Submitted on ${new Date().toLocaleString('en-US', { dateStyle: 'long', timeStyle: 'short' })}
 
 Tip: You can reply directly to this email to respond to ${name}.
         `,
-        htmlContent: `
+      htmlContent: `
           <!DOCTYPE html>
           <html>
             <head>
@@ -140,6 +159,12 @@ Tip: You can reply directly to this email to respond to ${name}.
                           <div style="background-color: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #0ea5e9;">
                             <p style="margin: 0; color: #334155; line-height: 1.6; white-space: pre-wrap;">${message}</p>
                           </div>
+                          ${attachments.length > 0 ? `
+                          <h3 style="color: #1e293b; font-size: 16px; margin: 20px 0 10px;">Attachments (${attachments.length}):</h3>
+                          <div style="background-color: #f0fdf4; padding: 15px; border-radius: 6px; border-left: 4px solid #10b981;">
+                            ${attachments.map(a => `<p style="margin: 5px 0; color: #166534;">📎 ${a.name}</p>`).join('')}
+                          </div>
+                          ` : ''}
                           <div style="margin-top: 20px; padding: 15px; background-color: #eff6ff; border-radius: 6px; border-left: 4px solid #3b82f6;">
                             <p style="margin: 0; color: #1e40af; font-size: 14px;">
                               💡 <strong>Tip:</strong> You can reply directly to this email to respond to ${name}.
@@ -165,7 +190,21 @@ Tip: You can reply directly to this email to respond to ${name}.
             </body>
           </html>
         `,
-      }),
+    }
+    
+    // Add attachments to the payload if present
+    if (attachments.length > 0) {
+      adminEmailPayload.attachment = attachments
+    }
+    
+    const adminEmailResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'api-key': apiKey,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(adminEmailPayload),
     })
 
     if (!adminEmailResponse.ok) {

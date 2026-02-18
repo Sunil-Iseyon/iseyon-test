@@ -78,6 +78,20 @@ export default function ContactPage() {
           foundingDate: '2020',
           knowsAbout: ['Business Intelligence', 'Data Analytics', 'AI Integration', 'Cloud Platforms'],
           areaServed: ['US', 'IN'],
+          member: {
+            '@type': 'OrganizationRole',
+            member: {
+              '@type': 'Person',
+              name: 'iSeyon Analytics Team',
+              jobTitle: 'Business Intelligence & AI Consultants',
+              worksFor: {
+                '@type': 'Organization',
+                name: 'iSeyon Analytics'
+              },
+              knowsAbout: ['Artificial Intelligence', 'Business Intelligence', 'Data Science', 'Cloud Computing'],
+              url: 'https://iseyon-analytics-v0.vercel.app/team'
+            }
+          }
         },
         publisher: {
           '@type': 'Organization',

@@ -168,11 +168,11 @@ export default async function BlogPage() {
         {/* FAQ Section */}
         <FAQSchema faqs={blogFAQs} title="Frequently Asked Questions About Our Blog" />
         
-        {/* Evidence-based content sections for E-E-A-T */}
-        {/* <IndustryStatistics /> */}
-        {/* <AuthoritativeCitations /> */}
-        {/* <ExpertQuotations /> */}
-        {/* <ProprietaryResearch /> */}
+        {/* Evidence-based content sections for E-E-A-T - Strategic Placement */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+          <IndustryStatistics />
+          <AuthoritativeCitations />
+        </div>
       </article>
     </>
   )

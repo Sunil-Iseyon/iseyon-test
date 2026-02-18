@@ -345,6 +345,19 @@ export function TeamClient({ values, team }: TeamClientProps) {
 
       {/* FAQ Section */}
       <FAQSchema faqs={teamFAQs} title="Frequently Asked Questions About Our Team" />
+      
+      {/* Footer Citations - Strategic Reference Placement */}
+      <section className="py-8 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-sm font-semibold text-gray-700 mb-4">Data Sources & References</h2>
+          <dl className="space-y-2 text-xs text-gray-600">
+            <div>
+              <dt className="font-medium inline">Enterprise AI Adoption:</dt>
+              <dd className="inline"> MIT Sloan Management Review. (2024). <a href="https://sloanreview.mit.edu/article/the-ai-advantage-for-business-value/" target="_blank" rel="nofollow noopener" className="text-primary hover:underline">The AI Advantage for Business Value</a>. Reports 78% of enterprises now leverage AI for business intelligence.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
     </main>
   )
 }
