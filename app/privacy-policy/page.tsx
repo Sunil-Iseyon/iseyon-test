@@ -2,9 +2,11 @@ import client from '@/lib/tina-local-client'
 import { PrivacyPolicyClient } from '@/components/privacy-policy-client'
 import type { Metadata } from 'next'
 
-async function getPrivacyPolicySections() {
-  const response = await client.queries.privacyPolicyConnection()
-  return response.data.privacyPolicyConnection.edges.map((edge) => edge.node)
+async function getPrivacyPolicy() {
+  const response = await client.queries.privacyPolicy({
+    relativePath: 'privacy-policy.json'
+  })
+  return response.data.privacyPolicy
 }
 
 export const metadata: Metadata = {
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
 }
 
 export default async function PrivacyPolicyPage() {
-  const sections = await getPrivacyPolicySections()
+  const privacyPolicy = await getPrivacyPolicy()
 
   // Add WebPage schema
   const webPageSchema = {
@@ -49,7 +51,7 @@ export default async function PrivacyPolicyPage() {
         url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
       },
     },
-    dateModified: '2026-02-15',
+    dateModified: '2026-02-18',
     inLanguage: 'en-US',
   }
 
@@ -59,7 +61,7 @@ export default async function PrivacyPolicyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
-      <PrivacyPolicyClient sections={sections as any} />
+      <PrivacyPolicyClient content={privacyPolicy.content as any} />
     </>
   )
 }

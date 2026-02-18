@@ -303,13 +303,13 @@ export default async function Home() {
       />
       <main className="min-h-screen bg-white snap-y snap-proximity">
         <Hero data={data.hero as any} founderMessages={data.founderMessages as any} />
-        {/* <IndustryStats /> */}
+        <IndustryStats />
         <ServicesSection services={data.services as any} />
-        {/* <ProprietaryResearch /> */}
+        <ProprietaryResearch />
         <NewProject data={data.project as any} />
-        {/* <ExpertQuotes /> */}
+        <ExpertQuotes />
         <TestimonialsSection testimonials={data.testimonials as any} />
-        {/* <AuthoritativeCitations /> */}
+        <AuthoritativeCitations />
         <BannerSection data={data.banner as any} />
         <PartnersSlider partners={data.partners as any} />
         <FAQSchema faqs={homeFAQs} title="Frequently Asked Questions About iSeyon Analytics" />

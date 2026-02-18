@@ -1,55 +1,29 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { TinaMarkdown } from 'tinacms/dist/rich-text'
 
-interface PrivacySection {
-  title?: string
-  content?: string
+interface PrivacyPolicyClientProps {
+  content: any
 }
 
-export function PrivacyPolicyClient({ sections }: { sections: PrivacySection[] }) {
+export function PrivacyPolicyClient({ content }: PrivacyPolicyClientProps) {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-20 pt-24 flex flex-col items-center justify-center">
-      {/* Header */}
-      <motion.h1
+    <main className="max-w-4xl mx-auto px-6 py-20 pt-24">
+      <motion.article
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-bold mb-4"
+        className="prose prose-lg prose-slate max-w-none
+          prose-headings:font-bold prose-headings:text-slate-900
+          prose-h1:text-4xl prose-h1:mb-8
+          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+          prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4
+          prose-ul:my-4 prose-li:text-gray-700
+          prose-strong:text-slate-900"
       >
-        Privacy Policy
-      </motion.h1>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-gray-500 mb-12"
-      >
-        <p>
-          Last updated: <time dateTime="2026-02-15">February 15, 2026</time>
-        </p>
-      </motion.div>
-
-      {/* Sections */}
-      <article className="space-y-10 w-full">
-        {sections.map((section, i) => (
-          <motion.section
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-          >
-            <h2 className="text-xl font-semibold mb-2">
-              {section.title}
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              {section.content}
-            </p>
-          </motion.section>
-        ))}
-      </article>
+        <TinaMarkdown content={content} />
+      </motion.article>
     </main>
   )
 }

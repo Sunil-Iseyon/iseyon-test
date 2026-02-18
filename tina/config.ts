@@ -956,17 +956,18 @@ export default defineConfig({
         label: "Privacy Policy",
         path: "content/privacy-policy",
         format: "json",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            required: true,
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
           },
+        },
+        fields: [
           {
             type: "rich-text",
             name: "content",
-            label: "Content",
+            label: "Privacy Policy Content",
+            description: "Complete privacy policy content including all sections",
             required: true,
           },
         ],
