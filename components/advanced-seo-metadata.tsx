@@ -214,3 +214,90 @@ export function generateAdvancedMetadata(config: {
 
   return result
 }
+
+/**
+ * Article Schema for E-E-A-T Signals
+ * Implements authorship, publication dates, and expertise signals
+ */
+export function getArticleSchema(config: {
+  headline: string
+  description: string
+  url: string
+  imageUrl?: string
+  author: {
+    name: string
+    url?: string
+    jobTitle?: string
+    worksFor?: string
+  }
+  publishDate: string
+  modifiedDate?: string
+  keywords?: string[]
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    'headline': config.headline,
+    'description': config.description,
+    'url': config.url,
+    'image': config.imageUrl || 'https://iseyon-analytics-v0.vercel.app/og-image.jpg',
+    'datePublished': config.publishDate,
+    'dateModified': config.modifiedDate || config.publishDate,
+    'author': {
+      '@type': 'Person',
+      'name': config.author.name,
+      'url': config.author.url || 'https://iseyon-analytics-v0.vercel.app/team',
+      'jobTitle': config.author.jobTitle || 'AI & BI Expert',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': config.author.worksFor || 'iSeyon Analytics',
+        'url': 'https://iseyon-analytics-v0.vercel.app',
+      },
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'iSeyon Analytics',
+      'url': 'https://iseyon-analytics-v0.vercel.app',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': 'https://iseyon-analytics-v0.vercel.app/logo.png',
+      },
+    },
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': config.url,
+    },
+    'keywords': config.keywords?.join(', ') || 'business intelligence, AI analytics, data science',
+    'inLanguage': 'en-US',
+  }
+}
+
+/**
+ * Comprehensive Service/Insight Schema with E-E-A-T
+ * Combines multiple schemas for maximum visibility
+ */
+export function getEnhancedContentSchema(config: {
+  type: 'Service' | 'Article'
+  headline: string
+  description: string
+  url: string
+  imageUrl?: string
+  publishDate?: string
+  keywords?: string[]
+}) {
+  const baseSchema = getArticleSchema({
+    headline: config.headline,
+    description: config.description,
+    url: config.url,
+    imageUrl: config.imageUrl,
+    author: {
+      name: 'iSeyon Analytics Team',
+      jobTitle: 'AI & Business Intelligence Experts',
+      worksFor: 'iSeyon Analytics',
+    },
+    publishDate: config.publishDate || new Date().toISOString(),
+    keywords: config.keywords,
+  })
+
+  return baseSchema
+}

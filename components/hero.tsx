@@ -127,38 +127,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                   className="w-full max-w-[200px] sm:max-w-xs md:max-w-md lg:max-w-lg h-0.5 bg-linear-to-r from-green-500 via-green-200 to-transparent rounded-full mt-4 sm:mt-6 origin-left"></motion.div>
                 {/* <div className="w-220 h-1 bg-white absolute left-0 rounded-full mb-2"></div> */}
                 {/* Trust Logos */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                  className="space-y-2">
-                  <p className="text-gray-500 text-[10px] sm:text-xs font-medium uppercase tracking-wide">
-                    Trusted by leading companies
-                  </p>
-                  <div className="relative overflow-hidden py-2">
-                    <div className="flex items-center space-x-8 sm:space-x-10 lg:space-x-12 animate-scroll">
-                      {/* Original set */}
-                      <Image src="/partners/databricks-logo.webp" alt="Databricks" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/tableau.webp" alt="Tableau" width={90} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/strategy.webp" alt="Strategy" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/microsoft.webp" alt="Microsoft" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/snowflake.webp" alt="Snowflake" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/AWS.webp" alt="AWS" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-16 sm:w-18 lg:w-20 h-auto" />
-                      <Image src="/partners/informatica.webp" alt="Informatica" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/lancet.webp" alt="Lancet" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-
-                      {/* Duplicate set for seamless loop */}
-                      <Image src="/partners/databricks-logo.webp" alt="Databricks" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/tableau.webp" alt="Tableau" width={90} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/strategy.webp" alt="Strategy" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/microsoft.webp" alt="Microsoft" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/snowflake.webp" alt="Snowflake" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/AWS.webp" alt="AWS" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-16 sm:w-18 lg:w-20 h-auto" />
-                      <Image src="/partners/informatica.webp" alt="Informatica" width={80} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                      <Image src="/partners/lancet.webp" alt="Lancet" width={70} height={20} className="shrink-0 opacity-60 hover:opacity-100 transition grayscale hover:grayscale-0 w-14 sm:w-16 lg:w-[70px] h-auto" />
-                    </div>
-                  </div>
-                </motion.div>
+                {/*  */}
               </div>
 
               {/* Right Illustration */}
@@ -308,35 +277,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
                     </g>
 
                     {/* AI Pipeline Illustration */}
-                    <g transform="translate(320, 150)">
-                      <motion.g
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 1.6 }}
-                      >
-                        {/* Card shadow */}
-                        <rect x="2" y="2" width="140" height="110" rx="8" fill="rgba(165, 243, 252, 0.1)" />
-                        <rect x="0" y="0" width="140" height="110" rx="8" fill="url(#cardGradient)" stroke="rgba(165, 243, 252, 0.4)" strokeWidth="2" />
-                        <text x="70" y="18" textAnchor="middle" fontSize="11" fill="rgba(15, 23, 42, 0.7)" fontWeight="600">AI Pipeline</text>
-                        {/* Pipeline nodes */}
-                        <circle cx="30" cy="45" r="12" fill="rgba(14, 165, 233, 0.3)" stroke="rgba(14, 165, 233, 0.8)" strokeWidth="2" />
-                        <circle cx="70" cy="45" r="12" fill="rgba(6, 182, 212, 0.3)" stroke="rgba(6, 182, 212, 0.8)" strokeWidth="2" />
-                        <circle cx="110" cy="45" r="12" fill="rgba(125, 211, 252, 0.3)" stroke="rgba(125, 211, 252, 0.8)" strokeWidth="2" />
-                        {/* Pipeline connections */}
-                        <line x1="42" y1="45" x2="58" y2="45" stroke="rgba(14, 165, 233, 0.6)" strokeWidth="2" markerEnd="url(#arrowhead)" />
-                        <line x1="82" y1="45" x2="98" y2="45" stroke="rgba(6, 182, 212, 0.6)" strokeWidth="2" markerEnd="url(#arrowhead)" />
-                        {/* Labels */}
-                        <text x="30" y="72" textAnchor="middle" fontSize="8" fill="rgba(71, 85, 105, 0.8)">Data</text>
-                        <text x="70" y="72" textAnchor="middle" fontSize="8" fill="rgba(71, 85, 105, 0.8)">Process</text>
-                        <text x="110" y="72" textAnchor="middle" fontSize="8" fill="rgba(71, 85, 105, 0.8)">Insight</text>
-                        {/* AI sparkles */}
-                        {/* AI sparkles with glow effect */}
-                        <g filter="url(#glow)">
-                          <path d="M 25 30 L 27 34 L 31 32 L 28 36 L 32 38 L 27 37 L 25 41 L 23 37 L 19 38 L 22 36 L 19 32 L 23 34 Z" fill="rgba(250, 204, 21, 0.8)" />
-                          <path d="M 105 30 L 107 34 L 111 32 L 108 36 L 112 38 L 107 37 L 105 41 L 103 37 L 99 38 L 102 36 L 99 32 L 103 34 Z" fill="rgba(250, 204, 21, 0.8)" />
-                        </g>
-                      </motion.g>
-                    </g>
+                    
                   </g>
                 </svg>
               </div>

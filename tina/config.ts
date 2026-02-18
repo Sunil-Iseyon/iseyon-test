@@ -755,6 +755,38 @@ export default defineConfig({
             label: "Content",
             required: true,
           },
+          {
+            type: "object",
+            name: "faqs",
+            label: "FAQs",
+            description: "Frequently asked questions for this insight page",
+            list: true,
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.question || "New FAQ" }
+              },
+            },
+            fields: [
+              {
+                type: "string",
+                name: "question",
+                label: "Question",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "answer",
+                label: "Answer",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+            ],
+          },
         ],
       },
       /* Removed - Now using insights collection instead

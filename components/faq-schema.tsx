@@ -189,3 +189,26 @@ export const teamFAQs: FAQ[] = [
     answer: "Our team continuously invests in training, attends industry conferences, maintains partnerships with leading technology vendors, and actively contributes to the analytics community through our blog and thought leadership."
   },
 ]
+
+export const insightFAQs: FAQ[] = [
+  {
+    question: "How can these insights help my organization?",
+    answer: "Our insights provide actionable strategies and best practices that help organizations leverage data analytics, AI, and business intelligence to improve decision-making, increase efficiency, and drive competitive advantage."
+  },
+  {
+    question: "Are these insights based on real-world implementations?",
+    answer: "Yes, all our insights are derived from our extensive experience implementing solutions for clients across various industries. We combine practical knowledge with industry research and emerging trends."
+  },
+  {
+    question: "How often are insights updated?",
+    answer: "We regularly update our insights to reflect the latest technological developments, industry best practices, and lessons learned from recent client engagements. Check our blog for the most current information."
+  },
+  {
+    question: "Can I request a consultation based on these insights?",
+    answer: "Absolutely! If you'd like to discuss how these insights apply to your specific situation, please contact us through our contact page or call +1-651-503-9126 for a free consultation."
+  },
+  {
+    question: "Do you provide implementation support for these concepts?",
+    answer: "Yes, we offer full implementation services including strategy development, platform selection, deployment, training, and ongoing support to help you successfully implement these insights in your organization."
+  },
+]

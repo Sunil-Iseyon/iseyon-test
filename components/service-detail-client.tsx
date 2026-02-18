@@ -5,8 +5,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 import { TinaRichText } from './tina-rich-text'
-import { FAQSchema, serviceFAQs } from './faq-schema'
+import { FAQSchema, serviceFAQs, insightFAQs } from './faq-schema'
 import { RelatedContent, serviceRelatedLinks } from './related-content'
+import { AuthorMetadata } from './content-enhancements'
 import type { TinaMarkdownContent } from 'tinacms/dist/rich-text'
 
 interface ServiceContent {
@@ -26,6 +27,10 @@ export function ServiceDetailClient({
 }: { 
   content: ServiceContent
 }) {
+  // Determine if this is an insight page based on category
+  const isInsightPage = content.category === 'business-intelligence' || content.category === 'internal-applications'
+  const defaultFAQs = isInsightPage ? insightFAQs : serviceFAQs
+  const sectionTitle = isInsightPage ? 'Insights' : 'Services'
 
   return (
     <main className="min-h-screen bg-white">
@@ -83,6 +88,21 @@ export function ServiceDetailClient({
                 />
               </motion.div>
             </div>
+            
+            {/* E-E-A-T: Author and Publication Metadata */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-8"
+            >
+              <AuthorMetadata
+                author="iSeyon Analytics Team"
+                authorTitle="AI & BI Experts"
+                publicationDate={new Date().toISOString()}
+                authorUrl="/team"
+              />
+            </motion.div>
           </div>
         </section>
 
@@ -104,15 +124,15 @@ export function ServiceDetailClient({
         </section>
       </div>
 
-      {/* FAQ Section */}
+      {/* FAQ Section - Now uses dynamic FAQs from Tina or defaults */}
       <FAQSchema 
-        faqs={content.faqs && content.faqs.length > 0 ? content.faqs : serviceFAQs} 
+        faqs={content.faqs && content.faqs.length > 0 ? content.faqs : defaultFAQs} 
         title={`Frequently Asked Questions About ${content.heading}`}
       />
 
-      {/* Related Services */}
+      {/* Related Content */}
       <RelatedContent 
-        title="Explore Our Other Services" 
+        title={`Explore Our Other ${sectionTitle}`}
         links={serviceRelatedLinks.filter(link => !link.href.includes(content.heading.toLowerCase()))}
       />
 
