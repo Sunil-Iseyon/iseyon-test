@@ -45,7 +45,7 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
     }
   }
   return (
-    <section className='pt-12 md:pt-11 mx-2 sm:mx-4 lg:mx-5 flex flex-col md:block min-h-[calc(100vh-3rem)] md:min-h-0'>
+    <section className=' h-screen pt-12 md:pt-11 mx-2 sm:mx-4 lg:mx-5 flex flex-col md:block min-h-[calc(100vh-3rem)] md:min-h-0'>
       <main className="rounded-t-lg sm:rounded-t-xl lg:rounded-t-2xl overflow-hidden flex-1 md:flex-none flex flex-col md:block">
         <div className="mx-auto py-4 md:py-6 lg:py-10 flex-1 md:flex-none flex flex-col md:block">
           <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-8 md:py-6 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl flex-1 md:flex-none flex flex-col md:block justify-center md:justify-start'>
@@ -134,33 +134,37 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
               <div className="relative h-full hidden lg:flex items-center justify-center">
 
                 <div className="absolute inset-0 hidden lg:block">
-                  {/* Column 1 - Left side tall bars - animated from top */}
+                  {/* Column 1 - Left side tall bars - smooth animation from bottom */}
                   <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "20rem" }}
-                    transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-                    className="absolute top-67 left-59 w-26 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent"
+                    initial={{ opacity: 0, scaleY: 0 }}
+                    animate={{ opacity: 1, scaleY: 1 }}
+                    transition={{ duration: 1.6, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    style={{ transformOrigin: 'top' }}
+                    className="absolute top-40 left-59 w-26 h-80 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent"
                   />
 
                   <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 0.8, height: "14rem" }}
-                    transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-                    className="absolute top-79 right-50 w-26 bg-linear-to-t from-sky-200 via-sky-200/40 to-transparent"
+                    initial={{ opacity: 0, scaleY: 0 }}
+                    animate={{ opacity: 0.8, scaleY: 1 }}
+                    transition={{ duration: 1.6, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    style={{ transformOrigin: 'top' }}
+                    className="absolute top-50 right-45 w-26 h-56 bg-linear-to-t from-sky-200 via-sky-200/40 to-transparent"
                   />
 
                   {/* Column 3 - Right side bars */}
                   <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "12rem" }}
-                    transition={{ duration: 1.5, delay: 0.7, ease: "easeOut" }}
-                    className="absolute top-72 right-30 w-20 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent"
+                    initial={{ opacity: 0, scaleY: 0 }}
+                    animate={{ opacity: 1, scaleY: 1 }}
+                    transition={{ duration: 1.6, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    style={{ transformOrigin: 'top' }}
+                    className="absolute top-45 right-25 w-20 h-48 bg-linear-to-t from-sky-300 via-sky-200/40 to-transparent"
                   />
                   <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 0.8, height: "14rem" }}
-                    transition={{ duration: 1.5, delay: 0.9, ease: "easeOut" }}
-                    className="absolute top-72 right-2 w-28 bg-linear-to-t from-sky-200 via-sky-200/40 to-transparent"
+                    initial={{ opacity: 0, scaleY: 0 }}
+                    animate={{ opacity: 0.8, scaleY: 1 }}
+                    transition={{ duration: 1.6, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    style={{ transformOrigin: 'top' }}
+                    className="absolute top-60 right-[-9px] w-28 h-56 bg-linear-to-t from-sky-200 via-sky-200/40 to-transparent"
                   />
                 </div>
 

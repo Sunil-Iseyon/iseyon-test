@@ -25,7 +25,16 @@
           },
           {
             "type": "text",
-            "text": " [EU Regulation 2016/679], "
+            "text": " [EU Regulation 2016/679] ("
+          },
+          {
+            "type": "text",
+            "text": "https://gdpr.eu/",
+            "italic": true
+          },
+          {
+            "type": "text",
+            "text": "), "
           },
           {
             "type": "text",
@@ -34,7 +43,16 @@
           },
           {
             "type": "text",
-            "text": ", and other applicable data protection regulations. According to a 2024 study by the International Association of Privacy Professionals (IAPP), organizations with comprehensive privacy policies experience 73% fewer data breach incidents."
+            "text": " ("
+          },
+          {
+            "type": "text",
+            "text": "https://oag.ca.gov/privacy/ccpa",
+            "italic": true
+          },
+          {
+            "type": "text",
+            "text": "), and other applicable data protection regulations."
           }
         ]
       },
@@ -251,7 +269,16 @@
           },
           {
             "type": "text",
-            "text": " (Information Security Management) and "
+            "text": " (Information Security Management - "
+          },
+          {
+            "type": "text",
+            "text": "https://www.iso.org/isoiec-27001-information-security.html",
+            "italic": true
+          },
+          {
+            "type": "text",
+            "text": ") and "
           },
           {
             "type": "text",
@@ -260,7 +287,16 @@
           },
           {
             "type": "text",
-            "text": " standards to protect your data from unauthorized access, disclosure, alteration, or destruction. According to IBM's 2025 Cost of a Data Breach Report, organizations with comprehensive security measures reduce breach costs by an average of $1.76 million."
+            "text": " ("
+          },
+          {
+            "type": "text",
+            "text": "https://www.nist.gov/cyberframework",
+            "italic": true
+          },
+          {
+            "type": "text",
+            "text": ") standards to protect your data from unauthorized access, disclosure, alteration, or destruction."
           }
         ]
       },
@@ -1017,7 +1053,7 @@
                 "children": [
                   {
                     "type": "text",
-                    "text": "EU General Data Protection Regulation (GDPR) - Regulation (EU) 2016/679"
+                    "text": "EU GDPR Official Website: https://gdpr.eu/ - Comprehensive GDPR resource"
                   }
                 ]
               }
@@ -1031,7 +1067,7 @@
                 "children": [
                   {
                     "type": "text",
-                    "text": "California Consumer Privacy Act (CCPA) as amended by CPRA"
+                    "text": "California CCPA Information: https://oag.ca.gov/privacy/ccpa"
                   }
                 ]
               }
@@ -1045,7 +1081,7 @@
                 "children": [
                   {
                     "type": "text",
-                    "text": "ISO/IEC 27001:2022 - Information Security Management Systems"
+                    "text": "ISO/IEC 27001: https://www.iso.org/isoiec-27001-information-security.html"
                   }
                 ]
               }
@@ -1059,7 +1095,7 @@
                 "children": [
                   {
                     "type": "text",
-                    "text": "NIST Cybersecurity Framework v1.1 and Privacy Framework"
+                    "text": "NIST Cybersecurity Framework: https://www.nist.gov/cyberframework"
                   }
                 ]
               }
@@ -1073,7 +1109,7 @@
                 "children": [
                   {
                     "type": "text",
-                    "text": "ePrivacy Directive (2002/58/EC) as amended"
+                    "text": "GDPR on Wikipedia: https://en.wikipedia.org/wiki/General_Data_Protection_Regulation"
                   }
                 ]
               }
@@ -1087,7 +1123,7 @@
                 "children": [
                   {
                     "type": "text",
-                    "text": "UK Information Commissioner's Office (ICO) Guidance on GDPR"
+                    "text": "Data Protection Wikipedia: https://en.wikipedia.org/wiki/Information_privacy"
                   }
                 ]
               }
@@ -1101,7 +1137,7 @@
                 "children": [
                   {
                     "type": "text",
-                    "text": "European Data Protection Board (EDPB) Guidelines and Recommendations"
+                    "text": "Stanford Encyclopedia - Privacy: https://plato.stanford.edu/entries/privacy/"
                   }
                 ]
               }
@@ -1115,20 +1151,11 @@
                 "children": [
                   {
                     "type": "text",
-                    "text": "SOC 2 Type II Compliance Standards (AICPA)"
+                    "text": "ePrivacy Directive Information: https://en.wikipedia.org/wiki/EPrivacy_Directive"
                   }
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "type": "p",
-        "children": [
-          {
-            "type": "text",
-            "text": "Statistical data and research cited from: International Association of Privacy Professionals (IAPP), Ponemon Institute, Gartner Research, IBM Security, Forrester Research, Digital Analytics Association, and Family Online Safety Institute."
           }
         ]
       },

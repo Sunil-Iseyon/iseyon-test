@@ -115,7 +115,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
               Our Vision for 2026 and Beyond
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-3xl mx-auto">
-             Iseyon Analytics envisions a future where AI and advanced analytics integrate seamlessly into every business operation. 
+             Iseyon Analytics envisions a future where <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">AI</a> and <a href="https://en.wikipedia.org/wiki/Analytics" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">advanced analytics</a> integrate seamlessly into every <a href="https://en.wikipedia.org/wiki/Business_operations" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">business operation</a>. 
             </p>
           </motion.div>
 

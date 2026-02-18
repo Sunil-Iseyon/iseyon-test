@@ -175,6 +175,12 @@ const client = {
         },
       });
     },
+    privacyPolicy: ({ relativePath }: { relativePath: string }) => {
+      const data = readJsonFile(`privacy-policy/${relativePath}`);
+      return Promise.resolve({
+        data: { privacyPolicy: data },
+      });
+    },
     blogPostsConnection: () => {
       const edges = getAllFilesInDir('blog');
       return Promise.resolve({
