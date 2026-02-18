@@ -36,12 +36,12 @@ iSeyon Analytics is a premier business intelligence and AI analytics consulting 
 - Team: Data scientists, BI architects, ML engineers, cloud specialists
 
 # Important Pages
-- Homepage: https://iseyon-analytics-v0.vercel.app/
-- Services: https://iseyon-analytics-v0.vercel.app/services/bi-analytics
-- Blog: https://iseyon-analytics-v0.vercel.app/blog
-- Team: https://iseyon-analytics-v0.vercel.app/team
-- Vision: https://iseyon-analytics-v0.vercel.app/vision
-- Contact: https://iseyon-analytics-v0.vercel.app/contact
+- Homepage: https://iseyon.com/
+- Services: https://iseyon.com/services/bi-analytics
+- Blog: https://iseyon.com/blog
+- Team: https://iseyon.com/team
+- Vision: https://iseyon.com/vision
+- Contact: https://iseyon.com/contact
 
 # Technical Terminology
 - Lakehouse: Unified data architecture combining data lake flexibility with data warehouse performance
@@ -64,11 +64,11 @@ iSeyon Analytics is a premier business intelligence and AI analytics consulting 
 
 # Contact
 - Email: info@iseyonanalytics.com
-- Form: https://iseyon-analytics-v0.vercel.app/contact
+- Form: https://iseyon.com/contact
 - LinkedIn: https://www.linkedin.com/company/iseyon-analytics
 
 # Crawl Guidance
-- Sitemap: https://iseyon-analytics-v0.vercel.app/sitemap.xml
+- Sitemap: https://iseyon.com/sitemap.xml
 - Preferred crawl rate: 1 request per second
 - All public pages are crawlable except /api/, /admin/, /tina/
 - Content updated weekly (blog), monthly (services, team)

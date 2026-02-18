@@ -28,9 +28,14 @@ interface HeroProps {
     avatar?: string
     message: any
   }>
+  services?: Array<{
+    heading: string
+    homePageDescription?: string
+    category: string
+  }>
 }
 
-export function Hero({ data, founderMessages = [] }: HeroProps) {
+export function Hero({ data, founderMessages = [], services = [] }: HeroProps) {
   const scrollToServices = () => {
     const servicesSection = document.getElementById("services")
     if (servicesSection) {
@@ -45,11 +50,11 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
     }
   }
   return (
-    <section className=' h-screen pt-12 md:pt-11 mx-2 sm:mx-4 lg:mx-5 flex flex-col md:block min-h-[calc(100vh-3rem)] md:min-h-0'>
-      <main className="rounded-t-lg sm:rounded-t-xl lg:rounded-t-2xl overflow-hidden flex-1 md:flex-none flex flex-col md:block">
-        <div className="mx-auto py-4 md:py-6 lg:py-10 flex-1 md:flex-none flex flex-col md:block">
-          <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-8 md:py-6 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl flex-1 md:flex-none flex flex-col md:block justify-center md:justify-start'>
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+    <section className='min-h-screen pt-12 md:pt-11 mx-2 sm:mx-4 lg:mx-5 flex flex-col'>
+      <main className="rounded-t-lg sm:rounded-t-xl lg:rounded-t-2xl overflow-hidden flex-1 flex flex-col">
+        <div className="mx-auto py-4 md:py-8 lg:py-12 flex-1 flex flex-col">
+          <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-8 md:py-12 lg:py-16 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl flex-1 flex flex-col justify-center'>
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center mb-8 lg:mb-12">
               {/* Left Content */}
               <div className="space-y-3 sm:space-y-4 z-10 w-full max-w-full overflow-hidden flex flex-col items-center md:items-start">
                 {/* Header */}
@@ -291,6 +296,38 @@ export function Hero({ data, founderMessages = [] }: HeroProps) {
             <div className="md:hidden mt-4 pt-4 border-t border-sky-300/30">
               <RotatingFounderMessages messages={founderMessages} interval={10000} delay={1500} />
             </div>
+
+            {/* Services Preview - Show top 3 services */}
+            {services && services.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                className="mt-8 md:mt-12"
+              >
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 text-center mb-6">
+                  Our Core Services
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                  {services.slice(0, 3).map((service, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 1.3 + index * 0.1 }}
+                      className="bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-sky-200"
+                    >
+                      <h4 className="text-base md:text-lg font-semibold text-slate-900 mb-2">
+                        {service.heading}
+                      </h4>
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {service.homePageDescription}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
           </div>
 
 

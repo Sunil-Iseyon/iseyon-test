@@ -973,6 +973,38 @@ export default defineConfig({
         ],
       },
       {
+        name: "homeFaqs",
+        label: "Homepage FAQs",
+        path: "content/home-faqs",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: true,
+            delete: true,
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "question",
+            label: "Question",
+            required: true,
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "string",
+            name: "answer",
+            label: "Answer",
+            required: true,
+            ui: {
+              component: "textarea",
+            },
+          },
+        ],
+      },
+      {
         name: "blogPosts",
         label: "Blog Posts",
         path: "content/blog",

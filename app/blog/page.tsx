@@ -1,8 +1,8 @@
 import { BlogList } from '@/components/blog-list'
 import { BlogHero } from '@/components/blog-hero'
 import { FAQSchema, blogFAQs } from '@/components/faq-schema'
+import { PageCitations, blogCitations } from '@/components/page-citations'
 import {
-  AuthoritativeCitations,
   ExpertQuotations,
   ProprietaryResearch,
   IndustryStatistics,
@@ -21,11 +21,11 @@ async function getBlogPosts() {
 
 // Generate advanced metadata with Dublin Core, hreflang, license signals
 export const metadata: Metadata = {
-  title: 'Blog | AI, BI & Data Analytics Insights | iSeyon Analytics',
+  title: 'Blog | AI, BI & Data Analytics Insights | Iseyon Analytics',
   description: 'Explore evidence-based insights on AI-powered business intelligence, data analytics, cloud platforms (Snowflake, Databricks, Palantir), and emerging technologies. Backed by expert research and proprietary benchmarks.',
   keywords: ['AI blog', 'business intelligence insights', 'data analytics articles', 'BI trends', 'technology insights', 'data science', 'machine learning', 'cloud analytics', 'lakehouse platform', 'generative AI'],
-  authors: [{ name: 'iSeyon Analytics Team', url: 'https://iseyon-analytics-v0.vercel.app/team' }],
-  publisher: 'iSeyon Analytics',
+  authors: [{ name: 'Iseyon Analytics Team', url: 'https://iseyon-analytics-v0.vercel.app/team' }],
+  publisher: 'Iseyon Analytics',
   openGraph: {
     title: 'Blog | AI & BI Insights',
     description: 'Evidence-based insights on AI-powered business intelligence, backed by expert research and proprietary benchmarks.',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog | iSeyon Analytics',
+    title: 'Blog | Iseyon Analytics',
     description: 'Evidence-based insights on AI-powered business intelligence and data analytics.',
   },
   alternates: {
@@ -50,12 +50,12 @@ export const metadata: Metadata = {
     // Dublin Core metadata for archival systems
     'DC.title': 'Blog | AI, BI & Data Analytics Insights',
     'DC.description': 'Explore evidence-based insights on AI-powered business intelligence, data analytics, and emerging technologies',
-    'DC.creator': 'iSeyon Analytics Team',
+    'DC.creator': 'Iseyon Analytics Team',
     'DC.date': new Date().toISOString().split('T')[0],
     'DC.language': 'en',
     'DC.format': 'text/html',
-    'DC.publisher': 'iSeyon Analytics',
-    'DC.rights': 'Copyright © 2024 iSeyon Analytics. Licensed under CC-BY-NC-SA-4.0',
+    'DC.publisher': 'Iseyon Analytics',
+    'DC.rights': 'Copyright © 2024 Iseyon Analytics. Licensed under CC-BY-NC-SA-4.0',
     'DC.subject': 'Business Intelligence, AI Analytics, Data Science, Machine Learning',
     'DC.type': 'Collection',
     // License metadata for AI training signals
@@ -75,14 +75,14 @@ export default async function BlogPage() {
       {
         '@type': 'Blog',
         '@id': 'https://iseyon-analytics-v0.vercel.app/blog#blog',
-        name: 'iSeyon Analytics Blog',
+        name: 'Iseyon Analytics Blog',
         description: 'Evidence-based insights on AI-powered business intelligence and data analytics',
         url: 'https://iseyon-analytics-v0.vercel.app/blog',
         inLanguage: 'en-US',
         publisher: {
           '@type': 'Organization',
           '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
-          name: 'iSeyon Analytics',
+          name: 'Iseyon Analytics',
           url: 'https://iseyon-analytics-v0.vercel.app',
           logo: {
             '@type': 'ImageObject',
@@ -100,10 +100,10 @@ export default async function BlogPage() {
           dateModified: new Date().toISOString().split('T')[0],
           author: {
             '@type': 'Person',
-            name: blog.author || 'iSeyon Analytics Team',
+            name: blog.author || 'Iseyon Analytics Team',
             worksFor: {
               '@type': 'Organization',
-              name: 'iSeyon Analytics',
+              name: 'Iseyon Analytics',
             },
           },
           image: `https://iseyon-analytics-v0.vercel.app${blog.image}`,
@@ -171,8 +171,10 @@ export default async function BlogPage() {
         {/* Evidence-based content sections for E-E-A-T - Strategic Placement */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <IndustryStatistics />
-          <AuthoritativeCitations />
         </div>
+        
+        {/* Blog-specific Citations */}
+        <PageCitations citations={blogCitations} title="Data Science & Analytics Research" />
       </article>
     </>
   )

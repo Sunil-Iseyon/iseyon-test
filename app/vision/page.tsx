@@ -2,6 +2,7 @@ import client from "@/lib/tina-local-client";
 import { VisionClient } from "@/components/vision-client";
 import { getSpeakableSchema, standardActions, getPotentialActionSchema } from '@/components/advanced-seo-metadata';
 import { FAQSchema } from '@/components/faq-schema';
+import { PageCitations, visionCitations } from '@/components/page-citations';
 import { visionFAQs } from '@/lib/vision-faqs';
 import type { Metadata } from 'next';
 
@@ -11,40 +12,40 @@ async function getVisionData() {
 }
 
 export const metadata: Metadata = {
-  title: 'Our Vision | iSeyon Analytics - Shaping the Future of AI & BI',
-  description: 'Discover iSeyon Analytics vision for transforming business intelligence through AI-powered solutions. Learn about our mission to help enterprises achieve 5.6x ROI through data-driven transformation.',
+  title: 'Our Vision | Iseyon Analytics - Shaping the Future of AI & BI',
+  description: 'Discover Iseyon Analytics vision for transforming business intelligence through AI-powered solutions. Learn about our mission to help enterprises achieve 5.6x ROI through data-driven transformation.',
   keywords: ['company vision', 'AI innovation', 'business intelligence future', 'data-driven transformation', 'analytics mission', 'enterprise AI', 'BI strategy'],
-  authors: [{ name: 'iSeyon Analytics Team', url: 'https://iseyon-analytics-v0.vercel.app/team' }],
-  publisher: 'iSeyon Analytics',
+  authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/team' }],
+  publisher: 'Iseyon Analytics',
   openGraph: {
-    title: 'Our Vision | iSeyon Analytics',
+    title: 'Our Vision | Iseyon Analytics',
     description: 'Shaping the future of AI-powered business intelligence and data analytics.',
-    url: 'https://iseyon-analytics-v0.vercel.app/vision',
+    url: 'https://www.iseyon.com/vision',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Our Vision | iSeyon Analytics',
+    title: 'Our Vision | Iseyon Analytics',
     description: 'Shaping the future of AI-powered business intelligence.',
   },
   alternates: {
-    canonical: 'https://iseyon-analytics-v0.vercel.app/vision',
+    canonical: 'https://www.iseyon.com/vision',
     languages: {
-      'en': 'https://iseyon-analytics-v0.vercel.app/vision',
-      'en-US': 'https://iseyon-analytics-v0.vercel.app/vision',
-      'en-IN': 'https://iseyon-analytics-v0.vercel.app/vision',
-      'x-default': 'https://iseyon-analytics-v0.vercel.app/vision',
+      'en': 'https://www.iseyon.com/vision',
+      'en-US': 'https://www.iseyon.com/vision',
+      'en-IN': 'https://www.iseyon.com/vision',
+      'x-default': 'https://www.iseyon.com/vision',
     },
   },
   other: {
-    'DC.title': 'Our Vision | iSeyon Analytics',
+    'DC.title': 'Our Vision | Iseyon Analytics',
     'DC.description': 'Vision for transforming business intelligence through AI-powered solutions',
-    'DC.creator': 'iSeyon Analytics Team',
+    'DC.creator': 'Iseyon Analytics Team',
     'DC.date': new Date().toISOString().split('T')[0],
     'DC.language': 'en',
     'DC.format': 'text/html',
-    'DC.publisher': 'iSeyon Analytics',
-    'DC.rights': 'Copyright © 2024 iSeyon Analytics. Licensed under CC-BY-NC-SA-4.0',
+    'DC.publisher': 'Iseyon Analytics',
+    'DC.rights': 'Copyright © 2024 Iseyon Analytics. Licensed under CC-BY-NC-SA-4.0',
     'DC.subject': 'Company Vision, AI Strategy, Business Intelligence Future',
     'DC.type': 'Text',
     'license': 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
@@ -61,10 +62,10 @@ export default async function VisionPage() {
     '@graph': [
       {
         '@type': 'AboutPage',
-        '@id': 'https://iseyon-analytics-v0.vercel.app/vision#aboutpage',
+        '@id': 'https://www.iseyon.com/vision#aboutpage',
         name: 'Our Vision',
-        description: 'iSeyon Analytics vision for transforming business intelligence through AI-powered solutions',
-        url: 'https://iseyon-analytics-v0.vercel.app/vision',
+        description: 'Iseyon Analytics vision for transforming business intelligence through AI-powered solutions',
+        url: 'https://www.iseyon.com/vision',
         datePublished: '2024-01-15',
         dateModified: new Date().toISOString().split('T')[0],
         inLanguage: 'en-US',
@@ -72,13 +73,13 @@ export default async function VisionPage() {
         potentialAction: getPotentialActionSchema(standardActions),
         publisher: {
           '@type': 'Organization',
-          '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
-          name: 'iSeyon Analytics',
-          url: 'https://iseyon-analytics-v0.vercel.app',
+          '@id': 'https://www.iseyon.com/#organization',
+          name: 'Iseyon Analytics',
+          url: 'https://www.iseyon.com',
           foundingDate: '2020',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+            url: 'https://www.iseyon.com/iseyon.webp',
           },
           sameAs: [
             'https://www.linkedin.com/company/iseyon-analytics',
@@ -91,13 +92,13 @@ export default async function VisionPage() {
               '@type': 'ListItem',
               position: 1,
               name: 'Home',
-              item: 'https://iseyon-analytics-v0.vercel.app',
+              item: 'https://www.iseyon.com',
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Vision',
-              item: 'https://iseyon-analytics-v0.vercel.app/vision',
+              item: 'https://www.iseyon.com/vision',
             },
           ],
         },
@@ -114,6 +115,7 @@ export default async function VisionPage() {
       />
       <VisionClient visionData={visionData} />
       <FAQSchema faqs={visionFAQs} title="Vision & Mission FAQs" />
+      <PageCitations citations={visionCitations} title="Future of AI and Business Intelligence" />
     </>
   );
 }

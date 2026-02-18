@@ -104,8 +104,8 @@ export function FAQSchema({ faqs, title = "Frequently Asked Questions", showVisi
 // Pre-defined FAQ sets for different pages
 export const blogFAQs: FAQ[] = [
   {
-    question: "What topics does the iSeyon Analytics blog cover?",
-    answer: "The iSeyon Analytics blog covers AI-powered business intelligence, data analytics, cloud platforms (Snowflake, Databricks, Palantir), emerging technologies, industry trends, and best practices for data-driven decision making."
+    question: "What topics does the Iseyon Analytics blog cover?",
+    answer: "The Iseyon Analytics blog covers AI-powered business intelligence, data analytics, cloud platforms (Snowflake, Databricks, Palantir), emerging technologies, industry trends, and best practices for data-driven decision making."
   },
   {
     question: "How often is the blog updated with new content?",
@@ -113,7 +113,7 @@ export const blogFAQs: FAQ[] = [
   },
   {
     question: "Who writes the blog articles?",
-    answer: "Our blog articles are written by the iSeyon Analytics expert team, including our founders and senior consultants with decades of combined experience in business intelligence, data analytics, and AI integration."
+    answer: "Our blog articles are written by the Iseyon Analytics expert team, including our founders and senior consultants with decades of combined experience in business intelligence, data analytics, and AI integration."
   },
   {
     question: "Can I subscribe to receive blog updates?",
@@ -121,14 +121,14 @@ export const blogFAQs: FAQ[] = [
   },
   {
     question: "How can I request a specific topic to be covered?",
-    answer: "We welcome topic suggestions! Please contact us through our contact page or send an email to info@iSeyon.com with your suggested topics or questions you'd like addressed."
+    answer: "We welcome topic suggestions! Please contact us through our contact page or send an email to info@Iseyon.com with your suggested topics or questions you'd like addressed."
   },
 ]
 
 export const serviceFAQs: FAQ[] = [
   {
-    question: "What services does iSeyon Analytics provide?",
-    answer: "iSeyon Analytics provides AI-powered business intelligence consulting, cloud platform implementation (Snowflake, Databricks, Palantir, Anaplan), Power BI services, data analytics solutions, and custom AI integration services."
+    question: "What services does Iseyon Analytics provide?",
+    answer: "Iseyon Analytics provides AI-powered business intelligence consulting, cloud platform implementation (Snowflake, Databricks, Palantir, Anaplan), Power BI services, data analytics solutions, and custom AI integration services."
   },
   {
     question: "How long does a typical BI implementation project take?",
@@ -150,7 +150,7 @@ export const serviceFAQs: FAQ[] = [
 
 export const contactFAQs: FAQ[] = [
   {
-    question: "How can I get started with iSeyon Analytics?",
+    question: "How can I get started with Iseyon Analytics?",
     answer: "Simply fill out our contact form, schedule a consultation, or call us at +1-651-503-9126. We'll discuss your needs and provide a customized solution proposal."
   },
   {
@@ -166,14 +166,14 @@ export const contactFAQs: FAQ[] = [
     answer: "We aim to respond to all inquiries within 24 business hours. For urgent matters, please call us directly at +1-651-503-9126."
   },
   {
-    question: "Where is iSeyon Analytics located?",
+    question: "Where is Iseyon Analytics located?",
     answer: "Our headquarters is in New York, USA, and we serve clients across the United States and India, with capabilities to work remotely with global clients."
   },
 ]
 
 export const teamFAQs: FAQ[] = [
   {
-    question: "What experience does the iSeyon Analytics team have?",
+    question: "What experience does the Iseyon Analytics team have?",
     answer: "Our team brings decades of combined experience in business intelligence, data analytics, AI implementation, and cloud platforms. Our founders and consultants have worked with Fortune 500 companies and led enterprise-scale transformations."
   },
   {
@@ -185,7 +185,7 @@ export const teamFAQs: FAQ[] = [
     answer: "Absolutely! We encourage discovery meetings where you can meet the team members who will be working on your project. This helps build trust and ensures alignment on goals and approach."
   },
   {
-    question: "How does iSeyon Analytics stay current with technology trends?",
+    question: "How does Iseyon Analytics stay current with technology trends?",
     answer: "Our team continuously invests in training, attends industry conferences, maintains partnerships with leading technology vendors, and actively contributes to the analytics community through our blog and thought leadership."
   },
 ]

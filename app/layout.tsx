@@ -23,14 +23,14 @@ const sansation = Sansation({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://iseyon-analytics-v0.vercel.app'),
+  metadataBase: new URL('https://iseyon.com'),
   title: {
-    default: 'iSeyon Analytics | AI-Powered Business Intelligence',
-    template: '%s | iSeyon Analytics',
+    default: 'Iseyon Analytics | AI-Powered Business Intelligence',
+    template: '%s | Iseyon Analytics',
   },
   description: 'Transform your business with AI-powered analytics and intelligence solutions. Expert BI consulting, cloud platforms, and data-driven insights.',
   keywords: ['AI business intelligence', 'data analytics', 'BI consulting', 'Power BI', 'Snowflake', 'Databricks', 'business analytics', 'AI solutions'],
-  authors: [{ name: 'iSeyon Analytics Team', url: 'https://iseyon-analytics-v0.vercel.app/team' }],
+  authors: [{ name: 'Iseyon Analytics Team', url: 'https://iseyon.com/team' }],
   creator: 'Iseyon Analytics',
   publisher: 'Iseyon Analytics',
   formatDetection: {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://iseyon-analytics-v0.vercel.app',
+    url: 'https://iseyon.com',
     siteName: 'Iseyon Analytics',
     title: 'Iseyon Analytics | AI-Powered Business Intelligence',
     description: 'Transform your business with AI-powered analytics and intelligence solutions',
@@ -83,13 +83,13 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code',
   },
   alternates: {
-    canonical: 'https://iseyon-analytics-v0.vercel.app',
+    canonical: 'https://iseyon.com',
     languages: {
-      'en': 'https://iseyon-analytics-v0.vercel.app',
-      'x-default': 'https://iseyon-analytics-v0.vercel.app',
+      'en': 'https://iseyon.com',
+      'x-default': 'https://iseyon.com',
     },
     types: {
-      'application/rss+xml': 'https://iseyon-analytics-v0.vercel.app/feed.xml',
+      'application/rss+xml': 'https://iseyon.com/feed.xml',
     },
   },
   other: {
@@ -116,13 +116,13 @@ export default async function RootLayout({
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
-    name: 'iSeyon Analytics',
-    legalName: 'iSeyon Analytics',
-    url: 'https://iseyon-analytics-v0.vercel.app',
+    '@id': 'https://iseyon.com/#organization',
+    name: 'Iseyon Analytics',
+    legalName: 'Iseyon Analytics',
+    url: 'https://iseyon.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+      url: 'https://iseyon.com/iseyon.webp',
       width: 250,
       height: 60,
     },
@@ -132,7 +132,7 @@ export default async function RootLayout({
         '@type': 'Person',
         name: 'Srinivas Reddy Karri',
         jobTitle: 'Founder & CEO',
-        sameAs: 'https://iseyon-analytics-v0.vercel.app/team',
+        sameAs: 'https://iseyon.com/team',
       },
     ],
     knowsAbout: [
@@ -182,12 +182,12 @@ export default async function RootLayout({
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://iseyon-analytics-v0.vercel.app/#website',
-    url: 'https://iseyon-analytics-v0.vercel.app',
-    name: 'iSeyon Analytics',
+    '@id': 'https://iseyon.com/#website',
+    url: 'https://iseyon.com',
+    name: 'Iseyon Analytics',
     description: 'AI-Powered Business Intelligence & Data Analytics Solutions',
     publisher: {
-      '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+      '@id': 'https://iseyon.com/#organization',
     },
     inLanguage: 'en-US',
   }

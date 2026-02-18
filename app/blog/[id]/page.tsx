@@ -28,12 +28,12 @@ export async function generateMetadata({
   
   if (!blog) {
     return {
-      title: 'Blog Post Not Found | iSeyon Analytics',
+      title: 'Blog Post Not Found | Iseyon Analytics',
     }
   }
 
   return {
-    title: `${blog.title} | iSeyon Analytics Blog`,
+    title: `${blog.title} | Iseyon Analytics Blog`,
     description: blog.summary || blog.title,
     keywords: blog.tags || [],
     openGraph: {
@@ -43,7 +43,7 @@ export async function generateMetadata({
       type: 'article',
       images: blog.image ? [{ url: blog.image }] : [],
       publishedTime: blog.date,
-      authors: [blog.author || 'iSeyon Analytics Team'],
+      authors: [blog.author || 'Iseyon Analytics Team'],
     },
     twitter: {
       card: 'summary_large_image',
@@ -95,12 +95,12 @@ export default async function BlogDetailPage({
     dateModified: blog.date,
     author: {
       '@type': 'Person',
-      name: blog.author || 'iSeyon Analytics Team',
+      name: blog.author || 'Iseyon Analytics Team',
       url: 'https://iseyon-analytics-v0.vercel.app/team',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'iSeyon Analytics',
+      name: 'Iseyon Analytics',
       url: 'https://iseyon-analytics-v0.vercel.app',
       logo: {
         '@type': 'ImageObject',

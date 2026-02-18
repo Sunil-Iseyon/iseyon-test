@@ -22,7 +22,7 @@ export async function GET() {
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>iSeyon Analytics Blog</title>
+    <title>Iseyon Analytics Blog</title>
     <link>${baseUrl}/blog</link>
     <description>Evidence-based insights on AI-powered business intelligence, data analytics, cloud platforms, and emerging technologies.</description>
     <language>en-us</language>
@@ -30,7 +30,7 @@ export async function GET() {
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>${baseUrl}/iseyon.webp</url>
-      <title>iSeyon Analytics</title>
+      <title>Iseyon Analytics</title>
       <link>${baseUrl}</link>
     </image>
     ${blogPosts

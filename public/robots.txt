@@ -1,5 +1,5 @@
 # Robots.txt for iSeyon Analytics
-# https://iseyon-analytics-v0.vercel.app
+# https://iseyon.com
 # Last updated: 2024
 
 # Default access for all bots
@@ -11,10 +11,10 @@ Disallow: /_next/
 Disallow: /tina/
 
 # Sitemap
-Sitemap: https://iseyon-analytics-v0.vercel.app/sitemap.xml
+Sitemap: https://iseyon.com/sitemap.xml
 
 # RSS Feed
-# https://iseyon-analytics-v0.vercel.app/feed.xml
+# https://iseyon.com/feed.xml
 
 # Traditional search engine bots
 User-agent: Googlebot

@@ -1,5 +1,6 @@
 import { ContactClient } from '@/components/contact-client'
 import { getSpeakableSchema, standardActions, getPotentialActionSchema } from '@/components/advanced-seo-metadata'
+import { PageCitations, contactCitations } from '@/components/page-citations'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -153,6 +154,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
       />
       <ContactClient />
+      <PageCitations citations={contactCitations} title="Business Intelligence Success Stories & Research" />
     </>
   )
 }

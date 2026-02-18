@@ -55,6 +55,11 @@ export async function getProjectContent() {
   return response.data.project;
 }
 
+export async function getAllHomeFaqs() {
+  const response = await client.queries.homeFaqsConnection();
+  return response.data.homeFaqsConnection.edges?.map(edge => edge?.node) || [];
+}
+
 export async function getAllServiceContent() {
   const response = await client.queries.serviceContentConnection();
   return response.data.serviceContentConnection.edges?.map(edge => edge?.node) || [];

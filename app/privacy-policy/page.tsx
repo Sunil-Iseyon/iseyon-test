@@ -10,19 +10,19 @@ async function getPrivacyPolicy() {
 }
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | iSeyon Analytics - Data Protection & Privacy',
-  description: 'Read iSeyon Analytics privacy policy. Learn how we protect your data, handle personal information, and comply with GDPR and data protection regulations.',
+  title: 'Privacy Policy | Iseyon Analytics - Data Protection & Privacy',
+  description: 'Read Iseyon Analytics privacy policy. Learn how we protect your data, handle personal information, and comply with GDPR and data protection regulations.',
   keywords: ['privacy policy', 'data protection', 'GDPR compliance', 'data privacy', 'personal information'],
   openGraph: {
-    title: 'Privacy Policy | iSeyon Analytics',
-    description: 'Learn how iSeyon Analytics protects your data and complies with privacy regulations.',
+    title: 'Privacy Policy | Iseyon Analytics',
+    description: 'Learn how Iseyon Analytics protects your data and complies with privacy regulations.',
     url: 'https://iseyon-analytics-v0.vercel.app/privacy-policy',
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Privacy Policy | iSeyon Analytics',
-    description: 'Learn how iSeyon Analytics protects your data and complies with privacy regulations.',
+    title: 'Privacy Policy | Iseyon Analytics',
+    description: 'Learn how Iseyon Analytics protects your data and complies with privacy regulations.',
   },
   alternates: {
     canonical: 'https://iseyon-analytics-v0.vercel.app/privacy-policy',
@@ -41,11 +41,11 @@ export default async function PrivacyPolicyPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Privacy Policy',
-    description: 'iSeyon Analytics privacy policy detailing data protection practices and compliance.',
+    description: 'Iseyon Analytics privacy policy detailing data protection practices and compliance.',
     url: 'https://iseyon-analytics-v0.vercel.app/privacy-policy',
     publisher: {
       '@type': 'Organization',
-      name: 'iSeyon Analytics',
+      name: 'Iseyon Analytics',
       logo: {
         '@type': 'ImageObject',
         url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',

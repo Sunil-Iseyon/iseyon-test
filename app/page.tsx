@@ -5,8 +5,8 @@ import { TestimonialsSection } from '@/components/testimonials-section'
 import { BannerSection } from '@/components/banner-section'
 import { PartnersSlider } from '@/components/partners-slider'
 import { FAQSchema } from '@/components/faq-schema'
-import { IndustryStats, ExpertQuotes, ProprietaryResearch, AuthoritativeCitations } from '@/components/seo-enhancements'
-import { homeFAQs } from '@/lib/home-faqs'
+import { IndustryStats, ExpertQuotes, ProprietaryResearch } from '@/components/seo-enhancements'
+import { PageCitations, homeCitations } from '@/components/page-citations'
 import client from "@/lib/tina-local-client";
 import type { Metadata } from 'next'
 
@@ -18,6 +18,7 @@ async function getHomeData() {
   const bannerResponse = await client.queries.banner({ relativePath: "main.json" });
   const projectResponse = await client.queries.project({ relativePath: "main.json" });
   const founderMessagesResponse = await client.queries.founderMessagesConnection();
+  const homeFaqsResponse = await client.queries.homeFaqsConnection();
 
   // Filter for services that should show on home page and sort by modification date
   const allServiceContent = serviceContentResponse.data.serviceContentConnection.edges?.map(edge => ({
@@ -42,12 +43,13 @@ async function getHomeData() {
     banner: bannerResponse.data.banner,
     project: projectResponse.data.project,
     founderMessages: founderMessagesResponse.data.founderMessagesConnection.edges?.map(edge => edge?.node) || [],
+    homeFaqs: homeFaqsResponse.data.homeFaqsConnection.edges?.map(edge => edge?.node) || [],
   };
 }
 
 export const metadata: Metadata = {
-  title: 'iSeyon Analytics | AI-Powered Business Intelligence & Data Analytics Solutions',
-  description: '78% of enterprises leverage AI for analytics. iSeyon Analytics delivers proven 5.6x ROI through AI-powered BI solutions, cloud platforms (Snowflake, Databricks, Palantir), and expert data analytics consulting. Transform your data into strategic insights.',
+  title: 'Iseyon Analytics | AI-Powered Business Intelligence & Data Analytics Solutions',
+  description: '78% of enterprises leverage AI for analytics. Iseyon Analytics delivers proven 5.6x ROI through AI-powered BI solutions, cloud platforms (Snowflake, Databricks, Palantir), and expert data analytics consulting. Transform your data into strategic insights.',
   keywords: [
     'AI business intelligence',
     'data analytics solutions',
@@ -65,10 +67,10 @@ export const metadata: Metadata = {
     'enterprise analytics',
   ],
   openGraph: {
-    title: 'iSeyon Analytics | AI-Powered Business Intelligence with 5.6x ROI',
-    description: '78% of enterprises now use AI for analytics. Join industry leaders achieving 5.6x ROI with iSeyon\'s AI-powered BI and data analytics solutions.',
-    url: 'https://iseyon-analytics-v0.vercel.app',
-    siteName: 'iSeyon Analytics',
+    title: 'Iseyon Analytics | AI-Powered Business Intelligence with 5.6x ROI',
+    description: '78% of enterprises now use AI for analytics. Join industry leaders achieving 5.6x ROI with Iseyon\'s AI-powered BI and data analytics solutions.',
+    url: 'https://iseyon.com',
+    siteName: 'Iseyon Analytics',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -76,25 +78,25 @@ export const metadata: Metadata = {
         url: '/iseyon.webp',
         width: 1200,
         height: 630,
-        alt: 'iSeyon Analytics - AI-Powered Business Intelligence',
+        alt: 'Iseyon Analytics - AI-Powered Business Intelligence',
         type: 'image/webp',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'iSeyon Analytics | AI-Powered BI with Proven 5.6x ROI',
+    title: 'Iseyon Analytics | AI-Powered BI with Proven 5.6x ROI',
     description: 'Transform your business with AI-powered analytics. 78% of enterprises now leverage AI for data-driven decisions.',
     images: ['/iseyon.webp'],
-    creator: '@iSeyonAnalytics',
+    creator: '@IseyonAnalytics',
   },
   alternates: {
-    canonical: 'https://iseyon-analytics-v0.vercel.app',
+    canonical: 'https://iseyon.com',
     languages: {
-      'en': 'https://iseyon-analytics-v0.vercel.app',
-      'en-US': 'https://iseyon-analytics-v0.vercel.app',
-      'en-IN': 'https://iseyon-analytics-v0.vercel.app',
-      'x-default': 'https://iseyon-analytics-v0.vercel.app',
+      'en': 'https://iseyon.com',
+      'en-US': 'https://iseyon.com',
+      'en-IN': 'https://iseyon.com',
+      'x-default': 'https://iseyon.com',
     },
   },
   robots: {
@@ -108,9 +110,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  authors: [{ name: 'iSeyon Analytics Team', url: 'https://iseyon-analytics-v0.vercel.app/team' }],
-  creator: 'iSeyon Analytics',
-  publisher: 'iSeyon Analytics',
+  authors: [{ name: 'Iseyon Analytics Team', url: 'https://iseyon.com/team' }],
+  creator: 'Iseyon Analytics',
+  publisher: 'Iseyon Analytics',
   category: 'Business Intelligence and Data Analytics',
   other: {
     // Dublin Core metadata
@@ -120,8 +122,8 @@ export const metadata: Metadata = {
     'DC.date': new Date().toISOString().split('T')[0],
     'DC.language': 'en',
     'DC.format': 'text/html',
-    'DC.publisher': 'iSeyon Analytics',
-    'DC.rights': 'Copyright © 2024 iSeyon Analytics. Licensed under CC-BY-NC-SA-4.0',
+    'DC.publisher': 'Iseyon Analytics',
+    'DC.rights': 'Copyright © 2024 Iseyon Analytics. Licensed under CC-BY-NC-SA-4.0',
     'DC.subject': 'Business Intelligence, AI Analytics, Data Science, Cloud Platforms',
     'DC.type': 'Service',
     // License metadata
@@ -137,16 +139,16 @@ export default async function Home() {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'iSeyon Analytics',
-    alternateName: 'iSeyon AI-Powered Analytics',
-    url: 'https://iseyon-analytics-v0.vercel.app',
+    name: 'Iseyon Analytics',
+    alternateName: 'Iseyon AI-Powered Analytics',
+    url: 'https://iseyon.com',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+      url: 'https://www.iseyon.com/iseyon.webp',
       width: '600',
       height: '60',
     },
-    description: '78% of enterprises now leverage AI for analytics. iSeyon Analytics delivers AI-Powered Business Intelligence and Data Analytics Solutions with proven 5.6x ROI.',
+    description: '78% of enterprises now leverage AI for analytics. Iseyon Analytics delivers AI-Powered Business Intelligence and Data Analytics Solutions with proven 5.6x ROI.',
     foundingDate: '2020',
     foundingLocation: 'New York, USA',
     contactPoint: {
@@ -164,10 +166,10 @@ export default async function Home() {
       addressCountry: 'US',
     },
     sameAs: [
-      'https://iseyon-analytics-v0.vercel.app/team',
-      'https://iseyon-analytics-v0.vercel.app/vision',
-      'https://iseyon-analytics-v0.vercel.app/contact',
-      'https://iseyon-analytics-v0.vercel.app/blog',
+      'https://iseyon.com/team',
+      'https://iseyon.com/vision',
+      'https://iseyon.com/contact',
+      'https://iseyon.com/blog',
     ],
     areaServed: [
       {
@@ -208,19 +210,19 @@ export default async function Home() {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'iSeyon Analytics',
-    url: 'https://iseyon-analytics-v0.vercel.app',
+    name: 'Iseyon Analytics',
+    url: 'https://iseyon.com',
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://iseyon-analytics-v0.vercel.app/search?q={search_term_string}',
+        urlTemplate: 'https://iseyon.com/search?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'iSeyon Analytics',
+      name: 'Iseyon Analytics',
       logo: {
         '@type': 'ImageObject',
         url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
@@ -302,17 +304,17 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main className="min-h-screen bg-white snap-y snap-proximity">
-        <Hero data={data.hero as any} founderMessages={data.founderMessages as any} />
+        <Hero data={data.hero as any} founderMessages={data.founderMessages as any} services={data.services as any} />
         <IndustryStats />
         <ServicesSection services={data.services as any} />
-        <ProprietaryResearch />
+        {/* <ProprietaryResearch /> */}
         <NewProject data={data.project as any} />
         <ExpertQuotes />
         <TestimonialsSection testimonials={data.testimonials as any} />
-        <AuthoritativeCitations />
+        <PageCitations citations={homeCitations} title="Evidence-Based Business Intelligence Insights" />
         <BannerSection data={data.banner as any} />
         <PartnersSlider partners={data.partners as any} />
-        <FAQSchema faqs={homeFAQs} title="Frequently Asked Questions About iSeyon Analytics" />
+        <FAQSchema faqs={data.homeFaqs as any} title="Frequently Asked Questions About Iseyon Analytics" />
       </main>
     </>
   )

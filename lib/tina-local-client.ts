@@ -181,6 +181,20 @@ const client = {
         data: { privacyPolicy: data },
       });
     },
+    homeFaqsConnection: () => {
+      const edges = getAllFilesInDir('home-faqs');
+      return Promise.resolve({
+        data: {
+          homeFaqsConnection: { edges },
+        },
+      });
+    },
+    homeFaqs: ({ relativePath }: { relativePath: string }) => {
+      const data = readJsonFile(`home-faqs/${relativePath}`);
+      return Promise.resolve({
+        data: { homeFaqs: data },
+      });
+    },
     blogPostsConnection: () => {
       const edges = getAllFilesInDir('blog');
       return Promise.resolve({

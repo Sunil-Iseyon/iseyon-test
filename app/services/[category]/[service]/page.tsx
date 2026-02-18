@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import client from '@/lib/tina-local-client'
 import { ServiceDetailClient } from '@/components/service-detail-client'
+import { PageCitations, serviceCitations } from '@/components/page-citations'
 import type { TinaMarkdownContent } from 'tinacms/dist/rich-text'
 import type { Metadata } from 'next'
 
@@ -60,16 +61,16 @@ export async function generateMetadata({
   }
 
   const serviceName = content.heading
-  const description = content.subheading || `Expert ${serviceName} consulting and implementation services by iSeyon Analytics. Transform your data operations with our proven expertise.`
+  const description = content.subheading || `Expert ${serviceName} consulting and implementation services by Iseyon Analytics. Transform your data operations with our proven expertise.`
   const pageUrl = `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`
-  const imageAlt = `${serviceName} services dashboard showing data analytics and business intelligence capabilities provided by iSeyon Analytics`
+  const imageAlt = `${serviceName} services dashboard showing data analytics and business intelligence capabilities provided by Iseyon Analytics`
 
   return {
     title: `${serviceName} Services`,
     description,
-    keywords: [serviceName, `${serviceName} consulting`, `${serviceName} implementation`, 'business intelligence', 'data analytics', 'iSeyon Analytics'],
+    keywords: [serviceName, `${serviceName} consulting`, `${serviceName} implementation`, 'business intelligence', 'data analytics', 'Iseyon Analytics'],
     openGraph: {
-      title: `${serviceName} Services | iSeyon Analytics`,
+      title: `${serviceName} Services | Iseyon Analytics`,
       description,
       url: pageUrl,
       type: 'website',
@@ -77,7 +78,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${serviceName} Services | iSeyon Analytics`,
+      title: `${serviceName} Services | Iseyon Analytics`,
       description,
       images: content.image ? [content.image] : [],
     },
@@ -89,8 +90,8 @@ export async function generateMetadata({
       },
     },
     other: {
-      'DC.title': `${serviceName} Services | iSeyon Analytics`,
-      'DC.creator': 'iSeyon Analytics',
+      'DC.title': `${serviceName} Services | Iseyon Analytics`,
+      'DC.creator': 'Iseyon Analytics',
       'DC.description': description,
       'DC.date': new Date().toISOString().split('T')[0],
     },
@@ -144,7 +145,7 @@ export default async function ServicePage({
           provider: {
             '@type': 'Organization',
             '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
-            name: 'iSeyon Analytics',
+            name: 'Iseyon Analytics',
             url: 'https://iseyon-analytics-v0.vercel.app',
             logo: {
               '@type': 'ImageObject',
@@ -175,7 +176,7 @@ export default async function ServicePage({
           image: content.image ? {
             '@type': 'ImageObject',
             url: `https://iseyon-analytics-v0.vercel.app${content.image}`,
-            caption: `${content.heading} services dashboard by iSeyon Analytics`,
+            caption: `${content.heading} services dashboard by Iseyon Analytics`,
           } : undefined,
           isPartOf: {
             '@type': 'WebSite',
@@ -215,6 +216,7 @@ export default async function ServicePage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
         <ServiceDetailClient content={content} />
+        <PageCitations citations={serviceCitations} title="Industry-Leading Data Platform Research" />
       </>
     )
 }
