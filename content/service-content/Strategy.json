@@ -23,6 +23,10 @@
     {
       "question": "How does Iseyon optimize Strategy performance?",
       "answer": "Iseyon applies best practices in architecture design, query optimization, caching strategies, and infrastructure tuning to enhance speed, scalability, and reliability. Our optimization services ensure consistent performance for enterprise-wide analytics and reporting environments."
+    },
+    {
+      "question": "Does Iseyon provide Strategy mobile BI and ongoing support?",
+      "answer": "Absolutely, Iseyon enables organizations to build mobile BI applications with touch-optimized dashboards and interactive visualizations across iOS and Android devices. We also provide 24×7 maintenance, proactive monitoring, and scheduled health checks to ensure continuous system reliability and maximum business value."
     }
   ]
 }
