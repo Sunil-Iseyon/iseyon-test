@@ -20,6 +20,10 @@
     {
       "question": "How does Iseyon enable data analytics, business intelligence, and AI on Azure?",
       "answer": "Iseyon builds modern data platforms using Azure Data Factory, Azure Synapse Analytics, and Azure Data Lake Storage. We integrate analytics with Microsoft Power BI and implement AI solutions using Azure Machine Learning to deliver predictive insights and intelligent decision-making capabilities."
+    },
+    {
+      "question": "How does Iseyon ensure security, governance, and DevOps excellence on Azure?",
+      "answer": "Iseyon implements enterprise-grade security frameworks including identity management, encryption, compliance controls, and continuous monitoring. We also enable CI/CD pipelines, infrastructure automation, and containerized development using services like Azure Functions and Azure Kubernetes Service, ensuring secure, scalable, and efficient cloud operations."
     }
   ]
 }
