@@ -23,6 +23,10 @@
     {
       "question": "How does Iseyon ensure security, governance, and compliance in Palantir environments?",
       "answer": "Security is embedded in every implementation. Iseyon configures fine-grained access controls, audit trails, data lineage tracking, and governance frameworks to ensure regulatory compliance, data protection, and enterprise-grade security across cloud, on-premise, and hybrid environments."
+    },
+    {
+      "question": "Can Iseyon integrate Palantir with existing enterprise systems?",
+      "answer": "Yes, Iseyon integrates Palantir platforms with legacy systems, databases, APIs, and third-party applications to support digital modernization. Our approach ensures seamless integration, scalable data pipelines, workflow automation, and minimal disruption to ongoing business operations."
     }
   ]
 }
