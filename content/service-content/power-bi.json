@@ -19,6 +19,10 @@
     {
       "question": "What data sources can Iseyon connect to Power BI?",
       "answer": "Iseyon enables analysts to use Power BI Desktop for advanced data modeling, transformation, and report creation. We then configure secure publishing to the Power BI Service, enabling automatic data refresh, enterprise-wide sharing, and report embedding into portals or applications."
+    },
+    {
+      "question": "How does Iseyon support Power BI Desktop and Power BI Service?",
+      "answer": "Iseyon enables analysts to use Power BI Desktop for advanced data modeling, transformation, and report creation. We then configure secure publishing to the Power BI Service, enabling automatic data refresh, enterprise-wide sharing, and report embedding into portals or applications."
     }
   ]
 }
