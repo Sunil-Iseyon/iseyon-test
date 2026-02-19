@@ -22,8 +22,8 @@
       "answer": "Iseyon implements data profiling, cleansing, validation, metadata management, lineage tracking, encryption, and role-based access controls to ensure high data quality and enterprise-grade security. Our approach supports audit readiness, regulatory compliance, and secure data operations across cloud and on-premise environments."
     },
     {
-      "question": "How does Iseyon ensure security, governance, and cost optimization in Big Data environments?",
-      "answer": "Iseyon implements enterprise-grade governance frameworks, access controls, data lineage tracking, and compliance standards to ensure secure data operations. We also deploy cloud-based big data ecosystems and continuously optimize processing performance, storage efficiency, and resource utilization to maintain cost-effective and sustainable analytics environments."
+      "question": "How does Iseyon support cloud, hybrid, and legacy data modernization?",
+      "answer": "Iseyon designs scalable data architectures that integrate seamlessly across cloud, hybrid, and on-premise systems. We modernize legacy data platforms, automate workflows, optimize storage through lifecycle management policies, and improve performance—creating a future-ready, cost-efficient data management ecosystem."
     }
   ]
 }
