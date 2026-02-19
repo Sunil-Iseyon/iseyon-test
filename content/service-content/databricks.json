@@ -23,6 +23,10 @@
     {
       "question": "Does Iseyon provide machine learning and AI implementation on Databricks?",
       "answer": "Yes, Iseyon supports the full ML lifecycle on Databricks-from data preparation and feature engineering to model training, experimentation, and production deployment. Using built-in ML capabilities and MLflow, we help organizations operationalize AI models efficiently and securely at scale."
+    },
+    {
+      "question": "How does Iseyon ensure security, governance, and cloud scalability with Databricks?",
+      "answer": "Iseyon deploys Databricks on major cloud platforms including Amazon Web Services, Microsoft Azure, and Google Cloud. We implement enterprise-grade security controls, role-based access, data governance, workflow automation, monitoring, and cost optimization to ensure reliable, compliant, and scalable data operations."
     }
   ]
 }
