@@ -12,6 +12,10 @@
     {
       "question": "Does Iseyon provide SQL Server BI and Data Warehousing solutions?",
       "answer": "Yes, Iseyon delivers Business Intelligence (BI) and data warehousing consulting using Microsoft’s BI stack, including:\nSQL Server Integration Services (SSIS)\nSQL Server Analysis Services (SSAS)\nSQL Server Reporting Services (SSRS)\n\nWe design scalable data warehouses and analytics environments that enable advanced reporting, multidimensional analysis, and enterprise data integration."
+    },
+    {
+      "question": "How does Iseyon improve SQL Server performance and reliability?",
+      "answer": "Iseyon specializes in SQL Server performance tuning, query optimization, indexing strategies, workload balancing, and server configuration improvements. We conduct detailed health checks to identify bottlenecks and implement proactive monitoring, high availability configurations, and disaster recovery strategies to ensure mission-critical database performance."
     }
   ]
 }
