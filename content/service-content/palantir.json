@@ -19,6 +19,10 @@
     {
       "question": "How does Iseyon enable operational intelligence and AI on Palantir?",
       "answer": "Iseyon builds real-time operational workflows that connect analytics directly to business processes. Using advanced capabilities within Palantir Gotham and Palantir Apollo, we develop predictive models, scenario simulations, and secure AI deployments that support continuous improvement and data-driven decision-making."
+    },
+    {
+      "question": "How does Iseyon ensure security, governance, and compliance in Palantir environments?",
+      "answer": "Security is embedded in every implementation. Iseyon configures fine-grained access controls, audit trails, data lineage tracking, and governance frameworks to ensure regulatory compliance, data protection, and enterprise-grade security across cloud, on-premise, and hybrid environments."
     }
   ]
 }
