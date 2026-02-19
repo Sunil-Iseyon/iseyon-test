@@ -20,6 +20,10 @@
     {
       "question": "Why do organizations choose Microsoft SQL Server?",
       "answer": "Organizations choose Microsoft SQL Server for its strong integration with Microsoft business applications, lower total cost of ownership, enterprise-grade security, scalability, virtualization support, and robust online transaction processing (OLTP) capabilities. It also provides powerful data warehousing and BI tools that support reporting, analytics, and real-time decision-making."
+    },
+    {
+      "question": "Can Iseyon support SQL Server modernization and upgrades?",
+      "answer": "Absolutely, Iseyon assists with SQL Server upgrades, migration planning, legacy modernization, and cloud readiness initiatives. We ensure minimal downtime, improved performance, enhanced security, and alignment with modern data and analytics strategies."
     }
   ]
 }
