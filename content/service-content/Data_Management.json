@@ -14,8 +14,8 @@
       "answer": "Iseyon defines enterprise-wide governance strategies that include clear data ownership, standardized policies, compliance controls, and accountability measures. Our frameworks ensure data accuracy, consistency, regulatory compliance, and transparency across departments and systems."
     },
     {
-      "question": "Can Iseyon implement real-time data processing solutions?",
-      "answer": "Yes, Iseyon implements event-driven and real-time data streaming solutions using tools like Apache Kafka. These systems enable instant insights, faster decision-making, and improved responsiveness across business operations."
+      "question": "Can Iseyon implement Master Data Management (MDM) solutions?",
+      "answer": "Yes, Iseyon designs and deploys MDM frameworks that create a single, trusted source of truth for critical entities such as customers, products, and suppliers. Our solutions reduce duplication, improve consistency, and enhance collaboration across business units."
     },
     {
       "question": "How does Iseyon enable advanced analytics and machine learning with Big Data?",
