@@ -19,6 +19,10 @@
     {
       "question": "How does Iseyon enable data engineering and analytics on Snowflake?",
       "answer": "Iseyon develops scalable ELT pipelines to ingest and transform data from multiple sources, ensuring high data quality and automation. Our Snowflake implementations support high-speed SQL analytics, real-time querying, and multi-cluster compute capabilities to power advanced reporting and complex analytical workloads."
+    },
+    {
+      "question": "Can Iseyon support advanced analytics, AI, and secure data sharing in Snowflake?",
+      "answer": "Yes. Iseyon integrates Snowflake with leading BI and machine learning tools to enable predictive modeling and enterprise analytics. We also configure Snowflake’s native secure data sharing features to allow real-time collaboration across departments, partners, and customers without duplicating data."
     }
   ]
 }
