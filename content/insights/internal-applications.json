@@ -8,6 +8,10 @@
     {
       "question": "What types of internal tools does Iseyon build?",
       "answer": "Iseyon designs and develops custom internal applications tailored to your organization’s unique workflows and operational needs. Our solutions include workflow automation systems, centralized data management platforms, custom dashboards, and enterprise integration hubs-built to scale as your business grows."
+    },
+    {
+      "question": "How does Iseyon help automate business workflows?",
+      "answer": "Iseyon builds automation solutions that eliminate repetitive manual tasks and streamline multi-step processes. From approvals and task assignments to data synchronization and reporting triggers, our workflow automation tools improve operational efficiency and allow teams to focus on high-value strategic work."
     }
   ]
 }
