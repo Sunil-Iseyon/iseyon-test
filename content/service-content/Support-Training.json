@@ -16,6 +16,10 @@
     {
       "question": "Does Iseyon offer structured incident management and SLA-based support?",
       "answer": "Yes, Iseyon implements formal incident management frameworks supported by defined Service Level Agreements (SLAs). Our rapid response model prioritizes critical issues, reduces business disruption, and ensures timely resolution with clear communication and accountability."
+    },
+    {
+      "question": "What types of training programs does Iseyon provide?",
+      "answer": "Iseyon delivers role-based training for business users, data engineers, administrators, and leadership teams. Our customized corporate training programs cover cloud platforms, big data technologies, data governance, AI/ML workflows, DevOps practices, and analytics tools. We combine practical workshops, real-world scenarios, and structured knowledge transfer to ensure effective learning and adoption."
     }
   ]
 }
