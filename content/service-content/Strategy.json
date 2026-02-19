@@ -11,6 +11,10 @@
     {
       "question": "What Strategy consulting services does Iseyon provide?",
       "answer": "Iseyon delivers comprehensive consulting services for MicroStrategy (Strategy), including administration, implementation, development, customization, migration, optimization, mobile BI enablement, and ongoing support. We help enterprises unify data, simplify analytics access, and accelerate data-driven decision-making across the organization."
+    },
+    {
+      "question": "How does Iseyon support Strategy administration and deployment?",
+      "answer": "Iseyon provides complete Strategy administration services, including installation, configuration, user account setup, data warehouse connectivity, and security management. Our team ensures a secure, scalable, and high-performance analytics foundation aligned with enterprise governance standards."
     }
   ]
 }
