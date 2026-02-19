@@ -28,9 +28,9 @@ export function Timeline({ events }: { events: TimelineEvent[] }) {
         {/* Vertical line */}
         <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary to-secondary sm:left-6 lg:left-12" />
 
-        {/* Timeline items */}
+        {/* Timeline items - newest first */}
         <div className="space-y-8 pl-6 sm:pl-20 lg:pl-24">
-          {events.map((event, index) => (
+          {[...events].reverse().map((event, index) => (
             <motion.div
               key={index}
               className="relative"

@@ -63,7 +63,7 @@ export function InternalAppsClient({ data }: { data: InternalAppsData }) {
             <TinaRichText content={data.description} className="text-lg md:text-xl text-foreground/70 leading-relaxed mb-8 max-w-2xl" />
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/request-demo"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-lg"
               >
                 Schedule a Demo
@@ -220,7 +220,7 @@ export function InternalAppsClient({ data }: { data: InternalAppsData }) {
               Transform your internal operations with applications designed for your specific needs.
             </p>
             <Link
-              href="/request-demo"
+              href="/contact"
               className="inline-flex items-center gap-2 px-10 py-5 bg-white text-primary rounded-xl font-bold text-lg hover:bg-white/90 transition-all shadow-lg"
             >
               Schedule a Demo

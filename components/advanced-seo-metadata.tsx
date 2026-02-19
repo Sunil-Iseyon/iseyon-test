@@ -22,13 +22,13 @@ export function getDublinCoreMetadata(page: {
   return {
     'DC.title': page.title,
     'DC.description': page.description,
-    'DC.creator': page.creator || 'iSeyon Analytics',
+    'DC.creator': page.creator || 'Iseyon Analytics',
     'DC.date': page.date || new Date().toISOString().split('T')[0],
     'DC.language': 'en',
     'DC.format': 'text/html',
     'DC.identifier': page.title,
-    'DC.publisher': 'iSeyon Analytics',
-    'DC.rights': 'Copyright © 2024 iSeyon Analytics. Licensed under CC-BY-NC-SA-4.0',
+    'DC.publisher': 'Iseyon Analytics',
+    'DC.rights': 'Copyright © 2024 Iseyon Analytics. Licensed under CC-BY-NC-SA-4.0',
     'DC.subject': page.subject || 'Business Intelligence, AI Analytics, Data Science',
     'DC.type': page.type || 'InteractiveResource',
   }
@@ -87,14 +87,14 @@ export function getDefinedTermSchema(terms: { name: string; description: string;
   return {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
-    'name': 'iSeyon Analytics Glossary',
+    'name': 'Iseyon Analytics Glossary',
     'description': 'Key terminology and concepts in AI-powered business intelligence',
     'hasDefinedTerm': terms.map(term => ({
       '@type': 'DefinedTerm',
       'name': term.name,
       'description': term.description,
       'alternateName': term.alternateName,
-      'inDefinedTermSet': 'https://iseyon-analytics-v0.vercel.app/glossary',
+      'inDefinedTermSet': 'https://www.iseyon.com/glossary',
     })),
   }
 }
@@ -153,23 +153,23 @@ export function getPotentialActionSchema(actions: { type: string; name: string; 
 export const standardActions = [
   {
     type: 'SearchAction',
-    name: 'Search iSeyon Analytics Services',
-    target: 'https://iseyon-analytics-v0.vercel.app/search?q={search_term_string}',
+    name: 'Search Iseyon Analytics Services',
+    target: 'https://www.iseyon.com/search?q={search_term_string}',
   },
   {
     type: 'ViewAction',
     name: 'View Service Details',
-    target: 'https://iseyon-analytics-v0.vercel.app/services/{category}/{service}',
+    target: 'https://www.iseyon.com/services/{category}/{service}',
   },
   {
     type: 'ContactAction',
-    name: 'Contact iSeyon Analytics',
-    target: 'https://iseyon-analytics-v0.vercel.app/contact',
+    name: 'Contact Iseyon Analytics',
+    target: 'https://www.iseyon.com/contact',
   },
   {
     type: 'SubscribeAction',
     name: 'Subscribe to Newsletter',
-    target: 'https://iseyon-analytics-v0.vercel.app/#newsletter',
+    target: 'https://www.iseyon.com/#newsletter',
   },
 ]
 
@@ -240,27 +240,27 @@ export function getArticleSchema(config: {
     'headline': config.headline,
     'description': config.description,
     'url': config.url,
-    'image': config.imageUrl || 'https://iseyon-analytics-v0.vercel.app/og-image.jpg',
+    'image': config.imageUrl || 'https://www.iseyon.com/og-image.jpg',
     'datePublished': config.publishDate,
     'dateModified': config.modifiedDate || config.publishDate,
     'author': {
       '@type': 'Person',
       'name': config.author.name,
-      'url': config.author.url || 'https://iseyon-analytics-v0.vercel.app/team',
+      'url': config.author.url || 'https://www.iseyon.com/team',
       'jobTitle': config.author.jobTitle || 'AI & BI Expert',
       'worksFor': {
         '@type': 'Organization',
-        'name': config.author.worksFor || 'iSeyon Analytics',
-        'url': 'https://iseyon-analytics-v0.vercel.app',
+        'name': config.author.worksFor || 'Iseyon Analytics',
+        'url': 'https://www.iseyon.com',
       },
     },
     'publisher': {
       '@type': 'Organization',
-      'name': 'iSeyon Analytics',
-      'url': 'https://iseyon-analytics-v0.vercel.app',
+      'name': 'Iseyon Analytics',
+      'url': 'https://www.iseyon.com',
       'logo': {
         '@type': 'ImageObject',
-        'url': 'https://iseyon-analytics-v0.vercel.app/logo.png',
+        'url': 'https://www.iseyon.com/logo.png',
       },
     },
     'mainEntityOfPage': {
@@ -291,9 +291,9 @@ export function getEnhancedContentSchema(config: {
     url: config.url,
     imageUrl: config.imageUrl,
     author: {
-      name: 'iSeyon Analytics Team',
+      name: 'Iseyon Analytics Team',
       jobTitle: 'AI & Business Intelligence Experts',
-      worksFor: 'iSeyon Analytics',
+      worksFor: 'Iseyon Analytics',
     },
     publishDate: config.publishDate || new Date().toISOString(),
     keywords: config.keywords,

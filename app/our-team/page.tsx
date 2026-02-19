@@ -17,16 +17,16 @@ export const metadata: Metadata = {
   title: 'Iseyon Analytics Team | Meet Our AI & BI Experts',
   description: 'Meet the expert team behind Iseyon Analytics. Our founders bring decades of combined experience in AI-powered business intelligence, data analytics, cloud platforms (Snowflake, Databricks, Palantir), and enterprise solutions.',
   keywords: ['Iseyon Analytics team', 'AI experts', 'business intelligence team', 'data analytics professionals', 'BI consultants', 'Databricks experts', 'Snowflake consultants'],
-  authors: [{ name: 'Iseyon Analytics Team', url: 'https://iseyon-analytics-v0.vercel.app/team' }],
+  authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   publisher: 'Iseyon Analytics',
   openGraph: {
     title: 'Iseyon Analytics Team | Meet Our AI & BI Experts',
     description: 'Meet the expert team behind Iseyon Analytics. Our founders bring decades of experience in AI-powered business intelligence, data analytics, and enterprise solutions.',
-    url: 'https://iseyon-analytics-v0.vercel.app/team',
+    url: 'https://www.iseyon.com/our-team',
     type: 'website',
     images: [
       {
-        url: '/team.png',
+        url: '/our-team.png',
         width: 1200,
         height: 630,
         alt: 'Iseyon Analytics Team - AI and Business Intelligence Experts',
@@ -37,15 +37,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Iseyon Analytics Team | Meet Our AI & BI Experts',
     description: 'Meet the expert team behind Iseyon Analytics. Our founders bring decades of experience in AI-powered business intelligence.',
-    images: ['/team.png'],
+    images: ['/our-team.png'],
   },
   alternates: {
-    canonical: 'https://iseyon-analytics-v0.vercel.app/team',
+    canonical: 'https://www.iseyon.com/our-team',
     languages: {
-      'en': 'https://iseyon-analytics-v0.vercel.app/team',
-      'en-US': 'https://iseyon-analytics-v0.vercel.app/team',
-      'en-IN': 'https://iseyon-analytics-v0.vercel.app/team',
-      'x-default': 'https://iseyon-analytics-v0.vercel.app/team',
+      'en': 'https://www.iseyon.com/our-team',
+      'en-US': 'https://www.iseyon.com/our-team',
+      'en-IN': 'https://www.iseyon.com/our-team',
+      'x-default': 'https://www.iseyon.com/our-team',
     },
   },
   other: {
@@ -71,10 +71,10 @@ export default async function TeamPage() {
   const aboutSchema = {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
-    '@id': 'https://iseyon-analytics-v0.vercel.app/team#aboutpage',
+    '@id': 'https://www.iseyon.com/our-team#aboutpage',
     name: 'Our Team',
     description: 'Meet the expert team at Iseyon Analytics driving innovation in AI-powered business intelligence and data analytics',
-    url: 'https://iseyon-analytics-v0.vercel.app/team',
+    url: 'https://www.iseyon.com/our-team',
     datePublished: '2024-01-15',
     dateModified: new Date().toISOString().split('T')[0],
     inLanguage: 'en-US',
@@ -82,12 +82,12 @@ export default async function TeamPage() {
     potentialAction: getPotentialActionSchema(standardActions),
     publisher: {
       '@type': 'Organization',
-      '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+      '@id': 'https://www.iseyon.com/#organization',
       name: 'Iseyon Analytics',
       foundingDate: '2020',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+        url: 'https://www.iseyon.com/iseyon.webp',
       },
     },
     license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
@@ -102,13 +102,13 @@ export default async function TeamPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://iseyon-analytics-v0.vercel.app',
+        item: 'https://www.iseyon.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Team',
-        item: 'https://iseyon-analytics-v0.vercel.app/team',
+        item: 'https://www.iseyon.com/our-team',
       },
     ],
   };
@@ -118,8 +118,8 @@ export default async function TeamPage() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Iseyon Analytics',
-    url: 'https://iseyon-analytics-v0.vercel.app',
-    logo: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+    url: 'https://www.iseyon.com',
+    logo: 'https://www.iseyon.com/iseyon.webp',
     description: 'AI-Powered Business Intelligence and Analytics Solutions with proven 5.6x ROI',
     foundingDate: '2020',
     knowsAbout: [
@@ -145,9 +145,9 @@ export default async function TeamPage() {
       },
     })),
     sameAs: [
-      'https://iseyon-analytics-v0.vercel.app/team',
-      'https://iseyon-analytics-v0.vercel.app/vision',
-      'https://iseyon-analytics-v0.vercel.app/contact',
+      'https://www.iseyon.com/our-team',
+      'https://www.iseyon.com/vision',
+      'https://www.iseyon.com/contact',
     ],
   };
 

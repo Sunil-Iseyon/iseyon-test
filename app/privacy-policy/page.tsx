@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy | Iseyon Analytics',
     description: 'Learn how Iseyon Analytics protects your data and complies with privacy regulations.',
-    url: 'https://iseyon-analytics-v0.vercel.app/privacy-policy',
+    url: 'https://www.iseyon.com/privacy-policy',
     type: 'website',
   },
   twitter: {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: 'Learn how Iseyon Analytics protects your data and complies with privacy regulations.',
   },
   alternates: {
-    canonical: 'https://iseyon-analytics-v0.vercel.app/privacy-policy',
+    canonical: 'https://www.iseyon.com/privacy-policy',
   },
   robots: {
     index: true,
@@ -42,13 +42,13 @@ export default async function PrivacyPolicyPage() {
     '@type': 'WebPage',
     name: 'Privacy Policy',
     description: 'Iseyon Analytics privacy policy detailing data protection practices and compliance.',
-    url: 'https://iseyon-analytics-v0.vercel.app/privacy-policy',
+    url: 'https://www.iseyon.com/privacy-policy',
     publisher: {
       '@type': 'Organization',
       name: 'Iseyon Analytics',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+        url: 'https://www.iseyon.com/iseyon.webp',
       },
     },
     dateModified: '2026-02-18',
