@@ -12,6 +12,10 @@
     {
       "question": "Can Iseyon build custom Shopify apps and multi-vendor marketplaces?",
       "answer": "Yes, Iseyon develops custom Shopify apps to extend store functionality, automate workflows, and integrate third-party systems. We also build multi-vendor and marketplace solutions with features such as vendor onboarding, commission management, product ownership mapping, order tracking, and automated payouts-while maintaining centralized administrative control."
+    },
+    {
+      "question": "What payment gateways and checkout solutions does Iseyon support?",
+      "answer": "Iseyon integrates secure payment gateways including:\nRazorpay\nStripe\nPayPal\nWe implement advanced checkout logic such as split payments, multi-vendor settlements, and region-specific compliance to ensure seamless and secure transaction experiences."
     }
   ]
 }
