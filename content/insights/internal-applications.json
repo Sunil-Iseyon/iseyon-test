@@ -12,6 +12,10 @@
     {
       "question": "How does Iseyon help automate business workflows?",
       "answer": "Iseyon builds automation solutions that eliminate repetitive manual tasks and streamline multi-step processes. From approvals and task assignments to data synchronization and reporting triggers, our workflow automation tools improve operational efficiency and allow teams to focus on high-value strategic work."
+    },
+    {
+      "question": "Can Iseyon create centralized data management systems?",
+      "answer": "Yes, Iseyon develops centralized data management platforms that serve as a single source of truth for your organization. Our solutions include role-based access controls, secure data storage, audit trails, and structured data governance—ensuring accuracy, transparency, and compliance."
     }
   ]
 }
