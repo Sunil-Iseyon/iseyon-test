@@ -11,6 +11,10 @@
     {
       "question": "What Palantir services does Iseyon provide?",
       "answer": "Iseyon delivers end-to-end data integration, operational intelligence, and AI solutions using Palantir Technologies platforms. Our services include unified data integration, ontology-driven architecture, data engineering, workflow automation, AI enablement, governance, and cloud or hybrid deployment to help organizations make faster and more secure decisions at scale."
+    },
+    {
+      "question": "How does Iseyon implement unified data integration using Palantir?",
+      "answer": "Iseyon leverages platforms such as Palantir Foundry to unify siloed data across departments, systems, and environments. We design a centralized data ecosystem where structured and unstructured data is integrated into a governed, single source of truth powered by a robust operational ontology."
     }
   ]
 }
