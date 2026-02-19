@@ -12,6 +12,10 @@
     {
       "question": "How do Iseyon’s executive dashboards support decision-making?",
       "answer": "Iseyon designs real-time executive dashboards with customized KPI visualizations tailored to your business objectives. These interactive dashboards provide a 360-degree view of performance, allowing leadership teams to monitor metrics, drill into data, and identify trends instantly—across departments and devices."
+    },
+    {
+      "question": "Does Iseyon provide predictive analytics and machine learning capabilities?",
+      "answer": "Yes, Iseyon leverages machine learning models to deliver predictive analytics, forecasting, and trend analysis. Our solutions help organizations anticipate demand, detect risks, identify growth opportunities, and optimize strategic planning before challenges impact performance."
     }
   ]
 }
