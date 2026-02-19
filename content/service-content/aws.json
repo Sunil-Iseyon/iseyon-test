@@ -12,6 +12,10 @@
     {
       "question": "How does Iseyon support AWS cloud migration?",
       "answer": "Iseyon provides comprehensive migration strategies including lift-and-shift, re-platforming, and full re-architecture of legacy systems. Our team ensures minimal downtime, secure data transfer, performance optimization, and business continuity throughout the migration process."
+    },
+    {
+      "question": "Can Iseyon build scalable and secure cloud infrastructure on AWS?",
+      "answer": "Yes, Iseyon designs highly available and resilient architectures using services such as Amazon EC2, Amazon S3, and Amazon VPC. Our solutions include disaster recovery planning, auto-scaling, cost optimization, and enterprise-grade security controls."
     }
   ]
 }
