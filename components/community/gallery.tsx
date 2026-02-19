@@ -11,7 +11,9 @@ interface GalleryImage {
   description?: string;
 }
 
-export function Gallery({ images }: { images: GalleryImage[] }) {
+export function Gallery({ images: rawImages }: { images: GalleryImage[] }) {
+  // Show newest first
+  const images = [...rawImages].reverse();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 

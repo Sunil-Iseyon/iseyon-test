@@ -15,8 +15,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const companyLinks = [
-    { name: "Our Team", url: "/team" },
-    { name: "Our Vision", url: "/vision" },
+    { name: "Our Team", url: "/our-team" },
+    { name: "Our Vision", url: "/our-vision" },
     { name: "Contact Us", url: "/contact" },
     { name: "Blog", url: "/blog" },
   ]
@@ -176,7 +176,7 @@ export function Footer() {
         <motion.div variants={itemVariants} className="border-t border-slate-700 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
           <div className="flex items-center gap-4">
             <Link
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/iseyon"
               className="hover:text-primary transition-colors"
               aria-label="LinkedIn"
             >

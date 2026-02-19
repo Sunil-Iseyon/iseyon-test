@@ -81,7 +81,7 @@ export function ServiceDetailClient({
               >
                 <Image
                   src={content.image}
-                  alt={`${content.heading} services dashboard showing data analytics and business intelligence capabilities by iSeyon Analytics`}
+                  alt={`${content.heading} services dashboard showing data analytics and business intelligence capabilities by Iseyon`}
                   fill
                   // className="object-cover"
                   priority
@@ -97,7 +97,7 @@ export function ServiceDetailClient({
               className="mt-8"
             >
               <AuthorMetadata
-                author="iSeyon Analytics Team"
+                author="Iseyon Analytics Team"
                 authorTitle="AI & BI Experts"
                 publicationDate={new Date().toISOString()}
                 authorUrl="/team"
@@ -117,7 +117,7 @@ export function ServiceDetailClient({
                 transition={{ duration: 0.6 }}
                 className="prose prose-sm sm:prose md:prose-lg max-w-none"
               >
-                <TinaRichText content={content.content} className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed space-y-3 sm:space-y-4 md:space-y-5" />
+                <TinaRichText content={content.content} className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed [&>h3]:mt-10 [&>h3]:mb-3 [&>h3]:pt-8 [&>h3]:border-t [&>h3]:border-gray-200 space-y-4 sm:space-y-5 md:space-y-6" />
               </motion.div>
             </div>
           </div>

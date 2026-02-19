@@ -183,7 +183,7 @@ export function Header({ servicesMenu }: HeaderProps) {
           </div>
 
           <Link 
-            href="/vision" 
+            href="/our-vision" 
             className={`font-medium transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 inline-block ${getLinkStyles()}`}
             onMouseEnter={() => {
               setOpenDropdown(null)
@@ -194,7 +194,7 @@ export function Header({ servicesMenu }: HeaderProps) {
           </Link>
 
           <Link 
-            href="/team" 
+            href="/our-team" 
             className={`font-medium transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 inline-block ${getLinkStyles()}`}
             onMouseEnter={() => {
               setOpenDropdown(null)
@@ -337,7 +337,7 @@ export function Header({ servicesMenu }: HeaderProps) {
               </AnimatePresence>
 
               <Link
-                href="/vision"
+                href="/our-vision"
                 onClick={() => setIsOpen(false)}
                 className="block px-3 py-2 text-foreground hover:bg-muted hover:translate-x-1 transition-transform rounded"
               >
@@ -345,7 +345,7 @@ export function Header({ servicesMenu }: HeaderProps) {
               </Link>
 
               <Link
-                href="/team"
+                href="/our-team"
                 onClick={() => setIsOpen(false)}
                 className="block px-3 py-2 text-foreground hover:bg-muted hover:translate-x-1 transition-transform rounded"
               >

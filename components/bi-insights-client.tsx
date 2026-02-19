@@ -75,7 +75,7 @@ export function BIInsightsClient({ data }: { data: BIData }) {
             <TinaRichText content={data.description} className="text-lg md:text-xl text-foreground/70 leading-relaxed mb-8 max-w-2xl" />
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/request-demo"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-lg"
               >
                 Start Free Trial
@@ -240,7 +240,7 @@ export function BIInsightsClient({ data }: { data: BIData }) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/request-demo"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary rounded-xl font-bold hover:bg-white/90 transition-all shadow-lg"
               >
                 Start Free Trial

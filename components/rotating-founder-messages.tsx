@@ -44,21 +44,28 @@ export function RotatingFounderMessages({
     return () => clearInterval(timer)
   }, [messages.length, interval, isVisible])
 
-  if (!messages || messages.length === 0 || !isVisible) {
+  if (!messages || messages.length === 0) {
     return null
   }
 
   const currentMessage = messages[currentIndex]
 
   return (
-    <div className="space-y-3 sm:space-y-4">
-      <AnimatePresence mode="wait">
+    <motion.div
+      className="space-y-3 sm:space-y-4"
+      animate={{ opacity: isVisible ? 1 : 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      {/* initial={false} prevents the enter-animation on first mount —
+          the outer motion.div already handles the fade-in, so this only
+          animates when the message actually rotates */}
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
             {/* Avatar */}
@@ -101,6 +108,6 @@ export function RotatingFounderMessages({
           ))}
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }

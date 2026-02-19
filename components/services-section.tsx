@@ -221,10 +221,10 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                 variants={itemVariants}
                 whileHover={{ scale: 1.02, y: -8 }}
                 className={`
-                  group relative p-6 md:p-8 rounded-2xl sm:rounded-3xl transition-all duration-300 shadow-lg hover:shadow-2xl h-auto min-h-[280px] md:min-h-[320px] flex flex-col overflow-hidden
+                  group relative rounded-bl-2xl rounded-tr-2xl p-6 md:p-8  transition-all duration-300 shadow-lg hover:shadow-2xl h-auto min-h-[280px] md:min-h-[320px] flex flex-col overflow-hidden
                   ${isPrimary 
                     ? 'bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600' 
-                    : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 '
+                    : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border border-2 '
                   }
                 `}
               >

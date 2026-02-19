@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import client from "@/lib/tina-local-client"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://iseyon-analytics-v0.vercel.app'
+  const baseUrl = 'https://www.iseyon.com'
   
   // Get all blog posts
   const blogResponse = await client.queries.blogPostsConnection()

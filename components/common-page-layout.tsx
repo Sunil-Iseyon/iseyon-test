@@ -56,8 +56,8 @@ export function CommonPageLayout({
   description,
   backLink = '/insights',
   backLinkText = 'Back to Insights',
-  ctaText = 'Request a Demo',
-  ctaLink = '/request-demo',
+  ctaText = 'Contact Us',
+  ctaLink = '/contact',
   features = [],
   featuresTitle = 'Powerful Capabilities',
   featuresDescription = 'Everything you need to succeed',
@@ -68,7 +68,7 @@ export function CommonPageLayout({
   bottomCtaTitle = 'Ready to Transform Your Business?',
   bottomCtaDescription = 'Let our experts help you unlock the full potential of your data.',
   bottomCtaButtonText = 'Get Started Today',
-  bottomCtaButtonLink = '/request-demo',
+  bottomCtaButtonLink = '/contact',
 }: CommonPageLayoutProps) {
   return (
     <main className="min-h-screen bg-white">
