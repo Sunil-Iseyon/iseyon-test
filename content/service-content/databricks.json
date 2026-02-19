@@ -19,6 +19,10 @@
     {
       "question": "How does Iseyon build scalable data engineering and analytics solutions on Databricks?",
       "answer": "Iseyon designs high-performance ETL and ELT pipelines using Apache Spark on Databricks to ingest, transform, and process large-scale structured and unstructured data. We also enable fast SQL analytics and integrate with leading BI tools to provide real-time reporting and actionable business intelligence."
+    },
+    {
+      "question": "Does Iseyon provide machine learning and AI implementation on Databricks?",
+      "answer": "Yes, Iseyon supports the full ML lifecycle on Databricks-from data preparation and feature engineering to model training, experimentation, and production deployment. Using built-in ML capabilities and MLflow, we help organizations operationalize AI models efficiently and securely at scale."
     }
   ]
 }
