@@ -3,5 +3,27 @@
   "heading": "SQL Server",
   "image": "/sqlserver.png",
   "subheading": "Enterprise-Grade SQL Server Solutions that Drive Performance",
-  "content": "At Iseyon Analytics, we strive to deliver efficiency-enhancing SQL Server database solutions. Microsoft SQL Server is the leading enterprise data platform, covering the complete set of database and information needs for the lowest total cost of ownership. SQL Server is often the database of choice for a highly integrated platform with features to query, search, synchronize, report, and analyze your data.\n\nIseyon Analytics are experts at SQL Server database administration, performance tuning and database problem-solving. Our Services include,\n\n* SQL Service BI & Analytics Consulting including SSIS, SSAS & SSRS\n* SQL Server Data Warehousing Consulting\n\nIseyon Analytics can undoubtedly say that the business world runs on Microsoft, and SQL Server enables advanced integration with application development and business software. Organizations often choose SQL Server for this integration and for its lower total cost of ownership. SQL Server has developed effective data warehousing and business intelligence tools to help you do more with your data, whether you are looking for mission critical performance and availability for your transactional databases or more productive management and development tools. The system also offers scalability through virtualization and online transaction processing.\n\nOur Services in Microsoft SQL Consulting comprise of,\n\n* SQL Design and Architecture\n* SQL Installation and Configuration\n* SQL Health check\n* SQL Performance Tuning\n* SQL Server Development\n* SQL Database Administration\n* SQL Training\n* SQL Disaster Recovery and Planning\n* SQL Server Upgrades\n"
+  "content": "At Iseyon , we strive to deliver efficiency-enhancing SQL Server database solutions. Microsoft SQL Server is the leading enterprise data platform, covering the complete set of database and information needs for the lowest total cost of ownership. SQL Server is often the database of choice for a highly integrated platform with features to query, search, synchronize, report, and analyze your data.\n\nIseyon  are experts at SQL Server database administration, performance tuning and database problem-solving. Our Services include,\n\n* SQL Service BI & Analytics Consulting including SSIS, SSAS & SSRS\n* SQL Server Data Warehousing Consulting\n\nIseyon can undoubtedly say that the business world runs on Microsoft, and SQL Server enables advanced integration with application development and business software. Organizations often choose SQL Server for this integration and for its lower total cost of ownership. SQL Server has developed effective data warehousing and business intelligence tools to help you do more with your data, whether you are looking for mission critical performance and availability for your transactional databases or more productive management and development tools. The system also offers scalability through virtualization and online transaction processing.\n\nOur Services in Microsoft SQL Consulting comprise of,\n\n* SQL Design and Architecture\n* SQL Installation and Configuration\n* SQL Health check\n* SQL Performance Tuning\n* SQL Server Development\n* SQL Database Administration\n* SQL Training\n* SQL Disaster Recovery and Planning\n* SQL Server Upgrades\n",
+  "faqs": [
+    {
+      "question": "What Microsoft SQL Server services does Iseyon provide?",
+      "answer": "Iseyon offers comprehensive consulting services for Microsoft SQL Server, including database design and architecture, installation and configuration, performance tuning, health checks, development, database administration, disaster recovery planning, upgrades, and SQL training. We deliver end-to-end support to ensure optimal database performance, availability, and scalability."
+    },
+    {
+      "question": "Does Iseyon provide SQL Server BI and Data Warehousing solutions?",
+      "answer": "Yes, Iseyon delivers Business Intelligence (BI) and data warehousing consulting using Microsoft’s BI stack, including:\nSQL Server Integration Services (SSIS)\nSQL Server Analysis Services (SSAS)\nSQL Server Reporting Services (SSRS)\n\nWe design scalable data warehouses and analytics environments that enable advanced reporting, multidimensional analysis, and enterprise data integration."
+    },
+    {
+      "question": "How does Iseyon improve SQL Server performance and reliability?",
+      "answer": "Iseyon specializes in SQL Server performance tuning, query optimization, indexing strategies, workload balancing, and server configuration improvements. We conduct detailed health checks to identify bottlenecks and implement proactive monitoring, high availability configurations, and disaster recovery strategies to ensure mission-critical database performance."
+    },
+    {
+      "question": "Why do organizations choose Microsoft SQL Server?",
+      "answer": "Organizations choose Microsoft SQL Server for its strong integration with Microsoft business applications, lower total cost of ownership, enterprise-grade security, scalability, virtualization support, and robust online transaction processing (OLTP) capabilities. It also provides powerful data warehousing and BI tools that support reporting, analytics, and real-time decision-making."
+    },
+    {
+      "question": "Can Iseyon support SQL Server modernization and upgrades?",
+      "answer": "Absolutely, Iseyon assists with SQL Server upgrades, migration planning, legacy modernization, and cloud readiness initiatives. We ensure minimal downtime, improved performance, enhanced security, and alignment with modern data and analytics strategies."
+    }
+  ]
 }

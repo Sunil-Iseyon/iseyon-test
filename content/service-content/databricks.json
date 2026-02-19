@@ -6,5 +6,27 @@
   "content": "[Databricks](https://en.wikipedia.org/wiki/Databricks) processes over 2 billion queries daily and is trusted by 10,000+ organizations worldwide. Iseyon helps organizations unlock the full value of their data by building scalable, [cloud-native](https://en.wikipedia.org/wiki/Cloud-native_computing) analytics and AI solutions. Iseyon enables enterprises to modernize their data platforms, accelerate insights, and drive data-driven decision-making using the [Databricks Lakehouse](https://en.wikipedia.org/wiki/Data_lakehouse) architecture.\n\n#### **Unified Data & AI Platform**\n\nIseyon implements Databricks as a unified platform that brings together data engineering, analytics, data science, and machine learning. By combining the flexibility of data lakes with the performance and reliability of data warehouses, Iseyon helps organizations simplify their data architecture and reduce operational complexity. According to Databricks, this lakehouse approach reduces data infrastructure costs by up to 70%.\n\n#### **Data Engineering & ETL Pipelines**\n\nThe Iseyon team designs and builds robust, high-performance data pipelines using [Apache Spark](https://en.wikipedia.org/wiki/Apache_Spark) on Databricks. Iseyon enables seamless ingestion, transformation, and processing of large-scale structured and unstructured data from multiple sources, ensuring high data quality, reliability, and scalability.\n\n#### **Advanced Analytics & Business Intelligence**\n\nIseyon helps businesses leverage Databricks for advanced analytics and reporting by enabling fast SQL analytics on large datasets. Our solutions integrate Databricks with leading BI tools, allowing stakeholders to gain real-time insights and actionable intelligence from a single source of truth.\n\n#### **Machine Learning & AI Solutions**\n\nThe Iseyon Databricks [machine learning](https://en.wikipedia.org/wiki/Machine_learning) services support the complete ML lifecycle—from data preparation and feature engineering to model training, experimentation, and deployment. Using built-in ML capabilities and [MLflow](https://en.wikipedia.org/wiki/MLflow), Iseyon helps organizations operationalize AI models and move them efficiently into production.\n\n#### **Cloud-Native & Scalable Architecture**\n\nIseyon deploys Databricks on leading cloud platforms such as AWS, Azure, and Google Cloud, ensuring secure, scalable, and cost-optimized solutions. Our cloud-native implementations are designed to handle growing data volumes while maintaining performance and governance.\n\n#### **Security, Governance & Automation**\n\nIseyon implements enterprise-grade security, access controls, and data governance within Databricks. Our solutions include workflow automation, job scheduling, monitoring, and cost optimization to ensure reliable and compliant data operations.\n\n#### **Seamless Integration & Modernization**\n\nIseyon helps organizations modernize legacy data systems by integrating Databricks with existing databases, data warehouses, and applications. This enables a smooth transition to a modern data platform without disrupting ongoing business operations.\n",
   "showOnHomePage": true,
   "homePageDescription": "Iseyon builds scalable analytics and AI solutions using Databricks, trusted by many organizations.",
-  "homePageIcon": "Zap"
+  "homePageIcon": "Zap",
+  "faqs": [
+    {
+      "question": "What Databricks services does Iseyon provide?",
+      "answer": "Iseyon delivers end-to-end data and AI solutions using Databricks, including lakehouse implementation, data engineering, advanced analytics, machine learning deployment, cloud-native architecture, governance, and modernization services. We help organizations build scalable, high-performance data platforms that accelerate insights and reduce infrastructure complexity."
+    },
+    {
+      "question": "How does Iseyon implement the Databricks Lakehouse architecture?",
+      "answer": "Iseyon implements the Databricks Lakehouse architecture to unify data engineering, analytics, and AI within a single platform. By combining the flexibility of data lakes with the reliability of data warehouses, we help enterprises simplify architecture, improve performance, and reduce data infrastructure costs while maintaining governance and scalability."
+    },
+    {
+      "question": "How does Iseyon build scalable data engineering and analytics solutions on Databricks?",
+      "answer": "Iseyon designs high-performance ETL and ELT pipelines using Apache Spark on Databricks to ingest, transform, and process large-scale structured and unstructured data. We also enable fast SQL analytics and integrate with leading BI tools to provide real-time reporting and actionable business intelligence."
+    },
+    {
+      "question": "Does Iseyon provide machine learning and AI implementation on Databricks?",
+      "answer": "Yes, Iseyon supports the full ML lifecycle on Databricks-from data preparation and feature engineering to model training, experimentation, and production deployment. Using built-in ML capabilities and MLflow, we help organizations operationalize AI models efficiently and securely at scale."
+    },
+    {
+      "question": "How does Iseyon ensure security, governance, and cloud scalability with Databricks?",
+      "answer": "Iseyon deploys Databricks on major cloud platforms including Amazon Web Services, Microsoft Azure, and Google Cloud. We implement enterprise-grade security controls, role-based access, data governance, workflow automation, monitoring, and cost optimization to ensure reliable, compliant, and scalable data operations."
+    }
+  ]
 }

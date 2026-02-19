@@ -6,5 +6,27 @@
   "content": "Iseyon helps organizations modernize their data ecosystem using [Snowflake Inc.](https://en.wikipedia.org/wiki/Snowflake_Inc.) By leveraging the [Snowflake Data Cloud](https://en.wikipedia.org/wiki/Snowflake_Inc.#Data_Cloud), we enable enterprises to unify data, accelerate analytics, and support advanced [data-driven decision-making](https://en.wikipedia.org/wiki/Data-driven_decision-making) with high scalability and performance.\n\n#### **Unified Data Platform & Architecture**\n\nIseyon implements Snowflake as a centralized data platform that separates compute and storage for maximum flexibility and performance. Our architectures support structured, semi-structured, and unstructured data while ensuring scalability and cost efficiency.\n\n#### **Data Warehousing & Modern Analytics**\n\nIseyon designs and optimizes cloud-native data warehouses on Snowflake to support complex analytical workloads. Our solutions deliver high-speed SQL analytics, real-time querying, and multi-cluster compute capabilities for consistent performance at scale.\n\n#### **Data Engineering & ELT Pipelines**\n\nOur team builds robust ELT pipelines within Snowflake to ingest, transform, and manage data from diverse sources. Iseyon ensures high data quality, reliability, and automation while enabling seamless integration with external data systems.\n\n#### **Data Sharing & Collaboration**\n\nIseyon enables secure, real-time data sharing across departments, partners, and customers using Snowflake’s native data sharing capabilities. This eliminates data duplication and promotes collaboration across the enterprise ecosystem.\n\n#### **Advanced Analytics & AI Enablement**\n\nIseyon supports advanced analytics and AI initiatives by integrating Snowflake with leading data science and machine learning tools. Our solutions empower organizations to leverage large-scale datasets for predictive modeling and business intelligence.\n\n#### **Performance Optimization & Cost Management**\n\nIseyon optimizes Snowflake environments through warehouse sizing strategies, query performance tuning, workload isolation, and automated scaling ensuring efficient resource utilization and cost control.\n\n#### **Security, Governance & Compliance**\n\nIseyon implements enterprise-grade security, role-based access controls, encryption, and data governance within Snowflake. Our approach ensures regulatory compliance, audit readiness, and secure data operations.\n\n#### **Cloud Integration & Modernization**\n\nIseyon integrates Snowflake seamlessly with major cloud platforms such as Amazon Web Services, Microsoft Azure, and Google Cloud. Our modernization strategies enable organizations to transition from legacy data warehouses to a scalable, cloud-native data ecosystem without disrupting business operations.\n",
   "showOnHomePage": true,
   "homePageDescription": "Iseyon helps organizations modernize their data ecosystem using Snowflake, serving customers worldwide.",
-  "homePageIcon": "Database"
+  "homePageIcon": "Database",
+  "faqs": [
+    {
+      "question": "What Snowflake services does Iseyon provide?",
+      "answer": "Iseyon delivers end-to-end data modernization services using Snowflake Inc. and the Snowflake Data Cloud. Our services include unified data platform architecture, data warehousing, ELT pipeline development, advanced analytics enablement, performance optimization, governance, and cloud integration—helping enterprises scale securely and efficiently."
+    },
+    {
+      "question": "How does Iseyon implement a modern data architecture on Snowflake?",
+      "answer": "Iseyon designs cloud-native architectures that leverage Snowflake’s separation of compute and storage for flexibility, scalability, and cost efficiency. We build centralized platforms capable of handling structured, semi-structured, and unstructured data while ensuring high availability and performance."
+    },
+    {
+      "question": "How does Iseyon enable data engineering and analytics on Snowflake?",
+      "answer": "Iseyon develops scalable ELT pipelines to ingest and transform data from multiple sources, ensuring high data quality and automation. Our Snowflake implementations support high-speed SQL analytics, real-time querying, and multi-cluster compute capabilities to power advanced reporting and complex analytical workloads."
+    },
+    {
+      "question": "Can Iseyon support advanced analytics, AI, and secure data sharing in Snowflake?",
+      "answer": "Yes. Iseyon integrates Snowflake with leading BI and machine learning tools to enable predictive modeling and enterprise analytics. We also configure Snowflake’s native secure data sharing features to allow real-time collaboration across departments, partners, and customers without duplicating data."
+    },
+    {
+      "question": "How does Iseyon ensure performance optimization, cost control, and security in Snowflake environments?",
+      "answer": "Iseyon optimizes warehouse sizing, query performance, workload isolation, and automated scaling to maximize efficiency and control costs. We implement enterprise-grade security, role-based access controls, encryption, and governance frameworks. Additionally, we integrate Snowflake seamlessly with Amazon Web Services, Microsoft Azure, and Google Cloud to support secure, scalable cloud modernization."
+    }
+  ]
 }

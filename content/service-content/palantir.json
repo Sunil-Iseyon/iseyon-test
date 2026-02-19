@@ -6,5 +6,27 @@
   "content": "We help organizations unlock the full potential of their data using [Palantir Technologies](https://en.wikipedia.org/wiki/Palantir_Technologies). By leveraging advanced [data integration](https://en.wikipedia.org/wiki/Data_integration), [operational intelligence](https://en.wikipedia.org/wiki/Operational_intelligence), and AI-driven decision platforms, we enable enterprises and institutions to make faster, smarter, and more secure decisions at scale.\n\n#### Unified Data Integration & Ontology\n\nWe implement Palantir’s platforms to unify siloed data across systems, departments, and environments. Using solutions like [Palantir Foundry](https://en.wikipedia.org/wiki/Palantir_Technologies), we create a centralized [data ecosystem](https://en.wikipedia.org/wiki/Data_ecosystem) where structured and unstructured data is integrated, governed, and transformed into a single source of truth through a powerful operational ontology.\n\n#### Operational Intelligence & Decision Support\n\nWe build operational workflows that connect data directly to business processes. By enabling real-time monitoring, scenario analysis, and automated decision support, we empower organizations to respond quickly to changing conditions and improve operational efficiency.\n\n#### Data Engineering & Pipeline Development\n\nOur team designs scalable, production-grade data pipelines within Palantir environments to ingest, clean, transform, and validate data from multiple sources. We ensure high data quality, traceability, and governance while supporting complex analytical workloads.\n\n#### Advanced Analytics & AI Enablement\n\nWe leverage Palantir’s advanced analytics capabilities to build predictive models, simulations, and AI-driven insights. With platforms like Palantir Gotham and Palantir Apollo, we support secure AI deployment, model lifecycle management, and continuous operational improvement.\n\n#### Enterprise-Grade Security & Governance\n\nSecurity and compliance are built into every implementation. We configure fine-grained access controls, audit trails, data lineage, and governance frameworks to ensure regulatory compliance and enterprise-level data protection.\n\n#### Workflow Automation & Process Optimization\n\nWe develop automated workflows that connect analytics outputs directly to operational actions. This ensures faster execution, reduced manual effort, and improved collaboration across teams.\n\n#### Cloud & Hybrid Deployment\n\nWe deploy Palantir solutions across cloud, on-premise, and hybrid environments, ensuring flexibility, scalability, and performance while aligning with enterprise infrastructure strategies.\n\n#### Seamless Integration & Digital Modernization\n\nWe integrate Palantir with existing enterprise systems, databases, APIs, and third-party tools. Our modernization approach enables organizations to transform legacy operations into agile, data-driven ecosystems without disrupting ongoing business processes.\n",
   "showOnHomePage": true,
   "homePageDescription": "Transforming Complex Data into Actionable Intelligence ",
-  "homePageIcon": "Brain"
+  "homePageIcon": "Brain",
+  "faqs": [
+    {
+      "question": "What Palantir services does Iseyon provide?",
+      "answer": "Iseyon delivers end-to-end data integration, operational intelligence, and AI solutions using Palantir Technologies platforms. Our services include unified data integration, ontology-driven architecture, data engineering, workflow automation, AI enablement, governance, and cloud or hybrid deployment to help organizations make faster and more secure decisions at scale."
+    },
+    {
+      "question": "How does Iseyon implement unified data integration using Palantir?",
+      "answer": "Iseyon leverages platforms such as Palantir Foundry to unify siloed data across departments, systems, and environments. We design a centralized data ecosystem where structured and unstructured data is integrated into a governed, single source of truth powered by a robust operational ontology."
+    },
+    {
+      "question": "How does Iseyon enable operational intelligence and AI on Palantir?",
+      "answer": "Iseyon builds real-time operational workflows that connect analytics directly to business processes. Using advanced capabilities within Palantir Gotham and Palantir Apollo, we develop predictive models, scenario simulations, and secure AI deployments that support continuous improvement and data-driven decision-making."
+    },
+    {
+      "question": "How does Iseyon ensure security, governance, and compliance in Palantir environments?",
+      "answer": "Security is embedded in every implementation. Iseyon configures fine-grained access controls, audit trails, data lineage tracking, and governance frameworks to ensure regulatory compliance, data protection, and enterprise-grade security across cloud, on-premise, and hybrid environments."
+    },
+    {
+      "question": "Can Iseyon integrate Palantir with existing enterprise systems?",
+      "answer": "Yes, Iseyon integrates Palantir platforms with legacy systems, databases, APIs, and third-party applications to support digital modernization. Our approach ensures seamless integration, scalable data pipelines, workflow automation, and minimal disruption to ongoing business operations."
+    }
+  ]
 }
