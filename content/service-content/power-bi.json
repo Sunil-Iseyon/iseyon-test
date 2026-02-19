@@ -23,6 +23,10 @@
     {
       "question": "How does Iseyon support Power BI Desktop and Power BI Service?",
       "answer": "Iseyon enables analysts to use Power BI Desktop for advanced data modeling, transformation, and report creation. We then configure secure publishing to the Power BI Service, enabling automatic data refresh, enterprise-wide sharing, and report embedding into portals or applications."
+    },
+    {
+      "question": "Can Power BI dashboards be accessed on mobile devices?",
+      "answer": "Yes, Iseyon configures mobile-ready dashboards that are accessible across devices through the Power BI mobile apps. Decision-makers can securely view real-time insights, collaborate on reports, and access updated metrics anytime, anywhere."
     }
   ]
 }
