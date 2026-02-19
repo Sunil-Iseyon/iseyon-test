@@ -11,6 +11,10 @@
     {
       "question": "What Anaplan services does Iseyon provide?",
       "answer": "Iseyon provides end-to-end Anaplan services including Connected Planning implementation, Financial Planning & Analysis (FP&A) model development, sales and revenue planning, supply chain planning, workforce planning, data integration, model optimization, governance, and ongoing support. Our solutions help organizations move from disconnected spreadsheets to scalable, enterprise-wide planning environments."
+    },
+    {
+      "question": "How does Iseyon implement Connected Planning using Anaplan?",
+      "answer": "Iseyon designs and deploys enterprise-wide Connected Planning solutions that integrate finance, sales, supply chain, HR, and operations into a unified platform. We follow industry best practices in model architecture, Agile delivery, and governance to ensure scalable, high-performance planning systems that support real-time collaboration and decision-making."
     }
   ]
 }
