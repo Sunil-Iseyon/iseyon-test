@@ -19,6 +19,10 @@
     {
       "question": "Can Iseyon migrate existing BI systems to Strategy?",
       "answer": "Yes, Iseyon helps organizations migrate dashboards, reports, and data assets from other business intelligence platforms into Strategy. We ensure smooth transitions with minimal disruption, optimized performance, and preserved data integrity—enabling organizations to leverage advanced analytics capabilities efficiently."
+    },
+    {
+      "question": "How does Iseyon optimize Strategy performance?",
+      "answer": "Iseyon applies best practices in architecture design, query optimization, caching strategies, and infrastructure tuning to enhance speed, scalability, and reliability. Our optimization services ensure consistent performance for enterprise-wide analytics and reporting environments."
     }
   ]
 }
