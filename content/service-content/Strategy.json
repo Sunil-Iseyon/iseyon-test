@@ -15,6 +15,10 @@
     {
       "question": "How does Iseyon support Strategy administration and deployment?",
       "answer": "Iseyon provides complete Strategy administration services, including installation, configuration, user account setup, data warehouse connectivity, and security management. Our team ensures a secure, scalable, and high-performance analytics foundation aligned with enterprise governance standards."
+    },
+    {
+      "question": "Can Iseyon migrate existing BI systems to Strategy?",
+      "answer": "Yes, Iseyon helps organizations migrate dashboards, reports, and data assets from other business intelligence platforms into Strategy. We ensure smooth transitions with minimal disruption, optimized performance, and preserved data integrity—enabling organizations to leverage advanced analytics capabilities efficiently."
     }
   ]
 }
