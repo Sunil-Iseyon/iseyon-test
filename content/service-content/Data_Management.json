@@ -18,8 +18,8 @@
       "answer": "Yes, Iseyon designs and deploys MDM frameworks that create a single, trusted source of truth for critical entities such as customers, products, and suppliers. Our solutions reduce duplication, improve consistency, and enhance collaboration across business units."
     },
     {
-      "question": "How does Iseyon enable advanced analytics and machine learning with Big Data?",
-      "answer": "Iseyon integrates big data platforms with machine learning frameworks to support predictive analytics, recommendation systems, forecasting, and anomaly detection. Our solutions help organizations extract meaningful insights from complex datasets and operationalize AI-driven decision-making at scale."
+      "question": "How does Iseyon ensure data quality, security, and compliance?",
+      "answer": "Iseyon implements data profiling, cleansing, validation, metadata management, lineage tracking, encryption, and role-based access controls to ensure high data quality and enterprise-grade security. Our approach supports audit readiness, regulatory compliance, and secure data operations across cloud and on-premise environments."
     },
     {
       "question": "How does Iseyon ensure security, governance, and cost optimization in Big Data environments?",
