@@ -15,6 +15,10 @@
     {
       "question": "How does Iseyon implement Connected Planning using Anaplan?",
       "answer": "Iseyon designs and deploys enterprise-wide Connected Planning solutions that integrate finance, sales, supply chain, HR, and operations into a unified platform. We follow industry best practices in model architecture, Agile delivery, and governance to ensure scalable, high-performance planning systems that support real-time collaboration and decision-making."
+    },
+    {
+      "question": "Can Iseyon integrate Anaplan with our ERP, CRM, and data warehouse systems?",
+      "answer": "Yes, Iseyon specializes in integrating Anaplan with leading ERP, CRM, and enterprise data warehouse systems to enable automated data synchronization and real-time reporting. Our integration approach ensures a single source of truth, reduces manual effort, and enhances planning accuracy across departments."
     }
   ]
 }
