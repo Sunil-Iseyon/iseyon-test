@@ -16,6 +16,10 @@
     {
       "question": "How does Iseyon improve SQL Server performance and reliability?",
       "answer": "Iseyon specializes in SQL Server performance tuning, query optimization, indexing strategies, workload balancing, and server configuration improvements. We conduct detailed health checks to identify bottlenecks and implement proactive monitoring, high availability configurations, and disaster recovery strategies to ensure mission-critical database performance."
+    },
+    {
+      "question": "Why do organizations choose Microsoft SQL Server?",
+      "answer": "Organizations choose Microsoft SQL Server for its strong integration with Microsoft business applications, lower total cost of ownership, enterprise-grade security, scalability, virtualization support, and robust online transaction processing (OLTP) capabilities. It also provides powerful data warehousing and BI tools that support reporting, analytics, and real-time decision-making."
     }
   ]
 }
