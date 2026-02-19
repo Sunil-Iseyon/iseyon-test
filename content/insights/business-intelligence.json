@@ -20,6 +20,10 @@
     {
       "question": "How does Iseyon enable real-time processing and advanced reporting?",
       "answer": "Iseyon implements modern BI architectures that support near real-time data processing and automated report generation. With rapid data ingestion and sub-second analytics capabilities, businesses gain immediate insights, faster response times, and continuously updated reports for operational agility."
+    },
+    {
+      "question": "What industries and business functions benefit from Iseyon’s BI solutions?",
+      "answer": "Our BI solutions are adaptable across industries and departments, including:\n\nFinance & Accounting: Real-time financial analytics, budgeting, and spend optimization\nSales & Marketing: Pipeline tracking, customer journey analysis, and ROI measurement\nOperations: Process efficiency monitoring, supply chain visibility, and performance optimization\n\nBy aligning analytics with functional goals, Iseyon ensures business intelligence drives strategic growth and operational excellence."
     }
   ]
 }
