@@ -11,6 +11,10 @@
     {
       "question": "What Snowflake services does Iseyon provide?",
       "answer": "Iseyon delivers end-to-end data modernization services using Snowflake Inc. and the Snowflake Data Cloud. Our services include unified data platform architecture, data warehousing, ELT pipeline development, advanced analytics enablement, performance optimization, governance, and cloud integration—helping enterprises scale securely and efficiently."
+    },
+    {
+      "question": "How does Iseyon implement a modern data architecture on Snowflake?",
+      "answer": "Iseyon designs cloud-native architectures that leverage Snowflake’s separation of compute and storage for flexibility, scalability, and cost efficiency. We build centralized platforms capable of handling structured, semi-structured, and unstructured data while ensuring high availability and performance."
     }
   ]
 }
