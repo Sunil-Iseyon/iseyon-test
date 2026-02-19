@@ -16,6 +16,10 @@
     {
       "question": "Can Iseyon implement real-time data processing solutions?",
       "answer": "Yes, Iseyon implements event-driven and real-time data streaming solutions using tools like Apache Kafka. These systems enable instant insights, faster decision-making, and improved responsiveness across business operations."
+    },
+    {
+      "question": "How does Iseyon enable advanced analytics and machine learning with Big Data?",
+      "answer": "Iseyon integrates big data platforms with machine learning frameworks to support predictive analytics, recommendation systems, forecasting, and anomaly detection. Our solutions help organizations extract meaningful insights from complex datasets and operationalize AI-driven decision-making at scale."
     }
   ]
 }
