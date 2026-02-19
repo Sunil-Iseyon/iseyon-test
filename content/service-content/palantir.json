@@ -15,6 +15,10 @@
     {
       "question": "How does Iseyon implement unified data integration using Palantir?",
       "answer": "Iseyon leverages platforms such as Palantir Foundry to unify siloed data across departments, systems, and environments. We design a centralized data ecosystem where structured and unstructured data is integrated into a governed, single source of truth powered by a robust operational ontology."
+    },
+    {
+      "question": "How does Iseyon enable operational intelligence and AI on Palantir?",
+      "answer": "Iseyon builds real-time operational workflows that connect analytics directly to business processes. Using advanced capabilities within Palantir Gotham and Palantir Apollo, we develop predictive models, scenario simulations, and secure AI deployments that support continuous improvement and data-driven decision-making."
     }
   ]
 }
