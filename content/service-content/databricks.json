@@ -11,6 +11,10 @@
     {
       "question": "What Databricks services does Iseyon provide?",
       "answer": "Iseyon delivers end-to-end data and AI solutions using Databricks, including lakehouse implementation, data engineering, advanced analytics, machine learning deployment, cloud-native architecture, governance, and modernization services. We help organizations build scalable, high-performance data platforms that accelerate insights and reduce infrastructure complexity."
+    },
+    {
+      "question": "How does Iseyon implement the Databricks Lakehouse architecture?",
+      "answer": "Iseyon implements the Databricks Lakehouse architecture to unify data engineering, analytics, and AI within a single platform. By combining the flexibility of data lakes with the reliability of data warehouses, we help enterprises simplify architecture, improve performance, and reduce data infrastructure costs while maintaining governance and scalability."
     }
   ]
 }
