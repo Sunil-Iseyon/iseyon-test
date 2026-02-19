@@ -16,6 +16,10 @@
     {
       "question": "Can Iseyon create centralized data management systems?",
       "answer": "Yes, Iseyon develops centralized data management platforms that serve as a single source of truth for your organization. Our solutions include role-based access controls, secure data storage, audit trails, and structured data governance—ensuring accuracy, transparency, and compliance."
+    },
+    {
+      "question": "How do custom dashboards improve team performance?",
+      "answer": "Iseyon builds personalized dashboards tailored to specific roles and departments. Whether for operations, finance, HR, or leadership, each dashboard delivers relevant KPIs and real-time insights, enabling faster decisions and improved accountability across teams."
     }
   ]
 }
