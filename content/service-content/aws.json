@@ -20,6 +20,10 @@
     {
       "question": "How does Iseyon enable data engineering and analytics on AWS?",
       "answer": "Iseyon builds modern data platforms using services like AWS Glue, Amazon Redshift, and Amazon Athena. We develop scalable ETL pipelines, real-time processing systems, and analytics environments that deliver actionable business insights."
+    },
+    {
+      "question": "Does Iseyon provide AI and machine learning solutions on AWS?",
+      "answer": "Absolutely, Iseyon supports the complete ML lifecycle using Amazon SageMaker-from data preparation and model training to deployment and monitoring. Our AI solutions help organizations automate processes, enhance predictions, and drive innovation at scale."
     }
   ]
 }
