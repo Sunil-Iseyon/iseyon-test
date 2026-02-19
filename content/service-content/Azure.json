@@ -12,6 +12,10 @@
     {
       "question": "How does Iseyon manage Azure cloud migration and modernization?",
       "answer": "Iseyon supports lift-and-shift migrations, re-platforming, and full cloud-native re-architecture from on-premise systems to Azure. We ensure minimal downtime, secure data transfer, performance optimization, and business continuity while modernizing legacy applications for a future-ready cloud ecosystem."
+    },
+    {
+      "question": "How does Iseyon build scalable, high-performance Azure infrastructure?",
+      "answer": "We design resilient architectures using services such as Azure Virtual Machines, Azure Blob Storage, and Azure Virtual Network. Our solutions include disaster recovery, auto-scaling, networking optimization, and cost management to ensure reliability and operational efficiency."
     }
   ]
 }
