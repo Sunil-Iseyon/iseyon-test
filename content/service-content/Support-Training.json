@@ -12,6 +12,10 @@
     {
       "question": "How does Iseyon ensure platform performance and optimization?",
       "answer": "Iseyon provides comprehensive platform administration, including user access management, configuration updates, cost monitoring, and performance tuning. Through regular system audits and optimization reviews, we ensure scalability, efficiency, and alignment with evolving business needs."
+    },
+    {
+      "question": "Does Iseyon offer structured incident management and SLA-based support?",
+      "answer": "Yes, Iseyon implements formal incident management frameworks supported by defined Service Level Agreements (SLAs). Our rapid response model prioritizes critical issues, reduces business disruption, and ensures timely resolution with clear communication and accountability."
     }
   ]
 }
