@@ -8,6 +8,10 @@
     {
       "question": "What support services does Iseyon provide?",
       "answer": "Iseyon offers 24/7 technical support and managed services across data platforms, cloud environments, and analytics systems. Our services include proactive monitoring, incident resolution, performance optimization, system health checks, and SLA-based support to ensure high availability, operational stability, and minimal downtime."
+    },
+    {
+      "question": "How does Iseyon ensure platform performance and optimization?",
+      "answer": "Iseyon provides comprehensive platform administration, including user access management, configuration updates, cost monitoring, and performance tuning. Through regular system audits and optimization reviews, we ensure scalability, efficiency, and alignment with evolving business needs."
     }
   ]
 }
