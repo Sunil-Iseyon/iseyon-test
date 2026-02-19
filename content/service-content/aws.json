@@ -16,6 +16,10 @@
     {
       "question": "Can Iseyon build scalable and secure cloud infrastructure on AWS?",
       "answer": "Yes, Iseyon designs highly available and resilient architectures using services such as Amazon EC2, Amazon S3, and Amazon VPC. Our solutions include disaster recovery planning, auto-scaling, cost optimization, and enterprise-grade security controls."
+    },
+    {
+      "question": "How does Iseyon enable data engineering and analytics on AWS?",
+      "answer": "Iseyon builds modern data platforms using services like AWS Glue, Amazon Redshift, and Amazon Athena. We develop scalable ETL pipelines, real-time processing systems, and analytics environments that deliver actionable business insights."
     }
   ]
 }
