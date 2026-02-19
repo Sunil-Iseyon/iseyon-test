@@ -15,6 +15,10 @@
     {
       "question": "How does Iseyon design interactive dashboards and reports?",
       "answer": "Iseyon builds dynamic dashboards that provide a 360-degree view of business performance. Users can explore insights using natural language queries, drill-down capabilities, and built-in or custom visuals. Our dashboards are designed to communicate insights clearly while supporting real-time, data-driven decision-making."
+    },
+    {
+      "question": "What data sources can Iseyon connect to Power BI?",
+      "answer": "Iseyon enables analysts to use Power BI Desktop for advanced data modeling, transformation, and report creation. We then configure secure publishing to the Power BI Service, enabling automatic data refresh, enterprise-wide sharing, and report embedding into portals or applications."
     }
   ]
 }
