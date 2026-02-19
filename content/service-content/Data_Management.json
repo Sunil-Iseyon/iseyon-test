@@ -10,8 +10,8 @@
       "answer": "Iseyon delivers comprehensive data management consulting services including data strategy development, governance framework implementation, master data management (MDM), data quality improvement, architecture design, integration, security, lifecycle management, and modernization. We help organizations transform fragmented data environments into structured, governed, and high-performing ecosystems that support analytics and AI initiatives."
     },
     {
-      "question": "How does Iseyon design scalable Big Data architectures?",
-      "answer": "Iseyon builds distributed data platforms using technologies such as Apache Hadoop and Apache Spark to support both batch and real-time processing. Our architectures are designed for resilience, scalability, and high performance, enabling enterprises to manage massive datasets efficiently."
+      "question": "How does Iseyon establish a strong data governance framework?",
+      "answer": "Iseyon defines enterprise-wide governance strategies that include clear data ownership, standardized policies, compliance controls, and accountability measures. Our frameworks ensure data accuracy, consistency, regulatory compliance, and transparency across departments and systems."
     },
     {
       "question": "Can Iseyon implement real-time data processing solutions?",
