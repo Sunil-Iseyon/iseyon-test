@@ -20,6 +20,10 @@
     {
       "question": "How does Tableau handle metadata and data preparation?",
       "answer": "Tableau simplifies metadata management by allowing users to rename fields, modify formats, create hierarchies, group data, and build subsets visually. Its in-memory Data Engine enables fast extraction and analysis of large datasets for ad hoc exploration, even on laptops or mobile devices."
+    },
+    {
+      "question": "Does Iseyon support Tableau mobile and self-service analytics?",
+      "answer": "Absolutely, Iseyon enables organizations to deploy dashboards optimized for mobile devices through Tableau Mobile. Dashboards are automatically responsive, allowing users to interact with reports using intuitive gestures on tablets and smartphones. Our solutions empower enterprise-wide self-service analytics with performance, scalability, and visual excellence built in."
     }
   ]
 }
