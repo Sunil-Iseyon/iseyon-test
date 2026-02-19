@@ -12,6 +12,10 @@
     {
       "question": "How does Iseyon design scalable Big Data architectures?",
       "answer": "Iseyon builds distributed data platforms using technologies such as Apache Hadoop and Apache Spark to support both batch and real-time processing. Our architectures are designed for resilience, scalability, and high performance, enabling enterprises to manage massive datasets efficiently."
+    },
+    {
+      "question": "Can Iseyon implement real-time data processing solutions?",
+      "answer": "Yes, Iseyon implements event-driven and real-time data streaming solutions using tools like Apache Kafka. These systems enable instant insights, faster decision-making, and improved responsiveness across business operations."
     }
   ]
 }
