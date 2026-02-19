@@ -8,6 +8,10 @@
     {
       "question": "What Tableau consulting services does Iseyon provide?",
       "answer": "Iseyon Analytics delivers end-to-end consulting services for Tableau, including dashboard design, data integration, advanced analytics, performance optimization, metadata management, and mobile deployment. Our data scientists and visualization experts transform complex business requirements into intuitive, high-impact dashboards that drive data-driven decision-making."
+    },
+    {
+      "question": "Can Tableau connect to multiple and large-scale data sources?",
+      "answer": "Yes, Tableau connects to spreadsheets, cloud applications, relational databases, and big data platforms such as Apache Hadoop. It allows organizations to combine multiple data sources seamlessly and analyze datasets ranging from small files to petabytes of enterprise data—all without writing code."
     }
   ]
 }
