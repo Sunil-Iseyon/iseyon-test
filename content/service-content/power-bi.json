@@ -11,6 +11,10 @@
     {
       "question": "What Power BI services does Iseyon provide?",
       "answer": "Iseyon delivers end-to-end consulting services for Microsoft Power BI, including dashboard design, data integration, report development, governance setup, performance optimization, embedding, and enterprise deployment. We help organizations unify data, create interactive visualizations, and enable scalable, collaborative business intelligence environments."
+    },
+    {
+      "question": "How does Iseyon design interactive dashboards and reports?",
+      "answer": "Iseyon builds dynamic dashboards that provide a 360-degree view of business performance. Users can explore insights using natural language queries, drill-down capabilities, and built-in or custom visuals. Our dashboards are designed to communicate insights clearly while supporting real-time, data-driven decision-making."
     }
   ]
 }
