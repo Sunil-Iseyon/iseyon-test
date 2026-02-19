@@ -8,6 +8,10 @@
     {
       "question": "What Shopify services does Iseyon provide?",
       "answer": "Iseyon delivers end-to-end consulting and development services for Shopify, including store design, custom theme development, app development, payment gateway integration, marketplace solutions, automation, migration, and ongoing support. We help startups, growing brands, and enterprise merchants build scalable, high-performance online stores."
+    },
+    {
+      "question": "Can Iseyon build custom Shopify apps and multi-vendor marketplaces?",
+      "answer": "Yes, Iseyon develops custom Shopify apps to extend store functionality, automate workflows, and integrate third-party systems. We also build multi-vendor and marketplace solutions with features such as vendor onboarding, commission management, product ownership mapping, order tracking, and automated payouts-while maintaining centralized administrative control."
     }
   ]
 }
