@@ -16,6 +16,10 @@
     {
       "question": "Does Iseyon provide predictive analytics and machine learning capabilities?",
       "answer": "Yes, Iseyon leverages machine learning models to deliver predictive analytics, forecasting, and trend analysis. Our solutions help organizations anticipate demand, detect risks, identify growth opportunities, and optimize strategic planning before challenges impact performance."
+    },
+    {
+      "question": "How does Iseyon enable real-time processing and advanced reporting?",
+      "answer": "Iseyon implements modern BI architectures that support near real-time data processing and automated report generation. With rapid data ingestion and sub-second analytics capabilities, businesses gain immediate insights, faster response times, and continuously updated reports for operational agility."
     }
   ]
 }
