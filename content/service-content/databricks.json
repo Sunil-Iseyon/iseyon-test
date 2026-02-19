@@ -15,6 +15,10 @@
     {
       "question": "How does Iseyon implement the Databricks Lakehouse architecture?",
       "answer": "Iseyon implements the Databricks Lakehouse architecture to unify data engineering, analytics, and AI within a single platform. By combining the flexibility of data lakes with the reliability of data warehouses, we help enterprises simplify architecture, improve performance, and reduce data infrastructure costs while maintaining governance and scalability."
+    },
+    {
+      "question": "How does Iseyon build scalable data engineering and analytics solutions on Databricks?",
+      "answer": "Iseyon designs high-performance ETL and ELT pipelines using Apache Spark on Databricks to ingest, transform, and process large-scale structured and unstructured data. We also enable fast SQL analytics and integrate with leading BI tools to provide real-time reporting and actionable business intelligence."
     }
   ]
 }
