@@ -8,6 +8,10 @@
     {
       "question": "What AWS services does Iseyon provide?",
       "answer": "Iseyon delivers end-to-end cloud solutions using Amazon Web Services, including cloud migration, infrastructure design, data engineering, analytics, AI/ML, serverless development, DevOps automation, and enterprise security. We help organizations modernize their technology landscape while improving scalability, agility, and cost efficiency."
+    },
+    {
+      "question": "How does Iseyon support AWS cloud migration?",
+      "answer": "Iseyon provides comprehensive migration strategies including lift-and-shift, re-platforming, and full re-architecture of legacy systems. Our team ensures minimal downtime, secure data transfer, performance optimization, and business continuity throughout the migration process."
     }
   ]
 }
