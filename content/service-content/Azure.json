@@ -8,6 +8,10 @@
     {
       "question": "What Microsoft Azure services does Iseyon provide?",
       "answer": "Iseyon delivers end-to-end cloud solutions on Microsoft Azure, including cloud infrastructure design, migration, modernization, data engineering, AI/ML implementation, DevOps automation, security, and system integration. Our Azure services help enterprises innovate, scale securely, and optimize cloud investments."
+    },
+    {
+      "question": "How does Iseyon manage Azure cloud migration and modernization?",
+      "answer": "Iseyon supports lift-and-shift migrations, re-platforming, and full cloud-native re-architecture from on-premise systems to Azure. We ensure minimal downtime, secure data transfer, performance optimization, and business continuity while modernizing legacy applications for a future-ready cloud ecosystem."
     }
   ]
 }
