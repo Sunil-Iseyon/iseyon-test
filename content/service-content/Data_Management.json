@@ -20,6 +20,10 @@
     {
       "question": "How does Iseyon enable advanced analytics and machine learning with Big Data?",
       "answer": "Iseyon integrates big data platforms with machine learning frameworks to support predictive analytics, recommendation systems, forecasting, and anomaly detection. Our solutions help organizations extract meaningful insights from complex datasets and operationalize AI-driven decision-making at scale."
+    },
+    {
+      "question": "How does Iseyon ensure security, governance, and cost optimization in Big Data environments?",
+      "answer": "Iseyon implements enterprise-grade governance frameworks, access controls, data lineage tracking, and compliance standards to ensure secure data operations. We also deploy cloud-based big data ecosystems and continuously optimize processing performance, storage efficiency, and resource utilization to maintain cost-effective and sustainable analytics environments."
     }
   ]
 }
