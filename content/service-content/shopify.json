@@ -16,6 +16,10 @@
     {
       "question": "What payment gateways and checkout solutions does Iseyon support?",
       "answer": "Iseyon integrates secure payment gateways including:\nRazorpay\nStripe\nPayPal\nWe implement advanced checkout logic such as split payments, multi-vendor settlements, and region-specific compliance to ensure seamless and secure transaction experiences."
+    },
+    {
+      "question": "How does Iseyon optimize Shopify performance and integrations?",
+      "answer": "Iseyon optimizes Shopify stores for speed, SEO, reliability, and security. We integrate Shopify with ERP systems, CRM platforms, and analytics tools to enable real-time synchronization of sales, inventory, finance, and customer data. Our automation solutions streamline order processing, refunds, cancellations, and vendor settlements to improve operational efficiency."
     }
   ]
 }
