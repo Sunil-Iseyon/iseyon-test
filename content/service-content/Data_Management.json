@@ -8,6 +8,10 @@
     {
       "question": "What Big Data consulting services does Iseyon provide?",
       "answer": "Iseyon delivers end-to-end Big Data consulting services including strategy development, scalable data architecture design, data engineering, real-time processing, advanced analytics, governance, cloud deployment, and modernization. We help organizations transform high-volume, high-velocity, and high-variety data into actionable insights that drive innovation and competitive advantage."
+    },
+    {
+      "question": "How does Iseyon design scalable Big Data architectures?",
+      "answer": "Iseyon builds distributed data platforms using technologies such as Apache Hadoop and Apache Spark to support both batch and real-time processing. Our architectures are designed for resilience, scalability, and high performance, enabling enterprises to manage massive datasets efficiently."
     }
   ]
 }
