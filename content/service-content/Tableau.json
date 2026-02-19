@@ -12,6 +12,10 @@
     {
       "question": "Can Tableau connect to multiple and large-scale data sources?",
       "answer": "Yes, Tableau connects to spreadsheets, cloud applications, relational databases, and big data platforms such as Apache Hadoop. It allows organizations to combine multiple data sources seamlessly and analyze datasets ranging from small files to petabytes of enterprise data—all without writing code."
+    },
+    {
+      "question": "What advanced analytics capabilities does Tableau offer?",
+      "answer": "Tableau enables in-depth statistical analysis including forecasting, trend analysis, regression, correlation, cohort analysis, box plots, and statistical summaries. Users can create calculated fields, filter data dynamically, and explore insights interactively through drag-and-drop functionality—making advanced analytics accessible to business users."
     }
   ]
 }
