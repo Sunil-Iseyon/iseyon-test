@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: 'Contact Us | iSeyon Analytics - Get in Touch',
   description: 'Contact iSeyon Analytics for AI-powered business intelligence solutions. Request a demo, book a consultation, or get answers to your data analytics questions. Available in US and India.',
   keywords: ['contact iSeyon Analytics', 'request demo', 'business intelligence consultation', 'AI analytics support', 'data solutions inquiry', 'BI consulting'],
-  authors: [{ name: 'iSeyon Analytics Team', url: 'https://iseyon-analytics-v0.vercel.app/team' }],
+  authors: [{ name: 'iSeyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   publisher: 'iSeyon Analytics',
   openGraph: {
     title: 'Contact Us | iSeyon Analytics',
     description: 'Get in touch with iSeyon Analytics for AI-powered business intelligence solutions.',
-    url: 'https://iseyon-analytics-v0.vercel.app/contact',
+    url: 'https://www.iseyon.com/contact',
     type: 'website',
   },
   twitter: {
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     description: 'Get in touch with iSeyon Analytics for AI-powered business intelligence solutions.',
   },
   alternates: {
-    canonical: 'https://iseyon-analytics-v0.vercel.app/contact',
+    canonical: 'https://www.iseyon.com/contact',
     languages: {
-      'en': 'https://iseyon-analytics-v0.vercel.app/contact',
-      'en-US': 'https://iseyon-analytics-v0.vercel.app/contact',
-      'en-IN': 'https://iseyon-analytics-v0.vercel.app/contact',
-      'x-default': 'https://iseyon-analytics-v0.vercel.app/contact',
+      'en': 'https://www.iseyon.com/contact',
+      'en-US': 'https://www.iseyon.com/contact',
+      'en-IN': 'https://www.iseyon.com/contact',
+      'x-default': 'https://www.iseyon.com/contact',
     },
   },
   other: {
@@ -54,27 +54,27 @@ export default function ContactPage() {
     '@graph': [
       {
         '@type': ['ContactPage', 'WebPage'],
-        '@id': 'https://iseyon-analytics-v0.vercel.app/contact#contactpage',
+        '@id': 'https://www.iseyon.com/contact#contactpage',
         name: 'Contact iSeyon Analytics',
         description: 'Contact information and consultation request form for iSeyon Analytics - AI-powered business intelligence solutions',
-        url: 'https://iseyon-analytics-v0.vercel.app/contact',
+        url: 'https://www.iseyon.com/contact',
         datePublished: '2024-01-15',
         dateModified: new Date().toISOString().split('T')[0],
         inLanguage: 'en-US',
         isPartOf: {
           '@type': 'WebSite',
-          '@id': 'https://iseyon-analytics-v0.vercel.app/#website',
+          '@id': 'https://www.iseyon.com/#website',
           name: 'iSeyon Analytics',
-          url: 'https://iseyon-analytics-v0.vercel.app',
+          url: 'https://www.iseyon.com',
         },
         author: {
           '@type': 'Organization',
-          '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+          '@id': 'https://www.iseyon.com/#organization',
           name: 'iSeyon Analytics',
-          url: 'https://iseyon-analytics-v0.vercel.app',
+          url: 'https://www.iseyon.com',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+            url: 'https://www.iseyon.com/iseyon.webp',
           },
           foundingDate: '2020',
           knowsAbout: ['Business Intelligence', 'Data Analytics', 'AI Integration', 'Cloud Platforms'],
@@ -90,22 +90,22 @@ export default function ContactPage() {
                 name: 'iSeyon Analytics'
               },
               knowsAbout: ['Artificial Intelligence', 'Business Intelligence', 'Data Science', 'Cloud Computing'],
-              url: 'https://iseyon-analytics-v0.vercel.app/team'
+              url: 'https://www.iseyon.com/our-team'
             }
           }
         },
         publisher: {
           '@type': 'Organization',
-          '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+          '@id': 'https://www.iseyon.com/#organization',
         },
         speakable: getSpeakableSchema(['h1', 'h2', '.contact-info']),
         potentialAction: getPotentialActionSchema(standardActions),
         mainEntity: {
           '@type': 'Organization',
-          '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+          '@id': 'https://www.iseyon.com/#organization',
           name: 'iSeyon Analytics',
-          url: 'https://iseyon-analytics-v0.vercel.app',
-          logo: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+          url: 'https://www.iseyon.com',
+          logo: 'https://www.iseyon.com/iseyon.webp',
           foundingDate: '2020',
           contactPoint: {
             '@type': 'ContactPoint',
@@ -132,13 +132,13 @@ export default function ContactPage() {
               '@type': 'ListItem',
               position: 1,
               name: 'Home',
-              item: 'https://iseyon-analytics-v0.vercel.app',
+              item: 'https://www.iseyon.com',
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Contact',
-              item: 'https://iseyon-analytics-v0.vercel.app/contact',
+              item: 'https://www.iseyon.com/contact',
             },
           ],
         },

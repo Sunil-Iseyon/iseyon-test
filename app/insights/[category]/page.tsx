@@ -68,5 +68,5 @@ export default async function InsightPage({
         )
     }
 
-    return <ServiceDetailClient content={content} />
+    return <ServiceDetailClient content={content} currentSlug={category} />
 }

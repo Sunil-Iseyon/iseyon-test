@@ -24,12 +24,12 @@ export const metadata: Metadata = {
   title: 'Blog | AI, BI & Data Analytics Insights | Iseyon Analytics',
   description: 'Explore evidence-based insights on AI-powered business intelligence, data analytics, cloud platforms (Snowflake, Databricks, Palantir), and emerging technologies. Backed by expert research and proprietary benchmarks.',
   keywords: ['AI blog', 'business intelligence insights', 'data analytics articles', 'BI trends', 'technology insights', 'data science', 'machine learning', 'cloud analytics', 'lakehouse platform', 'generative AI'],
-  authors: [{ name: 'Iseyon Analytics Team', url: 'https://iseyon-analytics-v0.vercel.app/team' }],
+  authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   publisher: 'Iseyon Analytics',
   openGraph: {
     title: 'Blog | AI & BI Insights',
     description: 'Evidence-based insights on AI-powered business intelligence, backed by expert research and proprietary benchmarks.',
-    url: 'https://iseyon-analytics-v0.vercel.app/blog',
+    url: 'https://www.iseyon.com/blog',
     type: 'website',
   },
   twitter: {
@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     description: 'Evidence-based insights on AI-powered business intelligence and data analytics.',
   },
   alternates: {
-    canonical: 'https://iseyon-analytics-v0.vercel.app/blog',
+    canonical: 'https://www.iseyon.com/blog',
     languages: {
-      'en': 'https://iseyon-analytics-v0.vercel.app/blog',
-      'en-US': 'https://iseyon-analytics-v0.vercel.app/blog',
-      'en-IN': 'https://iseyon-analytics-v0.vercel.app/blog',
-      'x-default': 'https://iseyon-analytics-v0.vercel.app/blog',
+      'en': 'https://www.iseyon.com/blog',
+      'en-US': 'https://www.iseyon.com/blog',
+      'en-IN': 'https://www.iseyon.com/blog',
+      'x-default': 'https://www.iseyon.com/blog',
     },
   },
   other: {
@@ -74,19 +74,19 @@ export default async function BlogPage() {
     '@graph': [
       {
         '@type': 'Blog',
-        '@id': 'https://iseyon-analytics-v0.vercel.app/blog#blog',
+        '@id': 'https://www.iseyon.com/blog#blog',
         name: 'Iseyon Analytics Blog',
         description: 'Evidence-based insights on AI-powered business intelligence and data analytics',
-        url: 'https://iseyon-analytics-v0.vercel.app/blog',
+        url: 'https://www.iseyon.com/blog',
         inLanguage: 'en-US',
         publisher: {
           '@type': 'Organization',
-          '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+          '@id': 'https://www.iseyon.com/#organization',
           name: 'Iseyon Analytics',
-          url: 'https://iseyon-analytics-v0.vercel.app',
+          url: 'https://www.iseyon.com',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+            url: 'https://www.iseyon.com/iseyon.webp',
           },
           sameAs: [
             'https://www.linkedin.com/company/iseyon-analytics',
@@ -106,8 +106,8 @@ export default async function BlogPage() {
               name: 'Iseyon Analytics',
             },
           },
-          image: `https://iseyon-analytics-v0.vercel.app${blog.image}`,
-          url: `https://iseyon-analytics-v0.vercel.app/blog/${blog.id}`,
+          image: `https://www.iseyon.com${blog.image}`,
+          url: `https://www.iseyon.com/blog/${blog.id}`,
         })),
         // Speakable schema for voice optimization
         speakable: getSpeakableSchema(['h1', 'h2', '.summary']),
@@ -119,13 +119,13 @@ export default async function BlogPage() {
       // WebPage schema
       {
         '@type': 'WebPage',
-        '@id': 'https://iseyon-analytics-v0.vercel.app/blog#webpage',
-        url: 'https://iseyon-analytics-v0.vercel.app/blog',
+        '@id': 'https://www.iseyon.com/blog#webpage',
+        url: 'https://www.iseyon.com/blog',
         name: 'Blog | AI, BI & Data Analytics Insights',
         description: 'Explore evidence-based insights on AI-powered business intelligence and data analytics',
         inLanguage: 'en-US',
         isPartOf: {
-          '@id': 'https://iseyon-analytics-v0.vercel.app/#website',
+          '@id': 'https://www.iseyon.com/#website',
         },
         breadcrumb: {
           '@type': 'BreadcrumbList',
@@ -134,13 +134,13 @@ export default async function BlogPage() {
               '@type': 'ListItem',
               position: 1,
               name: 'Home',
-              item: 'https://iseyon-analytics-v0.vercel.app',
+              item: 'https://www.iseyon.com',
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Blog',
-              item: 'https://iseyon-analytics-v0.vercel.app/blog',
+              item: 'https://www.iseyon.com/blog',
             },
           ],
         },

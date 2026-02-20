@@ -141,8 +141,8 @@ export default function NotFound() {
             {[
               { href: '/', label: 'Home' },
               { href: '/blog', label: 'Blog' },
-              { href: '/team', label: 'Our Team' },
-              { href: '/vision', label: 'Vision' },
+              { href: '/our-team', label: 'Our Team' },
+              { href: '/our-vision', label: 'Vision' },
               { href: '/contact', label: 'Contact Us' },
             ].map((link, index) => (
               <motion.div

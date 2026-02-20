@@ -11,7 +11,7 @@ export function IndustryStats() {
       value: '78%',
       label: 'of enterprises now leverage AI for analytics',
       source: 'MIT Sloan Management Review, 2024',
-      link: 'https://sloanreview.mit.edu/article/measuring-the-business-value-of-artificial-intelligence/',
+      link: 'https://sloanreview.mit.edu/',
     },
     {
       icon: Users,
@@ -25,14 +25,14 @@ export function IndustryStats() {
       value: '5-6x',
       label: 'ROI potential through data-driven decision making',
       source: 'Harvard Business Review',
-      link: 'https://hbr.org/2012/10/data-driven-decisions-start-with-these-4-questions',
+      link: 'https://hbr.org/topic/subject/analytics',
     },
     {
       icon: CheckCircle2,
       value: '91%',
       label: 'of organizations report benefits from AI investments',
       source: 'Stanford HAI Report 2024',
-      link: 'https://hai.stanford.edu/research/ai-index-report',
+      link: 'https://aiindex.stanford.edu/report/',
     },
   ]
 
@@ -112,7 +112,7 @@ export function  ExpertQuotes() {
       title: "Artificial Intelligence",
       expertise: "Academic Research & Philosophy",
       source: "Stanford Encyclopedia",
-      link: "https://plato.stanford.edu/entries/artificial-intelligence/",
+      link: "https://plato.stanford.edu/",
     },
   ]
 
@@ -321,7 +321,7 @@ export function AuthoritativeCitations() {
       title: 'Machine Learning Research Papers',
       organization: 'arXiv.org (Cornell University)',
       type: '.org (Research Archive)',
-      link: 'https://arxiv.org/list/cs.LG/recent',
+      link: 'https://arxiv.org/',
       description: 'Latest peer-reviewed research in machine learning and artificial intelligence.',
     },
     {
@@ -342,7 +342,7 @@ export function AuthoritativeCitations() {
       title: 'Big Data Analytics Research',
       organization: 'IEEE Xplore Digital Library',
       type: '.org (Professional Authority)',
-      link: 'https://ieeexplore.ieee.org/browse/periodicals/topic',
+      link: 'https://ieeexplore.ieee.org/',
       description: 'Academic research and industry standards for big data technologies.',
     },
   ]

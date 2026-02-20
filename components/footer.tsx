@@ -20,6 +20,11 @@ export function Footer() {
     { name: "Contact Us", url: "/contact" },
     { name: "Blog", url: "/blog" },
   ]
+  const insights = [
+    { label: 'Business Intelligence', href: '/insights/business-intelligence' },
+    { label: 'Internal Applications', href: '/insights/internal-applications' },
+    { label: 'Support for Communities', href: '/insights/support-communities' }
+  ]
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -85,7 +90,7 @@ export function Footer() {
           <motion.div variants={itemVariants} className="space-y-4">
             {/* Logo - Left */}
         <Link href="/" className="flex items-center gap-2 font-bold text-xl text-white z-10">
-          <img src="/iseyon-whiteLogo.webp" alt="iSeyon Analytics white logo representing Vision, Leadership and Consistency" className="h-20 w-45" />
+          <img src="/iseyon-whiteLogo.webp" alt="Iseyon Analytics white logo representing Vision, Leadership and Consistency" className="h-20 w-45" />
         </Link>
             <p className=" text-sm">
               Transforming businesses through AI-powered analytics and data-driven intelligence solutions.
@@ -98,7 +103,7 @@ export function Footer() {
             <div className="flex items-start gap-3 text-xs md:text-sm">
               <MapPin className="w-4 h-4 md:w-5 md:h-5 shrink-0 mt-0.5" />
               <div>
-                <p className="leading-relaxed">New York l New Jersey | Minnesota l California l Florida l Bangalore</p>
+                <p className="leading-relaxed">New York l New Jersey | Minnesota l California l Washington l Bangalore</p>
               </div>
             </div>
             <div className="flex items-center gap-3 text-xs md:text-sm mt-4">
@@ -127,9 +132,24 @@ export function Footer() {
               ))}
             </ul>
           </motion.div>
+           <motion.div variants={itemVariants} className="space-y-4">
+            <h3 className="font-semibold text-base md:text-lg">Insights</h3>
+            <ul className="space-y-2 text-xs md:text-sm">
+              {insights.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="relative inline-block after:absolute after:w-0 after:h-[1px] after:bottom-0 after:left-0 after:bg-background after:transition-all after:duration-300 hover:after:w-full"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
 
           {/* Newsletter */}
-          <motion.div variants={itemVariants} className="space-y-4">
+          {/* <motion.div variants={itemVariants} className="space-y-4">
             <h3 className="font-semibold text-base md:text-lg">Stay Updated</h3>
             <p className="text-xs md:text-sm">
               Subscribe to get the latest updates on AI and analytics.
@@ -169,7 +189,7 @@ export function Footer() {
                 </motion.p>
               )}
             </form>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Social Links */}

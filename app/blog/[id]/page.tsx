@@ -39,7 +39,7 @@ export async function generateMetadata({
     openGraph: {
       title: blog.title,
       description: blog.summary || blog.title,
-      url: `https://iseyon-analytics-v0.vercel.app/blog/${id}`,
+      url: `https://www.iseyon.com/blog/${id}`,
       type: 'article',
       images: blog.image ? [{ url: blog.image }] : [],
       publishedTime: blog.date,
@@ -52,7 +52,7 @@ export async function generateMetadata({
       images: blog.image ? [blog.image] : [],
     },
     alternates: {
-      canonical: `https://iseyon-analytics-v0.vercel.app/blog/${id}`,
+      canonical: `https://www.iseyon.com/blog/${id}`,
     },
   }
 }
@@ -96,22 +96,22 @@ export default async function BlogDetailPage({
     author: {
       '@type': 'Person',
       name: blog.author || 'Iseyon Analytics Team',
-      url: 'https://iseyon-analytics-v0.vercel.app/team',
+      url: 'https://www.iseyon.com/our-team',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Iseyon Analytics',
-      url: 'https://iseyon-analytics-v0.vercel.app',
+      url: 'https://www.iseyon.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+        url: 'https://www.iseyon.com/iseyon.webp',
         width: '600',
         height: '60',
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://iseyon-analytics-v0.vercel.app/blog/${id}`,
+      '@id': `https://www.iseyon.com/blog/${id}`,
     },
     keywords: blog.tags?.join(', ') || 'AI, Business Intelligence, Data Analytics',
     articleSection: 'Business Intelligence and Analytics',

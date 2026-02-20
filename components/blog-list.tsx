@@ -157,8 +157,8 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
         </div>
       </motion.div>
 
-      {/* BLOG CAROUSEL - Both Mobile and Desktop */}
-      <section className="mt-8 sm:mt-10 px-4" aria-label="Blog post carousel">
+      {/* BLOG CAROUSEL - Mobile only */}
+      <section className="mt-8 sm:mt-10 px-4 md:hidden" aria-label="Blog post carousel">
         <Carousel
           opts={{
             align: "start",
@@ -169,20 +169,31 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
         >
           <CarouselContent className="-ml-4">
             {filteredBlogs.map((blog, idx) => (
-              <CarouselItem key={blog.id || idx} className="basis-[85%] sm:basis-[90%] md:basis-1/3 pl-4">
+              <CarouselItem key={blog.id || idx} className="basis-[85%] sm:basis-[90%] pl-4">
                 <Link href={`/blog/${blog.id || idx}`}>
                   {renderBlogCard(blog, idx)}
                 </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
-          {filteredBlogs.length > 3 && (
+          {filteredBlogs.length > 1 && (
             <div className="flex justify-center gap-2 mt-6">
               <CarouselPrevious className="relative left-0 translate-x-0 hover:text-white" />
               <CarouselNext className="relative right-0 translate-x-0 hover:text-white" />
             </div>
           )}
         </Carousel>
+      </section>
+
+      {/* BLOG GRID - Desktop only */}
+      <section className="hidden md:block mt-10 px-4" aria-label="Blog post grid">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredBlogs.map((blog, idx) => (
+            <Link key={blog.id || idx} href={`/blog/${blog.id || idx}`}>
+              {renderBlogCard(blog, idx)}
+            </Link>
+          ))}
+        </div>
       </section>
     </main>
   )

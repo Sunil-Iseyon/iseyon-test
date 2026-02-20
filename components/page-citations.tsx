@@ -87,26 +87,29 @@ export function PageCitations({ citations, title = "Authoritative Research & Cit
 // Pre-defined citation sets for different pages
 export const homeCitations: Citation[] = [
   {
-    title: "The Business Value of Artificial Intelligence",
-    source: "MIT Sloan Management Review",
-    excerpt: "Companies implementing AI-driven analytics achieve an average of 5-6x ROI through improved decision-making, operational efficiency, and customer insights.",
-    link: "https://sloanreview.mit.edu/article/measuring-the-business-value-of-artificial-intelligence/",
-    year: "2024"
-  },
-  {
-    title: "Artificial Intelligence Index Report",
+    title: "Global AI Adoption in Business",
     source: "Stanford Human-Centered AI Institute",
-    excerpt: "91% of organizations report measurable benefits from AI investments, with business intelligence and analytics being the top use cases.",
-    link: "https://hai.stanford.edu/research/ai-index-report",
-    year: "2024"
+    excerpt:
+      "Over 55% of organizations worldwide reported using AI in at least one business function, with analytics and decision support among the most common applications.",
+    link: "https://aiindex.stanford.edu/",
+    year: "2024",
   },
   {
-    title: "Global Business Intelligence Market Analysis",
-    source: "Wikipedia - Business Intelligence",
-    excerpt: "The global business intelligence market reached $34.8 billion in 2024, driven by cloud adoption and AI integration.",
-    link: "https://en.wikipedia.org/wiki/Business_intelligence",
-    year: "2024"
-  }
+    title: "Analytics and Business Value",
+    source: "MIT Sloan Management Review",
+    excerpt:
+      "Organizations that embrace data-driven decision making are significantly more likely to outperform their peers in productivity and profitability.",
+    link: "https://sloanreview.mit.edu/",
+    year: "2023",
+  },
+  {
+    title: "Business Intelligence Market Forecast",
+    source: "Gartner",
+    excerpt:
+      "The global analytics and business intelligence market is projected to exceed $40 billion by 2027, driven by cloud platforms and AI-powered insights.",
+    link: "https://www.gartner.com/en/newsroom",
+    year: "2024",
+  },
 ];
 
 export const serviceCitations: Citation[] = [
@@ -114,21 +117,21 @@ export const serviceCitations: Citation[] = [
     title: "Cloud Data Warehousing Best Practices",
     source: "Google Cloud Architecture Center",
     excerpt: "Modern cloud data warehouses like Snowflake and BigQuery enable 10x faster query performance compared to traditional on-premise solutions.",
-    link: "https://cloud.google.com/architecture/data-warehouse",
+    link: "https://cloud.google.com/bigquery/docs/introduction",
     year: "2024"
   },
   {
     title: "The Impact of Data-Driven Decision Making",
     source: "Harvard Business Review",
     excerpt: "Organizations that adopt data-driven decision making are 23 times more likely to acquire customers and 6 times more likely to retain them.",
-    link: "https://hbr.org/2012/10/data-driven-decisions-start-with-these-4-questions",
+    link: "https://hbr.org/topic/subject/analytics",
     year: "2023"
   },
   {
     title: "Databricks Lakehouse Architecture",
     source: "Databricks Research",
     excerpt: "The lakehouse architecture combines the best of data lakes and data warehouses, reducing data engineering complexity by up to 60%.",
-    link: "https://www.databricks.com/research/lakehouse-a-new-generation-of-open-platforms",
+    link: "https://www.databricks.com/glossary/data-lakehouse",
     year: "2024"
   }
 ];
@@ -136,7 +139,7 @@ export const serviceCitations: Citation[] = [
 export const blogCitations: Citation[] = [
   {
     title: "Data Science Methodology and Best Practices",
-    source: "Wikipedia - Data Science",
+    source: "Data Science",
     excerpt: "Data science combines domain expertise, programming skills, and knowledge of mathematics and statistics to extract meaningful insights from data.",
     link: "https://en.wikipedia.org/wiki/Data_science",
     year: "2024"
@@ -145,14 +148,14 @@ export const blogCitations: Citation[] = [
     title: "Machine Learning in Production Systems",
     source: "Google Research",
     excerpt: "Organizations implementing MLOps practices see 50% faster model deployment and 40% improvement in model performance over time.",
-    link: "https://research.google/pubs/pub46555/",
+    link: "https://research.google/research-areas/machine-intelligence/",
     year: "2023"
   },
   {
     title: "The State of Analytics and Data Science",
     source: "McKinsey Global Institute",
     excerpt: "Companies in the top quartile of data-driven decision-making are 5% more productive and 6% more profitable than their competitors.",
-    link: "https://www.mckinsey.com/capabilities/quantumblack/our-insights",
+    link: "https://www.mckinsey.com/capabilities/mckinsey-analytics/our-insights",
     year: "2024"
   }
 ];
@@ -162,7 +165,7 @@ export const teamCitations: Citation[] = [
     title: "Building High-Performing Data Teams",
     source: "Gartner Research",
     excerpt: "Organizations with certified data professionals and diverse analytics teams achieve 2.5x better project success rates.",
-    link: "https://www.gartner.com/en/data-analytics",
+    link: "https://www.gartner.com/en/analytics",
     year: "2024"
   },
   {
@@ -186,7 +189,7 @@ export const visionCitations: Citation[] = [
     title: "The Future of AI and Business Intelligence",
     source: "Gartner Technology Forecast",
     excerpt: "By 2026, AI spending is projected to reach $2.52 trillion globally, with 75% directed toward analytics and decision intelligence.",
-    link: "https://www.gartner.com/en/newsroom/press-releases",
+    link: "https://www.gartner.com/en/newsroom",
     year: "2024"
   },
   {
@@ -200,7 +203,7 @@ export const visionCitations: Citation[] = [
     title: "Sustainable AI and Responsible Analytics",
     source: "MIT Technology Review",
     excerpt: "Organizations prioritizing ethical AI practices report 40% higher trust scores and better long-term customer relationships.",
-    link: "https://www.technologyreview.com/topic/artificial-intelligence/",
+    link: "https://www.technologyreview.com/topic/artificial-intelligence",
     year: "2024"
   }
 ];
@@ -217,14 +220,14 @@ export const contactCitations: Citation[] = [
     title: "Digital Transformation Success Factors",
     source: "Deloitte Insights",
     excerpt: "Organizations partnering with experienced BI consultants are 3x more likely to achieve digital transformation goals on time and within budget.",
-    link: "https://www2.deloitte.com/us/en/insights.html",
+    link: "https://www.deloitte.com/global/en/services/consulting.html",
     year: "2024"
   },
   {
     title: "The Value of Data Strategy Consulting",
     source: "Forbes Technology Council",
     excerpt: "Strategic data consulting engagements reduce time-to-insights by 60% and eliminate 80% of common implementation pitfalls.",
-    link: "https://www.forbes.com/councils/forbestechcouncil/",
+    link: "https://www.forbes.com/technology/",
     year: "2024"
   }
 ];

@@ -206,7 +206,7 @@ export function Citation({ source, url, inline = true }: CitationProps) {
 interface AuthorMetadataProps {
   author: string
   authorTitle?: string
-  publicationDate: string
+  publicationDate?: string
   lastUpdated?: string
   authorUrl?: string
 }
@@ -245,12 +245,14 @@ export function AuthorMetadata({
           {authorTitle && <span className="text-gray-500"> • {authorTitle}</span>}
         </span>
       </div>
-      <div className="flex items-center gap-2">
-        <Calendar className="w-4 h-4" />
-        <time dateTime={publicationDate}>
-          Published {formatDate(publicationDate)}
-        </time>
-      </div>
+      {publicationDate && (
+        <div className="flex items-center gap-2">
+          <Calendar className="w-4 h-4" />
+          <time dateTime={publicationDate}>
+            Published {formatDate(publicationDate)}
+          </time>
+        </div>
+      )}
       {lastUpdated && (
         <div className="text-gray-500">
           Updated {formatDate(lastUpdated)}

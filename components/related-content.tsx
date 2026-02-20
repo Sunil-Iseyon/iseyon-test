@@ -27,13 +27,13 @@ const defaultInternalLinks: RelatedLink[] = [
   {
     title: 'Meet Our Team',
     description: 'Get to know the experts behind our success',
-    href: '/team',
+    href: '/our-team',
     icon: Users,
   },
   {
     title: 'Our Vision',
     description: 'Learn about our mission and values',
-    href: '/vision',
+    href: '/our-vision',
     icon: Target,
   },
   {
@@ -119,32 +119,134 @@ export function RelatedContent({
   )
 }
 
-// Service-specific related links
-export const serviceRelatedLinks: RelatedLink[] = [
+// ─── Category-specific service links ─────────────────────────────────────────
+
+const biAndAnalyticsLinks: RelatedLink[] = [
   {
     title: 'Power BI Services',
-    description: 'Advanced Power BI implementation and consulting',
+    description: 'Interactive dashboards and self-service reporting powered by Microsoft Power BI',
     href: '/services/bi-and-analytics/power-bi',
     icon: Briefcase,
   },
   {
+    title: 'Tableau Consulting',
+    description: 'Visual analytics and storytelling with Tableau for enterprise teams',
+    href: '/services/bi-and-analytics/Tableau',
+    icon: Briefcase,
+  },
+  {
+    title: 'Analytics Strategy',
+    description: 'Data strategy roadmaps that align analytics investments with business goals',
+    href: '/services/bi-and-analytics/Strategy',
+    icon: Briefcase,
+  },
+]
+
+const cloudAndPlatformsLinks: RelatedLink[] = [
+  {
     title: 'Snowflake Consulting',
-    description: 'Expert Snowflake implementation and optimization',
+    description: 'Cloud data warehouse design, optimization, and governance on Snowflake',
     href: '/services/cloud-and-platforms/Snowflake',
     icon: Briefcase,
   },
   {
     title: 'Databricks Solutions',
-    description: 'Comprehensive Databricks analytics platform services',
+    description: 'Unified analytics and data lakehouse pipelines built on Databricks',
     href: '/services/cloud-and-platforms/databricks',
     icon: Briefcase,
   },
   {
     title: 'Palantir Integration',
-    description: 'Palantir Foundry implementation and support',
+    description: 'Palantir Foundry implementation and operational analytics',
     href: '/services/cloud-and-platforms/palantir',
     icon: Briefcase,
   },
+  {
+    title: 'Anaplan Planning',
+    description: 'Connected planning and scenario modeling on the Anaplan platform',
+    href: '/services/cloud-and-platforms/Anaplan',
+    icon: Briefcase,
+  },
+  {
+    title: 'AWS Data Services',
+    description: 'End-to-end analytics architectures on Amazon Web Services',
+    href: '/services/cloud-and-platforms/aws',
+    icon: Briefcase,
+  },
+  {
+    title: 'Azure Analytics',
+    description: 'Microsoft Azure data platform implementation and managed services',
+    href: '/services/cloud-and-platforms/Azure',
+    icon: Briefcase,
+  },
+  {
+    title: 'Shopify Solutions',
+    description: 'End-to-end Shopify store design, development, and analytics integration',
+    href: '/services/cloud-and-platforms/shopify',
+    icon: Briefcase,
+  },
+]
+
+const dataAndEngineeringLinks: RelatedLink[] = [
+  {
+    title: 'SQL & Reporting',
+    description: 'SQL development, stored procedures, and enterprise reporting services',
+    href: '/services/data-and-engineering/sql',
+    icon: Briefcase,
+  },
+  {
+    title: 'Data Management',
+    description: 'Data governance, quality, and master data management programs',
+    href: '/services/data-and-engineering/Data_Management',
+    icon: Briefcase,
+  },
+  {
+    title: 'Big Data Engineering',
+    description: 'Large-scale data pipeline design using Apache Spark and distributed systems',
+    href: '/services/data-and-engineering/Big-Data',
+    icon: Briefcase,
+  },
+]
+
+const insightsLinks: RelatedLink[] = [
+  {
+    title: 'Business Intelligence',
+    description: 'Explore our BI insights covering dashboards, reporting, and analytics strategy',
+    href: '/insights/business-intelligence',
+    icon: BookOpen,
+  },
+  {
+    title: 'Internal Applications',
+    description: 'Insights on building custom internal tools and operational applications',
+    href: '/insights/internal-applications',
+    icon: BookOpen,
+  },
+]
+
+/**
+ * Returns same-category related links for a service page, excluding the current page.
+ */
+export function getCategoryRelatedLinks(
+  category: string,
+  currentSlug: string,
+): RelatedLink[] {
+  let pool: RelatedLink[] = []
+  if (category === 'bi-and-analytics') pool = biAndAnalyticsLinks
+  else if (category === 'cloud-and-platforms') pool = cloudAndPlatformsLinks
+  else if (category === 'data-and-engineering') pool = dataAndEngineeringLinks
+  else if (category === 'business-intelligence' || category === 'internal-applications') pool = insightsLinks
+  else pool = serviceRelatedLinks
+
+  return pool.filter(
+    (l) => !l.href.toLowerCase().endsWith(`/${currentSlug.toLowerCase()}`),
+  )
+}
+
+// Flat list for generic usage (all services)
+export const serviceRelatedLinks: RelatedLink[] = [
+  ...biAndAnalyticsLinks,
+  ...cloudAndPlatformsLinks,
+  ...dataAndEngineeringLinks,
 ]
 
 // Blog-specific related links
@@ -164,7 +266,7 @@ export const blogRelatedLinks: RelatedLink[] = [
   {
     title: 'Expert Team',
     description: 'Meet our industry experts and thought leaders',
-    href: '/team',
+    href: '/our-team',
     icon: Users,
   },
 ]

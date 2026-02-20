@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   description: 'Transform your business with AI-powered analytics and intelligence solutions. Expert BI consulting, cloud platforms, and data-driven insights.',
   keywords: ['AI business intelligence', 'data analytics', 'BI consulting', 'Power BI', 'Snowflake', 'Databricks', 'business analytics', 'AI solutions'],
-  authors: [{ name: 'Iseyon Analytics Team', url: 'https://iseyon.com/team' }],
+  authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   creator: 'Iseyon Analytics',
   publisher: 'Iseyon Analytics',
   formatDetection: {
@@ -38,14 +38,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  icons: {
-    icon: [
-      {
-        url: '/iseyon.webp',
-        type: 'image/svg+xml',
-      },
-    ],
-  },
+  
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -66,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Iseyon Analytics | AI-Powered Business Intelligence',
     description: 'Transform your business with AI-powered analytics and intelligence solutions',
-    images: ['/iseyon.webp'],
+    images: ['/iseyon-logo.png'],
   },
   robots: {
     index: true,
@@ -132,7 +125,7 @@ export default async function RootLayout({
         '@type': 'Person',
         name: 'Srinivas Reddy Karri',
         jobTitle: 'Founder & CEO',
-        sameAs: 'https://iseyon.com/team',
+        sameAs: 'https://www.iseyon.com/our-team',
       },
     ],
     knowsAbout: [

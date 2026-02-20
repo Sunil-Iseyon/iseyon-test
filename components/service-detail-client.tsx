@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 import { TinaRichText } from './tina-rich-text'
 import { FAQSchema, serviceFAQs, insightFAQs } from './faq-schema'
-import { RelatedContent, serviceRelatedLinks } from './related-content'
+import { RelatedContent, getCategoryRelatedLinks } from './related-content'
 import { AuthorMetadata } from './content-enhancements'
 import type { TinaMarkdownContent } from 'tinacms/dist/rich-text'
 
@@ -20,17 +20,25 @@ interface ServiceContent {
     question: string;
     answer: string;
   }>;
+  _sys?: {
+    filename: string;
+  };
 }
 
 export function ServiceDetailClient({ 
-  content
+  content,
+  currentSlug,
 }: { 
   content: ServiceContent
+  currentSlug?: string
 }) {
   // Determine if this is an insight page based on category
   const isInsightPage = content.category === 'business-intelligence' || content.category === 'internal-applications'
   const defaultFAQs = isInsightPage ? insightFAQs : serviceFAQs
   const sectionTitle = isInsightPage ? 'Insights' : 'Services'
+
+  // Use URL-derived slug first (most accurate), fall back to _sys then heading
+  const resolvedSlug = currentSlug ?? content._sys?.filename ?? content.heading.toLowerCase().replace(/\s+/g, '-')
 
   return (
     <main className="min-h-screen bg-white">
@@ -99,8 +107,7 @@ export function ServiceDetailClient({
               <AuthorMetadata
                 author="Iseyon Analytics Team"
                 authorTitle="AI & BI Experts"
-                publicationDate={new Date().toISOString()}
-                authorUrl="/team"
+                authorUrl="/our-team"
               />
             </motion.div>
           </div>
@@ -133,7 +140,10 @@ export function ServiceDetailClient({
       {/* Related Content */}
       <RelatedContent 
         title={`Explore Our Other ${sectionTitle}`}
-        links={serviceRelatedLinks.filter(link => !link.href.includes(content.heading.toLowerCase()))}
+        links={getCategoryRelatedLinks(
+          content.category,
+          resolvedSlug,
+        )}
       />
 
       {/* Static CTA Section */}

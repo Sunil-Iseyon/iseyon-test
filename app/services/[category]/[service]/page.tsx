@@ -62,7 +62,7 @@ export async function generateMetadata({
 
   const serviceName = content.heading
   const description = content.subheading || `Expert ${serviceName} consulting and implementation services by Iseyon Analytics. Transform your data operations with our proven expertise.`
-  const pageUrl = `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`
+  const pageUrl = `https://www.iseyon.com/services/${category}/${service}`
   const imageAlt = `${serviceName} services dashboard showing data analytics and business intelligence capabilities provided by Iseyon Analytics`
 
   return {
@@ -130,7 +130,7 @@ export default async function ServicePage({
 
     // Generate schemas
     const currentDate = new Date().toISOString().split('T')[0]
-    const pageUrl = `https://iseyon-analytics-v0.vercel.app/services/${category}/${service}`
+    const pageUrl = `https://www.iseyon.com/services/${category}/${service}`
     
     const serviceSchema = {
       '@context': 'https://schema.org',
@@ -144,28 +144,28 @@ export default async function ServicePage({
           description: content.subheading,
           provider: {
             '@type': 'Organization',
-            '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+            '@id': 'https://www.iseyon.com/#organization',
             name: 'Iseyon Analytics',
-            url: 'https://iseyon-analytics-v0.vercel.app',
+            url: 'https://www.iseyon.com',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+              url: 'https://www.iseyon.com/iseyon.webp',
             },
             foundingDate: '2020',
             knowsAbout: ['Business Intelligence', 'Data Analytics', 'AI Integration', content.heading],
             sameAs: [
               'https://www.linkedin.com/company/iseyon-analytics',
-              'https://iseyon-analytics-v0.vercel.app/team',
-              'https://iseyon-analytics-v0.vercel.app/vision',
+              'https://www.iseyon.com/our-team',
+              'https://www.iseyon.com/our-vision',
             ],
           },
           author: {
             '@type': 'Organization',
-            '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+            '@id': 'https://www.iseyon.com/#organization',
           },
           publisher: {
             '@type': 'Organization',
-            '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+            '@id': 'https://www.iseyon.com/#organization',
           },
           areaServed: ['US', 'IN'],
           category: category,
@@ -175,12 +175,12 @@ export default async function ServicePage({
           inLanguage: 'en-US',
           image: content.image ? {
             '@type': 'ImageObject',
-            url: `https://iseyon-analytics-v0.vercel.app${content.image}`,
+            url: `https://www.iseyon.com${content.image}`,
             caption: `${content.heading} services dashboard by Iseyon Analytics`,
           } : undefined,
           isPartOf: {
             '@type': 'WebSite',
-            '@id': 'https://iseyon-analytics-v0.vercel.app/#website',
+            '@id': 'https://www.iseyon.com/#website',
           },
           breadcrumb: {
             '@type': 'BreadcrumbList',
@@ -189,13 +189,13 @@ export default async function ServicePage({
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://iseyon-analytics-v0.vercel.app',
+                item: 'https://www.iseyon.com',
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Services',
-                item: 'https://iseyon-analytics-v0.vercel.app/#services',
+                item: 'https://www.iseyon.com/#services',
               },
               {
                 '@type': 'ListItem',
@@ -215,7 +215,7 @@ export default async function ServicePage({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
-        <ServiceDetailClient content={content} />
+        <ServiceDetailClient content={content} currentSlug={service} />
         <PageCitations citations={serviceCitations} title="Industry-Leading Data Platform Research" />
       </>
     )

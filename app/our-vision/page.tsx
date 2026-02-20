@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'Our Vision | Iseyon Analytics - Shaping the Future of AI & BI',
   description: 'Discover Iseyon Analytics vision for transforming business intelligence through AI-powered solutions. Learn about our mission to help enterprises achieve 5.6x ROI through data-driven transformation.',
   keywords: ['company vision', 'AI innovation', 'business intelligence future', 'data-driven transformation', 'analytics mission', 'enterprise AI', 'BI strategy'],
-  authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/team' }],
+  authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   publisher: 'Iseyon Analytics',
   openGraph: {
     title: 'Our Vision | Iseyon Analytics',

@@ -110,7 +110,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  authors: [{ name: 'Iseyon Analytics Team', url: 'https://iseyon.com/team' }],
+  authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   creator: 'Iseyon Analytics',
   publisher: 'Iseyon Analytics',
   category: 'Business Intelligence and Data Analytics',
@@ -166,10 +166,10 @@ export default async function Home() {
       addressCountry: 'US',
     },
     sameAs: [
-      'https://iseyon.com/team',
-      'https://iseyon.com/vision',
-      'https://iseyon.com/contact',
-      'https://iseyon.com/blog',
+      'https://www.iseyon.com/our-team',
+      'https://www.iseyon.com/our-vision',
+      'https://www.iseyon.com/contact',
+      'https://www.iseyon.com/blog',
     ],
     areaServed: [
       {
@@ -225,7 +225,7 @@ export default async function Home() {
       name: 'Iseyon Analytics',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+        url: 'https://www.iseyon.com/iseyon.webp',
       },
     },
   };
@@ -234,25 +234,25 @@ export default async function Home() {
   const webPageSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    '@id': 'https://iseyon-analytics-v0.vercel.app/#webpage',
-    name: 'iSeyon Analytics - AI-Powered Business Intelligence Solutions',
+    '@id': 'https://www.iseyon.com/#webpage',
+    name: 'Iseyon Analytics - AI-Powered Business Intelligence Solutions',
     description: '78% of enterprises now leverage AI for analytics. Get 5.6x ROI with iSeyon\'s data-driven solutions.',
-    url: 'https://iseyon-analytics-v0.vercel.app',
+    url: 'https://www.iseyon.com',
     inLanguage: 'en-US',
     datePublished: '2024-01-15',
     dateModified: new Date().toISOString().split('T')[0],
     author: {
       '@type': 'Organization',
-      '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+      '@id': 'https://www.iseyon.com/#organization',
     },
     publisher: {
       '@type': 'Organization',
-      '@id': 'https://iseyon-analytics-v0.vercel.app/#organization',
+      '@id': 'https://www.iseyon.com/#organization',
     },
     isPartOf: {
       '@type': 'WebSite',
-      '@id': 'https://iseyon-analytics-v0.vercel.app/#website',
-      url: 'https://iseyon-analytics-v0.vercel.app',
+      '@id': 'https://www.iseyon.com/#website',
+      url: 'https://www.iseyon.com',
     },
     about: {
       '@type': 'Thing',
@@ -264,7 +264,7 @@ export default async function Home() {
     },
     primaryImageOfPage: {
       '@type': 'ImageObject',
-      url: 'https://iseyon-analytics-v0.vercel.app/iseyon.webp',
+      url: 'https://www.iseyon.com/iseyon.webp',
     },
     license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
   };
@@ -278,7 +278,7 @@ export default async function Home() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://iseyon-analytics-v0.vercel.app',
+        item: 'https://www.iseyon.com',
       },
     ],
   };
@@ -305,13 +305,14 @@ export default async function Home() {
       />
       <main className="min-h-screen bg-white snap-y snap-proximity">
         <Hero data={data.hero as any} founderMessages={data.founderMessages as any} services={data.services as any} />
-        <IndustryStats />
+        
         <ServicesSection services={data.services as any} />
+        <IndustryStats />
         {/* <ProprietaryResearch /> */}
         <NewProject data={data.project as any} />
         <ExpertQuotes />
         <TestimonialsSection testimonials={data.testimonials as any} />
-        <PageCitations citations={homeCitations} title="Evidence-Based Business Intelligence Insights" />
+        {/* <PageCitations citations={homeCitations} title="Evidence-Based Business Intelligence Insights" /> */}
         <BannerSection data={data.banner as any} />
         <PartnersSlider partners={data.partners as any} />
         <FAQSchema faqs={data.homeFaqs as any} title="Frequently Asked Questions About Iseyon Analytics" />

@@ -1,3 +1,5 @@
+// Utility function to render up to 4 lines of content, appending '...' if more lines exist
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -16,6 +18,12 @@ import {
   ShieldCheck,
   Settings,
   GitBranch,
+  Snowflake,
+  ShoppingBag,
+  LayoutDashboard,
+  CalendarRange,
+  Boxes,
+
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,6 +51,11 @@ const iconMap = {
   ShieldCheck,
   Settings,
   GitBranch,
+  Snowflake,
+  ShoppingBag,
+  LayoutDashboard,
+  CalendarRange,
+  Boxes,
 };
 
 interface Service {
@@ -59,7 +72,19 @@ interface Service {
 interface ServicesSectionProps {
   services: Service[];
 }
-
+function renderContentWithLimit(content?: string) {
+  if (!content) return null;
+  const lines = content.split('\n');
+  if (lines.length <= 4) {
+    return lines.map((line, idx) => <div key={idx}>{line}</div>);
+  }
+  return (
+    <>
+      {lines.slice(0, 4).map((line, idx) => <div key={idx}>{line}</div>)}
+      <div>...</div>
+    </>
+  );
+}
 export function ServicesSection({ services }: ServicesSectionProps) {
 
   const containerVariants = {
@@ -135,20 +160,20 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className={`
-                        group relative p-4 items-center rounded-2xl sm:rounded-3xl transition-all duration-300 shadow-lg  min-h-[240px] flex flex-col overflow-hidden
+                        group relative p-4 rounded-bl-2xl rounded-tr-2xl transition-all duration-300 shadow-lg min-h-60 flex flex-col overflow-hidden
                         ${isPrimary 
-                          ? 'bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600' 
-                          : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border border-slate-200'
+                          ? 'bg-linear-to-br from-sky-400 via-sky-500 to-sky-600' 
+                          : 'bg-linear-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border border-slate-200'
                         }
                       `}
                     >
                       {/* Blur overlay on tap/touch */}
                       <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px] opacity-0 active:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                      <div className="relative z-10 flex flex-col h-full">
+                      <div className="relative z-10 flex flex-col h-full gap-2">
                         {/* Icon */}
                         <div className={`
-                          w-12 h-12 rounded-xl flex items-center justify-center mb-3 shrink-0
+                          w-10 h-10 rounded-bl-2xl rounded-tr-2xl flex items-center justify-center shrink-0
                           ${isPrimary ? 'bg-slate-800/90' : 'bg-slate-700/90'}
                         `}>
                           <Icon className="w-6 h-6 text-white" />
@@ -163,19 +188,19 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                         </h3>
 
                         {/* Description */}
-                        <p className={`
-                          text-xs leading-relaxed mb-3 grow h-[60px]
+                        <div className={`
+                          text-xs leading-relaxed grow h-20.5 mb-4 
                           ${isPrimary ? 'text-white/90' : 'text-slate-600'}
                         `}>
-                          {service.homePageDescription}
-                        </p>
+                          {renderContentWithLimit(service.homePageDescription)}
+                        </div>
 
                         {/* Learn More Button */}
                         <Link href={serviceUrl}>
                           <Button
                             variant="default"
                             size="sm"
-                            className={`w-full shadow-md text-xs font-medium flex items-center justify-center gap-2 transition-all
+                            className={`w-full shadow-md  text-xs font-medium flex items-center justify-center gap-2 transition-all
                               ${isPrimary 
                                 ? 'bg-white text-sky-500 hover:bg-transparent  hover:text-white ' 
                                 : 'bg-sky-500 text-white hover:bg-transparent  hover:text-sky-500 border border-sky-500'
@@ -221,66 +246,59 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                 variants={itemVariants}
                 whileHover={{ scale: 1.02, y: -8 }}
                 className={`
-                  group relative rounded-bl-2xl rounded-tr-2xl p-6 md:p-8  transition-all duration-300 shadow-lg hover:shadow-2xl h-auto min-h-[280px] md:min-h-[320px] flex flex-col overflow-hidden
+                  group relative rounded-bl-2xl rounded-tr-2xl p-6 transition-all duration-300 shadow-lg hover:shadow-2xl h-62.5 flex flex-col overflow-hidden
                   ${isPrimary 
-                    ? 'bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600' 
-                    : 'bg-gradient-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border border-2 '
+                    ? 'bg-linear-to-br from-sky-400 via-sky-500 to-sky-600' 
+                    : 'bg-linear-to-br from-stone-50 via-sky-50/50 to-stone-100/80 border-2 border-slate-200'
                   }
                 `}
               >
-                {/* Blur overlay on hover */}
-                <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                {/* Dark scrim overlay — sits above content, below button (z-15) */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-15" />
 
-                <div className="relative z-10 flex flex-col h-full">
+                {/* Content — blurs + fades on hover */}
+                <div className="relative z-10 flex flex-col h-full gap-2 transition-all duration-300 group-hover:blur-[2px] group-hover:opacity-40">
                   {/* Icon */}
                   <div className={`
-                    w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shrink-0 transition-transform duration-300 group-hover:scale-110
+                    w-12 h-12 md:w-14 md:h-14 rounded-tr-lg rounded-bl-lg flex items-center justify-center shrink-0
                     ${isPrimary ? 'bg-slate-800/90' : 'bg-slate-700/90'}
                   `}>
-                    <Icon className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
 
                   {/* Title */}
                   <h3 className={`
-                    text-lg md:text-xl font-bold mb-3 md:mb-4
+                    text-lg md:text-xl font-bold 
                     ${isPrimary ? 'text-white' : 'text-slate-800'}
                   `}>
                     {service.heading}
                   </h3>
 
                   {/* Description */}
-                  <p className={`
-                    text-sm leading-relaxed mb-4 grow 
+                  <div className={`
+                    text-sm leading-relaxed grow 
                     ${isPrimary ? 'text-white/90' : 'text-slate-600'}
                   `}>
-                    {service.homePageDescription}
-                  </p>
-
-                  {/* Learn More Button - shown on hover */}
-                  <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <Link href={serviceUrl}>
-                      <Button
-                        variant="default"
-                        size="lg"
-                        className={`w-full shadow-lg text-sm md:text-base font-bold flex items-center justify-center gap-2 group/btn transition-all
-                          ${isPrimary 
-                            ? 'bg-white text-sky-500 hover:bg-transparent hover:border-white hover:text-white border border-white' 
-                            : 'bg-sky-500 text-white hover:bg-white  hover:text-sky-500 border '
-                          }
-                        `}
-                      >
-                        <span>Learn more</span>
-                        <motion.span
-                          initial={{ x: 0 }}
-                          whileHover={{ x: 4 }}
-                          transition={{ duration: 0.2 }}
-                          className="inline-block"
-                        >
-                          →
-                        </motion.span>
-                      </Button>
-                    </Link>
+                    {renderContentWithLimit(service.homePageDescription)}
                   </div>
+                </div>
+
+                {/* Learn More Button — above scrim, revealed on hover */}
+                <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-3 group-hover:translate-y-0 flex items-center justify-center absolute inset-0 z-20">
+                  <Link href={serviceUrl}>
+                    <span className={`
+                      inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm border-2 transition-all duration-200
+                      ${isPrimary
+                        ? 'border-white text-white hover:bg-white hover:text-sky-600'
+                        : 'border-sky-400 text-sky-100 hover:bg-sky-500 hover:border-sky-500 hover:text-white'
+                      }
+                    `}>
+                      Explore Service
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </Link>
                 </div>
               </motion.div>
             );

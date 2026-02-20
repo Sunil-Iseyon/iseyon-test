@@ -296,6 +296,11 @@ export default defineConfig({
               {value: "ShieldCheck", label: "Shield Check"},
               {value: "Settings", label: "Settings"},
               {value: "GitBranch", label: "Git Branch"},
+              {value: "LayoutDashboard", label: "Layout Dashboard"},
+              {value: "CalendarRange", label: "Calendar Range"},
+              {value: "Boxes", label: "Boxes"},
+              {value: "ShoppingBag", label: "Shopping Bag"},
+              {value: "Snowflake", label: "Snowflake"},
             ],
           },
           {
@@ -1042,7 +1047,6 @@ export default defineConfig({
             type: "string",
             name: "category",
             label: "Category",
-            required: true,
             options: ["Newsletter", "Tips", "Insight", "Success Stories"],
           },
           {
@@ -1055,7 +1059,6 @@ export default defineConfig({
             type: "string",
             name: "readTime",
             label: "Read Time",
-            required: true,
           },
           {
             type: "string",

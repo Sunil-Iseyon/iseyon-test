@@ -25,11 +25,21 @@ const wheelCategories = [
 ]
 
 function HeroWheel() {
-  // Use a smaller radius on mobile so labels fit without causing horizontal scroll
-  const [radiusPct, setRadiusPct] = useState(55)
+  // Three breakpoint radii: xs (hidden labels), sm-md, lg+
+  const [radiusPct, setRadiusPct] = useState(52)
+  const [showLabels, setShowLabels] = useState(true)
 
   useEffect(() => {
-    const update = () => setRadiusPct(window.innerWidth < 1024 ? 47 : 55)
+    const update = () => {
+      const w = window.innerWidth
+      if (w < 640) {
+        setRadiusPct(50)
+      } else if (w < 1024) {
+        setRadiusPct(52)
+      } else {
+        setRadiusPct(52)
+      }
+    }
     update()
     window.addEventListener('resize', update)
     return () => window.removeEventListener('resize', update)
@@ -40,15 +50,15 @@ function HeroWheel() {
   const items = wheelCategories.map((cat, i) => {
     const angleDeg = (i * 360) / n - 90        // start at top, clockwise
     const angleRad = (angleDeg * Math.PI) / 180
-    const lx = 40 + radiusPct * Math.cos(angleRad)  // symmetric center (50,50)
-    const ly = 47 + radiusPct * Math.sin(angleRad)
+    const lx = 39 + radiusPct * Math.cos(angleRad)  // true center (50, 50)
+    const ly = 45 + radiusPct * Math.sin(angleRad)
     return { ...cat, lx, ly }
   })
 
   return (
     // Show on all screen sizes; overflow-x-hidden on the parent section
     // prevents any slight overflow from causing page-level scroll.
-    <div className="relative w-full aspect-square max-w-72 sm:max-w-96 lg:max-w-125 mx-auto">
+    <div className="relative w-full aspect-square max-w-64 sm:max-w-96 lg:max-w-125 mx-auto">
       {/* Center image */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="relative md:w-full md:h-full w-[80%] h-[80%]">
@@ -62,8 +72,8 @@ function HeroWheel() {
         </div>
       </div>
 
-      {/* Category labels — always center-aligned title + desc */}
-      {items.map((item, i) => (
+      {/* Category labels — equally spaced; hidden on xs mobile */}
+      { items.map((item, i) => (
         <motion.div
           key={item.title}
           className="absolute flex flex-col items-center text-center gap-0"
@@ -71,16 +81,16 @@ function HeroWheel() {
             left: `${item.lx}%`,
             top: `${item.ly}%`,
             transform: 'translate(-50%, -50%)',
-            width: 'clamp(90px, 22%, 120px)',
+            width: 'clamp(72px, 20%, 112px)',
           }}
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.8 + i * 0.12, ease: 'easeOut' }}
         >
-          <span className={`text-[6px] sm:text-[8px] lg:text-[10px] xl:text-[12px] font-bold leading-tight ${item.color} text-center w-10 lg:w-40`}>
+          <span className={`text-[7px] sm:text-[8px] lg:text-[10px] xl:text-[12px] font-bold leading-tight ${item.color} text-center `}>
             {item.title}
           </span>
-          <span className="text-[5px] sm:text-[7px] lg:text-[8.5px] xl:text-[10px] text-gray-500 leading-snug text-center w-20 lg:w-40">
+          <span className="text-[6px] sm:text-[7px] lg:text-[8.5px] xl:text-[10px] text-gray-500 leading-snug text-center  ">
             {item.desc}
           </span>
         </motion.div>
