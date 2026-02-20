@@ -1,29 +1,29 @@
 {
-  "category": "support",
-  "heading": "Support & Training",
-  "image": "/Support and Training.jpg",
-  "subheading": "Ensuring Continuous Performance, Adoption, and Operational Excellence",
-  "content": "Iseyon provides comprehensive support and training services to help organizations maximize the value of their data, cloud, and analytics investments. Our approach ensures system reliability, user adoption, and continuous improvement through structured knowledge transfer and proactive technical support.\n\n#### **24/7 Technical Support & Managed Services**\n\nIseyon offers ongoing monitoring, issue resolution, and performance optimization across data platforms, cloud environments, and analytics systems. Our managed services ensure high availability, minimal downtime, and consistent operational stability.\n\n#### **Platform Administration & Optimization**\n\nOur team provides administrative support, including user access management, configuration updates, system health checks, cost monitoring, and performance tuning. Iseyon proactively optimizes environments to ensure scalability and efficiency.\n\n#### **Incident Management & SLA-Based Support**\n\nIseyon implements structured incident management processes with defined Service Level Agreements (SLAs). Our rapid response framework ensures timely resolution of technical issues and minimizes business disruption.\n\n#### **End-User & Administrator Training**\n\nIseyon delivers role-based training programs for business users, data engineers, administrators, and leadership teams. Our hands-on workshops and practical sessions help teams effectively use data platforms, analytics tools, and cloud technologies.\n\n#### **Customized Corporate Training Programs**\n\nIseyon designs tailored training modules aligned with organizational needs covering cloud platforms, big data technologies, data governance, AI/ML workflows, and DevOps practices. Our programs combine theoretical knowledge with real-world implementation scenarios.\n\n#### **Knowledge Transfer & Documentation**\n\nIseyon provides structured knowledge transfer sessions and comprehensive documentation to ensure internal teams can independently manage and scale solutions. This promotes long-term sustainability and operational self-sufficiency.\n\n#### **Adoption & Change Management**\n\nIseyon supports organizations in driving user adoption through structured onboarding, process alignment, and best practice guidance. Our change management strategies ensure smooth transitions during platform migrations or modernization initiatives.\n\n#### **Continuous Improvement & Performance Reviews**\n\nIseyon conducts regular performance assessments, optimization reviews, and strategy workshops to ensure systems remain aligned with evolving business goals and technology advancements.\n\nOur Support & Training services ensure that your technology investments deliver sustained value, operational efficiency, and empowered teams enabling long-term digital success.\n",
-  "faqs": [
-    {
-      "question": "What support services does Iseyon provide?",
-      "answer": "Iseyon offers 24/7 technical support and managed services across data platforms, cloud environments, and analytics systems. Our services include proactive monitoring, incident resolution, performance optimization, system health checks, and SLA-based support to ensure high availability, operational stability, and minimal downtime."
-    },
-    {
-      "question": "How does Iseyon ensure platform performance and optimization?",
-      "answer": "Iseyon provides comprehensive platform administration, including user access management, configuration updates, cost monitoring, and performance tuning. Through regular system audits and optimization reviews, we ensure scalability, efficiency, and alignment with evolving business needs."
-    },
-    {
-      "question": "Does Iseyon offer structured incident management and SLA-based support?",
-      "answer": "Yes, Iseyon implements formal incident management frameworks supported by defined Service Level Agreements (SLAs). Our rapid response model prioritizes critical issues, reduces business disruption, and ensures timely resolution with clear communication and accountability."
-    },
-    {
-      "question": "What types of training programs does Iseyon provide?",
-      "answer": "Iseyon delivers role-based training for business users, data engineers, administrators, and leadership teams. Our customized corporate training programs cover cloud platforms, big data technologies, data governance, AI/ML workflows, DevOps practices, and analytics tools. We combine practical workshops, real-world scenarios, and structured knowledge transfer to ensure effective learning and adoption."
-    },
-    {
-      "question": "How does Iseyon support adoption and continuous improvement?",
-      "answer": "Iseyon drives long-term success through structured onboarding, change management strategies, detailed documentation, and ongoing performance reviews. We conduct regular optimization assessments and strategy workshops to ensure your technology investments continue delivering measurable value, operational efficiency, and empowered teams."
-    }
-  ]
+    "category":  "support",
+    "heading":  "Support \u0026 Training",
+    "image":  "/Support and Training.jpg",
+    "subheading":  "Ensuring Continuous Performance, Adoption, and Operational Excellence",
+    "content":  "Iseyon provides comprehensive support and training services to help organizations maximize the value of their data, cloud, and analytics investments. Iseyon\u0027s approach ensures system reliability, user adoption, and continuous improvement through structured knowledge transfer and proactive technical support.\n\n#### **24/7 Technical Support \u0026 Managed Services**\n\nIseyon offers ongoing monitoring, issue resolution, and performance optimization across data platforms, cloud environments, and analytics systems. Iseyon managed services ensure high availability, minimal downtime, and consistent operational stability.\n\n#### **Platform Administration \u0026 Optimization**\n\nThe Iseyon team provides administrative support, including user access management, configuration updates, system health checks, cost monitoring, and performance tuning. Iseyon proactively optimizes environments to ensure scalability and efficiency.\n\n#### **Incident Management \u0026 SLA-Based Support**\n\nIseyon implements structured incident management processes with defined Service Level Agreements (SLAs). Iseyon\u0027s rapid response framework ensures timely resolution of technical issues and minimizes business disruption.\n\n#### **End-User \u0026 Administrator Training**\n\nIseyon delivers role-based training programs for business users, data engineers, administrators, and leadership teams. Iseyon\u0027s hands-on workshops and practical sessions help teams effectively use data platforms, analytics tools, and cloud technologies.\n\n#### **Customized Corporate Training Programs**\n\nIseyon designs tailored training modules aligned with organizational needs covering cloud platforms, big data technologies, data governance, AI/ML workflows, and DevOps practices. Iseyon programs combine theoretical knowledge with real-world implementation scenarios.\n\n#### **Knowledge Transfer \u0026 Documentation**\n\nIseyon provides structured knowledge transfer sessions and comprehensive documentation to ensure internal teams can independently manage and scale solutions. This promotes long-term sustainability and operational self-sufficiency.\n\n#### **Adoption \u0026 Change Management**\n\nIseyon supports organizations in driving user adoption through structured onboarding, process alignment, and best practice guidance. Iseyon\u0027s change management strategies ensure smooth transitions during platform migrations or modernization initiatives.\n\n#### **Continuous Improvement \u0026 Performance Reviews**\n\nIseyon conducts regular performance assessments, optimization reviews, and strategy workshops to ensure systems remain aligned with evolving business goals and technology advancements.\n\nIseyon Support \u0026 Training services ensure that your technology investments deliver sustained value, operational efficiency, and empowered teams enabling long-term digital success.\n",
+    "faqs":  [
+                 {
+                     "question":  "What support services does Iseyon provide?",
+                     "answer":  "Iseyon offers 24/7 technical support and managed services across data platforms, cloud environments, and analytics systems. Our services include proactive monitoring, incident resolution, performance optimization, system health checks, and SLA-based support to ensure high availability, operational stability, and minimal downtime."
+                 },
+                 {
+                     "question":  "How does Iseyon ensure platform performance and optimization?",
+                     "answer":  "Iseyon provides comprehensive platform administration, including user access management, configuration updates, cost monitoring, and performance tuning. Through regular system audits and optimization reviews, we ensure scalability, efficiency, and alignment with evolving business needs."
+                 },
+                 {
+                     "question":  "Does Iseyon offer structured incident management and SLA-based support?",
+                     "answer":  "Yes, Iseyon implements formal incident management frameworks supported by defined Service Level Agreements (SLAs). Our rapid response model prioritizes critical issues, reduces business disruption, and ensures timely resolution with clear communication and accountability."
+                 },
+                 {
+                     "question":  "What types of training programs does Iseyon provide?",
+                     "answer":  "Iseyon delivers role-based training for business users, data engineers, administrators, and leadership teams. Our customized corporate training programs cover cloud platforms, big data technologies, data governance, AI/ML workflows, DevOps practices, and analytics tools. We combine practical workshops, real-world scenarios, and structured knowledge transfer to ensure effective learning and adoption."
+                 },
+                 {
+                     "question":  "How does Iseyon support adoption and continuous improvement?",
+                     "answer":  "Iseyon drives long-term success through structured onboarding, change management strategies, detailed documentation, and ongoing performance reviews. We conduct regular optimization assessments and strategy workshops to ensure your technology investments continue delivering measurable value, operational efficiency, and empowered teams."
+                 }
+             ]
 }

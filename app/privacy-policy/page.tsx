@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.iseyon.com/privacy-policy',
+    languages: {
+      'en': 'https://www.iseyon.com/privacy-policy',
+      'x-default': 'https://www.iseyon.com/privacy-policy',
+    },
   },
   robots: {
     index: true,
@@ -51,8 +55,14 @@ export default async function PrivacyPolicyPage() {
         url: 'https://www.iseyon.com/iseyon.webp',
       },
     },
+    datePublished: '2025-01-01',
     dateModified: '2026-02-18',
     inLanguage: 'en-US',
+    mentions: [
+      { '@type': 'Thing', name: 'General Data Protection Regulation', alternateName: 'GDPR' },
+      { '@type': 'Thing', name: 'Personal Data Protection' },
+      { '@type': 'Thing', name: 'Data Privacy' },
+    ],
   }
 
   return (

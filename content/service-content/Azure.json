@@ -1,29 +1,29 @@
 {
-  "category": "cloud-and-platforms",
-  "heading": "Azure",
-  "image": "/Azure.jpg",
-  "subheading": "Empowering Digital Transformation with Secure, Intelligent, and Scalable Cloud Solutions",
-  "content": "Iseyon helps organizations innovate, modernize, and scale using Microsoft Azure. Our Azure services enable enterprises to build resilient cloud infrastructures, unlock data-driven insights, and accelerate AI adoption while ensuring security, governance, and cost optimization.\n\n#### **Cloud Infrastructure & Migration**\n\nIseyon designs and deploys secure, high-availability cloud architectures on Azure. Our team supports end-to-end migration strategies including lift-and-shift, re-platforming, and cloud-native re-architecture ensuring seamless transitions from on-premise systems to the cloud with minimal disruption.\n\n#### **Compute, Storage & Networking**\n\nIseyon builds scalable infrastructure using core Azure services such as Azure Virtual Machines, Azure Blob Storage, and Azure Virtual Network. Our solutions are optimized for performance, reliability, and disaster recovery.\n\n#### **Data Engineering & Analytics**\n\nIseyon implements modern data platforms using services like Azure Data Factory, Azure Synapse Analytics, and Azure Data Lake Storage. Iseyon develops scalable ETL/ELT pipelines and real-time processing systems that transform raw data into meaningful insights.\n\n#### **Business Intelligence & Reporting**\n\nIseyon enables advanced reporting and interactive dashboards using Microsoft Power BI integrated with Azure data services. Our solutions provide real-time visibility into key metrics, empowering stakeholders to make informed decisions.\n\n#### **Artificial Intelligence & Machine Learning**\n\nOur AI/ML services leverage Azure Machine Learning to support the full model lifecycle—from data preparation and experimentation to deployment and monitoring. Iseyon helps organizations operationalize AI models securely and at scale.\n\n#### **Cloud-Native & Serverless Development**\n\nIseyon builds modern applications using services like Azure Functions and Azure Kubernetes Service. Our cloud-native architectures improve scalability, reduce infrastructure overhead, and accelerate development cycles.\n\n#### **Security, Governance & Compliance**\n\nIseyon implements enterprise-grade security using identity management, encryption, and monitoring services within Azure. Our approach ensures data protection, regulatory compliance, and strong governance across cloud environments.\n\n#### **DevOps & Automation**\n\nIseyon enables CI/CD pipelines and automated infrastructure deployment using Azure DevOps tools, improving release velocity, collaboration, and operational consistency across development and production environments.\n\n#### **Integration & Modernization**\n\nIseyon integrates Azure with existing enterprise applications, third-party systems, and on-premise infrastructure. Our modernization strategies help organizations transition to a future-ready cloud ecosystem while maintaining business continuity and operational efficiency.\n",
-  "faqs": [
-    {
-      "question": "What Microsoft Azure services does Iseyon provide?",
-      "answer": "Iseyon delivers end-to-end cloud solutions on Microsoft Azure, including cloud infrastructure design, migration, modernization, data engineering, AI/ML implementation, DevOps automation, security, and system integration. Our Azure services help enterprises innovate, scale securely, and optimize cloud investments."
-    },
-    {
-      "question": "How does Iseyon manage Azure cloud migration and modernization?",
-      "answer": "Iseyon supports lift-and-shift migrations, re-platforming, and full cloud-native re-architecture from on-premise systems to Azure. We ensure minimal downtime, secure data transfer, performance optimization, and business continuity while modernizing legacy applications for a future-ready cloud ecosystem."
-    },
-    {
-      "question": "How does Iseyon build scalable, high-performance Azure infrastructure?",
-      "answer": "We design resilient architectures using services such as Azure Virtual Machines, Azure Blob Storage, and Azure Virtual Network. Our solutions include disaster recovery, auto-scaling, networking optimization, and cost management to ensure reliability and operational efficiency."
-    },
-    {
-      "question": "How does Iseyon enable data analytics, business intelligence, and AI on Azure?",
-      "answer": "Iseyon builds modern data platforms using Azure Data Factory, Azure Synapse Analytics, and Azure Data Lake Storage. We integrate analytics with Microsoft Power BI and implement AI solutions using Azure Machine Learning to deliver predictive insights and intelligent decision-making capabilities."
-    },
-    {
-      "question": "How does Iseyon ensure security, governance, and DevOps excellence on Azure?",
-      "answer": "Iseyon implements enterprise-grade security frameworks including identity management, encryption, compliance controls, and continuous monitoring. We also enable CI/CD pipelines, infrastructure automation, and containerized development using services like Azure Functions and Azure Kubernetes Service, ensuring secure, scalable, and efficient cloud operations."
-    }
-  ]
+    "category":  "cloud-and-platforms",
+    "heading":  "Azure",
+    "image":  "/Azure.jpg",
+    "subheading":  "Empowering Digital Transformation with Secure, Intelligent, and Scalable Cloud Solutions",
+    "content":  "Iseyon helps organizations innovate, modernize, and scale using Microsoft Azure. Iseyon Azure services enable enterprises to build resilient cloud infrastructures, unlock data-driven insights, and accelerate AI adoption while ensuring security, governance, and cost optimization.\n\n#### **Cloud Infrastructure \u0026 Migration**\n\nIseyon designs and deploys secure, high-availability cloud architectures on Azure. The Iseyon team supports end-to-end migration strategies including lift-and-shift, re-platforming, and cloud-native re-architecture ensuring seamless transitions from on-premise systems to the cloud with minimal disruption.\n\n#### **Compute, Storage \u0026 Networking**\n\nIseyon builds scalable infrastructure using core Azure services such as Azure Virtual Machines, Azure Blob Storage, and Azure Virtual Network. Iseyon solutions are optimized for performance, reliability, and disaster recovery.\n\n#### **Data Engineering \u0026 Analytics**\n\nIseyon implements modern data platforms using services like Azure Data Factory, Azure Synapse Analytics, and Azure Data Lake Storage. Iseyon develops scalable ETL/ELT pipelines and real-time processing systems that transform raw data into meaningful insights.\n\n#### **Business Intelligence \u0026 Reporting**\n\nIseyon enables advanced reporting and interactive dashboards using Microsoft Power BI integrated with Azure data services. Iseyon solutions provide real-time visibility into key metrics, empowering stakeholders to make informed decisions.\n\n#### **Artificial Intelligence \u0026 Machine Learning**\n\nIseyon AI/ML services leverage Azure Machine Learning to support the full model lifecycleâ€”from data preparation and experimentation to deployment and monitoring. Iseyon helps organizations operationalize AI models securely and at scale.\n\n#### **Cloud-Native \u0026 Serverless Development**\n\nIseyon builds modern applications using services like Azure Functions and Azure Kubernetes Service. Iseyon\u0027s cloud-native architectures improve scalability, reduce infrastructure overhead, and accelerate development cycles.\n\n#### **Security, Governance \u0026 Compliance**\n\nIseyon implements enterprise-grade security using identity management, encryption, and monitoring services within Azure. Iseyon\u0027s approach ensures data protection, regulatory compliance, and strong governance across cloud environments.\n\n#### **DevOps \u0026 Automation**\n\nIseyon enables CI/CD pipelines and automated infrastructure deployment using Azure DevOps tools, improving release velocity, collaboration, and operational consistency across development and production environments.\n\n#### **Integration \u0026 Modernization**\n\nIseyon integrates Azure with existing enterprise applications, third-party systems, and on-premise infrastructure. Iseyon\u0027s modernization strategies help organizations transition to a future-ready cloud ecosystem while maintaining business continuity and operational efficiency.\n",
+    "faqs":  [
+                 {
+                     "question":  "What Microsoft Azure services does Iseyon provide?",
+                     "answer":  "Iseyon delivers end-to-end cloud solutions on Microsoft Azure, including cloud infrastructure design, migration, modernization, data engineering, AI/ML implementation, DevOps automation, security, and system integration. Our Azure services help enterprises innovate, scale securely, and optimize cloud investments."
+                 },
+                 {
+                     "question":  "How does Iseyon manage Azure cloud migration and modernization?",
+                     "answer":  "Iseyon supports lift-and-shift migrations, re-platforming, and full cloud-native re-architecture from on-premise systems to Azure. We ensure minimal downtime, secure data transfer, performance optimization, and business continuity while modernizing legacy applications for a future-ready cloud ecosystem."
+                 },
+                 {
+                     "question":  "How does Iseyon build scalable, high-performance Azure infrastructure?",
+                     "answer":  "We design resilient architectures using services such as Azure Virtual Machines, Azure Blob Storage, and Azure Virtual Network. Our solutions include disaster recovery, auto-scaling, networking optimization, and cost management to ensure reliability and operational efficiency."
+                 },
+                 {
+                     "question":  "How does Iseyon enable data analytics, business intelligence, and AI on Azure?",
+                     "answer":  "Iseyon builds modern data platforms using Azure Data Factory, Azure Synapse Analytics, and Azure Data Lake Storage. We integrate analytics with Microsoft Power BI and implement AI solutions using Azure Machine Learning to deliver predictive insights and intelligent decision-making capabilities."
+                 },
+                 {
+                     "question":  "How does Iseyon ensure security, governance, and DevOps excellence on Azure?",
+                     "answer":  "Iseyon implements enterprise-grade security frameworks including identity management, encryption, compliance controls, and continuous monitoring. We also enable CI/CD pipelines, infrastructure automation, and containerized development using services like Azure Functions and Azure Kubernetes Service, ensuring secure, scalable, and efficient cloud operations."
+                 }
+             ]
 }

@@ -1,29 +1,29 @@
 {
-  "category": "data-and-engineering",
-  "heading": "Data Management Consulting",
-  "image": "/data_management.jpg",
-  "subheading": "Building Reliable, Governed, and Scalable Data Foundations for Modern Enterprises",
-  "content": "Iseyon helps organizations establish strong data management frameworks that ensure data accuracy, consistency, security, and accessibility. Our Data Management Consulting services enable enterprises to transform fragmented data environments into structured, governed, and high-performing ecosystems that support analytics, AI, and strategic decision-making.\n\n#### **Data Strategy & Governance Framework**\n\nIseyon defines comprehensive data management strategies aligned with business objectives. Our governance frameworks establish clear ownership, policies, standards, and controls to ensure data quality, compliance, and accountability across the organization.\n\n#### **Master Data Management (MDM)**\n\nIseyon designs and implements master data solutions that create a single, trusted source of truth for critical business entities such as customers, products, and suppliers. Our MDM frameworks improve consistency, reduce duplication, and enhance cross-functional collaboration.\n\n#### **Data Quality & Standardization**\n\nIseyon implements data profiling, cleansing, validation, and standardization processes to ensure high data accuracy and reliability. Our solutions improve operational efficiency and enable confident decision-making based on trusted data.\n\n#### **Data Architecture & Integration**\n\nIseyon designs scalable and flexible data architectures that support seamless integration across systems, applications, and platforms. Using modern integration tools and APIs, we ensure smooth data flow across enterprise environments.\n\n#### **Metadata Management & Lineage**\n\nIseyon implements metadata management solutions to provide visibility into data definitions, usage, and lineage. This enhances transparency, auditability, and regulatory compliance while enabling better data discovery and collaboration.\n\n#### **Data Security & Compliance**\n\nIseyon establishes enterprise-grade security frameworks, including access controls, encryption, and monitoring. Our solutions ensure regulatory compliance and protect sensitive data across on-premise and cloud environments.\n\n#### **Data Lifecycle Management**\n\nIseyon defines policies for data retention, archival, and disposal to optimize storage costs and maintain compliance. Our lifecycle management strategies ensure data remains accessible, secure, and relevant throughout its lifespan.\n\n#### **Cloud & Hybrid Data Management**\n\nIseyon supports data management across cloud, hybrid, and on-premise environments. Our solutions ensure consistency, governance, and scalability regardless of infrastructure strategy.\n\n#### **Modernization & Optimization**\n\nIseyon helps organizations modernize legacy data systems and implement automation to improve performance, reduce operational complexity, and enhance overall data efficiency creating a future-ready data management ecosystem.\n",
-  "faqs": [
-    {
-      "question": "What Data Management Consulting services does Iseyon provide?",
-      "answer": "Iseyon delivers comprehensive data management consulting services including data strategy development, governance framework implementation, master data management (MDM), data quality improvement, architecture design, integration, security, lifecycle management, and modernization. We help organizations transform fragmented data environments into structured, governed, and high-performing ecosystems that support analytics and AI initiatives."
-    },
-    {
-      "question": "How does Iseyon establish a strong data governance framework?",
-      "answer": "Iseyon defines enterprise-wide governance strategies that include clear data ownership, standardized policies, compliance controls, and accountability measures. Our frameworks ensure data accuracy, consistency, regulatory compliance, and transparency across departments and systems."
-    },
-    {
-      "question": "Can Iseyon implement Master Data Management (MDM) solutions?",
-      "answer": "Yes, Iseyon designs and deploys MDM frameworks that create a single, trusted source of truth for critical entities such as customers, products, and suppliers. Our solutions reduce duplication, improve consistency, and enhance collaboration across business units."
-    },
-    {
-      "question": "How does Iseyon ensure data quality, security, and compliance?",
-      "answer": "Iseyon implements data profiling, cleansing, validation, metadata management, lineage tracking, encryption, and role-based access controls to ensure high data quality and enterprise-grade security. Our approach supports audit readiness, regulatory compliance, and secure data operations across cloud and on-premise environments."
-    },
-    {
-      "question": "How does Iseyon support cloud, hybrid, and legacy data modernization?",
-      "answer": "Iseyon designs scalable data architectures that integrate seamlessly across cloud, hybrid, and on-premise systems. We modernize legacy data platforms, automate workflows, optimize storage through lifecycle management policies, and improve performance—creating a future-ready, cost-efficient data management ecosystem."
-    }
-  ]
+    "category":  "data-and-engineering",
+    "heading":  "Data Management Consulting",
+    "image":  "/data_management.jpg",
+    "subheading":  "Building Reliable, Governed, and Scalable Data Foundations for Modern Enterprises",
+    "content":  "Iseyon helps organizations establish strong data management frameworks that ensure data accuracy, consistency, security, and accessibility. Iseyon Data Management Consulting services enable enterprises to transform fragmented data environments into structured, governed, and high-performing ecosystems that support analytics, AI, and strategic decision-making.\n\n#### **Data Strategy \u0026 Governance Framework**\n\nIseyon defines comprehensive data management strategies aligned with business objectives. Iseyon\u0027s governance frameworks establish clear ownership, policies, standards, and controls to ensure data quality, compliance, and accountability across the organization.\n\n#### **Master Data Management (MDM)**\n\nIseyon designs and implements master data solutions that create a single, trusted source of truth for critical business entities such as customers, products, and suppliers. Iseyon\u0027s MDM frameworks improve consistency, reduce duplication, and enhance cross-functional collaboration.\n\n#### **Data Quality \u0026 Standardization**\n\nIseyon implements data profiling, cleansing, validation, and standardization processes to ensure high data accuracy and reliability. Our solutions improve operational efficiency and enable confident decision-making based on trusted data.\n\n#### **Data Architecture \u0026 Integration**\n\nIseyon designs scalable and flexible data architectures that support seamless integration across systems, applications, and platforms. Using modern integration tools and APIs, Iseyon ensures smooth data flow across enterprise environments.\n\n#### **Metadata Management \u0026 Lineage**\n\nIseyon implements metadata management solutions to provide visibility into data definitions, usage, and lineage. This enhances transparency, auditability, and regulatory compliance while enabling better data discovery and collaboration.\n\n#### **Data Security \u0026 Compliance**\n\nIseyon establishes enterprise-grade security frameworks, including access controls, encryption, and monitoring. Iseyon solutions ensure regulatory compliance and protect sensitive data across on-premise and cloud environments.\n\n#### **Data Lifecycle Management**\n\nIseyon defines policies for data retention, archival, and disposal to optimize storage costs and maintain compliance. Iseyon\u0027s lifecycle management strategies ensure data remains accessible, secure, and relevant throughout its lifespan.\n\n#### **Cloud \u0026 Hybrid Data Management**\n\nIseyon supports data management across cloud, hybrid, and on-premise environments. Iseyon solutions ensure consistency, governance, and scalability regardless of infrastructure strategy.\n\n#### **Modernization \u0026 Optimization**\n\nIseyon helps organizations modernize legacy data systems and implement automation to improve performance, reduce operational complexity, and enhance overall data efficiency creating a future-ready data management ecosystem.\n",
+    "faqs":  [
+                 {
+                     "question":  "What Data Management Consulting services does Iseyon provide?",
+                     "answer":  "Iseyon delivers comprehensive data management consulting services including data strategy development, governance framework implementation, master data management (MDM), data quality improvement, architecture design, integration, security, lifecycle management, and modernization. We help organizations transform fragmented data environments into structured, governed, and high-performing ecosystems that support analytics and AI initiatives."
+                 },
+                 {
+                     "question":  "How does Iseyon establish a strong data governance framework?",
+                     "answer":  "Iseyon defines enterprise-wide governance strategies that include clear data ownership, standardized policies, compliance controls, and accountability measures. Our frameworks ensure data accuracy, consistency, regulatory compliance, and transparency across departments and systems."
+                 },
+                 {
+                     "question":  "Can Iseyon implement Master Data Management (MDM) solutions?",
+                     "answer":  "Yes, Iseyon designs and deploys MDM frameworks that create a single, trusted source of truth for critical entities such as customers, products, and suppliers. Our solutions reduce duplication, improve consistency, and enhance collaboration across business units."
+                 },
+                 {
+                     "question":  "How does Iseyon ensure data quality, security, and compliance?",
+                     "answer":  "Iseyon implements data profiling, cleansing, validation, metadata management, lineage tracking, encryption, and role-based access controls to ensure high data quality and enterprise-grade security. Our approach supports audit readiness, regulatory compliance, and secure data operations across cloud and on-premise environments."
+                 },
+                 {
+                     "question":  "How does Iseyon support cloud, hybrid, and legacy data modernization?",
+                     "answer":  "Iseyon designs scalable data architectures that integrate seamlessly across cloud, hybrid, and on-premise systems. We modernize legacy data platforms, automate workflows, optimize storage through lifecycle management policies, and improve performanceâ€”creating a future-ready, cost-efficient data management ecosystem."
+                 }
+             ]
 }

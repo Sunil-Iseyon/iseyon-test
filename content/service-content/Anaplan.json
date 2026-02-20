@@ -1,32 +1,32 @@
 {
-  "category": "cloud-and-platforms",
-  "heading": "Anaplan",
-  "image": "/anaplane.webp",
-  "subheading": "Driving Agile, Connected, and Intelligent Enterprise Planning",
-  "content": "Iseyon helps organizations transform financial and operational planning using [Anaplan](https://en.wikipedia.org/wiki/Anaplan). Our Anaplan services enable enterprises to unify data, streamline planning processes, and enhance decision-making through a scalable and collaborative [connected planning](https://en.wikipedia.org/wiki/Connected_planning) platform.\n\n#### **Connected Planning Implementation**\n\nIseyon designs and implements enterprise-wide planning solutions on Anaplan that connect finance, sales, supply chain, HR, and operations. Our solutions eliminate data silos and provide a single, real-time planning environment across departments.\n\n#### **Financial Planning & Analysis (FP\\&A)**\n\nIseyon builds robust financial planning models for budgeting, forecasting, scenario planning, and long-term strategic planning. Our Anaplan implementations enhance visibility into financial performance and enable dynamic, driver-based forecasting.\n\n#### **Sales & Revenue Planning**\n\nIseyon develops sales performance management solutions including territory planning, quota setting, incentive compensation management, and revenue forecasting. These solutions improve sales alignment, accuracy, and transparency.\n\n#### **Supply Chain & Operations Planning**\n\nIseyon implements supply chain planning models that support demand forecasting, inventory optimization, production planning, and capacity management helping organizations improve efficiency and reduce operational risk.\n\n#### **Workforce Planning**\n\nOur workforce planning solutions align headcount planning, compensation forecasting, and talent strategies with financial objectives. Iseyon enables HR and finance teams to collaborate effectively within a unified planning framework.\n\n#### **Data Integration & Automation**\n\nIseyon integrates Anaplan with ERP, CRM, and data warehouse systems to ensure seamless data flow and real-time updates. Our automated workflows reduce manual effort and improve planning accuracy.\n\n#### **Model Optimization & Governance**\n\nIseyon ensures scalable model architecture, access control management, performance optimization, and governance best practices within Anaplan environments to maintain reliability and compliance.\n\n#### **Training & Ongoing Support**\n\nIseyon provides end-user training, administrator enablement, and continuous support to ensure successful adoption and long-term value realization from Anaplan implementations.\n\nOur Anaplan services empower organizations to move from disconnected spreadsheets to intelligent, connected enterprise planning enabling faster, more confident decision-making across the business.\n",
-  "showOnHomePage": true,
-  "homePageDescription": "Iseyon delivers connected planning solutions for finance and operations with forecasting, scenario modeling, and performance optimization, enabling faster alignment across teams and leadership.",
-  "homePageIcon": "CalendarRange",
-  "faqs": [
-    {
-      "question": "What Anaplan services does Iseyon provide?",
-      "answer": "Iseyon provides end-to-end Anaplan services including Connected Planning implementation, Financial Planning & Analysis (FP&A) model development, sales and revenue planning, supply chain planning, workforce planning, data integration, model optimization, governance, and ongoing support. Our solutions help organizations move from disconnected spreadsheets to scalable, enterprise-wide planning environments."
-    },
-    {
-      "question": "How does Iseyon implement Connected Planning using Anaplan?",
-      "answer": "Iseyon designs and deploys enterprise-wide Connected Planning solutions that integrate finance, sales, supply chain, HR, and operations into a unified platform. We follow industry best practices in model architecture, Agile delivery, and governance to ensure scalable, high-performance planning systems that support real-time collaboration and decision-making."
-    },
-    {
-      "question": "Can Iseyon integrate Anaplan with our ERP, CRM, and data warehouse systems?",
-      "answer": "Yes, Iseyon specializes in integrating Anaplan with leading ERP, CRM, and enterprise data warehouse systems to enable automated data synchronization and real-time reporting. Our integration approach ensures a single source of truth, reduces manual effort, and enhances planning accuracy across departments."
-    },
-    {
-      "question": "How does Iseyon improve Financial Planning & Analysis (FP&A) with Anaplan?",
-      "answer": "Iseyon builds advanced FP&A models for budgeting, rolling forecasts, scenario planning, and long-term strategic planning. We implement driver-based forecasting and dynamic reporting capabilities that enhance financial visibility, improve forecasting accuracy, and empower leadership with faster, data-driven insights."
-    },
-    {
-      "question": "Does Iseyon provide post-implementation support and governance for Anaplan?",
-      "answer": "Yes, Iseyon offers ongoing support including model optimization, performance tuning, access control management, governance best practices, administrator enablement, and end-user training. Our goal is to ensure long-term scalability, compliance, and continuous business value from your Anaplan investment."
-    }
-  ]
+    "category":  "cloud-and-platforms",
+    "heading":  "Anaplan",
+    "image":  "/anaplane.webp",
+    "subheading":  "Driving Agile, Connected, and Intelligent Enterprise Planning",
+    "content":  "Iseyon helps organizations transform financial and operational planning using [Anaplan](https://en.wikipedia.org/wiki/Anaplan), a platform trusted by more than 2,400 customers across 50+ countries for connected planning. Iseyon\u0027s Anaplan services enable enterprises to unify data, streamline planning processes, and enhance decision-making through a scalable and collaborative [connected planning](https://en.wikipedia.org/wiki/Connected_planning) platform.\n\n#### **Connected Planning Implementation**\n\nIseyon designs and implements enterprise-wide planning solutions on Anaplan that connect finance, sales, supply chain, HR, and operations. Iseyon solutions eliminate data silos and provide a single, real-time planning environment across departments.\n\n#### **Financial Planning \u0026 Analysis (FP\\\u0026A)**\n\nIseyon builds robust financial planning models for budgeting, forecasting, scenario planning, and long-term strategic planning. Iseyon\u0027s Anaplan implementations enhance visibility into financial performance and enable dynamic, driver-based forecasting.\n\n#### **Sales \u0026 Revenue Planning**\n\nIseyon develops sales performance management solutions including territory planning, quota setting, incentive compensation management, and revenue forecasting. These solutions improve sales alignment, accuracy, and transparency.\n\n#### **Supply Chain \u0026 Operations Planning**\n\nIseyon implements supply chain planning models that support demand forecasting, inventory optimization, production planning, and capacity management helping organizations improve efficiency and reduce operational risk.\n\n#### **Workforce Planning**\n\nIseyon\u0027s workforce planning solutions align headcount planning, compensation forecasting, and talent strategies with financial objectives. Iseyon enables HR and finance teams to collaborate effectively within a unified planning framework.\n\n#### **Data Integration \u0026 Automation**\n\nIseyon integrates Anaplan with ERP, CRM, and data warehouse systems to ensure seamless data flow and real-time updates. Iseyon\u0027s automated workflows reduce manual effort and improve planning accuracy.\n\n#### **Model Optimization \u0026 Governance**\n\nIseyon ensures scalable model architecture, access control management, performance optimization, and governance best practices within Anaplan environments to maintain reliability and compliance.\n\n#### **Training \u0026 Ongoing Support**\n\nIseyon provides end-user training, administrator enablement, and continuous support to ensure successful adoption and long-term value realization from Anaplan implementations.\n\nIseyon Anaplan services empower organizations to move from disconnected spreadsheets to intelligent, connected enterprise planning enabling faster, more confident decision-making across the business.\n",
+    "showOnHomePage":  true,
+    "homePageDescription":  "Iseyon delivers connected planning solutions for finance and operations with forecasting, scenario modeling, and performance optimization, enabling faster alignment across teams and leadership.",
+    "homePageIcon":  "CalendarRange",
+    "faqs":  [
+                 {
+                     "question":  "What Anaplan services does Iseyon provide?",
+                     "answer":  "Iseyon provides end-to-end Anaplan services including Connected Planning implementation, Financial Planning \u0026 Analysis (FP\u0026A) model development, sales and revenue planning, supply chain planning, workforce planning, data integration, model optimization, governance, and ongoing support. Our solutions help organizations move from disconnected spreadsheets to scalable, enterprise-wide planning environments."
+                 },
+                 {
+                     "question":  "How does Iseyon implement Connected Planning using Anaplan?",
+                     "answer":  "Iseyon designs and deploys enterprise-wide Connected Planning solutions that integrate finance, sales, supply chain, HR, and operations into a unified platform. We follow industry best practices in model architecture, Agile delivery, and governance to ensure scalable, high-performance planning systems that support real-time collaboration and decision-making."
+                 },
+                 {
+                     "question":  "Can Iseyon integrate Anaplan with our ERP, CRM, and data warehouse systems?",
+                     "answer":  "Yes, Iseyon specializes in integrating Anaplan with leading ERP, CRM, and enterprise data warehouse systems to enable automated data synchronization and real-time reporting. Our integration approach ensures a single source of truth, reduces manual effort, and enhances planning accuracy across departments."
+                 },
+                 {
+                     "question":  "How does Iseyon improve Financial Planning \u0026 Analysis (FP\u0026A) with Anaplan?",
+                     "answer":  "Iseyon builds advanced FP\u0026A models for budgeting, rolling forecasts, scenario planning, and long-term strategic planning. We implement driver-based forecasting and dynamic reporting capabilities that enhance financial visibility, improve forecasting accuracy, and empower leadership with faster, data-driven insights."
+                 },
+                 {
+                     "question":  "Does Iseyon provide post-implementation support and governance for Anaplan?",
+                     "answer":  "Yes, Iseyon offers ongoing support including model optimization, performance tuning, access control management, governance best practices, administrator enablement, and end-user training. Our goal is to ensure long-term scalability, compliance, and continuous business value from your Anaplan investment."
+                 }
+             ]
 }
