@@ -77,45 +77,43 @@ export function RelatedContent({
           </p>
         </motion.div>
 
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayLinks.map((link, index) => {
             const Icon = link.icon || FileText
             return (
-              <li key={index}>
-                <motion.article
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="h-full"
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Link
+                  href={link.href}
+                  className="group block h-full p-6 bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-lg transition-all duration-300"
                 >
-                  <Link
-                    href={link.href}
-                    className="group block h-full p-6 bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-lg transition-all duration-300"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors shrink-0">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                          {link.title}
-                        </h3>
-                        <p className="text-sm text-gray-600 mb-3">
-                          {link.description}
-                        </p>
-                        <div className="flex items-center gap-2 text-primary text-sm font-medium">
-                          Learn more
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                        {link.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-3">
+                        {link.description}
+                      </p>
+                      <div className="flex items-center gap-2 text-primary text-sm font-medium">
+                        Learn more
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
-                  </Link>
-                </motion.article>
-              </li>
+                  </div>
+                </Link>
+              </motion.div>
             )
           })}
-        </ul>
+        </div>
       </div>
     </section>
   )

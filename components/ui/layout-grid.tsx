@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 type Card = {
   id: number;
-  content: React.ReactElement | React.ReactNode | string;
+  content: JSX.Element | React.ReactNode | string;
   className: string;
   thumbnail: string;
 };

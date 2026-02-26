@@ -83,10 +83,10 @@ export function InternalAppsClient({ data }: { data: InternalAppsData }) {
       {/* Stats Section */}
       <section className="py-12 md:py-16 bg-white border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 list-none p-0 m-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {stats.map((stat, index) => (
-              <li key={index}>
               <motion.div
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -96,9 +96,8 @@ export function InternalAppsClient({ data }: { data: InternalAppsData }) {
                 <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-primary mb-1 md:mb-2">{stat.value}</div>
                 <div className="text-xs md:text-sm text-foreground/60">{stat.label}</div>
               </motion.div>
-              </li>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
@@ -120,32 +119,31 @@ export function InternalAppsClient({ data }: { data: InternalAppsData }) {
             </p>
           </motion.div>
 
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 list-none p-0 m-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => {
               const Icon = iconMap[feature.icon] || Cog
               return (
-                <li key={index}>
-                <motion.article
+                <motion.div
+                  key={index}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="group relative p-8 bg-linear-to-br from-slate-50 to-blue-50 rounded-2xl border border-border hover:border-accent transition-all overflow-hidden h-full"
+                  className="group relative p-8 bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl border border-border hover:border-accent transition-all overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-primary/5 to-accent/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-accent/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                   <div className="relative">
-                    <div className="shrink-0 w-14 h-14 bg-linear-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
                       <Icon className="w-7 h-7" />
                     </div>
                     <h3 className="text-2xl font-bold text-foreground mb-3">{feature.title}</h3>
                     <p className="text-foreground/70 leading-relaxed">{feature.description}</p>
                   </div>
-                </motion.article>
-                </li>
+                </motion.div>
               )
             })}
-          </ul>
+          </div>
         </div>
       </section>
 

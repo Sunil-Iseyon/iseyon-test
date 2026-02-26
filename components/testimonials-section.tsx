@@ -50,33 +50,33 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
     <Card className="h-full border border-slate-200 hover:border-primary bg-white hover:shadow-lg transition-all duration-300 rounded-2xl">
       <CardContent className="p-6 md:p-8 flex flex-col h-full">
         {/* Star Rating */}
-        <div className="flex gap-1 mb-4 md:mb-6" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
+        <div className="flex gap-1 mb-4 md:mb-6">
           {Array.from({ length: testimonial.rating }).map((_, i) => (
             <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-amber-400 text-amber-400" />
           ))}
         </div>
 
         {/* Quote */}
-        <blockquote className="text-slate-700 text-sm md:text-base leading-relaxed mb-6 md:mb-8 grow border-0 p-0 m-0 not-italic">
-          <p className="m-0">&ldquo;{testimonial.content}&rdquo;</p>
-        </blockquote>
+        <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-6 md:mb-8 grow">
+          "{testimonial.content}"
+        </p>
 
         {/* Divider */}
         <div className="w-8 h-1 bg-gradient-to-r from-primary to-indigo-400 rounded-full mb-4 md:mb-6" />
 
         {/* Author */}
-        <footer className="flex items-center gap-3 md:gap-4">
+        <div className="flex items-center gap-3 md:gap-4">
           <Avatar className="w-10 h-10 md:w-12 md:h-12 border-2 border-cyan-100">
             <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
             <AvatarFallback className="bg-gradient-to-r from-primary to-indigo-400 text-white font-semibold text-sm md:text-base">
               {testimonial.initials}
             </AvatarFallback>
           </Avatar>
-          <cite className="not-italic">
+          <div>
             <h3 className="font-semibold text-slate-900 text-sm md:text-base">{testimonial.name}</h3>
             <p className="text-xs md:text-sm text-slate-500">{testimonial.role}</p>
-          </cite>
-        </footer>
+          </div>
+        </div>
       </CardContent>
     </Card>
   );

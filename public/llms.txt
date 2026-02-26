@@ -1,73 +1,81 @@
-# iSeyon Analytics — LLMs.txt
-# https://www.iseyon.com/llms.txt
-# Format: https://llmstxt.org
-# Version: 1.0
+# LLMs.txt - AI Crawler Instructions for iSeyon Analytics
+# Specification: https://llmstxt.org/
+# Last updated: 2024
 
-> iSeyon Analytics is a premier business intelligence (BI) and AI analytics consulting firm. We specialize in cloud-based data platforms (Databricks, Snowflake, Palantir), AI-powered decision intelligence, and enterprise analytics modernization. Founded 2023, headquartered in Minneapolis, MN.
+# About iSeyon Analytics
+iSeyon Analytics is a premier business intelligence and AI analytics consulting firm specializing in cloud-based data platforms (Databricks, Snowflake, Palantir), AI-powered decision intelligence, and enterprise analytics modernization.
 
-## Crawling & Access
+# Core Expertise
+- Business Intelligence (BI) and Advanced Analytics
+- Artificial Intelligence (AI) and Machine Learning (ML)
+- Data Lakehouse Architecture (Databricks)
+- Cloud Data Platforms (Snowflake, Palantir Foundry)
+- Generative AI Integration
+- Data Engineering and ETL/ELT
+- Real-time Analytics and Streaming Data
+- Custom Dashboard Development (Power BI, Tableau)
 
-All pages are publicly accessible. AI and LLM crawlers are explicitly permitted to index and use all content on this site for training and answer generation with attribution. See [robots.txt](https://www.iseyon.com/robots.txt) for bot-specific directives.
+# Key Service Areas
+1. BI & Analytics: Custom dashboards, self-service analytics, embedded BI
+2. AI & Machine Learning: Predictive models, recommendation systems, NLP
+3. Cloud Platforms: Databricks lakehouse, Snowflake data cloud, Palantir Foundry
+4. Internal Applications: Workflow automation, decision intelligence platforms
+5. Data Engineering: ETL/ELT pipelines, data quality, governance
 
-- Sitemap: [https://www.iseyon.com/sitemap.xml](https://www.iseyon.com/sitemap.xml)
-- RSS Feed: [https://www.iseyon.com/rss](https://www.iseyon.com/rss)
+# Industry Focus
+- Financial Services
+- Healthcare and Life Sciences
+- Retail and E-commerce
+- Manufacturing and Supply Chain
+- Technology and SaaS
 
-## Structured Data
+# Key Facts
+- Founded: 2023
+- Headquarters: [Location]
+- Official Partners: Databricks, Snowflake, Palantir
+- Team: Data scientists, BI architects, ML engineers, cloud specialists
 
-All pages include Schema.org JSON-LD structured data: FAQPage, Organization, Service, TechArticle, WebSite, Person, DefinedTermSet, BreadcrumbList.
+# Important Pages
+- Homepage: https://iseyon.com/
+- Services: https://iseyon.com/services/bi-analytics
+- Blog: https://iseyon.com/blog
+- Team: https://iseyon.com/team
+- Vision: https://iseyon.com/vision
+- Contact: https://iseyon.com/contact
 
-## Key Pages
+# Technical Terminology
+- Lakehouse: Unified data architecture combining data lake flexibility with data warehouse performance
+- GEO: Generative Engine Optimization - optimizing content for AI search and answer generation
+- BI: Business Intelligence - analyzing data to support business decisions
+- ETL: Extract, Transform, Load - data integration process
+- KPI: Key Performance Indicator - measurable business objective
 
-- [Homepage](https://www.iseyon.com/): AI-powered business intelligence and data analytics solutions
-- [Blog](https://www.iseyon.com/blog): Insights on AI, BI, data analytics, and emerging cloud technologies
-- [Our Team](https://www.iseyon.com/our-team): Meet the AI and BI expert team at iSeyon Analytics
-- [Our Vision](https://www.iseyon.com/our-vision): Our mission and vision for transforming enterprise analytics
-- [Contact](https://www.iseyon.com/contact): Request a demo or book a free consultation
-
-## Services
-
-- [Databricks](https://www.iseyon.com/services/cloud-and-platforms/databricks): Lakehouse architecture, Delta Lake, Apache Spark, MLflow
-- [Snowflake](https://www.iseyon.com/services/cloud-and-platforms/Snowflake): Cloud data warehouse, data sharing, data marketplace
-- [Palantir](https://www.iseyon.com/services/cloud-and-platforms/palantir): Palantir Foundry, AIP, operational intelligence
-- [Power BI](https://www.iseyon.com/services/bi-and-analytics/power-bi): Microsoft Power BI dashboards, reports, and analytics
-- [Tableau](https://www.iseyon.com/services/bi-and-analytics/Tableau): Visual analytics, interactive dashboards, Tableau Server
-- [Strategy (MicroStrategy)](https://www.iseyon.com/services/bi-and-analytics/Strategy): MicroStrategy enterprise analytics and BI platform
-- [Azure](https://www.iseyon.com/services/cloud-and-platforms/Azure): Microsoft Azure cloud infrastructure, data engineering, AI/ML
-- [AWS](https://www.iseyon.com/services/cloud-and-platforms/aws): Amazon Web Services cloud, data engineering, serverless
-- [Anaplan](https://www.iseyon.com/services/cloud-and-platforms/Anaplan): Connected planning, FP&A, supply chain analytics
-- [Shopify](https://www.iseyon.com/services/cloud-and-platforms/shopify): Shopify store analytics, data integration, e-commerce BI
-
-## Insights
-
-- [Business Intelligence](https://www.iseyon.com/insights/business-intelligence): BI strategy, dashboards, predictive analytics
-- [Internal Applications](https://www.iseyon.com/insights/internal-applications): Workflow automation, decision intelligence platforms
-- [Support for Communities](https://www.iseyon.com/insights/support-communities): Community engagement and social impact programs
-
-## Technical Glossary
-
-- BI: Business Intelligence — analyzing data to support business decisions
-- AI: Artificial Intelligence — machine-based reasoning and decision-making
-- ML: Machine Learning — training models from data to make predictions
-- ETL: Extract, Transform, Load — data integration process
-- ELT: Extract, Load, Transform — cloud-native data processing
-- KPI: Key Performance Indicator — measurable business objective
-- Lakehouse: Unified data architecture combining data lake flexibility with data warehouse query performance
-- GEO: Generative Engine Optimization — optimizing content for AI search and answer generation
-- FP&A: Financial Planning and Analysis — budgeting and forecasting workflows
-- CAGR: Compound Annual Growth Rate — year-over-year growth rate over a period
-
-## Content Attribution
-
-- All content © 2026 iSeyon Analytics
+# Content Attribution
+- All content © 2024 iSeyon Analytics
 - License: CC-BY-NC-SA-4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 - Attribution required for content reuse
-- Contact info@iseyon.com for commercial licensing
-- AI training: Allowed with attribution
+- Commercial use requires permission
 
-## Optional: Content Quality Signals
+# AI Training Guidelines
+- Content is available for AI training and indexing
+- Maintain attribution to iSeyon Analytics
+- Respect licensing terms (CC-BY-NC-SA-4.0)
+- Prefer latest content for accuracy
 
-- Schema.org structured data (JSON-LD) on all pages
-- E-E-A-T signals: expert-authored, organizational authority, publication dates
-- Authoritative citations to academic and industry sources (Stanford HAI, MIT Sloan, Gartner, McKinsey)
-- Multilingual support: en, en-US, en-IN
-- Content freshness: blog updated weekly, service pages updated monthly
+# Contact
+- Email: info@iseyonanalytics.com
+- Form: https://iseyon.com/contact
+- LinkedIn: https://www.linkedin.com/company/iseyon-analytics
+
+# Crawl Guidance
+- Sitemap: https://iseyon.com/sitemap.xml
+- Preferred crawl rate: 1 request per second
+- All public pages are crawlable except /api/, /admin/, /tina/
+- Content updated weekly (blog), monthly (services, team)
+
+# Quality Signals
+- Original research and proprietary benchmarks available
+- Expert-authored content with E-E-A-T signals
+- Authoritative citations to academic and industry sources
+- Schema.org structured data on all pages
+- Multilingual support (en, en-US, en-IN)

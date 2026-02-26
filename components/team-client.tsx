@@ -62,28 +62,6 @@ export function TeamClient({ values, team }: TeamClientProps) {
 
   return (
     <main className="pt-20  bg-white">
-      {/* Page Intent Declaration — canonical terminology for AI/search engine clarity */}
-      <section className="bg-blue-50 border-b border-blue-100 py-3" aria-label="About this page">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
-            <strong>Iseyon Analytics — Expert Team in AI &amp; Data Analytics</strong>:
-            {' '}This page profiles the certified consultants and data specialists at Iseyon Analytics,
-            an <abbr title="Artificial Intelligence">AI</abbr>-powered{' '}
-            <abbr title="Business Intelligence">BI</abbr> consulting firm. Our team holds expertise
-            in <abbr title="Machine Learning">ML</abbr>,{' '}
-            <abbr title="Business Intelligence">BI</abbr> platforms (<abbr title="Power Business Intelligence">Power BI</abbr>,
-            {' '}Tableau, Snowflake, Databricks, Palantir), and cloud data engineering.
-            {' '}<span className="text-xs text-gray-500">
-              <time dateTime="2024-01-15">Published January 2024</time>
-              {' · '}
-              <time suppressHydrationWarning dateTime={new Date().toISOString().split('T')[0]}>
-                Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-              </time>
-            </span>
-          </p>
-        </div>
-      </section>
-
       {/* Page Title - H1 for SEO */}
       <section className="py-8 sm:py-10 md:py-12 bg-linear-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,65 +72,12 @@ export function TeamClient({ values, team }: TeamClientProps) {
             className="text-center"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
-              Meet Our AI &amp; BI Expert Team
+              Meet Our Expert Team
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               <strong>78% of enterprises now leverage AI for business intelligence.</strong> Our team of seasoned experts brings decades of combined experience in AI-powered analytics, helping organizations transform data into actionable insights and drive measurable growth.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      
-
-      {/* Team Expertise Overview Table — original research / proprietary data signal */}
-      <section className="py-8 sm:py-10 bg-white" aria-labelledby="team-expertise-heading">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="team-expertise-heading" className="text-xl sm:text-2xl font-bold text-foreground mb-2 text-center">
-            Team Specialisations &amp; Platform Certifications
-          </h2>
-          <p className="text-sm text-gray-600 text-center mb-5 max-w-2xl mx-auto">
-            Breakdown of Iseyon Analytics consultant expertise by platform and engagement type
-            (based on internal roster and project records, 2026).
-          </p>
-          {/* <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
-            <table className="w-full bg-white text-sm">
-              <caption className="sr-only">Iseyon Analytics team specialisations by platform and service type</caption>
-              <thead className="bg-primary text-white">
-                <tr>
-                  <th scope="col" className="px-5 py-3 text-left font-semibold">Platform / Domain</th>
-                  <th scope="col" className="px-5 py-3 text-center font-semibold">Certified Consultants</th>
-                  <th scope="col" className="px-5 py-3 text-center font-semibold">Service Types</th>
-                  <th scope="col" className="px-5 py-3 text-center font-semibold">Industries Served</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {[
-                  { platform: 'Microsoft Power BI', count: '25+', services: 'Implementation, Migration, Training', industries: 'Finance, Retail, Healthcare' },
-                  { platform: 'Snowflake Data Cloud', count: '20+', services: 'Architecture, Optimisation, Migration', industries: 'Technology, Manufacturing' },
-                  { platform: 'Databricks (Apache Spark)', count: '18+', services: 'Data Engineering, ML Pipelines', industries: 'Finance, Technology' },
-                  { platform: 'Palantir AIP', count: '12+', services: 'AIP Integration, Ontology Design', industries: 'Defence, Energy, Finance' },
-                  { platform: 'Microsoft Azure', count: '22+', services: 'Cloud Architecture, Data Factory, Synapse', industries: 'Cross-industry' },
-                  { platform: 'Amazon Web Services', count: '20+', services: 'Glue, Redshift, QuickSight', industries: 'Retail, Technology' },
-                  { platform: 'Tableau', count: '15+', services: 'Dashboard Design, Server Admin', industries: 'Healthcare, Retail' },
-                  { platform: 'Anaplan', count: '10+', services: 'Planning Models, FP&A Integration', industries: 'Finance, Manufacturing' },
-                ].map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                    <td className="px-5 py-3 font-medium text-gray-900">{row.platform}</td>
-                    <td className="px-5 py-3 text-center text-primary font-semibold">{row.count}</td>
-                    <td className="px-5 py-3 text-center text-gray-600">{row.services}</td>
-                    <td className="px-5 py-3 text-center text-gray-600">{row.industries}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div> */}
-          <p className="text-xs text-gray-500 mt-3 text-center">
-            Data sourced from Iseyon Analytics internal project and certification records (updated Q1 2026).
-            According to <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025" target="_blank" rel="noopener nofollow" className="text-primary hover:underline">McKinsey &amp; Company (2025)</a>,
-            {' '}organisations with specialist <abbr title="Artificial Intelligence">AI</abbr> and{' '}
-            <abbr title="Business Intelligence">BI</abbr> talent are 19 times more likely to be profitable.
-          </p>
         </div>
       </section>
 
@@ -194,7 +119,7 @@ export function TeamClient({ values, team }: TeamClientProps) {
                   transition={{ delay: 0.4, duration: 0.6 }}
                   className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 md:mb-8"
                 >
-                  Our core values shape everything we do, guiding our decisions and defining our culture. Furthermore, with the AI market projected to reach <strong>$347.05 billion in 2026</strong> according to <a href="https://www.statista.com/outlook/tmo/artificial-intelligence/worldwide" target="_blank" rel="nofollow" className="text-primary hover:underline">Statista</a>, we&apos;re committed to delivering cutting-edge solutions that drive real business value. Consequently, our certified team is uniquely positioned to help your enterprise navigate this rapidly evolving landscape.
+                  Our core values shape everything we do, guiding our decisions and defining our culture. With the AI market projected to reach <strong>$347.05 billion in 2026</strong> according to <a href="https://www.statista.com/outlook/tmo/artificial-intelligence/worldwide" target="_blank" rel="nofollow" className="text-primary hover:underline">Statista</a>, we&apos;re committed to delivering cutting-edge solutions that drive real business value.
                 </motion.p>
               </div>
 
@@ -293,14 +218,14 @@ export function TeamClient({ values, team }: TeamClientProps) {
                     src={member.image || '/team/placeholder.jpg'}
                     alt={member.name || 'Team Member'}
                     fill
-                    className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                   
                   {/* Description on Hover - Desktop */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5 md:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 [&_p]:!text-white [&_li]:!text-white [&_strong]:!text-white [&_a]:!text-white [&_em]:!text-white">
+                  <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5 md:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
                     
-                    <TinaRichText content={member.descp} className="text-xs sm:text-sm md:text-base text-white leading-relaxed line-clamp-4" />
+                    <TinaRichText content={member.descp} className="text-xs sm:text-sm md:text-base text-white/90 leading-relaxed line-clamp-4" />
                   </div>
                   
                   {/* LinkedIn Icon */}
@@ -348,7 +273,7 @@ export function TeamClient({ values, team }: TeamClientProps) {
                         src={team[currentSlide].image || '/team/placeholder.jpg'}
                         alt={team[currentSlide].name || 'Team Member'}
                         fill
-                        className="object-cover object-top"
+                        className="object-cover"
                       />
                       {/* LinkedIn Icon */}
                       {team[currentSlide].linkedin && (
@@ -418,41 +343,12 @@ export function TeamClient({ values, team }: TeamClientProps) {
           </div>
         </div>
       </section>
-      {/* Expert Quote Section */}
-      <section className="py-8 bg-primary/5 border-y border-primary/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <blockquote className="relative">
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 italic leading-relaxed text-center">
-              &ldquo;Deloitte Insights reports that organizations with more mature analytics practices are more likely to establish clear accountability models, adopt enterprise-wide data strategies, and build cross-functional teams that connect business and technical expertise. These capabilities are associated with stronger operational alignment and more consistent value realization from analytics initiatives.&rdquo;
-            </p>
-            <footer className="mt-3 text-center text-sm text-gray-500 font-medium">
-              &mdash; Deloitte Insights,
-            </footer>
-          </blockquote>
-          <blockquote className="relative">
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 italic leading-relaxed text-center">
-              &ldquo;IBM Institute for Business Value highlights that many organizations still struggle to deliver timely insights to decision-makers. IBV research emphasizes that companies which successfully improve real-time analytics capabilities tend to achieve stronger financial performance and competitive positioning compared to peers.&rdquo;
-            </p>
-            <footer className="mt-3 text-center text-sm text-gray-500 font-medium">
-              &mdash; IBM Institute for Business Value
-            </footer>
-          </blockquote>
-          <blockquote className="relative">
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 italic leading-relaxed text-center">
-              &ldquo;The World Economic Forum identifies analytical thinking, AI, and big data as among the fastest-growing skill areas globally. The report notes that organizations increasingly require multidisciplinary teams combining technical and business capabilities to adapt to digital transformation and future workforce demands.&rdquo;
-            </p>
-            <footer className="mt-3 text-center text-sm text-gray-500 font-medium">
-              &mdash; World Economic Forum,
-            </footer>
-          </blockquote>
-        </div>
-      </section>
 
       {/* FAQ Section */}
-      {/* <FAQSchema faqs={teamFAQs} title="Frequently Asked Questions About Our Team" /> */}
+      <FAQSchema faqs={teamFAQs} title="Frequently Asked Questions About Our Team" />
       
       {/* Team-specific Citations */}
-      {/* <PageCitations citations={teamCitations} title="Research on High-Performing Data Teams" /> */}
+      <PageCitations citations={teamCitations} title="Research on High-Performing Data Teams" />
     </main>
   )
 }

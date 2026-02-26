@@ -5,9 +5,8 @@ import { TestimonialsSection } from '@/components/testimonials-section'
 import { BannerSection } from '@/components/banner-section'
 import { PartnersSlider } from '@/components/partners-slider'
 import { FAQSchema } from '@/components/faq-schema'
-import { IndustryStats, ExpertQuotes, IndustryResearchTable } from '@/components/seo-enhancements'
+import { IndustryStats, ExpertQuotes, ProprietaryResearch } from '@/components/seo-enhancements'
 import { PageCitations, homeCitations } from '@/components/page-citations'
-import { getSpeakableSchema, standardActions, getPotentialActionSchema } from '@/components/advanced-seo-metadata'
 import client from "@/lib/tina-local-client";
 import type { Metadata } from 'next'
 
@@ -50,7 +49,7 @@ async function getHomeData() {
 
 export const metadata: Metadata = {
   title: 'Iseyon Analytics | AI-Powered Business Intelligence & Data Analytics Solutions',
-  description: 'Predict, Optimize & Decide with Iseyon Analytics — AI-powered business intelligence (BI) and data analytics solutions delivering proven 5.6x ROI. Expert consulting for Snowflake, Databricks, Palantir, and Power BI.',
+  description: '78% of enterprises leverage AI for analytics. Iseyon Analytics delivers proven 5.6x ROI through AI-powered BI solutions, cloud platforms (Snowflake, Databricks, Palantir), and expert data analytics consulting. Transform your data into strategic insights.',
   keywords: [
     'AI business intelligence',
     'data analytics solutions',
@@ -261,7 +260,7 @@ export default async function Home() {
     },
     speakable: {
       '@type': 'SpeakableSpecification',
-      cssSelector: ['h1', 'h2', 'h3', 'blockquote'],
+      cssSelector: ['h1', 'h2', '.hero-description'],
     },
     primaryImageOfPage: {
       '@type': 'ImageObject',
@@ -280,54 +279,6 @@ export default async function Home() {
         position: 1,
         name: 'Home',
         item: 'https://www.iseyon.com',
-      },
-    ],
-  };
-
-  // DefinedTermSet — knowledge graph enrichment for home page (knowledge_graph rule)
-  const definedTermSetSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'DefinedTermSet',
-    '@id': 'https://www.iseyon.com/#termset',
-    name: 'AI & Business Intelligence Terminology by Iseyon Analytics',
-    hasDefinedTerm: [
-      {
-        '@type': 'DefinedTerm',
-        name: 'Business Intelligence',
-        termCode: 'BI',
-        description: 'Strategies and technologies used by enterprises for the data analysis of business information, converting raw data into actionable insights.',
-        url: 'https://www.iseyon.com',
-        sameAs: 'https://www.gartner.com/en/information-technology/glossary/business-intelligence',
-      },
-      {
-        '@type': 'DefinedTerm',
-        name: 'Artificial Intelligence',
-        termCode: 'AI',
-        description: 'Machine simulation of human intelligence processes including learning, reasoning, and self-correction, applied to enterprise data workflows.',
-        url: 'https://www.iseyon.com',
-        sameAs: 'https://cloud.google.com/learn/what-is-artificial-intelligence',
-      },
-      {
-        '@type': 'DefinedTerm',
-        name: 'Data Analytics',
-        termCode: 'DA',
-        description: 'The science of analysing raw data to find trends, draw conclusions, and support enterprise decision-making.',
-        url: 'https://www.iseyon.com',
-        sameAs: 'https://cloud.google.com/learn/what-is-data-analytics',
-      },
-      {
-        '@type': 'DefinedTerm',
-        name: 'Predictive Analytics',
-        termCode: 'PA',
-        description: 'Statistical and machine learning techniques that analyse current and historical data to forecast future outcomes with quantified confidence.',
-        url: 'https://www.iseyon.com',
-      },
-      {
-        '@type': 'DefinedTerm',
-        name: 'Cloud Data Platform',
-        termCode: 'CDP',
-        description: 'A managed, scalable cloud infrastructure for storing, processing, and analysing large volumes of enterprise data (e.g. Snowflake, Databricks, AWS).',
-        url: 'https://www.iseyon.com',
       },
     ],
   };
@@ -352,66 +303,16 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetSchema) }}
-      />
-      {/* Article schema — E-E-A-T authorship (author_schema check requires Article type with Person author) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Article',
-          '@id': 'https://www.iseyon.com/#article',
-          headline: 'Iseyon Analytics — AI-Powered Business Intelligence & Data Analytics',
-          description: 'Iseyon Analytics delivers AI-powered business intelligence and data analytics solutions, delivering up to 5.6x ROI for enterprises across the US and India.',
-          url: 'https://www.iseyon.com',
-          image: 'https://www.iseyon.com/iseyon.webp',
-          datePublished: '2024-01-15',
-          dateModified: new Date().toISOString().split('T')[0],
-          inLanguage: 'en-US',
-          author: {
-            '@type': 'Person',
-            '@id': 'https://www.iseyon.com/#chandan-pandey',
-            name: 'Chandan Pandey',
-            jobTitle: 'Founder & CEO',
-            url: 'https://www.iseyon.com/our-team',
-            worksFor: {
-              '@type': 'Organization',
-              name: 'Iseyon Analytics',
-              url: 'https://www.iseyon.com',
-            },
-            knowsAbout: ['Business Intelligence', 'Artificial Intelligence', 'Data Analytics', 'Machine Learning'],
-          },
-          publisher: {
-            '@type': 'Organization',
-            name: 'Iseyon Analytics',
-            url: 'https://www.iseyon.com',
-            logo: {
-              '@type': 'ImageObject',
-              url: 'https://www.iseyon.com/iseyon.webp',
-            },
-          },
-          mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': 'https://www.iseyon.com',
-          },
-          keywords: 'AI business intelligence, data analytics, BI consulting, Snowflake, Databricks, Palantir, Power BI, Iseyon Analytics',
-          potentialAction: getPotentialActionSchema(standardActions),
-          speakable: getSpeakableSchema(['h1', 'h2', 'h3', 'blockquote']),
-        }) }}
-      />
       <main className="min-h-screen bg-white snap-y snap-proximity">
-
         <Hero data={data.hero as any} founderMessages={data.founderMessages as any} services={data.services as any} />
         
         <ServicesSection services={data.services as any} />
-        {/* <IndustryStats /> */}
-        <IndustryResearchTable />
+        <IndustryStats />
+        {/* <ProprietaryResearch /> */}
         <NewProject data={data.project as any} />
         <ExpertQuotes />
         <TestimonialsSection testimonials={data.testimonials as any} />
-        <PageCitations citations={homeCitations} title="Evidence-Based Business Intelligence Insights" />
+        {/* <PageCitations citations={homeCitations} title="Evidence-Based Business Intelligence Insights" /> */}
         <BannerSection data={data.banner as any} />
         <PartnersSlider partners={data.partners as any} />
         <FAQSchema faqs={data.homeFaqs as any} title="Frequently Asked Questions About Iseyon Analytics" />

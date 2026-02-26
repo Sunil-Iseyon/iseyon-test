@@ -17,12 +17,11 @@ type FAQSchemaProps = {
   faqs: FAQ[]
   title?: string
   showVisibleFAQ?: boolean
-  potentialAction?: object | object[]
 }
 
-export function FAQSchema({ faqs, title = "Frequently Asked Questions", showVisibleFAQ = true, potentialAction }: FAQSchemaProps) {
+export function FAQSchema({ faqs, title = "Frequently Asked Questions", showVisibleFAQ = true }: FAQSchemaProps) {
   // FAQ Schema for search engines
-  const faqSchema: Record<string, unknown> = {
+  const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map(faq => ({
@@ -33,9 +32,6 @@ export function FAQSchema({ faqs, title = "Frequently Asked Questions", showVisi
         text: faq.answer,
       },
     })),
-  }
-  if (potentialAction) {
-    faqSchema.potentialAction = potentialAction
   }
 
   return (

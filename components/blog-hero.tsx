@@ -27,7 +27,7 @@ export function BlogHero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4"
           >
-             AI & Data Analytics Insights
+             Our Blogs
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

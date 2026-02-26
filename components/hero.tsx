@@ -73,11 +73,10 @@ function HeroWheel() {
       </div>
 
       {/* Category labels — equally spaced; hidden on xs mobile */}
-      <ul className="contents" aria-label="Iseyon Analytics service capabilities">
       { items.map((item, i) => (
-        <motion.li
+        <motion.div
           key={item.title}
-          className="absolute flex flex-col items-center text-center gap-0 list-none"
+          className="absolute flex flex-col items-center text-center gap-0"
           style={{
             left: `${item.lx}%`,
             top: `${item.ly}%`,
@@ -94,9 +93,8 @@ function HeroWheel() {
           <span className="text-[6px] sm:text-[7px] lg:text-[8.5px] xl:text-[10px] text-gray-500 leading-snug text-center  ">
             {item.desc}
           </span>
-        </motion.li>
+        </motion.div>
       ))}
-      </ul>
     </div>
   )
 }
@@ -152,9 +150,9 @@ export function Hero({ data, founderMessages = [], services = [] }: HeroProps) {
           <div className='bg-linear-to-br from-sky-200 via-blue-50 to-sky-50 px-3 sm:px-4 lg:px-24 py-8 md:py-12 lg:py-16 rounded-t-lg sm:rounded-t-2xl lg:rounded-t-3xl flex-1 flex flex-col justify-center'>
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center mb-8 lg:mb-12">
               {/* Left Content */}
-              <article className="space-y-3 sm:space-y-4 z-10 w-full max-w-full overflow-hidden flex flex-col items-center md:items-start">
+              <div className="space-y-3 sm:space-y-4 z-10 w-full max-w-full overflow-hidden flex flex-col items-center md:items-start">
                 {/* Header */}
-                <header className="space-y-2 sm:space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   {/* {data.badge && (
                     <motion.p
                       initial={{ opacity: 0, y: 20 }}
@@ -188,7 +186,7 @@ export function Hero({ data, founderMessages = [], services = [] }: HeroProps) {
                       )}
                     </motion.div>
                   )}
-                </header>
+                </div>
 
                 {/* CTA Buttons */}
                 <motion.div
@@ -231,7 +229,7 @@ export function Hero({ data, founderMessages = [], services = [] }: HeroProps) {
               <RotatingFounderMessages messages={founderMessages} interval={10000} delay={1500} />
             </div>
                 
-              </article>
+              </div>
 
               {/* Right Illustration — Radial Wheel */}
               <motion.div

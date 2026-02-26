@@ -4,32 +4,21 @@ import { PageCitations, contactCitations } from '@/components/page-citations'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Iseyon Analytics - Get in Touch',
-  description: 'Get in Touch with Iseyon Analytics — contact our certified AI & BI consultants to request a demo, book a free consultation, or get pricing information. Email info@iSeyon.com or call (651) 503-9126. We typically respond within 24 hours.',
-  keywords: ['contact Iseyon Analytics', 'request demo', 'business intelligence consultation', 'AI analytics support', 'data solutions inquiry', 'BI consulting', 'data analytics contact'],
-  authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
-  publisher: 'Iseyon Analytics',
+  title: 'Contact Us | iSeyon Analytics - Get in Touch',
+  description: 'Contact iSeyon Analytics for AI-powered business intelligence solutions. Request a demo, book a consultation, or get answers to your data analytics questions. Available in US and India.',
+  keywords: ['contact iSeyon Analytics', 'request demo', 'business intelligence consultation', 'AI analytics support', 'data solutions inquiry', 'BI consulting'],
+  authors: [{ name: 'iSeyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
+  publisher: 'iSeyon Analytics',
   openGraph: {
-    title: 'Contact Us | Iseyon Analytics - AI-Powered BI Solutions',
-    description: 'Contact Iseyon Analytics to request a demo or book a free consultation for AI-powered business intelligence, data analytics, and cloud platform solutions.',
+    title: 'Contact Us | iSeyon Analytics',
+    description: 'Get in touch with iSeyon Analytics for AI-powered business intelligence solutions.',
     url: 'https://www.iseyon.com/contact',
-    siteName: 'Iseyon Analytics',
     type: 'website',
-    locale: 'en_US',
-    images: [
-      {
-        url: '/iseyon.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Contact Iseyon Analytics - AI-Powered Business Intelligence Solutions',
-      },
-    ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Contact Us | Iseyon Analytics',
-    description: 'Contact Iseyon Analytics for AI-powered business intelligence and data analytics solutions.',
-    images: ['/iseyon.webp'],
+    card: 'summary',
+    title: 'Contact Us | iSeyon Analytics',
+    description: 'Get in touch with iSeyon Analytics for AI-powered business intelligence solutions.',
   },
   alternates: {
     canonical: 'https://www.iseyon.com/contact',
@@ -54,17 +43,7 @@ export const metadata: Metadata = {
     'DC.type': 'InteractiveResource',
     // License metadata
     'license': 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    'robots': 'index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1',
   },
 }
 
@@ -95,7 +74,7 @@ export default function ContactPage() {
           url: 'https://www.iseyon.com',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://www.iseyon.com/ISeyon.webp',
+            url: 'https://www.iseyon.com/iseyon.webp',
           },
           foundingDate: '2020',
           knowsAbout: ['Business Intelligence', 'Data Analytics', 'AI Integration', 'Cloud Platforms'],
@@ -119,14 +98,14 @@ export default function ContactPage() {
           '@type': 'Organization',
           '@id': 'https://www.iseyon.com/#organization',
         },
-        speakable: getSpeakableSchema(['h1', 'h2', 'h3', 'blockquote']),
+        speakable: getSpeakableSchema(['h1', 'h2', '.contact-info']),
         potentialAction: getPotentialActionSchema(standardActions),
         mainEntity: {
           '@type': 'Organization',
           '@id': 'https://www.iseyon.com/#organization',
           name: 'iSeyon Analytics',
           url: 'https://www.iseyon.com',
-          logo: 'https://www.iseyon.com/ISeyon.webp',
+          logo: 'https://www.iseyon.com/iseyon.webp',
           foundingDate: '2020',
           contactPoint: {
             '@type': 'ContactPoint',
@@ -143,7 +122,7 @@ export default function ContactPage() {
             addressCountry: 'US',
           },
           sameAs: [
-            'https://www.linkedin.com/company/iseyon',
+            'https://www.linkedin.com/company/iseyon-analytics',
           ],
         },
         breadcrumb: {
@@ -168,85 +147,14 @@ export default function ContactPage() {
     ],
   }
 
-  // DefinedTermSet — knowledge graph enrichment for contact page
-  const definedTermSetSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'DefinedTermSet',
-    '@id': 'https://www.iseyon.com/contact#termset',
-    name: 'Business Intelligence Consultation Terminology',
-    hasDefinedTerm: [
-      {
-        '@type': 'DefinedTerm',
-        name: 'Business Intelligence Consultation',
-        termCode: 'BI-CONSULT',
-        description: 'A strategic session with certified BI experts to assess enterprise data needs and recommend high-impact analytics solutions.',
-        url: 'https://www.iseyon.com/contact',
-      },
-      {
-        '@type': 'DefinedTerm',
-        name: 'AI-Powered Analytics',
-        termCode: 'AI-ANALYTICS',
-        description: 'Analytics workflows enhanced by machine learning models that automate pattern detection, forecasting, and insight generation.',
-        url: 'https://www.iseyon.com/contact',
-      },
-    ],
-  }
-
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetSchema) }}
-      />
-      {/* Article schema — E-E-A-T (eeat_signals) and provenance_freshness; Article type required for dateModified to register with crawlers */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Article',
-          '@id': 'https://www.iseyon.com/contact#article',
-          headline: 'Contact Iseyon Analytics — Get in Touch',
-          description: 'Get in touch with Iseyon Analytics to request a demo, book a free consultation, or inquire about AI-powered business intelligence and data analytics solutions.',
-          url: 'https://www.iseyon.com/contact',
-          image: 'https://www.iseyon.com/iseyon.webp',
-          datePublished: '2024-01-15',
-          dateModified: new Date().toISOString().split('T')[0],
-          inLanguage: 'en-US',
-          author: {
-            '@type': 'Person',
-            name: 'Chandan Pandey',
-            jobTitle: 'Founder & CEO',
-            url: 'https://www.iseyon.com/our-team',
-            worksFor: {
-              '@type': 'Organization',
-              name: 'Iseyon Analytics',
-              url: 'https://www.iseyon.com',
-            },
-          },
-          publisher: {
-            '@type': 'Organization',
-            name: 'Iseyon Analytics',
-            url: 'https://www.iseyon.com',
-            logo: {
-              '@type': 'ImageObject',
-              url: 'https://www.iseyon.com/iseyon.webp',
-            },
-          },
-          mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': 'https://www.iseyon.com/contact',
-          },
-          keywords: 'contact Iseyon Analytics, AI BI consultation, request demo, data analytics inquiry',
-          potentialAction: getPotentialActionSchema(standardActions),
-          speakable: getSpeakableSchema(['h1', 'h2', 'h3', 'blockquote']),
-        }) }}
-      />
       <ContactClient />
-      <PageCitations citations={contactCitations} title="BI/AI Success Stories &amp; Research" />
+      <PageCitations citations={contactCitations} title="Business Intelligence Success Stories & Research" />
     </>
   )
 }
