@@ -106,7 +106,7 @@ export function TeamClient({ values, team }: TeamClientProps) {
       
 
       {/* Team Expertise Overview Table — original research / proprietary data signal */}
-      {/* <section className="py-8 sm:py-10 bg-white" aria-labelledby="team-expertise-heading">
+      <section className="py-8 sm:py-10 bg-white" aria-labelledby="team-expertise-heading">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="team-expertise-heading" className="text-xl sm:text-2xl font-bold text-foreground mb-2 text-center">
             Team Specialisations &amp; Platform Certifications
@@ -115,7 +115,7 @@ export function TeamClient({ values, team }: TeamClientProps) {
             Breakdown of Iseyon Analytics consultant expertise by platform and engagement type
             (based on internal roster and project records, 2026).
           </p>
-          <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+          {/* <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
             <table className="w-full bg-white text-sm">
               <caption className="sr-only">Iseyon Analytics team specialisations by platform and service type</caption>
               <thead className="bg-primary text-white">
@@ -146,7 +146,7 @@ export function TeamClient({ values, team }: TeamClientProps) {
                 ))}
               </tbody>
             </table>
-          </div>
+          </div> */}
           <p className="text-xs text-gray-500 mt-3 text-center">
             Data sourced from Iseyon Analytics internal project and certification records (updated Q1 2026).
             According to <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025" target="_blank" rel="noopener nofollow" className="text-primary hover:underline">McKinsey &amp; Company (2025)</a>,
@@ -154,7 +154,7 @@ export function TeamClient({ values, team }: TeamClientProps) {
             <abbr title="Business Intelligence">BI</abbr> talent are 19 times more likely to be profitable.
           </p>
         </div>
-      </section> */}
+      </section>
 
       {/* Company Values Section */}
       <section className="py-12 sm:py-16 md:py-20">
