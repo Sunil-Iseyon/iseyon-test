@@ -1,32 +1,32 @@
 {
-    "category":  "bi-and-analytics",
-    "heading":  "Power BI",
-    "image":  "/powerbi1-1.jpg",
-    "subheading":  "Intuitive dashboards tailored to your KPIs sales, finance, operations, marketing, or forecasting.",
-    "content":  "Trusted by over 250,000 organizations worldwide, [Power BI](https://en.wikipedia.org/wiki/Microsoft_Power_BI) is Microsoft\u0027s leading business intelligence platform  -  deployed across 97% of Fortune 500 companies. Iseyon helps organizations transform data analysis and reporting using Power BI, enabling enterprises to unify data, create interactive dashboards, and enhance decision-making through a scalable and collaborative platform.\n\n#### Interactive Dashboards \u0026 Reporting\n\nIseyon designs and implements Power BI dashboards that provide a 360-degree view of business metrics. Users can explore data with natural language queries, leverage built-in and custom visuals, and create interactive reports that communicate insights effectively.\n\n#### Data Connectivity\n\nIseyon integrates Power BI with diverse data sources including Excel, Access, CSV files, Google Analytics, QuickBooks Online, Salesforce, [GitHub](https://github.com/), [MailChimp](https://mailchimp.com/), [SQL Server](https://www.microsoft.com/en-in/sql-server), and many more. With over 50 pre-built connectors, our solutions ensure seamless integration with enterprise applications.\n\n#### Business Insights \u0026 Collaboration\n\nIseyon Power BI implementations enable real-time dashboards accessible across devices. Business users can drill into underlying data, collaborate on insights, and make faster, more confident decisions with intuitive exploration tools.\n\n#### Power BI Desktop\n\nIseyon empowers analysts with Power BI Desktop, a feature-rich authoring tool for combining data from disparate databases, files, and web services. Automated data quality fixes and advanced wrangling capabilities ensure accurate, reliable reporting.\n\n#### Power BI Service\n\nIseyon help organizations securely publish reports to the Power BI service, set up automatic data refresh, and provide enterprise-wide access to the latest information. Reports and dashboards can be embedded into portals and applications for a unified analytics experience.\n\n#### Mobile Access\n\nIseyon enables mobile access to Power BI dashboards and reports, ensuring decision-makers can view real-time insights anywhere. Automatic updates keep data current across all devices.\n\n#### Data Integration \u0026 Gateways\n\nIseyon Power BI solutions connect both cloud and on-premises data sources. Using Power BI gateways, Iseyon integrates SQL Server databases, Analysis Services models, and other enterprise systems into unified dashboards.\n",
-    "showOnHomePage":  true,
-    "homePageDescription":  "Iseyon builds interactive Power BI reports and dashboards for real-time visibility, monitoring, smarter decisions, and executive performance tracking.",
-    "homePageIcon":  "LayoutDashboard",
-    "faqs":  [
-                 {
-                     "question":  "What Power BI services does Iseyon provide?",
-                     "answer":  "Iseyon delivers end-to-end consulting services for Microsoft Power BI, including dashboard design, data integration, report development, governance setup, performance optimization, embedding, and enterprise deployment. We help organizations unify data, create interactive visualizations, and enable scalable, collaborative business intelligence environments."
-                 },
-                 {
-                     "question":  "How does Iseyon design interactive dashboards and reports?",
-                     "answer":  "Iseyon builds dynamic dashboards that provide a 360-degree view of business performance. Users can explore insights using natural language queries, drill-down capabilities, and built-in or custom visuals. Our dashboards are designed to communicate insights clearly while supporting real-time, data-driven decision-making."
-                 },
-                 {
-                     "question":  "What data sources can Iseyon connect to Power BI?",
-                     "answer":  "Iseyon enables analysts to use Power BI Desktop for advanced data modeling, transformation, and report creation. We then configure secure publishing to the Power BI Service, enabling automatic data refresh, enterprise-wide sharing, and report embedding into portals or applications."
-                 },
-                 {
-                     "question":  "How does Iseyon support Power BI Desktop and Power BI Service?",
-                     "answer":  "Iseyon enables analysts to use Power BI Desktop for advanced data modeling, transformation, and report creation. We then configure secure publishing to the Power BI Service, enabling automatic data refresh, enterprise-wide sharing, and report embedding into portals or applications."
-                 },
-                 {
-                     "question":  "Can Power BI dashboards be accessed on mobile devices?",
-                     "answer":  "Yes, Iseyon configures mobile-ready dashboards that are accessible across devices through the Power BI mobile apps. Decision-makers can securely view real-time insights, collaborate on reports, and access updated metrics anytime, anywhere."
-                 }
-             ]
+  "category": "bi-and-analytics",
+  "heading": "Power BI",
+  "image": "/powerbi1-1.jpg",
+  "subheading": "Intuitive dashboards tailored to your KPIs sales, finance, operations, marketing, or forecasting.",
+  "content": "Trusted by over 300,000 organizations worldwide, [Power BI](https://en.wikipedia.org/wiki/Microsoft_Power_BI) is Microsoft's leading business intelligence platform  -  deployed across 97% of Fortune 500 companies. A Forrester Total Economic Impact™ study commissioned by Microsoft found that a composite organization achieved over 366–406% ROI over three years, with payback in under six months. Iseyon helps organizations transform data analysis and reporting using Power BI, enabling enterprises to unify data, create interactive dashboards, and enhance decision-making through a scalable and collaborative platform.\n\n> *\"Self-service analytics platforms like Power BI democratize data access, enabling business users to answer questions independently — reducing analyst bottlenecks by over 50% in mature deployments.\"*\n\n## Dashboard Design & Analytics\n\n### Interactive Dashboards & Reporting\n\nIseyon designs and implements Power BI dashboards that provide a 360-degree view of business metrics. Users can explore data with natural language queries, leverage built-in and custom visuals, and create interactive reports that communicate insights effectively.\n\n### Data Connectivity\n\nIseyon integrates Power BI with diverse data sources including Excel, Access, CSV files, Google Analytics, QuickBooks Online, Salesforce, [GitHub](https://github.com/), [MailChimp](https://mailchimp.com/), [SQL Server](https://www.microsoft.com/en-in/sql-server), and many more. With over 50 pre-built connectors, our solutions ensure seamless integration with enterprise applications.\n\n### Business Insights & Collaboration\n\nIseyon Power BI implementations enable real-time dashboards accessible across devices. Business users can drill into underlying data, collaborate on insights, and make faster, more confident decisions with intuitive exploration tools.\n\n### Power BI Desktop\n\nIseyon empowers analysts with Power BI Desktop, a feature-rich authoring tool for combining data from disparate databases, files, and web services. Automated data quality fixes and advanced wrangling capabilities ensure accurate, reliable reporting.\n\n### Power BI Service\n\nIseyon help organizations securely publish reports to the Power BI service, set up automatic data refresh, and provide enterprise-wide access to the latest information. Reports and dashboards can be embedded into portals and applications for a unified analytics experience.\n\n### Mobile Access\n\nIseyon enables mobile access to Power BI dashboards and reports, ensuring decision-makers can view real-time insights anywhere. Automatic updates keep data current across all devices.\n\n### Data Integration & Gateways\n\nIseyon Power BI solutions connect both cloud and on-premises data sources. Using Power BI gateways, Iseyon integrates SQL Server databases, Analysis Services models, and other enterprise systems into unified dashboards.\n",
+  "showOnHomePage": true,
+  "homePageDescription": "Iseyon builds interactive Power BI reports and dashboards for real-time visibility, monitoring, smarter decisions, and executive performance tracking.",
+  "homePageIcon": "LayoutDashboard",
+  "faqs": [
+    {
+      "question": "What Power BI services does Iseyon provide?",
+      "answer": "Iseyon delivers end-to-end consulting services for Microsoft Power BI, including dashboard design, data integration, report development, governance setup, performance optimization, embedding, and enterprise deployment. We help organizations unify data, create interactive visualizations, and enable scalable, collaborative business intelligence environments."
+    },
+    {
+      "question": "How does Iseyon design interactive dashboards and reports?",
+      "answer": "Iseyon builds dynamic dashboards that provide a 360-degree view of business performance. Users can explore insights using natural language queries, drill-down capabilities, and built-in or custom visuals. Our dashboards are designed to communicate insights clearly while supporting real-time, data-driven decision-making."
+    },
+    {
+      "question": "What data sources can Iseyon connect to Power BI?",
+      "answer": "Iseyon enables analysts to use Power BI Desktop for advanced data modeling, transformation, and report creation. We then configure secure publishing to the Power BI Service, enabling automatic data refresh, enterprise-wide sharing, and report embedding into portals or applications."
+    },
+    {
+      "question": "How does Iseyon support Power BI Desktop and Power BI Service?",
+      "answer": "Iseyon enables analysts to use Power BI Desktop for advanced data modeling, transformation, and report creation. We then configure secure publishing to the Power BI Service, enabling automatic data refresh, enterprise-wide sharing, and report embedding into portals or applications."
+    },
+    {
+      "question": "Can Power BI dashboards be accessed on mobile devices?",
+      "answer": "Yes, Iseyon configures mobile-ready dashboards that are accessible across devices through the Power BI mobile apps. Decision-makers can securely view real-time insights, collaborate on reports, and access updated metrics anytime, anywhere."
+    }
+  ]
 }
