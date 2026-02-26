@@ -164,20 +164,20 @@ export function CommonPageLayout({
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 list-none p-0 m-0">
               {features.map((feature, index) => {
                 const Icon = feature.icon
                 return (
-                  <motion.div
-                    key={index}
+                  <li key={index}>
+                  <motion.article
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ y: -5 }}
-                    className="flex gap-6 p-8 bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl border border-border hover:border-accent transition-all"
+                    className="flex gap-6 p-8 bg-linear-to-br from-slate-50 to-blue-50 rounded-2xl border border-border hover:border-accent transition-all h-full"
                   >
-                    <div className="shrink-0 w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white">
+                    <div className="shrink-0 w-14 h-14 bg-linear-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white">
                       <Icon className="w-7 h-7" />
                     </div>
                     <div>
@@ -188,10 +188,11 @@ export function CommonPageLayout({
                         {feature.description}
                       </p>
                     </div>
-                  </motion.div>
+                  </motion.article>
+                  </li>
                 )
               })}
-            </div>
+            </ul>
           </div>
         </section>
       )}

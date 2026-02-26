@@ -1,6 +1,6 @@
 # Robots.txt for iSeyon Analytics
-# https://iseyon.com
-# Last updated: 2024
+# https://www.iseyon.com
+# Last updated: 2026-02-25
 
 # Default access for all bots
 User-agent: *
@@ -10,11 +10,16 @@ Disallow: /admin/
 Disallow: /_next/
 Disallow: /tina/
 
-# Sitemap
-Sitemap: https://iseyon.com/sitemap.xml
+# Sitemap locations (both canonical and Vercel preview)
+Sitemap: https://www.iseyon.com/sitemap.xml
+Sitemap: https://iseyon3.vercel.app/sitemap.xml
+
+# LLM Instructions (extended directive for AI crawlers)
+LLMs.txt: https://www.iseyon.com/llms.txt
+LLMs.txt: https://iseyon3.vercel.app/llms.txt
 
 # RSS Feed
-# https://iseyon.com/feed.xml
+# https://www.iseyon.com/rss
 
 # Traditional search engine bots
 User-agent: Googlebot
@@ -26,43 +31,40 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# AI and LLM crawler bots - explicitly allowed
+# AI and LLM crawler bots - explicitly allowed for training and indexing
 User-agent: GPTBot
 Allow: /
-Comment: OpenAI GPT crawler for training and indexing
 
 User-agent: ChatGPT-User
 Allow: /
-Comment: ChatGPT user-agent for web browsing
 
 User-agent: CCBot
 Allow: /
-Comment: Common Crawl bot
 
 User-agent: anthropic-ai
 Allow: /
-Comment: Anthropic Claude crawler
 
 User-agent: Claude-Web
 Allow: /
-Comment: Claude web search
+
+User-agent: ClaudeBot
+Allow: /
 
 User-agent: Google-Extended
 Allow: /
-Comment: Google Bard and AI training
 
 User-agent: PerplexityBot
 Allow: /
-Comment: Perplexity AI search
 
 User-agent: YouBot
 Allow: /
-Comment: You.com AI search
+
+User-agent: Applebot-Extended
+Allow: /
 
 # Academic and research bots
 User-agent: ia_archiver
 Allow: /
-Comment: Internet Archive Wayback Machine
 
 # Crawl delay for courtesy
 Crawl-delay: 1

@@ -86,15 +86,16 @@ export function StatisticsGrid({ stats }: StatisticsGridProps) {
   const variants = ['primary', 'secondary', 'accent'] as const
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8 list-none p-0 m-0">
       {stats.map((stat, index) => (
-        <StatCallout
-          key={index}
-          {...stat}
-          variant={variants[index % variants.length]}
-        />
+        <li key={index}>
+          <StatCallout
+            {...stat}
+            variant={variants[index % variants.length]}
+          />
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 

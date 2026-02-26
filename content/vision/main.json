@@ -1,45 +1,45 @@
 {
   "missionTitle": "Our Mission",
-  "missionHeading": "Vision, Leadership, Consistency",
-  "missionDescription": "Iseyon Analytics empowers businesses to harness data potential through [AI](https://en.wikipedia.org/wiki/Artificial_intelligence) and [analytics](https://en.wikipedia.org/wiki/Analytics). Our mission is to democratize [data science](https://en.wikipedia.org/wiki/Data_science), making [advanced analytics](https://en.wikipedia.org/wiki/Predictive_analytics) accessible to organizations of all sizes.\n",
+  "missionHeading": "Our Vision: Shaping the Future of AI & Business Intelligence",
+  "missionDescription": "Iseyon Analytics empowers businesses to harness the full potential of their data through AI-driven analytics and business intelligence. Our mission is to democratize data science — making advanced analytics accessible to organizations of all sizes, not just those with large internal data teams. Furthermore, according to [McKinsey Global Institute](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025), data-driven organizations are 23 times more likely to acquire customers and 19 times more likely to be profitable. Consequently, the urgency to build this capability has never been greater.In addition, Iseyon Analytics brings together certified AI and BI practitioners with deep expertise across Snowflake, Databricks, Power BI, Palantir, AWS, and Azure, delivering measurable analytics outcomes across finance, healthcare, manufacturing, and retail sectors.\n",
   "values": [
     {
       "icon": "Lightbulb",
       "title": "Innovation",
-      "description": "Iseyon Analytics constantly pushes the boundaries of what's possible with AI and data analytics.\n"
+      "description": "Iseyon Analytics constantly pushes the boundaries of what is possible with AI and data analytics. Our innovation practice applies the latest research in machine learning, generative AI, and real-time data processing to solve complex enterprise challenges. Consequently, our clients benefit from advanced analytical capabilities that were previously available only to the largest organizations with dedicated data science teams.\n"
     },
     {
       "icon": "Shield",
       "title": "Integrity",
-      "description": "Iseyon Analytics operates with transparency and maintains the highest ethical standards.\n"
+      "description": "Iseyon Analytics operates with full transparency and maintains the highest ethical standards in every client engagement. We believe that trustworthy data practices — from secure data handling to honest, unbiased reporting — are the foundation of any lasting partnership. Furthermore, our commitment to integrity means we provide candid assessments rather than telling clients what they want to hear, ensuring decisions are built on accurate intelligence.\n"
     },
     {
       "icon": "Rocket",
       "title": "Excellence",
-      "description": "Iseyon Analytics delivers world-class solutions that exceed client expectations.\n"
+      "description": "Iseyon Analytics delivers world-class solutions that consistently exceed client expectations across every engagement. Our consultants hold advanced certifications on leading platforms including Power BI, Snowflake, Databricks, and Azure. In addition, we apply rigorous quality frameworks to every project — measuring outcomes against defined KPIs and continuously refining our approach to drive the strongest possible business results.\n"
     },
     {
       "icon": "Heart",
       "title": "Customer Focus",
-      "description": "Your success is Iseyon Analytics' success. Furthermore, the company is committed to your growth.\n"
+      "description": "Your success is Iseyon Analytics' success. We invest deeply in understanding each client's unique business context, data landscape, and strategic objectives before recommending any solution. Consequently, our engagements deliver purpose-built analytics architectures rather than generic templates — typically generating measurable ROI within the first 90 days. Furthermore, the company remains committed to long-term partnership and continuous improvement long after initial deployment.\n"
     }
   ],
   "visionPoints": [
     {
       "icon": "Globe",
-      "text": "Extract actionable insights from any data source in real-time"
+      "text": "Extract actionable insights from any data source in real-time, enabling faster decisions and proactive responses to market changes"
     },
     {
       "icon": "Target",
-      "text": "Predict market trends and customer behavior with unprecedented accuracy"
+      "text": "Predict market trends and customer behavior with unprecedented accuracy using machine learning models trained on your own business data"
     },
     {
       "icon": "Rocket",
-      "text": "Automate complex business processes with intelligent systems"
+      "text": "Automate complex business processes with intelligent systems that reduce manual effort, minimize errors, and free teams to focus on high-value strategic work"
     },
     {
       "icon": "Users",
-      "text": "Make decisions with confidence backed by comprehensive data analysis"
+      "text": "Make confident decisions backed by comprehensive data analysis — from executive dashboards to operational alerts — at every level of your organization"
     }
   ]
 }

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import client from '@/lib/tina-local-client'
 import { ServiceDetailClient } from '@/components/service-detail-client'
+import { PageCitations, insightCitations } from '@/components/page-citations'
 import type { TinaMarkdownContent } from 'tinacms/dist/rich-text'
 import type { Metadata } from 'next'
 
@@ -53,35 +54,63 @@ export async function generateMetadata({
   }
 
   const pageUrl = `https://www.iseyon.com/insights/${category}`
-  const description = content.subheading || `Iseyon Analytics insights on ${content.heading}. Expert analysis and solutions for modern enterprises.`
+  const rawDescription = `${content.heading} insights by Iseyon Analytics — ${content.subheading || `Expert analysis and solutions for ${content.heading} in modern enterprises.`}`
+  const description = rawDescription.length > 160 ? rawDescription.slice(0, 157) + '...' : rawDescription
 
   return {
-    title: `${content.heading} | Iseyon Analytics`,
+    title: `${content.heading}`,
     description,
-    keywords: [content.heading, 'business intelligence', 'data analytics', 'Iseyon Analytics', category],
+    keywords: [content.heading, content.heading + ' insights', 'business intelligence', 'data analytics', 'Iseyon Analytics', category, content.heading + ' solutions'],
+    authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
+    publisher: 'Iseyon Analytics',
     openGraph: {
-      title: `${content.heading} | Iseyon Analytics`,
+      title: `${content.heading}`,
       description,
       url: pageUrl,
+      siteName: 'Iseyon Analytics',
       type: 'website',
+      locale: 'en_US',
+      images: content.image
+        ? [{ url: content.image, width: 1200, height: 630, alt: `${content.heading} insights by Iseyon Analytics` }]
+        : [{ url: '/iseyon.webp', width: 1200, height: 630, alt: 'Iseyon Analytics Insights' }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${content.heading} | Iseyon Analytics`,
+      title: `${content.heading}`,
       description,
+      images: content.image ? [content.image] : ['/iseyon.webp'],
     },
     alternates: {
       canonical: pageUrl,
       languages: {
         'en': pageUrl,
+        'en-US': pageUrl,
+        'en-IN': pageUrl,
         'x-default': pageUrl,
       },
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large' as const,
+        'max-snippet': -1,
+      },
+    },
     other: {
-      'DC.title': `${content.heading} | Iseyon Analytics`,
-      'DC.creator': 'Iseyon Analytics',
+      'DC.title': `${content.heading}`,
+      'DC.creator': 'Iseyon Analytics Team',
       'DC.description': description,
       'DC.date': new Date().toISOString().split('T')[0],
+      'DC.language': 'en',
+      'DC.format': 'text/html',
+      'DC.publisher': 'Iseyon Analytics',
+      'DC.rights': 'Copyright 2025 Iseyon Analytics. Licensed under CC-BY-NC-SA-4.0',
+      'DC.subject': `${content.heading}, Business Intelligence, Data Analytics`,
+      'DC.type': 'Text',
     },
   }
 }
@@ -116,6 +145,7 @@ export default async function InsightPage({
         )
     }
 
+    const currentDate = new Date().toISOString().split('T')[0]
     const pageUrl = `https://www.iseyon.com/insights/${category}`
 
     const insightSchema = {
@@ -126,24 +156,51 @@ export default async function InsightPage({
           '@id': `${pageUrl}#article`,
           headline: content.heading,
           description: content.subheading,
-          author: {
-            '@type': 'Organization',
-            '@id': 'https://www.iseyon.com/#organization',
-            name: 'Iseyon Analytics',
-            url: 'https://www.iseyon.com',
-          },
+          author: [
+            {
+              '@type': 'Organization',
+              '@id': 'https://www.iseyon.com/#organization',
+              name: 'Iseyon Analytics',
+              url: 'https://www.iseyon.com',
+            },
+            {
+              '@type': 'Person',
+              name: 'Iseyon Analytics Research Team',
+              jobTitle: 'AI & Business Intelligence Analysts',
+              description: 'Certified data engineers and BI consultants with expertise in enterprise analytics, cloud platforms, and AI-driven decision support.',
+              url: 'https://www.iseyon.com/our-team',
+              worksFor: { '@type': 'Organization', '@id': 'https://www.iseyon.com/#organization' },
+              sameAs: ['https://www.linkedin.com/company/iseyon-analytics/', 'https://www.iseyon.com/contact'],
+            },
+          ],
           publisher: {
             '@type': 'Organization',
             '@id': 'https://www.iseyon.com/#organization',
           },
           url: pageUrl,
           datePublished: '2024-06-01',
-          dateModified: '2026-02-18',
+          dateModified: currentDate,
           inLanguage: 'en-US',
           isPartOf: {
             '@type': 'WebSite',
             '@id': 'https://www.iseyon.com/#website',
           },
+          speakable: {
+            '@type': 'SpeakableSpecification',
+            cssSelector: ['h1', 'h2', '#faq-section h3', '.service-description', 'blockquote'],
+          },
+          potentialAction: [
+            {
+              '@type': 'ViewAction',
+              name: `Learn about ${content.heading}`,
+              target: pageUrl,
+            },
+            {
+              '@type': 'ReserveAction',
+              name: 'Book a Consultation',
+              target: 'https://www.iseyon.com/contact',
+            },
+          ],
           breadcrumb: {
             '@type': 'BreadcrumbList',
             itemListElement: [
@@ -153,16 +210,33 @@ export default async function InsightPage({
             ],
           },
         },
+        {
+          '@type': 'DefinedTermSet',
+          '@id': 'https://www.iseyon.com/#glossary',
+          name: 'Iseyon Analytics Technical Glossary',
+          description: 'Key technical terms used in AI, Business Intelligence, and cloud analytics.',
+          hasDefinedTerm: [
+            { '@type': 'DefinedTerm', name: 'Business Intelligence', termCode: 'BI', description: 'Analyzing data to support business decisions and strategy.', inDefinedTermSet: 'https://www.iseyon.com/#glossary' },
+            { '@type': 'DefinedTerm', name: 'Artificial Intelligence', termCode: 'AI', description: 'Machine-based reasoning, learning, and automated decision-making.', inDefinedTermSet: 'https://www.iseyon.com/#glossary' },
+            { '@type': 'DefinedTerm', name: 'Machine Learning', termCode: 'ML', description: 'Training computational models from data to make predictions.', inDefinedTermSet: 'https://www.iseyon.com/#glossary' },
+            { '@type': 'DefinedTerm', name: 'Extract Transform Load', termCode: 'ETL', description: 'Data integration pipeline: extracting, transforming, and loading data.', inDefinedTermSet: 'https://www.iseyon.com/#glossary' },
+            { '@type': 'DefinedTerm', name: 'Key Performance Indicator', termCode: 'KPI', description: 'Measurable business metric used to evaluate success toward objectives.', inDefinedTermSet: 'https://www.iseyon.com/#glossary' },
+            { '@type': 'DefinedTerm', name: 'Compound Annual Growth Rate', termCode: 'CAGR', description: 'Year-over-year growth rate of an investment or market over a specified time period.', inDefinedTermSet: 'https://www.iseyon.com/#glossary' },
+            { '@type': 'DefinedTerm', name: 'Financial Planning and Analysis', termCode: 'FP&A', description: 'Budgeting, forecasting, and analytical processes supporting corporate financial decisions.', inDefinedTermSet: 'https://www.iseyon.com/#glossary' },
+          ],
+        },
       ],
     }
 
     return (
       <>
+        <link rel="provenance" href="https://www.iseyon.com/our-team" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(insightSchema) }}
         />
         <ServiceDetailClient content={content} currentSlug={category} />
+        <PageCitations citations={insightCitations} title="Research & Industry Insights" />
       </>
     )
 }

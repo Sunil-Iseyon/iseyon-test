@@ -6,8 +6,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   
   // Get all blog posts
   const blogResponse = await client.queries.blogPostsConnection()
-  const blogs = blogResponse.data.blogPostsConnection.edges?.map((edge, index) => ({
-    url: `${baseUrl}/blog/${index + 1}`,
+  const blogs = blogResponse.data.blogPostsConnection.edges?.map((edge) => ({
+    url: `${baseUrl}/blog/${(edge?.node as any)?._sys?.filename || 'post'}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
@@ -30,13 +30,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: `${baseUrl}/team`,
+      url: `${baseUrl}/our-team`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/vision`,
+      url: `${baseUrl}/our-vision`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
@@ -58,6 +58,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/insights/business-intelligence`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/insights/internal-applications`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/insights/support-communities`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     ...blogs,
     ...services,
