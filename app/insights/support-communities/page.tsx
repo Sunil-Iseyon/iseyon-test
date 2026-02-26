@@ -121,16 +121,16 @@ const communityCitations = [
     source: 'Harvard T.H. Chan School of Public Health',
     excerpt:
       'Regular physical activity, including participation in charity runs and team sports, reduces workplace stress by up to 48% and increases productivity by 15%.',
-    link: 'https://www.hsph.harvard.edu/nutritionsource/staying-active/',
+    link: 'https://nutritionsource.hsph.harvard.edu/staying-active/active-communities/',
     year: '2024',
   },
   {
     title: 'Corporate Social Responsibility and Brand Trust',
     source: 'Nielsen Global Corporate Sustainability Report',
     excerpt:
-      '66% of consumers are willing to pay more for products from socially responsible companies, and businesses with active CSR programmes see a 20% increase in brand trust scores.',
-    link: 'https://www.nielsen.com/insights/2015/the-sustainability-imperative/',
-    year: '2023',
+      '66% of consumers are willing to pay more for products from socially responsible companies.',
+    link: 'https://ashtonmanufacturing.com.au/66-of-consumers-willing-to-pay-more-for-sustainable-goods-nielsen-report-reveals/',
+    year: '',
   },
   {
     title: 'GRI Standards for Impact Reporting',
@@ -195,30 +195,30 @@ export default async function SupportCommunitiesPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Community Engagement at Iseyon Analytics</h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
               At Iseyon Analytics, corporate social responsibility is not a footnote — it is a core pillar of how we operate. We actively invest in local communities through charity runs, employee volunteering, and social impact partnerships. According to a{' '}
-              <a href="https://www.deloitte.com/global/en/issues/work/millennialsurvey.html" target="_blank" rel="noopener noreferrer" className="text-primary underline">
+              <a href="https://www.deloitte.com/nz/en/issues/work/gen-z-millennial-survey-2023.html" target="_blank" rel="noopener noreferrer" className="text-primary underline">
                 Deloitte Global Millennial Survey (2023)
               </a>
-              , companies with structured CSR programmes report <strong>57% higher employee morale</strong> and <strong>30% lower staff turnover</strong> versus those without.
+              , organisations that demonstrate strong purpose and societal impact report higher employee engagement and loyalty.
             </p>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
               Our team participates in regular charity runs and community health initiatives. Research from the{' '}
-              <a href="https://www.hsph.harvard.edu/nutritionsource/staying-active/" target="_blank" rel="noopener noreferrer" className="text-primary underline">
+              <a href="https://nutritionsource.hsph.harvard.edu/staying-active/active-communities/" target="_blank" rel="noopener noreferrer" className="text-primary underline">
                 Harvard T.H. Chan School of Public Health (2024)
               </a>{' '}
-              confirms that regular physical activity reduces workplace stress by up to <strong>48%</strong> and increases productivity by <strong>15%</strong>.
+              - regular physical activity reduces stress and improves overall workplace wellbeing and productivity.
             </p>
             <blockquote className="border-l-4 border-primary pl-4 italic text-gray-600 my-6">
               &ldquo;Companies that invest in community and employee wellbeing do not just build better workplaces — they build better businesses. The data is unambiguous: purpose-driven organisations outperform peers on every long-term metric.&rdquo; &mdash; Deloitte Global, <em>2023 Millennial &amp; Gen Z Survey</em>
             </blockquote>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
-              We benchmark our programmes against the <a href="https://www.globalreporting.org/standards/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Global Reporting Initiative (GRI) Standards</a> for community impact and the <a href="https://www.unglobalcompact.org/what-is-gc" target="_blank" rel="noopener noreferrer" className="text-primary underline">UN Global Compact principles</a> on human rights, labour, environment, and anti-corruption to keep our reporting transparent and outcomes-focused.
+              We align our reporting approach with the <a href="https://www.globalreporting.org/standards/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Global Reporting Initiative (GRI) Standards</a> for community impact and the <a href="https://www.unglobalcompact.org/what-is-gc" target="_blank" rel="noopener noreferrer" className="text-primary underline">UN Global Compact principles</a> on human rights, labour, environment, and anti-corruption to keep our reporting transparent and outcomes-focused.
             </p>
             <p className="text-gray-700 text-lg leading-relaxed">
               The{' '}
               <a href="https://www.nielsen.com/insights/2015/the-sustainability-imperative/" target="_blank" rel="noopener noreferrer" className="text-primary underline">
-                Nielsen Global Corporate Sustainability Report
+                Nielsen Global Corporate Sustainability Report(2015)
               </a>{' '}
-              found that <strong>66% of consumers</strong> are willing to pay more for products from socially responsible companies, and active CSR programmes drive a <strong>20% increase in brand trust</strong>. Iseyon&apos;s community commitments reflect our belief that analytics firms can and should be a positive force beyond the boardroom.
+              found that <strong>66% of consumers</strong> are willing to pay more for products from socially responsible companies. Iseyon&apos;s community commitments reflect our belief that analytics firms can and should be a positive force beyond the boardroom.
             </p>
 
             {/* Original research benchmarks table — original_research signal */}
@@ -230,25 +230,25 @@ export default async function SupportCommunitiesPage() {
                 <thead className="bg-blue-50">
                   <tr>
                     <th scope="col" className="text-left px-3 py-2 font-semibold text-gray-700 border border-blue-100">CSR Activity</th>
-                    <th scope="col" className="text-left px-3 py-2 font-semibold text-gray-700 border border-blue-100">Measured Outcome</th>
+                    <th scope="col" className="text-left px-3 py-2 font-semibold text-gray-700 border border-blue-100">Reported Insight</th>
                     <th scope="col" className="text-left px-3 py-2 font-semibold text-gray-700 border border-blue-100">Source</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-blue-50">
                     <td className="px-3 py-2 border border-blue-100">Structured CSR programmes</td>
-                    <td className="px-3 py-2 border border-blue-100">57% higher employee morale; 30% lower staff turnover</td>
-                    <td className="px-3 py-2 border border-blue-100"><a href="https://www.deloitte.com/global/en/issues/work/millennialsurvey.html" target="_blank" rel="noopener nofollow" className="text-primary underline text-xs">Deloitte, 2023</a></td>
+                    <td className="px-3 py-2 border border-blue-100">Research shows that companies with strong societal purpose are associated with higher employee engagement and values alignment.</td>
+                    <td className="px-3 py-2 border border-blue-100"><a href="https://www.deloitte.com/global/en/about/press-room/2023-gen-z-and-millenial-survey.html" target="_blank" rel="noopener nofollow" className="text-primary underline text-xs">Deloitte Gen Z & Millennial Survey (2023)</a></td>
                   </tr>
                   <tr className="border-b border-blue-50 bg-white">
-                    <td className="px-3 py-2 border border-blue-100">Regular physical activity (charity runs)</td>
-                    <td className="px-3 py-2 border border-blue-100">Up to 48% stress reduction; 15% productivity increase</td>
+                    <td className="px-3 py-2 border border-blue-100">Regular workplace wellness initiatives</td>
+                    <td className="px-3 py-2 border border-blue-100">Regular physical activity is linked with lower stress and improved wellbeing in workplace health research.</td>
                     <td className="px-3 py-2 border border-blue-100"><a href="https://www.hsph.harvard.edu/nutritionsource/staying-active/" target="_blank" rel="noopener nofollow" className="text-primary underline text-xs">Harvard T.H. Chan, 2024</a></td>
                   </tr>
                   <tr className="border-b border-blue-50">
                     <td className="px-3 py-2 border border-blue-100">Active CSR branding</td>
-                    <td className="px-3 py-2 border border-blue-100">20% increase in brand trust; 66% of consumers pay premium</td>
-                    <td className="px-3 py-2 border border-blue-100"><a href="https://www.nielsen.com/insights/2015/the-sustainability-imperative/" target="_blank" rel="noopener nofollow" className="text-primary underline text-xs">Nielsen, 2023</a></td>
+                    <td className="px-3 py-2 border border-blue-100">66% of global consumers say they’re willing to pay more for sustainable brands.</td>
+                    <td className="px-3 py-2 border border-blue-100"><a href="https://ashtonmanufacturing.com.au/66-of-consumers-willing-to-pay-more-for-sustainable-goods-nielsen-report-reveals" target="_blank" rel="noopener nofollow" className="text-primary underline text-xs">Nielsen, 2023</a></td>
                   </tr>
                   <tr className="border-b border-blue-50 bg-white">
                     <td className="px-3 py-2 border border-blue-100">GRI-aligned impact reporting</td>

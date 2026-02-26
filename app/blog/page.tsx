@@ -238,7 +238,7 @@ export default async function BlogPage() {
               evidence-based analysis grounded in primary data and peer-reviewed research.
             </p>
             <table className="w-full text-sm border-collapse">
-              <caption className="text-xs text-gray-500 mb-2 text-left">Iseyon Analytics Blog — Topic Coverage Summary (2024–2025)</caption>
+              {/* <caption className="text-xs text-gray-500 mb-2 text-left">Iseyon Analytics Blog — Topic Coverage Summary (2024–2025)</caption> */}
               <thead className="bg-blue-100">
                 <tr>
                   <th scope="col" className="text-left px-3 py-2 font-semibold text-gray-700 border border-blue-200">Topic Area</th>
@@ -250,12 +250,12 @@ export default async function BlogPage() {
                 <tr className="border-b border-blue-100">
                   <td className="px-3 py-2 border border-blue-100">Cloud Data Platforms</td>
                   <td className="px-3 py-2 border border-blue-100">Snowflake, Databricks, Azure Synapse</td>
-                  <td className="px-3 py-2 border border-blue-100">Up to 40% reduction in data processing costs</td>
+                  <td className="px-3 py-2 border border-blue-100">Significant cost reduction and operational savings through modern cloud architecture and analytics modernization. (<a href="https://www.infojiniconsulting.com/building-the-business-case-for-analytics-modernization-roi-speed-and-scalability/" target="_blank" rel="noopener nofollow" className="text-blue-600 hover:underline">InfoJini Consulting</a>)</td>
                 </tr>
                 <tr className="border-b border-blue-100 bg-white">
                   <td className="px-3 py-2 border border-blue-100">Business Intelligence</td>
                   <td className="px-3 py-2 border border-blue-100">Power BI, Tableau, Qlik Sense</td>
-                  <td className="px-3 py-2 border border-blue-100">406% <abbr title="Return on Investment">ROI</abbr> over 3 years (<a href="https://www.microsoft.com/en-us/power-platform/products/power-bi" target="_blank" rel="noopener nofollow" className="text-blue-600 hover:underline">Microsoft, 2023</a>)</td>
+                  <td className="px-3 py-2 border border-blue-100">High <abbr title="Return on Investment">ROI</abbr> (300%+ over ~3 years) (<a href="https://www.integrate.io/blog/data-quality-improvement-stats-from-etl/?utm_source=chatgpt.com/" target="_blank" rel="noopener nofollow" className="text-blue-600 hover:underline">Integrate.io</a>)</td>
                 </tr>
                 <tr className="border-b border-blue-100">
                   <td className="px-3 py-2 border border-blue-100">AI &amp; Machine Learning</td>
