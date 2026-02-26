@@ -3,13 +3,20 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, BookOpen, Award, TrendingUp } from 'lucide-react'
 
-export interface Citation {
-  title: string
-  source: string
-  excerpt: string
-  link: string
-  year: string
-}
+// Citation type and all data live in the server-safe lib file.
+// Re-export them here so existing imports from '@/components/page-citations' keep working.
+export type { Citation } from '@/lib/citation-data'
+export {
+  homeCitations,
+  serviceCitations,
+  blogCitations,
+  teamCitations,
+  visionCitations,
+  contactCitations,
+  insightCitations,
+} from '@/lib/citation-data'
+
+import type { Citation } from '@/lib/citation-data'
 
 interface PageCitationsProps {
   citations: Citation[]
@@ -39,15 +46,15 @@ export function PageCitations({ citations, title = "Authoritative Research & Cit
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0">
           {citations.map((citation, index) => (
+            <li key={index}>
             <motion.article
-              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+              className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 group h-full"
             >
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -77,157 +84,10 @@ export function PageCitations({ citations, title = "Authoritative Research & Cit
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </motion.article>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )
 }
-
-// Pre-defined citation sets for different pages
-export const homeCitations: Citation[] = [
-  {
-    title: "Global AI Adoption in Business",
-    source: "Stanford Human-Centered AI Institute",
-    excerpt:
-      "Over 55% of organizations worldwide reported using AI in at least one business function, with analytics and decision support among the most common applications.",
-    link: "https://aiindex.stanford.edu/",
-    year: "2024",
-  },
-  {
-    title: "Analytics and Business Value",
-    source: "MIT Sloan Management Review",
-    excerpt:
-      "Organizations that embrace data-driven decision making are significantly more likely to outperform their peers in productivity and profitability.",
-    link: "https://sloanreview.mit.edu/",
-    year: "2023",
-  },
-  {
-    title: "Business Intelligence Market Forecast",
-    source: "Gartner",
-    excerpt:
-      "The global analytics and business intelligence market is projected to exceed $40 billion by 2027, driven by cloud platforms and AI-powered insights.",
-    link: "https://www.gartner.com/en/newsroom",
-    year: "2024",
-  },
-];
-
-export const serviceCitations: Citation[] = [
-  {
-    title: "Cloud Data Warehousing Best Practices",
-    source: "Google Cloud Architecture Center",
-    excerpt: "Modern cloud data warehouses like Snowflake and BigQuery enable 10x faster query performance compared to traditional on-premise solutions.",
-    link: "https://cloud.google.com/bigquery/docs/introduction",
-    year: "2024"
-  },
-  {
-    title: "The Impact of Data-Driven Decision Making",
-    source: "Harvard Business Review",
-    excerpt: "Organizations that adopt data-driven decision making are 23 times more likely to acquire customers and 6 times more likely to retain them.",
-    link: "https://hbr.org/topic/subject/analytics",
-    year: "2023"
-  },
-  {
-    title: "Databricks Lakehouse Architecture",
-    source: "Databricks Research",
-    excerpt: "The lakehouse architecture combines the best of data lakes and data warehouses, reducing data engineering complexity by up to 60%.",
-    link: "https://www.databricks.com/glossary/data-lakehouse",
-    year: "2024"
-  }
-];
-
-export const blogCitations: Citation[] = [
-  {
-    title: "Data Science Methodology and Best Practices",
-    source: "Data Science",
-    excerpt: "Data science combines domain expertise, programming skills, and knowledge of mathematics and statistics to extract meaningful insights from data.",
-    link: "https://en.wikipedia.org/wiki/Data_science",
-    year: "2024"
-  },
-  {
-    title: "Machine Learning in Production Systems",
-    source: "Google Research",
-    excerpt: "Organizations implementing MLOps practices see 50% faster model deployment and 40% improvement in model performance over time.",
-    link: "https://research.google/research-areas/machine-intelligence/",
-    year: "2023"
-  },
-  {
-    title: "The State of Analytics and Data Science",
-    source: "McKinsey Global Institute",
-    excerpt: "Companies in the top quartile of data-driven decision-making are 5% more productive and 6% more profitable than their competitors.",
-    link: "https://www.mckinsey.com/capabilities/mckinsey-analytics/our-insights",
-    year: "2024"
-  }
-];
-
-export const teamCitations: Citation[] = [
-  {
-    title: "Building High-Performing Data Teams",
-    source: "Gartner Research",
-    excerpt: "Organizations with certified data professionals and diverse analytics teams achieve 2.5x better project success rates.",
-    link: "https://www.gartner.com/en/analytics",
-    year: "2024"
-  },
-  {
-    title: "The Importance of Continuous Learning in Tech",
-    source: "IEEE Spectrum",
-    excerpt: "Technology professionals who invest in continuous learning and certification programs remain relevant 3x longer in rapidly evolving fields.",
-    link: "https://spectrum.ieee.org/",
-    year: "2024"
-  },
-  {
-    title: "Diversity in Data Science and Analytics",
-    source: "KDnuggets Research",
-    excerpt: "Diverse analytics teams produce more innovative solutions and identify 35% more insights compared to homogeneous teams.",
-    link: "https://www.kdnuggets.com/",
-    year: "2023"
-  }
-];
-
-export const visionCitations: Citation[] = [
-  {
-    title: "The Future of AI and Business Intelligence",
-    source: "Gartner Technology Forecast",
-    excerpt: "By 2026, AI spending is projected to reach $2.52 trillion globally, with 75% directed toward analytics and decision intelligence.",
-    link: "https://www.gartner.com/en/newsroom",
-    year: "2024"
-  },
-  {
-    title: "Democratizing Data Science",
-    source: "Nature - Scientific Data",
-    excerpt: "Open-source tools and low-code platforms are making data science accessible to 10x more professionals than a decade ago.",
-    link: "https://www.nature.com/sdata/",
-    year: "2024"
-  },
-  {
-    title: "Sustainable AI and Responsible Analytics",
-    source: "MIT Technology Review",
-    excerpt: "Organizations prioritizing ethical AI practices report 40% higher trust scores and better long-term customer relationships.",
-    link: "https://www.technologyreview.com/topic/artificial-intelligence",
-    year: "2024"
-  }
-];
-
-export const contactCitations: Citation[] = [
-  {
-    title: "ROI of Business Intelligence Implementations",
-    source: "Nucleus Research",
-    excerpt: "Companies achieve an average ROI of $13.01 for every dollar spent on business intelligence and analytics solutions.",
-    link: "https://nucleusresearch.com/",
-    year: "2023"
-  },
-  {
-    title: "Digital Transformation Success Factors",
-    source: "Deloitte Insights",
-    excerpt: "Organizations partnering with experienced BI consultants are 3x more likely to achieve digital transformation goals on time and within budget.",
-    link: "https://www.deloitte.com/global/en/services/consulting.html",
-    year: "2024"
-  },
-  {
-    title: "The Value of Data Strategy Consulting",
-    source: "Forbes Technology Council",
-    excerpt: "Strategic data consulting engagements reduce time-to-insights by 60% and eliminate 80% of common implementation pitfalls.",
-    link: "https://www.forbes.com/technology/",
-    year: "2024"
-  }
-];

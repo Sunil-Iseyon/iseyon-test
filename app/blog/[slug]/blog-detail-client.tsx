@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft, ArrowUp, ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import ReactMarkdown from 'react-markdown'
+import { TinaRichText } from '@/components/tina-rich-text'
 
 interface BlogPost {
   title: string
@@ -16,6 +17,7 @@ interface BlogPost {
   readTime: string
   author?: string
   id: number
+  slug: string
 }
 
 interface BlogDetailClientProps {
@@ -47,6 +49,17 @@ function ScrollToTop() {
 }
 
 export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientProps) {
+  // Parse date for <time> element dateTime attribute
+  const parsedDate = (() => {
+    try {
+      const cleaned = blog.date.replace(/\s+,/, ',')
+      const d = new Date(cleaned)
+      return isNaN(d.getTime()) ? null : d.toISOString().split('T')[0]
+    } catch {
+      return null
+    }
+  })()
+
   return (
     <>
       <ScrollToTop />
@@ -65,7 +78,7 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
         </motion.div>
 
         {/* Header */}
-        <motion.div
+        <motion.header
           className="mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,13 +88,25 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
             <span className="text-xs text-blue-600 font-medium bg-blue-50 px-3 py-1 rounded-full">
               {blog.category}
             </span>
-            <span className="text-xs text-gray-500">{blog.date}</span>
-            <span className="text-xs text-gray-500">·</span>
-            <span className="text-xs text-gray-500">{blog.readTime}</span>
+            {parsedDate ? (
+              <time dateTime={parsedDate} className="text-xs text-gray-500">{blog.date}</time>
+            ) : (
+              <span className="text-xs text-gray-500">{blog.date}</span>
+            )}
             {blog.author && (
               <>
                 <span className="text-xs text-gray-500">·</span>
-                <span className="text-xs text-gray-500">By {blog.author}</span>
+                <Link href="/our-team" className="text-xs text-blue-600 hover:underline">
+                  By {blog.author}
+                </Link>
+              </>
+            )}
+            {!blog.author && (
+              <>
+                <span className="text-xs text-gray-500">·</span>
+                <Link href="/our-team" className="text-xs text-blue-600 hover:underline">
+                  Iseyon Analytics Team
+                </Link>
               </>
             )}
           </div>
@@ -89,11 +114,11 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             {blog.title}
           </h1>
-        </motion.div>
+        </motion.header>
 
         {/* Featured Image */}
         <motion.div
-          className="relative h-96 md:h-125 mb-12 rounded-xl overflow-hidden"
+          className="relative w-full aspect-video mb-12 rounded-xl overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -102,41 +127,26 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
             src={blog.image}
             alt={blog.title}
             fill
-            className="object-cover"
+            className="object-contain"
             priority
           />
         </motion.div>
 
         {/* Content */}
-        <motion.div
+        <motion.section
           className="prose prose-lg max-w-none mb-12"
+          aria-label="Article content"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <ReactMarkdown
-            components={{
-              h1: ({ children }) => <h1 className="text-4xl font-bold mb-6 mt-8">{children}</h1>,
-              h2: ({ children }) => <h2 className="text-3xl font-bold mb-5 mt-7">{children}</h2>,
-              h3: ({ children }) => <h3 className="text-2xl font-bold mb-4 mt-6">{children}</h3>,
-              h4: ({ children }) => <h4 className="text-xl font-semibold mb-3 mt-5">{children}</h4>,
-              p: ({ children }) => <p className="mb-4 leading-relaxed text-gray-700">{children}</p>,
-              ul: ({ children }) => <ul className="list-disc list-inside mb-4 space-y-2 ml-4">{children}</ul>,
-              ol: ({ children }) => <ol className="list-decimal list-inside mb-4 space-y-2 ml-4">{children}</ol>,
-              li: ({ children }) => <li className="leading-relaxed text-gray-700">{children}</li>,
-              strong: ({ children }) => <strong className="font-bold text-gray-900">{children}</strong>,
-              em: ({ children }) => <em className="italic">{children}</em>,
-              code: ({ children }) => <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono text-blue-600">{children}</code>,
-              blockquote: ({ children }) => <blockquote className="border-l-4 border-blue-500 pl-4 italic my-4 text-gray-600">{children}</blockquote>,
-            }}
-          >
-            {blog.description}
-          </ReactMarkdown>
-        </motion.div>
+          <TinaRichText content={blog.description}/>
+        </motion.section>
 
         {/* Previous/Next Navigation */}
-        <motion.div
+        <motion.nav
+          aria-label="Blog post navigation"
           className="border-t border-b py-8 mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -146,7 +156,7 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
           <div className="grid grid-cols-2 gap-8">
             {/* Previous Blog */}
             {prevBlog ? (
-              <Link href={`/blog/${prevBlog.id}`} className="group">
+              <Link href={`/blog/${prevBlog.slug}`} className="group">
                 <div className="flex items-start gap-3 text-gray-600 hover:text-blue-600 transition-colors">
                   <ChevronLeft className="w-5 h-5 mt-1 shrink-0" />
                   <div>
@@ -161,7 +171,7 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
 
             {/* Next Blog */}
             {nextBlog ? (
-              <Link href={`/blog/${nextBlog.id}`} className="group text-right">
+              <Link href={`/blog/${nextBlog.slug}`} className="group text-right">
                 <div className="flex items-start justify-end gap-3 text-gray-600 hover:text-blue-600 transition-colors">
                   <div>
                     <p className="text-xs uppercase tracking-wide mb-1 text-gray-500">Next</p>
@@ -174,7 +184,7 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
               <div />
             )}
           </div>
-        </motion.div>
+        </motion.nav>
 
         {/* Footer */}
         <motion.div

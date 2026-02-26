@@ -76,12 +76,12 @@ function renderContentWithLimit(content?: string) {
   if (!content) return null;
   const lines = content.split('\n');
   if (lines.length <= 4) {
-    return lines.map((line, idx) => <div key={idx}>{line}</div>);
+    return lines.map((line, idx) => <p key={idx} className="m-0">{line}</p>);
   }
   return (
     <>
-      {lines.slice(0, 4).map((line, idx) => <div key={idx}>{line}</div>)}
-      <div>...</div>
+      {lines.slice(0, 4).map((line, idx) => <p key={idx} className="m-0">{line}</p>)}
+      <p className="m-0">...</p>
     </>
   );
 }
@@ -154,11 +154,12 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                 
                 return (
                   <CarouselItem key={index} className="basis-[85%] pl-4">
-                    <motion.div
+                    <motion.article
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
+                      aria-label={`${service.heading} service`}
                       className={`
                         group relative p-4 rounded-bl-2xl rounded-tr-2xl transition-all duration-300 shadow-lg min-h-60 flex flex-col overflow-hidden
                         ${isPrimary 
@@ -212,7 +213,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                           </Button>
                         </Link>
                       </div>
-                    </motion.div>
+                    </motion.article>
                   </CarouselItem>
                 );
               })}
@@ -241,10 +242,11 @@ export function ServicesSection({ services }: ServicesSectionProps) {
             const serviceUrl = `/services/${service.category}/${serviceSlug}`;
             
             return (
-              <motion.div
+              <motion.article
                 key={index}
                 variants={itemVariants}
                 whileHover={{ scale: 1.02, y: -8 }}
+                aria-label={`${service.heading} service`}
                 className={`
                   group relative rounded-bl-2xl rounded-tr-2xl p-6 transition-all duration-300 shadow-lg hover:shadow-2xl h-62.5 flex flex-col overflow-hidden
                   ${isPrimary 
@@ -300,7 +302,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                     </span>
                   </Link>
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </motion.div>

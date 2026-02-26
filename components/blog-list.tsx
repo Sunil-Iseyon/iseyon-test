@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Search } from 'lucide-react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import {
   Carousel,
   CarouselContent,
@@ -15,6 +17,7 @@ import {
 
 type Blog = {
   id?: number
+  slug?: string
   title: string
   shortDescription?: string
   description: string
@@ -92,9 +95,21 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
           {blog.title}
         </h3>
 
-        <p className="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-2" itemProp="description">
-          {blog.shortDescription || blog.description}
-        </p>
+        <div className="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-2" itemProp="description">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              p: ({ children }) => <>{children}</>,
+              a: ({ href, children }) => (
+                <a href={href ?? '#'} className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">
+                  {children}
+                </a>
+              ),
+            }}
+          >
+            {blog.shortDescription || blog.description}
+          </ReactMarkdown>
+        </div>
 
         <div className="text-xs text-gray-400 mt-3 sm:mt-4 flex items-center gap-2">
           {blog.author && (
@@ -169,8 +184,8 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
         >
           <CarouselContent className="-ml-4">
             {filteredBlogs.map((blog, idx) => (
-              <CarouselItem key={blog.id || idx} className="basis-[85%] sm:basis-[90%] pl-4">
-                <Link href={`/blog/${blog.id || idx}`}>
+              <CarouselItem key={blog.slug || blog.id || idx} className="basis-[85%] sm:basis-[90%] pl-4">
+                <Link href={`/blog/${blog.slug || blog.id || idx}`}>
                   {renderBlogCard(blog, idx)}
                 </Link>
               </CarouselItem>
@@ -187,13 +202,15 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
 
       {/* BLOG GRID - Desktop only */}
       <section className="hidden md:block mt-10 px-4" aria-label="Blog post grid">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className="grid grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0">
           {filteredBlogs.map((blog, idx) => (
-            <Link key={blog.id || idx} href={`/blog/${blog.id || idx}`}>
-              {renderBlogCard(blog, idx)}
-            </Link>
+            <li key={blog.slug || blog.id || idx}>
+              <Link href={`/blog/${blog.slug || blog.id || idx}`}>
+                {renderBlogCard(blog, idx)}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </main>
   )

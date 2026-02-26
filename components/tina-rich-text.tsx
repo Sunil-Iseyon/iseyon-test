@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import ReactMarkdown from 'react-markdown';
@@ -36,7 +37,34 @@ export function TinaRichText({ content, className }: TinaRichTextProps) {
             em: ({ children }) => <em className="italic">{children}</em>,
             code: ({ children }) => <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono text-pink-600">{children}</code>,
             pre: ({ children }) => <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4">{children}</pre>,
-            blockquote: ({ children }) => <blockquote className="border-l-4 border-primary pl-4 italic my-4 text-gray-600 bg-slate-50 py-2">{children}</blockquote>,
+            blockquote: ({ children }) => {
+              // Detect attribution pattern: markdown `> - Source` renders as
+              // a <ul> as the last child of the blockquote.  Wrap it in a
+              // semantic <footer> so AI crawlers and the expert_quotations
+              // rule recognise it as a properly attributed citation.
+              const childArray = React.Children.toArray(children);
+              const lastChild = childArray[childArray.length - 1];
+              const isAttribution =
+                React.isValidElement(lastChild) &&
+                (lastChild.type === 'ul' || lastChild.type === 'ol');
+              if (isAttribution) {
+                return (
+                  <blockquote className="border-l-4 border-primary pl-4 my-4 bg-slate-50 py-2 rounded-r-lg">
+                    <div className="italic text-gray-600">
+                      {childArray.slice(0, -1)}
+                    </div>
+                    <footer className="not-italic text-sm text-gray-500 font-medium mt-1 pl-0">
+                      <cite>{lastChild}</cite>
+                    </footer>
+                  </blockquote>
+                );
+              }
+              return (
+                <blockquote className="border-l-4 border-primary pl-4 italic my-4 text-gray-600 bg-slate-50 py-2 rounded-r-lg">
+                  {children}
+                </blockquote>
+              );
+            },
             a: ({ href, children }) => (
               <a 
                 href={href} 
@@ -112,7 +140,49 @@ export function TinaRichText({ content, className }: TinaRichTextProps) {
       prose-th:bg-slate-50 prose-th:px-6 prose-th:py-3 prose-th:text-left prose-th:text-xs prose-th:font-semibold prose-th:text-gray-900 prose-th:uppercase
       prose-td:px-6 prose-td:py-4 prose-td:text-sm prose-td:text-gray-700
       prose-img:rounded-lg prose-img:shadow-md`}>
-      <TinaMarkdown content={content} />
+      <TinaMarkdown
+        content={content}
+        components={{
+          // Semantic blockquote with <footer><cite> for attribution lines
+          // (satisfies the expert_quotations rule for AI crawlers)
+          // TinaMarkdown calls this when the AST node type is 'blockquote'
+          blockquote: (props:any) => {
+            const children = props?.children;
+            const childArray = React.Children.toArray(children);
+            const lastChild = childArray[childArray.length - 1];
+            // Detect attribution: last child is a <p> whose text starts with an em-dash or hyphen
+            const isAttribution =
+              React.isValidElement(lastChild) &&
+              (() => {
+                try {
+                  const el = lastChild as React.ReactElement<{ children?: React.ReactNode }>;
+                  const text = React.Children
+                    .toArray(el.props.children)
+                    .map((c) => (typeof c === 'string' ? c : ''))
+                    .join('');
+                  return text.startsWith('\u2014') || text.startsWith('- ') || text.startsWith('\u2013 ');
+                } catch {
+                  return false;
+                }
+              })();
+            if (isAttribution) {
+              return (
+                <blockquote className="border-l-4 border-primary pl-4 my-4 bg-slate-50 py-2 rounded-r-lg not-italic">
+                  <div className="italic text-gray-600">{childArray.slice(0, -1)}</div>
+                  <footer className="text-sm text-gray-500 font-medium mt-1 not-italic">
+                    <cite>{lastChild}</cite>
+                  </footer>
+                </blockquote>
+              );
+            }
+            return (
+              <blockquote className="border-l-4 border-primary pl-4 italic my-4 text-gray-600 bg-slate-50 py-2 rounded-r-lg">
+                {children}
+              </blockquote>
+            );
+          },
+        }}
+      />
     </div>
   );
 }
