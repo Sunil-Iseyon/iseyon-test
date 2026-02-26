@@ -95,10 +95,10 @@ export function BIInsightsClient({ data }: { data: BIData }) {
       {/* Stats Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <ul className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 list-none p-0 m-0">
             {stats.map((stat, idx) => (
+              <li key={idx}>
               <motion.div
-                key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -108,8 +108,9 @@ export function BIInsightsClient({ data }: { data: BIData }) {
                 <p className="text-2xl md:text-3xl font-bold text-primary mb-2">{stat.value}</p>
                 <p className="text-sm md:text-base text-foreground/60">{stat.label}</p>
               </motion.div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -131,18 +132,18 @@ export function BIInsightsClient({ data }: { data: BIData }) {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 list-none p-0 m-0">
             {coreCapabilities.map((capability, index) => {
               const Icon = iconMap[capability.icon] || Zap
               return (
-                <motion.div
-                  key={index}
+                <li key={index}>
+                <motion.article
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(30, 58, 138, 0.1)' }}
-                  className="p-8 bg-white border border-slate-200 rounded-2xl transition-all hover:border-primary/30"
+                  className="p-8 bg-white border border-slate-200 rounded-2xl transition-all hover:border-primary/30 h-full"
                 >
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -154,10 +155,11 @@ export function BIInsightsClient({ data }: { data: BIData }) {
                     </div>
                   </div>
                   <p className="text-foreground/70">{capability.description}</p>
-                </motion.div>
+                </motion.article>
+                </li>
               )
             })}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -179,27 +181,28 @@ export function BIInsightsClient({ data }: { data: BIData }) {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 list-none p-0 m-0">
             {useCases.map((useCase, index) => {
               const Icon = iconMap[useCase.icon] || Database
               return (
-                <motion.div
-                  key={index}
+                <li key={index}>
+                <motion.article
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-8 bg-white rounded-2xl border border-slate-200 hover:shadow-lg transition-all"
+                  className="p-8 bg-white rounded-2xl border border-slate-200 hover:shadow-lg transition-all h-full"
                 >
                   <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                     <Icon className="w-7 h-7 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-3">{useCase.title}</h3>
                   <p className="text-foreground/70 leading-relaxed">{useCase.description}</p>
-                </motion.div>
+                </motion.article>
+                </li>
               )
             })}
-          </div>
+          </ul>
         </div>
       </section>
 

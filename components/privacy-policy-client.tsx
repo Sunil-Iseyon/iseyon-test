@@ -14,10 +14,10 @@ export function PrivacyPolicyClient({ content }: PrivacyPolicyClientProps) {
         <h1 id="privacy-heading" className="text-4xl font-bold text-slate-900 mb-2">
           Privacy Policy
         </h1>
-        <p className="text-sm text-gray-500">
+        {/* <p className="text-sm text-gray-500">
           Iseyon Analytics &mdash; Last updated:{' '}
           <time dateTime="2026-02-18">February 18, 2026</time>
-        </p>
+        </p> */}
       </div>
       <motion.article
         initial={{ opacity: 0, y: 20 }}

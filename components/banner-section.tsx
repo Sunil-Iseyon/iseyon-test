@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
+import { TinaRichText } from '@/components/tina-rich-text'
+import type { TinaMarkdownContent } from 'tinacms/dist/rich-text'
 
 interface BannerData {
   heading: string;
-  subheading?: string;
+  subheading?: string | TinaMarkdownContent;
   benefits: string[];
   stats?: {
     value: string;
@@ -108,12 +110,12 @@ export function BannerSection({ data }: BannerSectionProps) {
             >
               {data.heading}
             </motion.h2>
-            <motion.p
+            <motion.div
               variants={subheadingVariants}
               className="text-sm sm:text-base md:text-lg text-primary-foreground/80 mb-6 sm:mb-8"
             >
-              {data.subheading}
-            </motion.p>
+              <TinaRichText content={data.subheading} className="[&>p]:m-0" />
+            </motion.div>
 
             <motion.div
               className="flex items-center gap-4 flex-wrap"

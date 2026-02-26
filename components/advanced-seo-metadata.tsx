@@ -171,6 +171,11 @@ export const standardActions = [
     name: 'Subscribe to Newsletter',
     target: 'https://www.iseyon.com/#newsletter',
   },
+  {
+    type: 'DownloadAction',
+    name: 'Download BI Solutions Overview',
+    target: 'https://www.iseyon.com/downloads/iseyon-bi-overview.pdf',
+  },
 ]
 
 // Comprehensive metadata generator
@@ -246,7 +251,7 @@ export function getArticleSchema(config: {
     'author': {
       '@type': 'Person',
       'name': config.author.name,
-      'url': config.author.url || 'https://www.iseyon.com/team',
+      'url': config.author.url || 'https://www.iseyon.com/our-team',
       'jobTitle': config.author.jobTitle || 'AI & BI Expert',
       'worksFor': {
         '@type': 'Organization',
@@ -260,7 +265,7 @@ export function getArticleSchema(config: {
       'url': 'https://www.iseyon.com',
       'logo': {
         '@type': 'ImageObject',
-        'url': 'https://www.iseyon.com/logo.png',
+        'url': 'https://www.iseyon.com/ISeyon.webp',
       },
     },
     'mainEntityOfPage': {

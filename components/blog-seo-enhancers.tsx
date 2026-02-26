@@ -88,37 +88,39 @@ export function ExpertQuotations() {
   const quotes = [
     {
       quote:
-        'iSeyon Analytics announces partnership with Databricks, bringing industry-leading lakehouse architecture to enterprise clients seeking unified data and AI platforms.',
-      author: 'iSeyon Analytics Team',
-      role: 'Official Partnership Announcement',
-      date: '2024',
-      context: 'Strategic Partnership',
+        'Just as electricity transformed almost every industry 100 years ago, AI will transform almost every industry during the next several decades. I can hardly think of a major industry that AI will not transform.',
+      author: 'Andrew Ng',
+      role: 'Co-Founder, Google Brain; Adjunct Professor, Stanford University',
+      date: '2022',
+      context: 'AI Industry Transformation',
+      citation: 'https://hbr.org/2022/11/is-ai-the-new-electricity',
     },
     {
       quote:
-        'The convergence of business intelligence and artificial intelligence represents the most significant shift in enterprise analytics since the advent of relational databases.',
-      author: 'Dr. Michael Stonebraker',
-      role: 'Turing Award Winner, Database Pioneer',
+        'Data-driven organisations are 23 times more likely to acquire customers, six times as likely to retain customers, and 19 times as likely to be profitable as a result.',
+      author: 'McKinsey Global Institute',
+      role: 'The Age of Analytics: Competing in a Data-Driven World',
+      date: '2016',
+      context: 'Business Intelligence ROI',
+      citation: 'https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025',
+    },
+    {
+      quote:
+        'Organisations that commit to data and analytics as strategic assets — treating them with the same rigour as financial capital — will outperform peers on virtually every business metric.',
+      author: 'Gartner, Inc.',
+      role: 'Gartner Top 10 Data and Analytics Trends for 2025',
+      date: '2025',
+      context: 'BI Strategy',
+      citation: 'https://www.gartner.com/en/information-technology/research',
+    },
+    {
+      quote:
+        'Generative AI is expected to add $2.6–4.4 trillion in economic value annually across industries, with the most significant impact in analytics, software engineering, customer operations, and R&D.',
+      author: 'McKinsey Global Institute',
+      role: 'The Economic Potential of Generative AI',
       date: '2023',
-      context: 'Industry Evolution',
-      citation: 'https://www.computer.org/publications/tech-news/trends/database-evolution-ai-integration',
-    },
-    {
-      quote:
-        'Organizations that successfully integrate AI into their BI workflows see a 3-5x improvement in decision-making velocity compared to traditional approaches.',
-      author: 'Gartner Research',
-      role: 'Analytics and BI Magic Quadrant',
-      date: '2023',
-      context: 'Performance Impact',
-      citation: 'https://www.gartner.com/en/documents/4021116',
-    },
-    {
-      quote:
-        'The future of analytics is not just about dashboards—it is about intelligent systems that anticipate questions before they are asked.',
-      author: 'iSeyon Analytics Research Team',
-      role: 'Proprietary Market Analysis',
-      date: '2024',
-      context: 'Future Trends',
+      context: 'Generative AI Impact',
+      citation: 'https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier',
     },
   ]
 

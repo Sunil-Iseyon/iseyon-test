@@ -8,6 +8,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { NewsletterStatusBanner } from "@/components/newsletter-status-banner"
 import { RouteProgress } from "@/components/route-progress"
+import { ScrollToTop } from "@/components/scroll-to-top"
 import { getServicesForNavigation } from "@/lib/tina-queries"
 
 const open_Sans = Open_Sans({ 
@@ -111,6 +112,7 @@ export default async function RootLayout({
     '@type': 'Organization',
     '@id': 'https://iseyon.com/#organization',
     name: 'Iseyon Analytics',
+    alternateName: ['iSeyon Analytics', 'Iseyon', 'iSeyon'],
     legalName: 'Iseyon Analytics',
     url: 'https://iseyon.com',
     logo: {
@@ -125,7 +127,7 @@ export default async function RootLayout({
         '@type': 'Person',
         name: 'Srinivas Reddy Karri',
         jobTitle: 'Founder & CEO',
-        sameAs: 'https://www.iseyon.com/our-team',
+        sameAs: ['https://www.iseyon.com/our-team', 'https://www.linkedin.com/company/iseyon'],
       },
     ],
     knowsAbout: [
@@ -167,7 +169,7 @@ export default async function RootLayout({
       areaServed: ['US', 'IN'],
     },
     sameAs: [
-      'https://www.linkedin.com/company/iseyon-analytics',
+      'https://www.linkedin.com/company/iseyon',
     ],
     description: 'Iseyon Analytics provides AI-powered business intelligence and data analytics solutions.',
   }
@@ -188,8 +190,11 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${open_Sans.variable} ${sansation.variable}`}>
       <head>
-        <link rel="sitemap" href="/sitemap.xml" />
+        <link rel="sitemap" href="/sitemap.xml" type="application/xml" />
+        <link rel="llms-txt" href="/llms.txt" type="text/plain" />
         <link rel="search" href="/llms.txt" type="text/plain" title="LLM Instructions" />
+        <meta name="content-language" content="en" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -203,6 +208,9 @@ export default async function RootLayout({
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded">
           Skip to main content
         </a>
+        <Suspense fallback={null}>
+          <ScrollToTop />
+        </Suspense>
         <Suspense fallback={null}>
           <RouteProgress />
         </Suspense>
