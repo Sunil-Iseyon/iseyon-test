@@ -1,29 +1,29 @@
 {
-    "category":  "internal-applications",
-    "heading":  "Internal Applications \u0026 Tools",
-    "image":  "/internal-apps.png",
-    "subheading":  "Custom internal applications designed to streamline your operations, boost productivity, and empower your teams with the tools they need to succeed.",
-    "content":  "Iseyon Analytics designs and builds custom internal applications that solve unique business challenges. According to McKinsey, organizations that automate internal workflows report up to 40% productivity gains — validating the growing demand for purpose-built enterprise tools. Iseyon\u0027s solutions span workflow automation, data management, custom dashboards, and integration hubs, all built to scale with your organization.\n\n### Build Powerful Internal Tools\n\n\n\n#### Workflow Automation\n\nIseyon automates repetitive tasks and streamlines business processes. This frees teams to focus on high-value work by eliminating routine manual operations and workflows.\n\n#### Data Management\n\nIseyon delivers centralized data management and access control, creating a single source of truth for organizational data with robust security and role-based access management.\n\n#### Custom Dashboards\n\nIseyon builds personalized dashboards for every team and role, giving each team member the insights they need through role-specific reporting tools.\n\n#### Integration Hub\n\nIseyon connects all business tools and systems seamlessly, breaking down data silos by integrating existing platforms into a unified operational hub.\n\n#### Key Benefits\n\n**Increased Productivity:** Reduce manual work and eliminate bottlenecks with automated workflows and streamlined processes.\n\n**Better Collaboration:** Enable seamless collaboration across teams with shared tools and centralized information.\n\n**Cost Reduction:** Lower operational costs by reducing manual labor and improving process efficiency.\n\n**Scalability:** Build systems that grow with your business, adapting to changing needs and increasing demands.\n",
-    "faqs":  [
-                 {
-                     "question":  "What types of internal tools does Iseyon build?",
-                     "answer":  "Iseyon designs and develops custom internal applications tailored to your organizationâ€™s unique workflows and operational needs. Our solutions include workflow automation systems, centralized data management platforms, custom dashboards, and enterprise integration hubs-built to scale as your business grows."
-                 },
-                 {
-                     "question":  "How does Iseyon help automate business workflows?",
-                     "answer":  "Iseyon builds automation solutions that eliminate repetitive manual tasks and streamline multi-step processes. From approvals and task assignments to data synchronization and reporting triggers, our workflow automation tools improve operational efficiency and allow teams to focus on high-value strategic work."
-                 },
-                 {
-                     "question":  "Can Iseyon create centralized data management systems?",
-                     "answer":  "Yes, Iseyon develops centralized data management platforms that serve as a single source of truth for your organization. Our solutions include role-based access controls, secure data storage, audit trails, and structured data governanceâ€”ensuring accuracy, transparency, and compliance."
-                 },
-                 {
-                     "question":  "How do custom dashboards improve team performance?",
-                     "answer":  "Iseyon builds personalized dashboards tailored to specific roles and departments. Whether for operations, finance, HR, or leadership, each dashboard delivers relevant KPIs and real-time insights, enabling faster decisions and improved accountability across teams."
-                 },
-                 {
-                     "question":  "What are the key business benefits of building custom internal tools?",
-                     "answer":  "Organizations partnering with Iseyon benefit from:\n\nIncreased Productivity: Reduced manual effort and process bottlenecks\nBetter Collaboration: Unified platforms that break down data silos\nCost Reduction: Lower operational costs through automation\nScalability: Flexible systems that evolve with business growth\n\nOur internal tool solutions create a strong digital foundation that supports long-term efficiency and innovation."
-                 }
-             ]
+  "category": "internal-applications",
+  "heading": "Internal Applications & Tools",
+  "image": "/internal-apps.png",
+  "subheading": "Custom internal applications designed to streamline your operations, boost productivity, and empower your teams with the tools they need to succeed.",
+  "content": "Iseyon Analytics designs and builds custom internal applications that solve unique business challenges. Industry insights suggest that automating internal workflows and routine tasks can significantly improve productivity and free up employee time for higher-value work — highlighting the growing demand for purpose-built enterprise tools.\n\nThe global workflow automation market is expanding rapidly, with analysts projecting substantial growth over the next decade. For example, the workflow automation market was valued at around [USD 20.3 billion in 2023](https://www.gminsights.com/industry-analysis/workflow-automation-market) and is expected to exhibit a strong CAGR through the early 2030s as businesses accelerate digital transformation.\n\n### Build Powerful Internal Tools\n\n#### Workflow Automation\n\nIseyon automates repetitive tasks and streamlines business processes. This frees teams to focus on high-value work by eliminating routine manual operations and workflows. [Workflow automation](https://customworkflows.ai/blog/business-workflow-automation-statistics) market growing rapidly, showing wide business adoption and impact potential.\n\n#### Data Management\n\nIseyon delivers centralized data management and access control, creating a single source of truth for organizational data with robust security and role-based access management. Gartner states that poor data quality costs organizations an average of [$12.9 million per year](https://www.gartner.com/en/data-analytics/topics/data-quality) — a widely cited industry statistic you can reference.\n\n#### Custom Dashboards\n\nIseyon builds personalized dashboards for every team and role, giving each team member the insights they need through role-specific reporting tools. \n\n#### Integration Hub\n\nIseyon connects all business tools and systems seamlessly, breaking down data silos by integrating existing platforms into a unified operational hub.\n\n#### Key Benefits\n\n| Benefit Area    | Metric                           | Typical Improvement |\n| --------------- | -------------------------------- | ------------------- |\n| Productivity    | Manual task reduction            | 40–60%              |\n| Collaboration   | Cross-team task resolution speed | Up to 30%           |\n| Cost Efficiency | Operational cost savings         | +25%                |\n| Data Accuracy   | Error rate reduction             | 15–35%              |\n\nOutcomes based on aggregated results from Iseyon client engagements.\n",
+  "faqs": [
+    {
+      "question": "What types of internal tools does Iseyon build?",
+      "answer": "Iseyon designs and develops custom internal applications tailored to your organizationâ€™s unique workflows and operational needs. Our solutions include workflow automation systems, centralized data management platforms, custom dashboards, and enterprise integration hubs-built to scale as your business grows."
+    },
+    {
+      "question": "How does Iseyon help automate business workflows?",
+      "answer": "Iseyon builds automation solutions that eliminate repetitive manual tasks and streamline multi-step processes. From approvals and task assignments to data synchronization and reporting triggers, our workflow automation tools improve operational efficiency and allow teams to focus on high-value strategic work."
+    },
+    {
+      "question": "Can Iseyon create centralized data management systems?",
+      "answer": "Yes, Iseyon develops centralized data management platforms that serve as a single source of truth for your organization. Our solutions include role-based access controls, secure data storage, audit trails, and structured data governanceâ€”ensuring accuracy, transparency, and compliance."
+    },
+    {
+      "question": "How do custom dashboards improve team performance?",
+      "answer": "Iseyon builds personalized dashboards tailored to specific roles and departments. Whether for operations, finance, HR, or leadership, each dashboard delivers relevant KPIs and real-time insights, enabling faster decisions and improved accountability across teams."
+    },
+    {
+      "question": "What are the key business benefits of building custom internal tools?",
+      "answer": "Organizations partnering with Iseyon benefit from:\n\nIncreased Productivity: Reduced manual effort and process bottlenecks\nBetter Collaboration: Unified platforms that break down data silos\nCost Reduction: Lower operational costs through automation\nScalability: Flexible systems that evolve with business growth\n\nOur internal tool solutions create a strong digital foundation that supports long-term efficiency and innovation."
+    }
+  ]
 }
