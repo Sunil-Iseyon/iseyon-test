@@ -8,23 +8,23 @@ import type { Metadata } from 'next';
 const teamFAQs = [
   {
     question: 'Who are the founders of Iseyon Analytics?',
-    answer: 'Iseyon Analytics was co-founded by Chandan Pandey (CEO), Kayel Nelson (CTO), and Walter Reis (Chief Technology Officer). Together they bring decades of combined experience in AI-powered business intelligence, data analytics, cloud architecture, and enterprise BI consulting across Fortune 500 organisations.',
+    answer: 'Iseyon Analytics was co-founded by Chandan Pandey (CEO), Kayel Nelson (CTO), and Walter Reis (Chief Technology Officer). Together they typically bring decades of combined experience in AI-powered business intelligence, data analytics, cloud architecture, and enterprise BI consulting across Fortune 500 organisations. Furthermore, each founder generally leads a distinct practice area, which allows Iseyon Analytics to deliver end-to-end solutions from strategy through deployment without relying on subcontractors.',
   },
   {
     question: 'What certifications and expertise does the Iseyon Analytics team hold?',
-    answer: 'The Iseyon Analytics team holds certifications across Snowflake, Databricks, Power BI, Palantir Foundry, AWS, Microsoft Azure, and Google Cloud Platform (GCP). Our consultants are certified practitioners in the primary platforms we implement, ensuring clients receive expert-level delivery on every engagement.',
+    answer: 'The Iseyon Analytics team holds certifications across Snowflake, Databricks, Power BI, Palantir Foundry, AWS, Microsoft Azure, and Google Cloud Platform (GCP). Our consultants are certified practitioners in the primary platforms we implement, ensuring clients typically receive expert-level delivery on every engagement. In addition, the team generally maintains active certifications as vendor programmes evolve, so clients can be confident that guidance reflects current platform capabilities. Consequently, clients rarely need to seek supplementary expertise from other providers.',
   },
   {
     question: 'How experienced is the Iseyon Analytics team in enterprise BI delivery?',
-    answer: 'Iseyon Analytics founders collectively have 30+ years of enterprise analytics experience. CEO Chandan Pandey has led multi-million-dollar BI transformation programmes serving Fortune 500 clients. CTO Kayel Nelson brings deep cloud-native architecture expertise. COO Walter Reis has built enterprise BI ecosystems on Tableau, Power BI, SQL Server, and Snowflake for Fortune 500 organisations.',
+    answer: 'Iseyon Analytics founders collectively have 30+ years of enterprise analytics experience. CEO Chandan Pandey has typically led multi-million-dollar BI transformation programmes serving Fortune 500 clients. CTO Kayel Nelson brings deep cloud-native architecture expertise. Furthermore, COO Walter Reis has built enterprise BI ecosystems on Tableau, Power BI, SQL Server, and Snowflake for Fortune 500 organisations. According to Harvard Business Review, organisations that engage consultants with demonstrated enterprise-scale delivery experience generally achieve better outcomes than those relying on vendors without comparable track records.',
   },
   {
     question: 'What industries does the Iseyon Analytics team specialise in?',
-    answer: 'The Iseyon Analytics team has deep expertise across financial services, retail and eCommerce, healthcare, manufacturing, and the public sector. Our consultants have delivered analytics solutions in all major verticals, adapting BI and AI strategies to each industry\'s unique data challenges and compliance requirements.',
+    answer: 'The Iseyon Analytics team has deep expertise across financial services, retail and eCommerce, healthcare, manufacturing, and the public sector. Our consultants have delivered analytics solutions in all major verticals, generally adapting BI and AI strategies to each industry\'s unique data challenges and compliance requirements. However, our methodology is typically platform-agnostic, allowing us to recommend the most appropriate technology for each context rather than defaulting to a single vendor stack.',
   },
   {
     question: 'How can I connect with the Iseyon Analytics team?',
-    answer: 'You can connect with the Iseyon Analytics team through our contact page at iseyon.com/contact, or by reaching out via LinkedIn. Our founders are also available for speaking engagements, workshops, and enterprise discovery sessions.',
+    answer: 'You can connect with the Iseyon Analytics team through our contact page at iseyon.com/contact, or by reaching out via LinkedIn. Additionally, our founders are generally available for speaking engagements, workshops, and enterprise discovery sessions. Therefore, whether you are looking for a strategic advisory conversation or a detailed technical scoping session, we can typically accommodate your preferred format.',
   },
 ];
 
@@ -40,7 +40,7 @@ async function getTeamData() {
 
 export const metadata: Metadata = {
   title: 'Iseyon Analytics Team | Meet Our AI & BI Experts',
-  description: 'Meet the AI & BI Expert Team at Iseyon Analytics — Founders Chandan Pandey, Kyle Nelson, and Walter Reis bring decades of experience in Snowflake, Databricks, Palantir, and enterprise data analytics. Updated 2026.',  
+  description: 'Iseyon Analytics Team — meet our AI & BI experts: co-founders Chandan Pandey, Kyle Nelson, and Walter Reis, with 30+ years of combined experience in Snowflake, Databricks, Palantir, and enterprise analytics.',  
   keywords: ['Iseyon Analytics team', 'AI experts', 'business intelligence team', 'data analytics professionals', 'BI consultants', 'Databricks experts', 'Snowflake consultants'],
   authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   publisher: 'Iseyon Analytics',

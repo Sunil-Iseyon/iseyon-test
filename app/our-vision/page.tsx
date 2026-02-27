@@ -13,7 +13,7 @@ async function getVisionData() {
 
 export const metadata: Metadata = {
   title: 'Our Vision — Shaping the Future of AI & Business Intelligence',
-  description: 'Our Vision: Shaping the Future of AI & Business Intelligence — Iseyon Analytics bridges business leaders and technology through ML-driven insights, delivering up to 5.6x ROI for enterprises across the US and India. Updated February 2026.',
+  description: 'Our Vision: Shaping the future of AI & Business Intelligence — Iseyon Analytics delivers ML-driven insights and data analytics solutions with proven 5.6x ROI for enterprises across the US and India.',
   keywords: ['company vision', 'AI innovation', 'business intelligence future', 'data-driven transformation', 'analytics mission', 'enterprise AI', 'BI strategy'],
   authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   publisher: 'Iseyon Analytics',

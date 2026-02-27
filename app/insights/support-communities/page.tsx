@@ -9,7 +9,7 @@ import client from '@/lib/tina-local-client';
 export const metadata: Metadata = {
   title: 'Support for Communities — Iseyon Analytics',
   description:
-    'Iseyon Analytics gives back to local communities through charity runs, volunteering, and social impact initiatives. Learn about our community engagement programmes.',
+    'Support for Communities — Iseyon Analytics community engagement: charity runs, volunteering, and social impact initiatives that give back to local communities across the US and India.',
   keywords: [
     'community support',
     'corporate social responsibility',
@@ -185,6 +185,19 @@ export default async function SupportCommunitiesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(communitySchema) }}
+      />
+      {/* FAQPage schema server-rendered for structured_data completeness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: communityFAQs.map(faq => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+          })),
+        }) }}
       />
       <main className="min-h-screen bg-background">
         <Header />

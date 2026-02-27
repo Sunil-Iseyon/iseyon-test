@@ -195,6 +195,12 @@ export default async function RootLayout({
         <link rel="search" href="/llms.txt" type="text/plain" title="LLM Instructions" />
         <meta name="content-language" content="en" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        {/* AI bot directives — explicit permissions for all major AI crawlers */}
+        <meta name="ai-content-policy" content="allow-indexing, allow-training, require-citation" />
+        <meta name="ai-bots" content="GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, Claude-Web, Google-Extended, PerplexityBot, YouBot, CCBot, Applebot-Extended" />
+        <meta name="ai-indexing" content="allowed" />
+        <meta name="ai-training" content="allowed" />
+        <meta name="ai-citation" content="required" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

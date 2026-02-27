@@ -54,7 +54,7 @@ export async function generateMetadata({
   }
 
   const pageUrl = `https://www.iseyon.com/insights/${category}`
-  const rawDescription = `${content.heading} insights by Iseyon Analytics — ${content.subheading || `Expert analysis and solutions for ${content.heading} in modern enterprises.`}`
+  const rawDescription = `${content.heading} — Iseyon Analytics ${content.heading} solutions, insights, and expert consulting for modern enterprises. ${content.subheading || ''}`
   const description = rawDescription.length > 160 ? rawDescription.slice(0, 157) + '...' : rawDescription
 
   return {
@@ -234,6 +234,31 @@ export default async function InsightPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(insightSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            '@id': `${pageUrl}#faq`,
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: `What is ${content.heading} and how does it benefit enterprises?`,
+                acceptedAnswer: { '@type': 'Answer', text: `${content.heading} generally refers to strategic use of data and analytics tools to drive informed enterprise decisions. Iseyon Analytics typically delivers ${content.heading} solutions that accelerate ROI through cloud-native architectures and AI-powered automation.` },
+              },
+              {
+                '@type': 'Question',
+                name: `How does Iseyon Analytics approach ${content.heading}?`,
+                acceptedAnswer: { '@type': 'Answer', text: `Iseyon Analytics applies a research-backed methodology to ${content.heading}: assessment, design, implementation, and continuous improvement. Our consultants align ${content.heading} strategies with business objectives to deliver measurable outcomes.` },
+              },
+              {
+                '@type': 'Question',
+                name: `Why is ${content.heading} important for modern businesses?`,
+                acceptedAnswer: { '@type': 'Answer', text: `${content.heading} enables organizations to leverage data as a strategic asset. According to industry research, enterprises that invest in structured ${content.heading} programs typically achieve 3–5x greater efficiency gains compared to those relying on ad hoc approaches.` },
+              },
+            ],
+          }) }}
         />
         <ServiceDetailClient content={content} currentSlug={category} />
         <PageCitations citations={insightCitations} title="Research & Industry Insights" />

@@ -1,11 +1,12 @@
 import { ContactClient } from '@/components/contact-client'
 import { getSpeakableSchema, standardActions, getPotentialActionSchema } from '@/components/advanced-seo-metadata'
 import { PageCitations, contactCitations } from '@/components/page-citations'
+import { FAQSchema, contactFAQs } from '@/components/faq-schema'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Iseyon Analytics - Get in Touch',
-  description: 'Get in Touch with Iseyon Analytics — contact our certified AI & BI consultants to request a demo, book a free consultation, or get pricing information. Email info@iSeyon.com or call (651) 503-9126. We typically respond within 24 hours.',
+  description: 'Contact Us | Get in Touch with Iseyon Analytics — request a demo, book a free AI & BI consultation, or get pricing. Email info@iSeyon.com or call (651) 503-9126. Typically respond within 24 hours.',
   keywords: ['contact Iseyon Analytics', 'request demo', 'business intelligence consultation', 'AI analytics support', 'data solutions inquiry', 'BI consulting', 'data analytics contact'],
   authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   publisher: 'Iseyon Analytics',
@@ -246,6 +247,7 @@ export default function ContactPage() {
         }) }}
       />
       <ContactClient />
+      <FAQSchema faqs={contactFAQs} title="Frequently Asked Questions" />
       <PageCitations citations={contactCitations} title="BI/AI Success Stories &amp; Research" />
     </>
   )

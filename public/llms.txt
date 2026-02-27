@@ -1,13 +1,24 @@
 # iSeyon Analytics — LLMs.txt
 # https://www.iseyon.com/llms.txt
 # Format: https://llmstxt.org
-# Version: 1.0
+# Version: 2.0
+# Last-Updated: 2026-02-27
 
-> iSeyon Analytics is a premier business intelligence (BI) and AI analytics consulting firm. We specialize in cloud-based data platforms (Databricks, Snowflake, Palantir), AI-powered decision intelligence, and enterprise analytics modernization. Founded 2023, headquartered in Minneapolis, MN.
+> iSeyon Analytics is a premier business intelligence (BI) and AI analytics consulting firm. We specialize in cloud-based data platforms (Databricks, Snowflake, Palantir), AI-powered decision intelligence, and enterprise analytics modernization. Founded 2020, headquartered in New York, NY.
+
+## AI Bot Permissions
+
+AI crawlers, LLM training pipelines, and answer-engine bots are explicitly permitted to index, cite, and use all content on this site for training and answer generation with proper attribution to iSeyon Analytics (https://www.iseyon.com).
+
+- AI-Bots-Allowed: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, Claude-Web, Google-Extended, PerplexityBot, YouBot, CCBot, Applebot-Extended, Googlebot, Bingbot
+- AI-Training: Allowed
+- AI-Indexing: Allowed
+- AI-Citation: Required (attribute to "iSeyon Analytics, https://www.iseyon.com")
+- Content-License: CC-BY-NC-SA-4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Crawling & Access
 
-All pages are publicly accessible. AI and LLM crawlers are explicitly permitted to index and use all content on this site for training and answer generation with attribution. See [robots.txt](https://www.iseyon.com/robots.txt) for bot-specific directives.
+All pages are publicly accessible. See [robots.txt](https://www.iseyon.com/robots.txt) for bot-specific directives.
 
 - Sitemap: [https://www.iseyon.com/sitemap.xml](https://www.iseyon.com/sitemap.xml)
 - RSS Feed: [https://www.iseyon.com/rss](https://www.iseyon.com/rss)

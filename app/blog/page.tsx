@@ -33,7 +33,7 @@ async function getBlogPosts() {
 // Generate advanced metadata with Dublin Core, hreflang, license signals
 export const metadata: Metadata = {
   title: 'Blog | AI, BI & Data Analytics Insights',
-  description: 'AI & Data Analytics Insights by Iseyon Analytics — explore business intelligence (BI), cloud platforms (Snowflake, Databricks, Palantir), and emerging technology trends shaped by expert research and proprietary benchmarks.',
+  description: 'Iseyon Analytics Blog — AI, BI & Data Analytics Insights: expert articles on business intelligence, cloud platforms (Snowflake, Databricks, Palantir), and AI analytics trends backed by industry research.',
   keywords: ['AI blog', 'data analytics insights', 'business intelligence blog', 'BI trends', 'AI analytics articles', 'data science', 'machine learning', 'cloud analytics', 'lakehouse platform', 'generative AI', 'Iseyon Analytics blog'],
   authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   publisher: 'Iseyon Analytics',
@@ -179,6 +179,19 @@ export default async function BlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      {/* FAQPage schema — server-rendered for structured_data rule completeness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: blogFAQs.map(faq => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+          })),
+        }) }}
       />
       <article itemScope itemType="https://schema.org/Blog" id="main-content">
 

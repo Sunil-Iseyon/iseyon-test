@@ -11,7 +11,7 @@ async function getPrivacyPolicy() {
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — Data Protection & Privacy',
-  description: 'Read the Iseyon Analytics Privacy Policy. Learn how we protect your personal data, handle information requests, and comply with GDPR and applicable data protection regulations.',
+  description: 'Iseyon Analytics Privacy Policy — data protection, GDPR compliance, UK GDPR, and CCPA privacy practices governing how we collect, use, and protect your personal data.',
   keywords: ['privacy policy', 'data protection', 'GDPR compliance', 'personal data', 'data privacy', 'Iseyon Analytics privacy', 'cookie policy'],
   authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   publisher: 'Iseyon Analytics',
