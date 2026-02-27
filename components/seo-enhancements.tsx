@@ -176,15 +176,43 @@ export function  ExpertQuotes() {
 // Industry Research Benchmarks Table — original_research signal using verified public data
 export function IndustryResearchTable() {
   const rows = [
-    { metric: 'Enterprises using AI for analytics (2024)', value: '78%', source: 'MIT Sloan Management Review', link: 'https://sloanreview.mit.edu/' },
-    { metric: 'AI investment benefit rate reported by organisations', value: '91%', source: 'Stanford HAI Index 2024', link: 'https://aiindex.stanford.edu/report/' },
-    { metric: 'ROI potential — data-driven decision-making', value: '5–6×', source: 'Harvard Business Review', link: 'https://hbr.org/topic/subject/analytics' },
-    { metric: 'Profit likelihood vs. non-data-driven peers', value: '19× higher', source: 'McKinsey Global Institute', link: 'https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025' },
-    { metric: 'Global BI market size (2024)', value: '$34.8B', source: 'Gartner', link: 'https://www.gartner.com/en/information-technology/glossary/business-intelligence' },
-    { metric: 'AI market projected value (2026)', value: '$347B+', source: 'Statista AI Outlook', link: 'https://www.statista.com/outlook/tmo/artificial-intelligence/worldwide' },
-    { metric: 'Reduction in reporting time with BI automation', value: '87%', source: 'Forrester Research, 2023', link: 'https://www.forrester.com/research/' },
-    { metric: 'Customer acquisition likelihood — analytics-led orgs', value: '23× higher', source: 'McKinsey & Company', link: 'https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025' },
-  ]
+  {
+    metric: 'Customer acquisition likelihood — analytics-driven organizations',
+    value: '23× higher',
+    source: 'McKinsey Global Institute',
+    link: 'https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/five-facts-how-customer-analytics-boosts-corporate-performance'
+  },
+  {
+    metric: 'Profit likelihood vs. non-data-driven peers',
+    value: '19× higher',
+    source: 'McKinsey Global Institute',
+    link: 'https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/five-facts-how-customer-analytics-boosts-corporate-performance'
+  },
+  {
+    metric: 'Customer retention likelihood — analytics-driven organizations',
+    value: '6× higher',
+    source: 'McKinsey Global Institute',
+    link: 'https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/five-facts-how-customer-analytics-boosts-corporate-performance'
+  },
+  {
+    metric: 'Generative AI private investment (2024)',
+    value: '$33.9B',
+    source: 'Stanford AI Index Report 2025',
+    link: 'https://hai.stanford.edu/ai-index/2025-ai-index-report/economy'
+  },
+  {
+    metric: 'Global AI private investment (2024)',
+    value: '$252B',
+    source: 'Stanford AI Index Report',
+    link: 'https://hai.stanford.edu/ai-index/2024-ai-index-report'
+  },
+  {
+    metric: 'Data-driven companies outperform competitors in acquisition',
+    value: '23× more likely',
+    source: 'McKinsey Research',
+    link: 'https://www.mckinsey.com/~/media/McKinsey/Business%20Functions/Marketing%20and%20Sales/Our%20Insights/Five%20facts%20How%20customer%20analytics%20boosts%20corporate%20performance/Datamatics.pdf'
+  }
+]
 
   return (
     <section className="py-14 sm:py-18 bg-white" aria-labelledby="benchmarks-heading">
