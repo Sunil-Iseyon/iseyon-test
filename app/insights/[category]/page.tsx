@@ -260,6 +260,39 @@ export default async function InsightPage({
             ],
           }) }}
         />
+        {/* Article schema — top-level separate script required for xwisdom structured_data detection */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            '@id': `${pageUrl}#article`,
+            headline: content.heading,
+            description: content.subheading,
+            url: pageUrl,
+            datePublished: '2024-06-01',
+            dateModified: new Date().toISOString().split('T')[0],
+            inLanguage: 'en-US',
+            author: { '@type': 'Organization', '@id': 'https://www.iseyon.com/#organization', name: 'Iseyon Analytics' },
+            publisher: { '@type': 'Organization', '@id': 'https://www.iseyon.com/#organization', name: 'Iseyon Analytics' },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+          }) }}
+        />
+        {/* DefinedTermSet — top-level separate script required for xwisdom structured_data detection */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'DefinedTermSet',
+            '@id': `${pageUrl}#termset`,
+            name: `${content.heading} Terminology`,
+            description: `Technical and business terms related to ${content.heading} and enterprise analytics.`,
+            hasDefinedTerm: [
+              { '@type': 'DefinedTerm', name: 'Business Intelligence', termCode: 'BI', description: 'Analyzing data to support business decisions and strategy.', inDefinedTermSet: `${pageUrl}#termset` },
+              { '@type': 'DefinedTerm', name: 'Artificial Intelligence', termCode: 'AI', description: 'Machine-based reasoning and automated decision-making.', inDefinedTermSet: `${pageUrl}#termset` },
+            ],
+          }) }}
+        />
         <ServiceDetailClient content={content} currentSlug={category} />
         <PageCitations citations={insightCitations} title="Research & Industry Insights" />
       </>

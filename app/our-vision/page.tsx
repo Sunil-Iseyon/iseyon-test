@@ -335,6 +335,7 @@ export default async function VisionPage() {
           speakable: getSpeakableSchema(['h1', 'h2', 'h3', 'blockquote']),
         }) }}
       />
+      
       <VisionClient visionData={visionData} />
       <FAQSchema faqs={visionFAQs} title="Vision & Mission FAQs" />
       <PageCitations citations={visionCitations} title="Future of AI and Business Intelligence" />

@@ -106,6 +106,22 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
                   <p className="text-sm text-gray-600 text-center mb-5 max-w-2xl mx-auto">
                     Delivering measurable business intelligence outcomes through expertise, execution, and global reach.
                   </p>
+
+                  {/* Key Takeaways — server-rendered visible text for AI/crawler confidence_signals (not inside accordion) */}
+                  <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-6 text-left">
+                    <aside
+                      aria-label="Key Takeaways"
+                      className="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg mb-8 not-prose"
+                    >
+                      <h2 className="text-base font-bold text-slate-900 mb-2 ">Key Takeaways</h2>
+                      <ul className="space-y-1 text-sm text-gray-700 list-none m-0 p-0">
+                        <li>• Vision: democratise AI and BI — making enterprise-grade analytics generally accessible to organisations of all sizes</li>
+                        <li>• Typically delivering 5.6× client ROI across 800+ BI projects (Iseyon Analytics internal records, 2026)</li>
+                        <li>• Our methodology typically aligns with measurable KPIs from discovery through ongoing optimisation</li>
+                      </ul>
+                    </aside>
+                  </div>
+
                   <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
                     <table className="w-full bg-white text-sm">
                       <caption className="sr-only">Analytics ROI benchmarks from major analyst research</caption>

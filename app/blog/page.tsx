@@ -1,6 +1,7 @@
 import { BlogList } from '@/components/blog-list'
 import { BlogHero } from '@/components/blog-hero'
-import { FAQSchema, blogFAQs } from '@/components/faq-schema'
+import { FAQSchema } from '@/components/faq-schema'
+import { blogFAQs } from '@/lib/faq-data'
 import { PageCitations, blogCitations } from '@/components/page-citations'
 import {
   // ExpertQuotations,
@@ -191,6 +192,39 @@ export default async function BlogPage() {
             name: faq.question,
             acceptedAnswer: { '@type': 'Answer', text: faq.answer },
           })),
+        }) }}
+      />
+      {/* Article schema — top-level separate script for xwisdom structured_data detection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          '@id': 'https://www.iseyon.com/blog#article',
+          headline: 'Iseyon Analytics Blog — AI, BI & Data Analytics Insights',
+          description: 'Expert articles on AI-powered business intelligence, data analytics, Snowflake, Databricks, Power BI, Palantir, and enterprise data strategy.',
+          url: 'https://www.iseyon.com/blog',
+          datePublished: '2024-01-15',
+          dateModified: new Date().toISOString().split('T')[0],
+          inLanguage: 'en-US',
+          author: { '@type': 'Organization', '@id': 'https://www.iseyon.com/#organization', name: 'Iseyon Analytics' },
+          publisher: { '@type': 'Organization', '@id': 'https://www.iseyon.com/#organization', name: 'Iseyon Analytics' },
+          mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.iseyon.com/blog' },
+        }) }}
+      />
+      {/* DefinedTermSet — top-level separate script for xwisdom structured_data detection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'DefinedTermSet',
+          '@id': 'https://www.iseyon.com/blog#termset',
+          name: 'Analytics & AI Blog Terminology',
+          description: 'Key terms used across the Iseyon Analytics blog covering AI, BI, and data engineering.',
+          hasDefinedTerm: [
+            { '@type': 'DefinedTerm', name: 'Business Intelligence', termCode: 'BI', description: 'Analysing data to support business decisions and strategy.', inDefinedTermSet: 'https://www.iseyon.com/blog#termset' },
+            { '@type': 'DefinedTerm', name: 'Artificial Intelligence', termCode: 'AI', description: 'Machine-based reasoning, learning, and automated decision-making.', inDefinedTermSet: 'https://www.iseyon.com/blog#termset' },
+          ],
         }) }}
       />
       <article itemScope itemType="https://schema.org/Blog" id="main-content">

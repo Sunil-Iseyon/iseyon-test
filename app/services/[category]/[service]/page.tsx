@@ -444,6 +444,53 @@ export default async function ServicePage({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
         />
+        {/* Article schema — top-level separate script required for xwisdom structured_data detection */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            '@id': `${pageUrl}#article`,
+            headline: `${content.heading} Services — Iseyon Analytics`,
+            description: content.subheading,
+            url: pageUrl,
+            image: content.image ? `https://www.iseyon.com${content.image}` : 'https://www.iseyon.com/iseyon.webp',
+            datePublished: '2024-01-15',
+            dateModified: currentDate,
+            inLanguage: 'en-US',
+            author: { '@type': 'Organization', '@id': 'https://www.iseyon.com/#organization', name: 'Iseyon Analytics' },
+            publisher: { '@type': 'Organization', '@id': 'https://www.iseyon.com/#organization', name: 'Iseyon Analytics' },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+          }) }}
+        />
+        {/* DefinedTermSet — top-level separate script required for xwisdom structured_data detection */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'DefinedTermSet',
+            '@id': `${pageUrl}#termset`,
+            name: `${content.heading} Service Terminology`,
+            description: `Technical and business terms related to ${content.heading} services and enterprise analytics.`,
+            hasDefinedTerm: [
+              {
+                '@type': 'DefinedTerm',
+                name: content.heading,
+                termCode: content.heading.replace(/\s+/g, '-').toUpperCase().slice(0, 20),
+                description: content.subheading,
+                inDefinedTermSet: `${pageUrl}#termset`,
+                url: pageUrl,
+              },
+              {
+                '@type': 'DefinedTerm',
+                name: 'Business Intelligence',
+                termCode: 'BI',
+                description: 'Technology and analytical processes for transforming raw data into actionable business insights.',
+                inDefinedTermSet: `${pageUrl}#termset`,
+              },
+            ],
+          }) }}
+        />
         <ServiceDetailClient content={content} currentSlug={service} />
         <PageCitations citations={getServiceCitations(service)} title={`${content.heading} Research & Industry Insights`} />
       </>

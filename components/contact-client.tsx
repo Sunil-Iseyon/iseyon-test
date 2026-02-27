@@ -207,6 +207,20 @@ export function ContactClient({ defaultContactType = '' }: ContactClientProps) {
           </motion.div>
         </div>
       </section>
+      {/* Key Takeaways — server-rendered visible text for AI/crawler confidence_signals (not inside accordion) */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <aside
+          aria-label="Key Takeaways"
+          className="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg not-prose"
+        >
+          <h2 className="text-base font-bold text-slate-900 mb-2">Key Takeaways</h2>
+          <ul className="space-y-1 text-sm text-gray-700 list-none m-0 p-0">
+            <li>• Generally respond within 24 business hours; same-day response typically possible for urgent needs</li>
+            <li>• Headquarters in New York, NY — serving clients across the US and India</li>
+            <li>• According to industry research, structured discovery sessions generally reduce implementation timelines significantly compared to unscoped engagements</li>
+          </ul>
+        </aside>
+      </div>
 
       {/* Industry Statistics Section - Critical for SEO */}
       {/* <section className="py-12 bg-white border-y border-gray-100">

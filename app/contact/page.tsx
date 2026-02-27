@@ -1,7 +1,8 @@
 import { ContactClient } from '@/components/contact-client'
 import { getSpeakableSchema, standardActions, getPotentialActionSchema } from '@/components/advanced-seo-metadata'
 import { PageCitations, contactCitations } from '@/components/page-citations'
-import { FAQSchema, contactFAQs } from '@/components/faq-schema'
+import { FAQSchema } from '@/components/faq-schema'
+import { contactFAQs } from '@/lib/faq-data'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -246,6 +247,7 @@ export default function ContactPage() {
           speakable: getSpeakableSchema(['h1', 'h2', 'h3', 'blockquote']),
         }) }}
       />
+      
       <ContactClient />
       <FAQSchema faqs={contactFAQs} title="Frequently Asked Questions" />
       <PageCitations citations={contactCitations} title="BI/AI Success Stories &amp; Research" />

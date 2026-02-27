@@ -331,7 +331,7 @@ export default async function TeamPage() {
           description: 'Co-Founder of Iseyon Analytics specialising in machine learning, AI integration, and advanced data science solutions.',
         }) }}
       />
-      {/* Static confidence signals section — server-rendered for AI/crawler visibility */}
+      
 
       <TeamClient values={values as any} team={team as any} />
       <FAQSchema faqs={teamFAQs} title="Frequently Asked Questions About Our Team" />

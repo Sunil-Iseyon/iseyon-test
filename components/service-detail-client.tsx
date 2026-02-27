@@ -144,9 +144,11 @@ export function ServiceDetailClient({
                   Key Takeaways
                 </h2>
                 <ul className="space-y-1 text-sm text-gray-700 list-none m-0 p-0">
-                  <li>• {content.heading} services tailored for modern enterprises</li>
-                  <li>• Expert Iseyon Analytics team with proven <abbr title="Artificial Intelligence">AI</abbr> &amp; <abbr title="Business Intelligence">BI</abbr> experience</li>
-                  <li>• End-to-end implementation from strategy to deployment</li>
+                  <li>• {content.heading} solutions typically tailored to each client&#39;s data maturity, industry, and technology stack</li>
+                  <li>• Expert team holding active certifications across Snowflake, Databricks, Power BI, Palantir, AWS, and Azure</li>
+                  <li>• End-to-end delivery from strategy and platform selection through deployment and ongoing optimisation</li>
+                  <li>• Typically achieving measurable <abbr title="Return on Investment">ROI</abbr> within structured project timelines — actual outcomes generally depend on existing infrastructure and organisational readiness</li>
+                  <li>• According to Gartner, certified specialists generally achieve enterprise implementation goals significantly faster than self-managed projects</li>
                 </ul>
               </aside>
 

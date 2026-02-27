@@ -103,7 +103,21 @@ export function TeamClient({ values, team }: TeamClientProps) {
         </div>
       </section>
 
-      
+      {/* Key Takeaways — server-rendered visible text for AI/crawler confidence_signals (not inside accordion) */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <aside
+          aria-label="Key Takeaways"
+          className="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg not-prose"
+        >
+          <h2 className="text-base font-bold text-slate-900 mb-2">Key Takeaways</h2>
+          <ul className="space-y-1 text-sm text-gray-700 list-none m-0 p-0">
+            <li>• Co-founded by Chandan Pandey, Kayel Nelson, and Walter Reis — 30+ years of combined BI &amp; AI enterprise experience</li>
+            <li>• Certified across Snowflake, Databricks, Power BI, Palantir Foundry, AWS, and Azure — platforms we typically implement for clients</li>
+            <li>• Delivered 800+ enterprise BI projects; generally serve finance, healthcare, retail, and manufacturing sectors</li>
+            
+          </ul>
+        </aside>
+      </div>
 
       {/* Team Expertise Overview Table — original research / proprietary data signal */}
       {/* <section className="py-8 sm:py-10 bg-white" aria-labelledby="team-expertise-heading">

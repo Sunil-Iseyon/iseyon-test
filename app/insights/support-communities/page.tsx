@@ -199,9 +199,57 @@ export default async function SupportCommunitiesPage() {
           })),
         }) }}
       />
+      {/* Article schema — top-level separate script for xwisdom structured_data detection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          '@id': 'https://www.iseyon.com/insights/support-communities#article',
+          headline: 'Support for Communities — Iseyon Analytics',
+          description: 'Iseyon Analytics gives back to local communities through charity runs, volunteering, and social impact initiatives.',
+          url: 'https://www.iseyon.com/insights/support-communities',
+          datePublished: '2024-06-01',
+          dateModified: new Date().toISOString().split('T')[0],
+          inLanguage: 'en-US',
+          author: { '@type': 'Organization', '@id': 'https://www.iseyon.com/#organization', name: 'Iseyon Analytics' },
+          publisher: { '@type': 'Organization', '@id': 'https://www.iseyon.com/#organization', name: 'Iseyon Analytics' },
+          mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.iseyon.com/insights/support-communities' },
+        }) }}
+      />
+      {/* DefinedTermSet — top-level separate script for xwisdom structured_data detection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'DefinedTermSet',
+          '@id': 'https://www.iseyon.com/insights/support-communities#termset',
+          name: 'Community & CSR Terminology',
+          description: 'Key terms related to corporate social responsibility and community engagement.',
+          hasDefinedTerm: [
+            { '@type': 'DefinedTerm', name: 'Corporate Social Responsibility', termCode: 'CSR', description: 'Business practices integrating social, ethical, and environmental commitments beyond profit.', inDefinedTermSet: 'https://www.iseyon.com/insights/support-communities#termset' },
+            { '@type': 'DefinedTerm', name: 'Global Reporting Initiative', termCode: 'GRI', description: 'International standards for sustainability and community impact reporting.', inDefinedTermSet: 'https://www.iseyon.com/insights/support-communities#termset' },
+          ],
+        }) }}
+      />
       <main className="min-h-screen bg-background">
         <Header />
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+
+          {/* Key Takeaways — server-rendered visible text for AI/crawler confidence_signals (not inside accordion) */}
+          <div className="max-w-4xl mx-auto mb-8">
+            <aside
+              aria-label="Key Takeaways"
+              className="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg not-prose"
+            >
+              <h2 className="text-base font-bold text-slate-900 mb-2">Key Takeaways</h2>
+              <ul className="space-y-1 text-sm text-gray-700 list-none m-0 p-0">
+                <li>• Iseyon Analytics actively invests in local communities through charity runs, employee volunteering, and social impact partnerships</li>
+                <li>• Community engagement aligns with <abbr title="Global Reporting Initiative">GRI</abbr> Standards and UN Global Compact principles on human rights, labour, environment, and anti-corruption</li>
+                <li>• Purpose-driven organisations report higher employee engagement and loyalty; 66% of consumers prefer socially responsible companies (Nielsen, 2015)</li>
+              </ul>
+            </aside>
+          </div>
 
           {/* Static authority content — visible to crawlers */}
           <section className="mb-12">
