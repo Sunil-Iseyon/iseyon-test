@@ -159,15 +159,16 @@ export default async function PrivacyPolicyPage() {
       <section className="bg-blue-50 border-b border-blue-100 py-4 privacy-summary pt-20" aria-label="Privacy policy summary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-sm text-gray-700 leading-relaxed text-center">
-            <strong>Iseyon Analytics Privacy Policy</strong> — Iseyon Analytics complies with the{' '}
+            <strong>Iseyon Analytics Privacy Policy</strong> — Iseyon Analytics is committed to protecting user data and supporting privacy rights aligned with global data protection frameworks including {' '}
             <abbr title="General Data Protection Regulation">GDPR</abbr>, <abbr title="UK General Data Protection Regulation">UK GDPR</abbr>,
             and <abbr title="California Consumer Privacy Act">CCPA</abbr>. According to the{' '}
-            <a href="https://www.cisco.com/c/dam/en/us/products/collateral/security/cybersecurity-series-2021-cps.pdf" target="_blank" rel="noopener nofollow" className="text-blue-600 hover:underline">
-              Cisco 2021 Consumer Privacy Survey
+            <a href="https://www.cisco.com/c/dam/en_us/about/doing_business/trust-center/docs/cisco-cybersecurity-series-2021-cps.pdf" target="_blank" rel="noopener nofollow" className="text-blue-600 hover:underline">
+              Cisco consumer privacy research
             </a>
-            , <strong>86% of consumers care about data privacy</strong> and want more control over how their
-            data is used. We honour all data subject rights including access, rectification, erasure, and portability.
-            {' '}<time dateTime="2025-01-01">Last reviewed January 2025</time>.
+            
+            , <strong>more than 80% of consumers</strong> say they care about the privacy of their personal 
+            data and want greater control over how it is used. We respect core data subject rights including access, rectification, erasure, and portability.
+            {' '}<time dateTime="2025-01-01"> Last reviewed January 2025</time>.
           </p>
         </div>
       </section>
