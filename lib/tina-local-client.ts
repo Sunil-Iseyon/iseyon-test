@@ -105,6 +105,14 @@ const client = {
         data: { project: data },
       });
     },
+    projectConnection: () => {
+      const edges = getAllFilesInDir('project');
+      return Promise.resolve({
+        data: {
+          projectConnection: { edges },
+        },
+      });
+    },
     teamMembersConnection: () => {
       const edges = getAllFilesInDir('team');
       return Promise.resolve({

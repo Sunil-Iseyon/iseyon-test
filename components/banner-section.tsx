@@ -112,12 +112,12 @@ export function BannerSection({ data }: BannerSectionProps) {
             </motion.h2>
             <motion.div
               variants={subheadingVariants}
-              className="text-sm sm:text-base md:text-lg text-primary-foreground/80 mb-6 sm:mb-8"
+              className="text-sm sm:text-base md:text-lg text-white mb-6 sm:mb-8"
             >
-              <TinaRichText content={data.subheading} className="[&>p]:m-0" />
+              <TinaRichText content={data.subheading} className="[&>p]:m-0 [&_p]:!text-white [&_li]:!text-white [&_strong]:!text-white [&_em]:!text-white" />
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               className="flex items-center gap-4 flex-wrap"
               variants={statsVariants}
             >
@@ -130,7 +130,7 @@ export function BannerSection({ data }: BannerSectionProps) {
                   <p className="text-xs sm:text-sm text-primary-foreground/70">Worldwide</p>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           <motion.div

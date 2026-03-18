@@ -17,7 +17,7 @@ async function getHomeData() {
   const testimonialsResponse = await client.queries.testimonialsConnection();
   const partnersResponse = await client.queries.partnersConnection();
   const bannerResponse = await client.queries.banner({ relativePath: "main.json" });
-  const projectResponse = await client.queries.project({ relativePath: "main.json" });
+  const projectResponse = await client.queries.projectConnection();
   const founderMessagesResponse = await client.queries.founderMessagesConnection();
   const homeFaqsResponse = await client.queries.homeFaqsConnection();
 
@@ -42,7 +42,8 @@ async function getHomeData() {
     testimonials: testimonialsResponse.data.testimonialsConnection.edges?.map(edge => edge?.node) || [],
     partners: partnersResponse.data.partnersConnection.edges?.map(edge => edge?.node) || [],
     banner: bannerResponse.data.banner,
-    project: projectResponse.data.project,
+    project: (projectResponse.data.projectConnection?.edges?.map((edge: any) => edge?.node) ?? [])
+      .sort((a: any, b: any) => (a?.order ?? 999) - (b?.order ?? 999)),
     founderMessages: founderMessagesResponse.data.founderMessagesConnection.edges?.map(edge => edge?.node) || [],
     homeFaqs: homeFaqsResponse.data.homeFaqsConnection.edges?.map(edge => edge?.node) || [],
   };
@@ -407,13 +408,14 @@ export default async function Home() {
         
         <ServicesSection services={data.services as any} />
         {/* <IndustryStats /> */}
-        <IndustryResearchTable />
-        <NewProject data={data.project as any} />
-        <ExpertQuotes />
-        <TestimonialsSection testimonials={data.testimonials as any} />
-        <PageCitations citations={homeCitations} title="Evidence-Based Business Intelligence Insights" />
-        <BannerSection data={data.banner as any} />
+        {/* <IndustryResearchTable /> */}
+        <NewProject projects={data.project as any} />
         <PartnersSlider partners={data.partners as any} />
+        {/* <ExpertQuotes /> */}
+        {/* <TestimonialsSection testimonials={data.testimonials as any} /> */}
+        {/* <PageCitations citations={homeCitations} title="Evidence-Based Business Intelligence Insights" /> */}
+        <BannerSection data={data.banner as any} />
+        
         <FAQSchema faqs={data.homeFaqs as any} title="Frequently Asked Questions About Iseyon Analytics" />
       </main>
     </>

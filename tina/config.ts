@@ -635,16 +635,17 @@ export default defineConfig({
       },
       {
         name: "project",
-        label: "Featured Project",
+        label: "Featured Projects",
         path: "content/project",
         format: "json",
-        ui: {
-          allowedActions: {
-            create: false,
-            delete: false,
-          },
-        },
         fields: [
+          {
+            type: "number",
+            name: "order",
+            label: "Display Order",
+            required: true,
+            description: "Lower numbers appear first (e.g. 1 = first, 2 = second)",
+          },
           {
             type: "string",
             name: "name",
@@ -681,11 +682,13 @@ export default defineConfig({
             name: "features",
             label: "Features",
             list: true,
+            required: true,
             fields: [
               {
                 type: "string",
                 name: "icon",
                 label: "Icon",
+                required: true,
                 options: [
                   {value: "Zap", label: "Zap"},
                   {value: "TrendingUp", label: "Trending Up"},
@@ -697,11 +700,13 @@ export default defineConfig({
                 type: "string",
                 name: "title",
                 label: "Title",
+                required: true,
               },
               {
                 type: "string",
                 name: "description",
                 label: "Description",
+                required: true,
               },
             ],
           },
@@ -709,11 +714,13 @@ export default defineConfig({
             type: "string",
             name: "ctaText",
             label: "CTA Text",
+            required: true,
           },
           {
             type: "string",
             name: "ctaLink",
             label: "CTA Link",
+            required: true,
           },
         ],
       },
