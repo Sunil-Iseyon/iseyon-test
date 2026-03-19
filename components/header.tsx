@@ -154,7 +154,7 @@ export function Header({ servicesMenu }: HeaderProps) {
                                 duration: 0.3,
                                 ease: "easeInOut"
                               }}
-                              className='p-4 min-h-[200px]'
+                              className='p-4 min-h-50'
                             >
                               <h3 className="font-bold text-base text-slate-800 mb-4 pb-2 border-b border-slate-200">
                                 {hoveredGroup}
@@ -255,10 +255,10 @@ export function Header({ servicesMenu }: HeaderProps) {
         </div>
 
         {/* Contact Button - Right */}
-        <div className="hidden md:block z-10 flex-shrink-0">
+        <div className="hidden md:block z-10 shrink-0">
           <Link
             href="/contact"
-            className="px-4 md:px-8 py-3 font-semibold bg-sky-600 text-primary-foreground rounded-sm  hover:rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium text-sm md:text-base shadow-lg hover:shadow-xl"
+            className="px-4 md:px-8 py-3 font-semibold bg-sky-600 text-primary-foreground rounded-sm hover:rounded-lg hover:bg-primary/90 transition-all duration-300 text-sm md:text-base shadow-lg hover:shadow-xl"
           >
             Contact Us
           </Link>

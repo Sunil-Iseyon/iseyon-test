@@ -8,6 +8,7 @@ import { TinaRichText } from './tina-rich-text'
 import { FAQSchema, serviceFAQs, insightFAQs } from './faq-schema'
 import { RelatedContent, getCategoryRelatedLinks } from './related-content'
 import { AuthorMetadata } from './content-enhancements'
+import { ObfuscatedEmail } from '@/components/obfuscated-email'
 import type { TinaMarkdownContent } from 'tinacms/dist/rich-text'
 
 interface ServiceContent {
@@ -51,7 +52,7 @@ export function ServiceDetailClient({
             {' '}Expert <abbr title="Artificial Intelligence" className="no-underline">AI</abbr>-powered{' '}
             <abbr title="Business Intelligence" className="no-underline">BI</abbr> consulting and implementation services
             for enterprises. Request a demo or consultation at{' '}
-            <a href="mailto:info@iSeyon.com" className="underline hover:no-underline">info@iSeyon.com</a>
+            <ObfuscatedEmail u="info" d="iSeyon.com" className="underline hover:no-underline" />
             {' '}or <a href="/contact" className="underline hover:no-underline">iseyon.com/contact</a>.
           </p>
         </div>

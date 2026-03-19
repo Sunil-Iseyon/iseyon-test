@@ -43,9 +43,8 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    // Dublin Core metadata
     'DC.title': 'Contact Us | iSeyon Analytics',
-    'DC.description': 'Contact information and consultation request form for iSeyon Analytics',
+    'DC.description': 'Contact information and consultation details for iSeyon Analytics',
     'DC.creator': 'iSeyon Analytics Team',
     'DC.date': new Date().toISOString().split('T')[0],
     'DC.language': 'en',
@@ -54,7 +53,6 @@ export const metadata: Metadata = {
     'DC.rights': 'Copyright © 2024 iSeyon Analytics. Licensed under CC-BY-NC-SA-4.0',
     'DC.subject': 'Business Intelligence Contact, AI Analytics Consultation',
     'DC.type': 'InteractiveResource',
-    // License metadata
     'license': 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
   },
   robots: {
@@ -71,7 +69,6 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
-  // ContactPage schema with enhanced E-E-A-T signals, speakable, and potentialAction
   const contactSchema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -79,7 +76,7 @@ export default function ContactPage() {
         '@type': ['ContactPage', 'WebPage'],
         '@id': 'https://www.iseyon.com/contact#contactpage',
         name: 'Contact iSeyon Analytics',
-        description: 'Contact information and consultation request form for iSeyon Analytics - AI-powered business intelligence solutions',
+        description: 'Contact information for iSeyon Analytics - AI-powered business intelligence solutions',
         url: 'https://www.iseyon.com/contact',
         datePublished: '2024-01-15',
         dateModified: new Date().toISOString().split('T')[0],
@@ -170,7 +167,6 @@ export default function ContactPage() {
     ],
   }
 
-  // DefinedTermSet — knowledge graph enrichment for contact page
   const definedTermSetSchema = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
@@ -204,7 +200,6 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetSchema) }}
       />
-      {/* Article schema — E-E-A-T (eeat_signals) and provenance_freshness; Article type required for dateModified to register with crawlers */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -247,7 +242,7 @@ export default function ContactPage() {
           speakable: getSpeakableSchema(['h1', 'h2', 'h3', 'blockquote']),
         }) }}
       />
-      
+
       <ContactClient />
       <FAQSchema faqs={contactFAQs} title="Frequently Asked Questions" />
       <PageCitations citations={contactCitations} title="BI/AI Success Stories &amp; Research" />

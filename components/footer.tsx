@@ -4,6 +4,7 @@ import React from "react"
 
 import Link from 'next/link'
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Rss } from 'lucide-react'
+import { ObfuscatedEmail } from '@/components/obfuscated-email'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
@@ -112,7 +113,7 @@ export function Footer() {
             </div>
             <div className="flex items-center gap-3 text-xs md:text-sm">
               <Mail className="w-4 h-4 md:w-5 md:h-5" />
-              <p>info@iSeyon.com</p>
+              <ObfuscatedEmail u="info" d="iSeyon.com" />
             </div>
           </motion.div>
 
