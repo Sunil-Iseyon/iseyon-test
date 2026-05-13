@@ -9,5 +9,13 @@
   "secondaryCta": {
     "text": "Learn More",
     "href": "/services"
+  },
+  "xFalcon": {
+    "enabled": true,
+    "title": "xFalcon",
+    "description": "A typical MCP server gives an LLM a database connection. xFalcon gives it domain expertise, institutional memory, guardrails against analytical mistakes, and a structured workflow.",
+    "logo": "/favicon_48.png",
+    "url": "https://www.xfalcon.ai/",
+    "ctaText": "Start exploring"
   }
 }

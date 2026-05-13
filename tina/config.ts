@@ -95,6 +95,46 @@ export default defineConfig({
               },
             ],
           },
+          {
+            type: "object",
+            name: "xFalcon",
+            label: "xFalcon Highlight",
+            fields: [
+              {
+                type: "boolean",
+                name: "enabled",
+                label: "Enable xFalcon Section",
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "Title",
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Description",
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "image",
+                name: "logo",
+                label: "Logo",
+              },
+              {
+                type: "string",
+                name: "url",
+                label: "Website URL",
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "CTA Text",
+              },
+            ],
+          },
         ],
       },
       /* Removed - Now using serviceContent collection instead

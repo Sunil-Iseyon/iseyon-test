@@ -252,6 +252,17 @@ export function Header({ servicesMenu }: HeaderProps) {
           >
             Blog
           </Link>
+
+          <Link 
+            href="https://www.xfalcon.ai/" 
+            className={`font-medium transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 inline-block ${getLinkStyles()}`}
+            onMouseEnter={() => {
+              setOpenDropdown(null)
+              setHoveredGroup(null)
+            }}
+          >
+            xFalcon
+          </Link>
         </div>
 
         {/* Contact Button - Right */}
@@ -387,6 +398,14 @@ export function Header({ servicesMenu }: HeaderProps) {
                 className="block px-3 py-2 text-foreground hover:bg-muted hover:translate-x-1 transition-transform rounded"
               >
                 Blog
+              </Link>
+
+              <Link
+                href="https://www.xfalcon.ai/"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 text-foreground hover:bg-muted hover:translate-x-1 transition-transform rounded"
+              >
+                xFalcon
               </Link>
 
               <Link
