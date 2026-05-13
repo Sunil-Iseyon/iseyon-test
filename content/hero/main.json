@@ -9,5 +9,8 @@
   "secondaryCta": {
     "text": "Learn More ",
     "href": "/services"
+  },
+  "xFalcon": {
+    "ctaText": "Start exploring"
   }
 }
