@@ -335,7 +335,7 @@ export default async function TeamPage() {
 
       <TeamClient values={values as any} team={team as any} />
       <FAQSchema faqs={teamFAQs} title="Frequently Asked Questions About Our Team" />
-      <PageCitations citations={teamCitations} title="Analytics Team Excellence Research" />
+      {/* <PageCitations citations={teamCitations} title="Analytics Team Excellence Research" /> */}
     </>
   );
 }

@@ -332,7 +332,7 @@ export default async function BlogPage() {
         <FAQSchema faqs={blogFAQs} title="Frequently Asked Questions About Our Blog" />
         
         {/* Blog-specific Citations */}
-        <PageCitations citations={blogCitations} title="Data Science & Analytics Research" />
+        {/* <PageCitations citations={blogCitations} title="Data Science & Analytics Research" /> */}
       </article>
     </main>
   )
