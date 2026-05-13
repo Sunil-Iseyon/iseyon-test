@@ -331,7 +331,7 @@ export default async function SupportCommunitiesPage() {
           <Gallery images={galleryImages as any} />
         </div>
         <FAQSchema faqs={communityFAQs} title="Frequently Asked Questions: Community Engagement" />
-        <PageCitations citations={communityCitations} title="Community Engagement Research" />
+        {/* <PageCitations citations={communityCitations} title="Community Engagement Research" /> */}
       </main>
     </>
   );

@@ -294,7 +294,7 @@ export default async function InsightPage({
           }) }}
         />
         <ServiceDetailClient content={content} currentSlug={category} />
-        <PageCitations citations={insightCitations} title="Research & Industry Insights" />
+        {/* <PageCitations citations={insightCitations} title="Research & Industry Insights" /> */}
       </>
     )
 }

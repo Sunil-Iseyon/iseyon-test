@@ -245,7 +245,7 @@ export default function ContactPage() {
 
       <ContactClient />
       <FAQSchema faqs={contactFAQs} title="Frequently Asked Questions" />
-      <PageCitations citations={contactCitations} title="BI/AI Success Stories &amp; Research" />
+      {/* <PageCitations citations={contactCitations} title="BI/AI Success Stories &amp; Research" /> */}
     </>
   )
 }

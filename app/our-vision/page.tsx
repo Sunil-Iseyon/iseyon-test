@@ -338,7 +338,7 @@ export default async function VisionPage() {
       
       <VisionClient visionData={visionData} />
       <FAQSchema faqs={visionFAQs} title="Vision & Mission FAQs" />
-      <PageCitations citations={visionCitations} title="Future of AI and Business Intelligence" />
+      {/* <PageCitations citations={visionCitations} title="Future of AI and Business Intelligence" /> */}
     </>
   );
 }

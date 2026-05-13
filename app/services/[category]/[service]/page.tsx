@@ -492,7 +492,7 @@ export default async function ServicePage({
           }) }}
         />
         <ServiceDetailClient content={content} currentSlug={service} />
-        <PageCitations citations={getServiceCitations(service)} title={`${content.heading} Research & Industry Insights`} />
+        {/* <PageCitations citations={getServiceCitations(service)} title={`${content.heading} Research & Industry Insights`} /> */}
       </>
     )
 }
