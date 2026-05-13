@@ -116,6 +116,14 @@ interface HeroProps {
       text?: string
       href?: string
     }
+    xFalcon?: {
+      enabled?: boolean
+      title?: string
+      description?: string
+      logo?: string
+      url?: string
+      ctaText?: string
+    }
   }
   founderMessages?: Array<{
     name: string
@@ -132,6 +140,8 @@ interface HeroProps {
 }
 
 export function Hero({ data, founderMessages = [], services = [] }: HeroProps) {
+  const xFalcon = data.xFalcon
+
   const scrollToServices = () => {
     const servicesSection = document.getElementById("services")
     if (servicesSection) {
@@ -227,9 +237,50 @@ export function Hero({ data, founderMessages = [], services = [] }: HeroProps) {
                   transition={{ duration: 0.6, delay: 1.0 }}
                   className="w-full max-w-[200px] sm:max-w-xs md:max-w-md lg:max-w-lg h-0.5 bg-linear-to-r from-green-500 via-green-200 to-transparent rounded-full mt-4 sm:mt-6 origin-left"></motion.div>
 
-                <div className="mt-4 pt-4">
+                {/* <div className="mt-4 pt-4">
               <RotatingFounderMessages messages={founderMessages} interval={10000} delay={1500} />
-            </div>
+            </div> */}
+
+                {xFalcon?.enabled !== false && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.55, delay: 1.1, ease: 'easeOut' }}
+                    className="mt-4 pt-4"
+                  >
+                    <div className="rounded-xl border border-teal-200/70 bg-white/55 backdrop-blur-sm p-4 sm:p-5 shadow-sm">
+                      <div className="flex items-center gap-3 mb-3">
+                        <a
+                          href={xFalcon?.url || 'https://www.xfalcon.ai/'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3"
+                        >
+                          <Image
+                            src={xFalcon?.logo || '/favicon_48.png'}
+                            alt={`${xFalcon?.title || 'xFalcon'} logo`}
+                            width={36}
+                            height={36}
+                            className="h-9 w-9"
+                          />
+                          <span className="text-2xl font-semibold text-slate-900">{xFalcon?.title || 'xFalcon'}</span>
+                        </a>
+                      </div>
+                      <p className="text-slate-700 text-base leading-relaxed max-w-2xl">
+                        {xFalcon?.description || 'A typical MCP server gives an LLM a database connection. xFalcon gives it domain expertise, institutional memory, guardrails against analytical mistakes, and a structured workflow.'}
+                      </p>
+                      <a
+                        href={xFalcon?.url || 'https://www.xfalcon.ai/'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-1 mt-3 text-teal-600 font-semibold hover:text-teal-700"
+                      >
+                        {xFalcon?.ctaText || 'Visit Full site'}
+                        <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                      </a>
+                    </div>
+                  </motion.div>
+                )}
                 
               </article>
 
