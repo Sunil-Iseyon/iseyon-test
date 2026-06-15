@@ -13,6 +13,7 @@ interface BlogPost {
   shortDescription?: string
   description: string | TinaMarkdownContent
   image: string
+  videoUrl?: string
   category: string
   date: string
   readTime: string
@@ -117,20 +118,29 @@ export function BlogDetailClient({ blog, prevBlog, nextBlog }: BlogDetailClientP
           </h1>
         </motion.header>
 
-        {/* Featured Image */}
+        {/* Featured Image or Video */}
         <motion.div
           className="relative w-full aspect-video mb-12 rounded-xl overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Image
-            src={blog.image}
-            alt={blog.title}
-            fill
-            className="object-contain"
-            priority
-          />
+          {blog.videoUrl ? (
+            <video
+              src={blog.videoUrl}
+              controls
+              playsInline
+              className="w-full h-full object-contain bg-black"
+            />
+          ) : (
+            <Image
+              src={blog.image}
+              alt={blog.title}
+              fill
+              className="object-contain"
+              priority
+            />
+          )}
         </motion.div>
 
         {/* Content */}

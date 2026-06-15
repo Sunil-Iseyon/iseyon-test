@@ -93,7 +93,7 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
         >
           <Image
             src={blog.image}
-            alt={`${blog.title} - iSeyon Analytics blog article cover image`}
+            alt={`${blog.title} - Iseyon Analytics blog article cover image`}
             fill
             className="object-cover"
             itemProp="image"
@@ -110,7 +110,7 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
         </h3>
 
         <div className="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-2" itemProp="description">
-          <ReactMarkdown
+          {/* <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
               p: ({ children }) => <>{children}</>,
@@ -122,7 +122,8 @@ export function BlogList({ blogs }: { blogs: Blog[] }) {
             }}
           >
             {blog.shortDescription || blog.description}
-          </ReactMarkdown>
+          </ReactMarkdown> */}
+          {blog.shortDescription || getPlainText(blog.description)}
         </div>
 
         <div className="text-xs text-gray-400 mt-3 sm:mt-4 flex items-center gap-2">

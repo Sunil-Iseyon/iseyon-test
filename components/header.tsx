@@ -81,7 +81,7 @@ export function Header({ servicesMenu }: HeaderProps) {
       <nav className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
         {/* Logo - Left */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg md:text-xl text-primary z-10 shrink-0">
-          <img src="/iseyon-logo.png" alt="iSeyon Analytics logo representing vision, leadership, collaboration, and expert AI and BI consulting" className="h-12 md:h-16 w-32 md:w-45" />
+          <img src="/iseyon-logo.png" alt="Iseyon Analytics logo representing vision, leadership, collaboration, and expert AI and BI consulting" className="h-12 md:h-16 w-32 md:w-45" />
         </Link>
 
         {/* Desktop Menu - Center with Glass Effect */}

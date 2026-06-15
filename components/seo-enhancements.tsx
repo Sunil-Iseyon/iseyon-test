@@ -329,7 +329,7 @@ export function ProprietaryResearch() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            iSeyon Analytics Performance Benchmarks
+            Iseyon Analytics Performance Benchmarks
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-6">
             Client implementation results across industries
@@ -352,7 +352,7 @@ export function ProprietaryResearch() {
               <tr>
                 <th className="px-6 py-4 text-left text-sm font-semibold">Performance Metric</th>
                 <th className="px-6 py-4 text-center text-sm font-semibold">Industry Average</th>
-                <th className="px-6 py-4 text-center text-sm font-semibold">iSeyon Analytics</th>
+                <th className="px-6 py-4 text-center text-sm font-semibold">Iseyon Analytics</th>
                 <th className="px-6 py-4 text-center text-sm font-semibold">Improvement</th>
               </tr>
             </thead>

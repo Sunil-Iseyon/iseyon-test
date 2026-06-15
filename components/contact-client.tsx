@@ -3,12 +3,12 @@
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { FAQSchema, contactFAQs } from './faq-schema'
+// import { FAQSchema, contactFAQs } from './faq-schema' — COMMENTED FOR FUTURE USE
 
 export function ContactClient() {
   const [emailAddr, setEmailAddr] = useState('')
   useEffect(() => {
-    setEmailAddr('info' + '\u0040' + 'iSeyon.com')
+    setEmailAddr('info' + '\u0040' + 'iseyon.com')
   }, [])
 
   const contactInfo = [
@@ -27,7 +27,7 @@ export function ContactClient() {
     {
       icon: MapPin,
       title: 'Office',
-      detail: 'New York | New Jersey | Minnesota | California | Florida | Bangalore',
+      detail: 'New York | New Jersey | Minnesota | California | Washington | Bangalore',
       link: '#'
     }
   ]
@@ -36,7 +36,7 @@ export function ContactClient() {
     <main className="min-h-screen bg-linear-to-br from-blue-50 via-white to-indigo-50 pt-20">
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
+      <section className="relative pt-32 pb-8 overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -76,16 +76,14 @@ export function ContactClient() {
               Get in{' '}<span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-indigo-600">Touch</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-3">
-              Contact <strong>Iseyon Analytics</strong> — an <abbr title="Artificial Intelligence">AI</abbr>-powered{' '}
-              <abbr title="Business Intelligence">BI</abbr> and Data Analytics consulting firm — to request a demo,
-              book a consultation, or get pricing information. Our certified consultants typically deliver up to{' '}
-              5.6x&nbsp;<abbr title="Return on Investment">ROI</abbr> through <abbr title="Artificial Intelligence">AI</abbr>-driven analytics (based on client benchmarks, 2025–2026).
+              Get in touch with us for consultations, demos, or inquiries about our AI-powered business intelligence and data analytics solutions.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Key Takeaways — server-rendered visible text for AI/crawler confidence_signals */}
+      {/* Key Takeaways — COMMENTED FOR FUTURE USE */}
+      {/* 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <aside
           aria-label="Key Takeaways"
@@ -99,8 +97,10 @@ export function ContactClient() {
           </ul>
         </aside>
       </div>
+      */}
 
-      {/* Analytics ROI Research Table — original_research signal */}
+      {/* Analytics ROI Research Table — COMMENTED FOR FUTURE USE */}
+      {/*
       <section className="py-10 bg-white" aria-labelledby="roi-research-heading">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="roi-research-heading" className="text-xl sm:text-2xl font-bold text-foreground mb-2 text-center">
@@ -148,9 +148,10 @@ export function ContactClient() {
           </p>
         </div>
       </section>
+      */}
 
       {/* Contact Information Section */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -162,19 +163,8 @@ export function ContactClient() {
             <div>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3 sm:mb-4">Contact Information</h2>
               <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-4">
-                We&apos;re typically delighted to hear from you. Whether you have a question about our services,
-                pricing, or anything else, our team is ready to answer all your questions. In addition, we offer
-                free initial consultations to help you understand the right solution for your needs.
+                Have a question or need assistance? Feel free to reach out to us. We're here to help!
               </p>
-              {/* Publication and Update Dates for Freshness Signal */}
-              <div className="text-xs text-gray-500 space-y-1">
-                <time dateTime="2024-01-15" className="block">
-                  Published: January 15, 2024
-                </time>
-                <time dateTime={new Date().toISOString().split('T')[0]} className="block">
-                  Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-                </time>
-              </div>
             </div>
 
             <address className="not-italic space-y-6">
@@ -211,7 +201,7 @@ export function ContactClient() {
               <div className="space-y-2 text-sm sm:text-base text-gray-600">
                 <p className="flex justify-between">
                   <span>Monday - Friday:</span>
-                  <span className="font-medium">10:00 AM - 7:00 PM</span>
+                  <span className="font-medium">10:00 AM - 7:00 PM EST</span>
                 </p>
               </div>
             </motion.div>
@@ -219,7 +209,8 @@ export function ContactClient() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Us Section — COMMENTED FOR FUTURE USE */}
+      {/*
       <section className="py-16 bg-white" aria-labelledby="why-contact">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -280,8 +271,10 @@ export function ContactClient() {
           </dl>
         </div>
       </section>
+      */}
 
-      {/* Expert Insights Section */}
+      {/* Expert Insights Section — COMMENTED FOR FUTURE USE */}
+      {/*
       <section className="py-12 bg-gray-50" aria-labelledby="expert-insights">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="expert-insights" className="text-2xl font-bold text-center mb-8 text-foreground">
@@ -317,9 +310,10 @@ export function ContactClient() {
           </div>
         </div>
       </section>
+      */}
 
-      {/* FAQ Section */}
-      <FAQSchema faqs={contactFAQs} title="Frequently Asked Questions About Contacting Us" />
+      {/* FAQ Section — COMMENTED FOR FUTURE USE */}
+      {/* <FAQSchema faqs={contactFAQs} title="Frequently Asked Questions About Contacting Us" /> */}
 
     </main>
   )

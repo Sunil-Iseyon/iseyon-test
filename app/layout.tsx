@@ -73,9 +73,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
   alternates: {
     canonical: 'https://iseyon.com',
     languages: {
@@ -92,9 +89,7 @@ export const metadata: Metadata = {
     'DC.description': 'Transform your business with AI-powered analytics and intelligence solutions',
     'DC.publisher': 'Iseyon Analytics',
     'DC.language': 'en',
-    'DC.rights': 'Copyright iSeyon Analytics. All rights reserved.',
-    'license': 'https://creativecommons.org/licenses/by/4.0/',
-    'rights': 'Copyright iSeyon Analytics. Reuse permitted under CC BY 4.0.',
+    'DC.rights': 'Copyright Iseyon Analytics. All rights reserved.',
   },
 }
 
@@ -112,7 +107,7 @@ export default async function RootLayout({
     '@type': 'Organization',
     '@id': 'https://iseyon.com/#organization',
     name: 'Iseyon Analytics',
-    alternateName: ['iSeyon Analytics', 'Iseyon', 'iSeyon'],
+    alternateName: ['Iseyon Analytics', 'Iseyon', 'Iseyon'],
     legalName: 'Iseyon Analytics',
     url: 'https://iseyon.com',
     logo: {
@@ -164,7 +159,7 @@ export default async function RootLayout({
       '@type': 'ContactPoint',
       telephone: '+1-651-503-9126',
       contactType: 'Customer Service',
-      email: 'info@iSeyon.com',
+      email: 'info@iseyon.com',
       availableLanguage: ['English'],
       areaServed: ['US', 'IN'],
     },

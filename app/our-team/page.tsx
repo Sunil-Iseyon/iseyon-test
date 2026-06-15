@@ -302,7 +302,7 @@ export default async function TeamPage() {
           '@type': 'Person',
           '@id': 'https://www.iseyon.com/our-team#kyle-nelson',
           name: 'Kyle Nelson',
-          jobTitle: 'Co-Founder',
+          jobTitle: 'Founder & COO',
           url: 'https://www.iseyon.com/our-team',
           worksFor: {
             '@type': 'Organization',
@@ -320,7 +320,7 @@ export default async function TeamPage() {
           '@type': 'Person',
           '@id': 'https://www.iseyon.com/our-team#walter-reis',
           name: 'Walter Reis',
-          jobTitle: 'Co-Founder',
+          jobTitle: 'Founder & CTO',
           url: 'https://www.iseyon.com/our-team',
           worksFor: {
             '@type': 'Organization',

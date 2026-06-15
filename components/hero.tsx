@@ -64,7 +64,7 @@ function HeroWheel() {
         <div className="relative md:w-full md:h-full w-[80%] h-[80%]">
           <Image
             src="/HeroServices.png"
-            alt="iSeyon Analytics AI/ML services wheel"
+            alt="Iseyon Analytics AI/ML services wheel"
             fill
             className="object-contain"
             priority

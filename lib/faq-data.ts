@@ -30,7 +30,7 @@ export const blogFAQs: FAQ[] = [
   },
   {
     question: "How can I request a specific topic to be covered?",
-    answer: "We welcome topic suggestions and aim to address the areas most relevant to our readers. Please contact us through our contact page or send an email to info@iSeyon.com with your suggested topics or questions you would like addressed. Furthermore, topics that reflect common questions from multiple readers are generally prioritised for upcoming editorial planning cycles. Therefore, community input directly shapes our content roadmap."
+    answer: "We welcome topic suggestions and aim to address the areas most relevant to our readers. Please contact us through our contact page or send an email to info@iseyon.com with your suggested topics or questions you would like addressed. Furthermore, topics that reflect common questions from multiple readers are generally prioritised for upcoming editorial planning cycles. Therefore, community input directly shapes our content roadmap."
   },
 ]
 
@@ -125,3 +125,4 @@ export const insightFAQs: FAQ[] = [
     answer: "Yes, we typically offer full implementation services including strategy development, platform selection, deployment, training, and ongoing support. However, the level of support generally varies by engagement scope. For example, a proof-of-concept may require less ongoing support than an enterprise-wide data platform migration."
   },
 ]
+

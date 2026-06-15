@@ -52,7 +52,7 @@ export function ServiceDetailClient({
             {' '}Expert <abbr title="Artificial Intelligence" className="no-underline">AI</abbr>-powered{' '}
             <abbr title="Business Intelligence" className="no-underline">BI</abbr> consulting and implementation services
             for enterprises. Request a demo or consultation at{' '}
-            <ObfuscatedEmail u="info" d="iSeyon.com" className="underline hover:no-underline" />
+            <ObfuscatedEmail u="info" d="iseyon.com" className="underline hover:no-underline" />
             {' '}or <a href="/contact" className="underline hover:no-underline">iseyon.com/contact</a>.
           </p>
         </div>

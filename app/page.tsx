@@ -118,18 +118,16 @@ export const metadata: Metadata = {
   category: 'Business Intelligence and Data Analytics',
   other: {
     // Dublin Core metadata
-    'DC.title': 'iSeyon Analytics | AI-Powered Business Intelligence & Data Analytics',
+    'DC.title': 'Iseyon Analytics | AI-Powered Business Intelligence & Data Analytics',
     'DC.description': 'AI-powered business intelligence and data analytics solutions with proven 5.6x ROI',
-    'DC.creator': 'iSeyon Analytics Team',
+    'DC.creator': 'Iseyon Analytics Team',
     'DC.date': new Date().toISOString().split('T')[0],
     'DC.language': 'en',
     'DC.format': 'text/html',
     'DC.publisher': 'Iseyon Analytics',
-    'DC.rights': 'Copyright © 2024 Iseyon Analytics. Licensed under CC-BY-NC-SA-4.0',
+    'DC.rights': 'Copyright © 2024 Iseyon Analytics. All rights reserved.',
     'DC.subject': 'Business Intelligence, AI Analytics, Data Science, Cloud Platforms',
     'DC.type': 'Service',
-    // License metadata
-    'license': 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
     'referrer': 'no-referrer-when-downgrade',
   },
 }
@@ -157,7 +155,7 @@ export default async function Home() {
       '@type': 'ContactPoint',
       telephone: '+1-651-503-9126',
       contactType: 'Customer Service',
-      email: 'info@iSeyon.com',
+      email: 'info@iseyon.com',
       availableLanguage: ['English'],
       areaServed: ['US', 'IN'],
     },
@@ -238,7 +236,7 @@ export default async function Home() {
     '@type': 'WebPage',
     '@id': 'https://www.iseyon.com/#webpage',
     name: 'Iseyon Analytics - AI-Powered Business Intelligence Solutions',
-    description: '78% of enterprises now leverage AI for analytics. Get 5.6x ROI with iSeyon\'s data-driven solutions.',
+    description: '78% of enterprises now leverage AI for analytics. Get 5.6x ROI with Iseyon\'s data-driven solutions.',
     url: 'https://www.iseyon.com',
     inLanguage: 'en-US',
     datePublished: '2024-01-15',
@@ -268,7 +266,6 @@ export default async function Home() {
       '@type': 'ImageObject',
       url: 'https://www.iseyon.com/iseyon.webp',
     },
-    license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
   };
 
   // BreadcrumbList schema

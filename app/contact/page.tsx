@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Iseyon Analytics - Get in Touch',
-  description: 'Contact Us | Get in Touch with Iseyon Analytics — request a demo, book a free AI & BI consultation, or get pricing. Email info@iSeyon.com or call (651) 503-9126. Typically respond within 24 hours.',
+  description: 'Contact Us | Get in Touch with Iseyon Analytics — request a demo, book a free AI & BI consultation, or get pricing. Email info@iseyon.com or call (651) 503-9126. Typically respond within 24 hours.',
   keywords: ['contact Iseyon Analytics', 'request demo', 'business intelligence consultation', 'AI analytics support', 'data solutions inquiry', 'BI consulting', 'data analytics contact'],
   authors: [{ name: 'Iseyon Analytics Team', url: 'https://www.iseyon.com/our-team' }],
   publisher: 'Iseyon Analytics',
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    'DC.title': 'Contact Us | iSeyon Analytics',
-    'DC.description': 'Contact information and consultation details for iSeyon Analytics',
-    'DC.creator': 'iSeyon Analytics Team',
+    'DC.title': 'Contact Us | Iseyon Analytics',
+    'DC.description': 'Contact information and consultation details for Iseyon Analytics',
+    'DC.creator': 'Iseyon Analytics Team',
     'DC.date': new Date().toISOString().split('T')[0],
     'DC.language': 'en',
     'DC.format': 'text/html',
-    'DC.publisher': 'iSeyon Analytics',
-    'DC.rights': 'Copyright © 2024 iSeyon Analytics. Licensed under CC-BY-NC-SA-4.0',
+    'DC.publisher': 'Iseyon Analytics',
+    'DC.rights': 'Copyright © 2024 Iseyon Analytics. Licensed under CC-BY-NC-SA-4.0',
     'DC.subject': 'Business Intelligence Contact, AI Analytics Consultation',
     'DC.type': 'InteractiveResource',
     'license': 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
@@ -75,8 +75,8 @@ export default function ContactPage() {
       {
         '@type': ['ContactPage', 'WebPage'],
         '@id': 'https://www.iseyon.com/contact#contactpage',
-        name: 'Contact iSeyon Analytics',
-        description: 'Contact information for iSeyon Analytics - AI-powered business intelligence solutions',
+        name: 'Contact Iseyon Analytics',
+        description: 'Contact information for Iseyon Analytics - AI-powered business intelligence solutions',
         url: 'https://www.iseyon.com/contact',
         datePublished: '2024-01-15',
         dateModified: new Date().toISOString().split('T')[0],
@@ -84,13 +84,13 @@ export default function ContactPage() {
         isPartOf: {
           '@type': 'WebSite',
           '@id': 'https://www.iseyon.com/#website',
-          name: 'iSeyon Analytics',
+          name: 'Iseyon Analytics',
           url: 'https://www.iseyon.com',
         },
         author: {
           '@type': 'Organization',
           '@id': 'https://www.iseyon.com/#organization',
-          name: 'iSeyon Analytics',
+          name: 'Iseyon Analytics',
           url: 'https://www.iseyon.com',
           logo: {
             '@type': 'ImageObject',
@@ -103,11 +103,11 @@ export default function ContactPage() {
             '@type': 'OrganizationRole',
             member: {
               '@type': 'Person',
-              name: 'iSeyon Analytics Team',
+              name: 'Iseyon Analytics Team',
               jobTitle: 'Business Intelligence & AI Consultants',
               worksFor: {
                 '@type': 'Organization',
-                name: 'iSeyon Analytics'
+                name: 'Iseyon Analytics'
               },
               knowsAbout: ['Artificial Intelligence', 'Business Intelligence', 'Data Science', 'Cloud Computing'],
               url: 'https://www.iseyon.com/our-team'
@@ -123,7 +123,7 @@ export default function ContactPage() {
         mainEntity: {
           '@type': 'Organization',
           '@id': 'https://www.iseyon.com/#organization',
-          name: 'iSeyon Analytics',
+          name: 'Iseyon Analytics',
           url: 'https://www.iseyon.com',
           logo: 'https://www.iseyon.com/ISeyon.webp',
           foundingDate: '2020',
@@ -131,7 +131,7 @@ export default function ContactPage() {
             '@type': 'ContactPoint',
             telephone: '+1-651-503-9126',
             contactType: 'Customer Service',
-            email: 'info@iSeyon.com',
+            email: 'info@iseyon.com',
             availableLanguage: ['English'],
             areaServed: ['US', 'IN'],
           },
@@ -244,7 +244,7 @@ export default function ContactPage() {
       />
 
       <ContactClient />
-      <FAQSchema faqs={contactFAQs} title="Frequently Asked Questions" />
+      {/* <FAQSchema faqs={contactFAQs} title="Frequently Asked Questions" /> */}
       {/* <PageCitations citations={contactCitations} title="BI/AI Success Stories &amp; Research" /> */}
     </>
   )

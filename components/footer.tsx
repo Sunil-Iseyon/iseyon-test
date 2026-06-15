@@ -104,7 +104,7 @@ export function Footer() {
             <div className="flex items-start gap-3 text-xs md:text-sm">
               <MapPin className="w-4 h-4 md:w-5 md:h-5 shrink-0 mt-0.5" />
               <div>
-                <p className="leading-relaxed">New York l New Jersey | Minnesota l California l Washington l Bangalore</p>
+                <p className="leading-relaxed">New York | New Jersey | Minnesota | California | Washington | Bangalore</p>
               </div>
             </div>
             <div className="flex items-center gap-3 text-xs md:text-sm mt-4">
@@ -113,7 +113,7 @@ export function Footer() {
             </div>
             <div className="flex items-center gap-3 text-xs md:text-sm">
               <Mail className="w-4 h-4 md:w-5 md:h-5" />
-              <ObfuscatedEmail u="info" d="iSeyon.com" />
+              <ObfuscatedEmail u="info" d="iseyon.com" />
             </div>
           </motion.div>
 

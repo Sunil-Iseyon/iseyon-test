@@ -326,7 +326,7 @@ export function VisionClient({ visionData }: { visionData: VisionDataType }) {
           <address className="not-italic grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-sm">
             <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
               <div className="font-semibold text-gray-900 mb-1">Email</div>
-              <a href="mailto:info@iSeyon.com" className="text-primary hover:underline">info@iSeyon.com</a>
+              <a href="mailto:info@iseyon.com" className="text-primary hover:underline">info@iseyon.com</a>
             </div>
             <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
               <div className="font-semibold text-gray-900 mb-1">Phone</div>
